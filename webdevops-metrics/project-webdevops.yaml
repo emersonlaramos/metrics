@@ -1,0 +1,145 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: webdevops
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: azure-devops-pat-secret # Nome do seu Secret
+  namespace: webdevops
+type: Opaque # Tipo padrão, pode ser omitido
+data:
+  pat-token: ''  
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azure-devops-exporter-emersonramos
+  namespace: webdevops
+  labels:
+    app: azure-devops-exporter-emersonramos
+
+spec:
+  replicas: 1 # Para alta disponibilidade, vamos usar 3 réplicas
+  selector:
+    matchLabels:
+      app: azure-devops-exporter-emersonramos
+  
+  template:
+    metadata:
+      labels:
+        app: azure-devops-exporter-emersonramos
+    
+    spec:
+      containers:
+      - name: azure-devops-exporter-emersonramos
+  
+        image: webdevops/azure-devops-exporter:main # Usando a tag latest
+        ports:
+        - containerPort: 8080 # Porta padrão do exporter
+        env:
+        - name: VERBOSE
+          value: "true"
+        - name: DEBUG
+          value: "true"
+        - name: ALLOW_REDIRECTS
+          value: "true"
+        - name: AZURE_DEVOPS_ORGANISATION
+          value: "emersonramos"
+        - name: AZURE_DEVOPS_APIVERSION
+          value: "7.1"
+        - name: AZURE_DEVOPS_ACCESS_TOKEN
+          value: ""
+#        valueFrom:
+#            secretKeyRef:
+#              name: azure-devops-pat-secret
+#              key: pat-token
+        resources: # Boas práticas para alocação de recursos
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: azure-devops-exporter-emersonramos-svc-clusterip
+  namespace: webdevops
+spec:
+  selector:
+    app: azure-devops-exporter
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP # Acessível apenas dentro do cluster
+############################################################
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azure-devops-exporter-devdrops
+  namespace: webdevops
+  labels:
+    app: azure-devops-exporter-devdrops
+
+spec:
+  replicas: 1 # Para alta disponibilidade, vamos usar 3 réplicas
+  selector:
+    matchLabels:
+      app: azure-devops-exporter-devdrops
+  
+  template:
+    metadata:
+      labels:
+        app: azure-devops-exporter-devdrops
+    
+    spec:
+      containers:
+      - name: azure-devops-exporter-devdrops
+  
+        image: webdevops/azure-devops-exporter:main # Usando a tag latest
+        ports:
+        - containerPort: 8080 # Porta padrão do exporter
+        env:
+        - name: VERBOSE
+          value: "true"
+        - name: DEBUG
+          value: "true"
+        - name: ALLOW_REDIRECTS
+          value: "true"
+        - name: AZURE_DEVOPS_ORGANISATION
+          value: "devdrops"
+        - name: AZURE_DEVOPS_APIVERSION
+          value: "7.1"
+        - name: AZURE_DEVOPS_ACCESS_TOKEN
+          value: ""
+#        valueFrom:
+#            secretKeyRef:
+#              name: azure-devops-pat-secret
+#              key: pat-token
+        resources: # Boas práticas para alocação de recursos
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: azure-devops-exporter-devdrops-svc-clusterip
+  namespace: webdevops
+spec:
+  selector:
+    app: azure-devops-exporter
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP # Acessível apenas dentro do cluster
