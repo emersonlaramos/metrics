@@ -1,0 +1,101 @@
+stages:
+- stage: validate
+  displayName: 'Validate Manifests'
+  jobs:
+  - job: check_securitycontext
+    displayName: 'Check Kubernetes Security Context'
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    # Etapa 1: Instalar a ferramenta 'yq' para manipular YAML
+    - script: |
+        set -e
+        echo "🔧 Installing yq..."
+        sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
+        sudo chmod +x /usr/bin/yq
+        echo "yq version: $(yq --version)"
+      displayName: 'Install yq'
+
+    # Etapa 2: Validar o arquivo de deployment
+    - script: |
+        set -e # Encerra o script se um comando essencial falhar
+
+        # --- Configuração ---
+        FILE="deployment.yaml" # Altere aqui para o caminho do seu arquivo
+        RED='\033[0;31m'
+        GREEN='\033[0;32m'
+        YELLOW='\033[1;33m'
+        NC='\033[0m' # Sem Cor
+        
+        FAILURE_COUNT=0
+
+        # --- Função Auxiliar de Validação ---
+        # Argumentos: 1:índice do container, 2:descrição, 3:query yq para valor atual, 4:valor esperado
+        run_check() {
+          local container_index="$1"
+          local description="$2"
+          local yq_query="$3"
+          local expected_value="$4"
+          local actual_value
+          
+          # Captura o valor real, tratando possíveis erros do yq se o campo não existir
+          actual_value=$(yq e "$yq_query" "$FILE" 2>/dev/null || echo "null")
+
+          if [[ "$actual_value" == "$expected_value" ]]; then
+            echo -e "  ${GREEN}✔ OK:${NC} $description"
+          else
+            echo -e "  ${RED}❌ FALHA:${NC} $description - Esperado: '$expected_value', Encontrado: '$actual_value'"
+            ((FAILURE_COUNT++))
+          fi
+        }
+
+        # --- Início da Execução ---
+        echo -e "\n${YELLOW}🔍 Validando securityContext em '$FILE'...${NC}"
+
+        if [ ! -f "$FILE" ]; then
+          echo -e "${RED}Erro: Arquivo '$FILE' não encontrado!${NC}"
+          exit 1
+        fi
+
+        # Obtém a lista de nomes de containers para iterar
+        container_names=$(yq e '.spec.template.spec.containers[].name' "$FILE")
+        
+        # Itera sobre cada container encontrado no arquivo
+        for name in $container_names; do
+          container_index=$(yq e ".spec.template.spec.containers | map(.name == \"$name\") | index(true)" "$FILE")
+          echo -e "\n-- Verificando container: ${YELLOW}$name${NC} (index: $container_index)"
+
+          # Valida se o bloco securityContext existe para o container
+          if ! yq e ".spec.template.spec.containers[$container_index].securityContext" "$FILE" >/dev/null; then
+            echo -e "  ${RED}❌ FALHA: O bloco 'securityContext' é obrigatório e não foi encontrado.${NC}"
+            ((FAILURE_COUNT++))
+            continue # Pula para o próximo container
+          fi
+
+          # --- Lista de Verificações para este container ---
+          run_check "$container_index" "allowPrivilegeEscalation deve ser 'false'" ".spec.template.spec.containers[$container_index].securityContext.allowPrivilegeEscalation" "false"
+          run_check "$container_index" "readOnlyRootFilesystem deve ser 'true'" ".spec.template.spec.containers[$container_index].securityContext.readOnlyRootFilesystem" "true"
+          run_check "$container_index" "runAsNonRoot deve ser 'true'" ".spec.template.spec.containers[$container_index].securityContext.runAsNonRoot" "true"
+          run_check "$container_index" "runAsUser deve ser '1000'" ".spec.template.spec.containers[$container_index].securityContext.runAsUser" "1000"
+          run_check "$container_index" "runAsGroup deve ser '1000'" ".spec.template.spec.containers[$container_index].securityContext.runAsGroup" "1000"
+          
+          # Para verificar arrays, a abordagem é um pouco diferente
+          # Verifica se 'ALL' está na lista de capabilities.drop
+          if [[ $(yq e ".spec.template.spec.containers[$container_index].securityContext.capabilities.drop | contains([\"ALL\"])" "$FILE") == "true" ]]; then
+            echo -e "  ${GREEN}✔ OK:${NC} capabilities.drop contém 'ALL'"
+          else
+            echo -e "  ${RED}❌ FALHA:${NC} capabilities.drop deve conter 'ALL'"
+            ((FAILURE_COUNT++))
+          fi
+          
+        done
+
+        # --- Sumário Final ---
+        echo -e "\n-------------------------------------------"
+        if [ $FAILURE_COUNT -gt 0 ]; then
+          echo -e "${RED}❌ Validação falhou com $FAILURE_COUNT erro(s).${NC}"
+          exit 1
+        else
+          echo -e "${GREEN}✅ Todas as verificações de securityContext passaram com sucesso!${NC}"
+        fi
+      displayName: "Validate Kubernetes Security Context"
