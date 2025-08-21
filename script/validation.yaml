@@ -1,0 +1,78 @@
+tasks:
+    - task: Bash@3
+      displayName: 'Validate Security Context in deploy.yaml'
+      # Se o script falhar (exit 1), a task e a pipeline falharão.
+      failOnStderr: true
+      inputs:
+        targetType: 'inline'
+        # O caminho para o arquivo de deployment é definido em uma variável de ambiente.
+        # Altere o valor de 'DEPLOY_FILE_PATH' para o caminho correto no seu repositório.
+        script: |
+          # --- Configuração ---
+          set -eo pipefail
+          export DEPLOY_FILE_PATH="$(System.DefaultWorkingDirectory)/path/to/your/deploy.yaml"
+
+          # --- Cores para o Output ---
+          GREEN='\033[0;32m'
+          RED='\033[0;31m'
+          YELLOW='\033[1;33m'
+          NC='\033[0m' # Sem Cor
+
+          # --- Variáveis Globais ---
+          declare -a COMPLIANT_ITEMS
+          declare -a NON_COMPLIANT_ITEMS
+
+          # --- Funções ---
+          function run_check() {
+              local check_description="$1"
+              local yq_query="$2"
+              local failing_containers
+
+              failing_containers=$(yq e "$yq_query" "$DEPLOY_FILE_PATH" | sed 's/^- //g' | tr '\n' ',' | sed 's/,$//')
+
+              if [[ -z "$failing_containers" ]]; then
+                  echo -e "${GREEN}✔ [CONFORME]${NC} - ${check_description}"
+                  COMPLIANT_ITEMS+=("$check_description")
+              else
+                  echo -e "${RED}❌ [NÃO CONFORME]${NC} - ${check_description}. Containers afetados: ${failing_containers}"
+                  NON_COMPLIANT_ITEMS+=("$check_description (Containers: ${failing_containers})")
+              fi
+          }
+
+          function print_summary() {
+              echo -e "\n--------------------------------------------------"
+              echo -e "          ${YELLOW}SUMÁRIO DA VALIDAÇÃO DE DEPLOYMENT${NC}        "
+              echo -e "--------------------------------------------------\n"
+              echo -e "${GREEN}Itens em Conformidade:${NC}"
+              if [ ${#COMPLIANT_ITEMS[@]} -eq 0 ]; then echo "Nenhum."; else for item in "${COMPLIANT_ITEMS[@]}"; do echo -e "  ✔ ${item}"; done; fi
+              echo -e "\n${RED}Itens Não Conformes:${NC}"
+              if [ ${#NON_COMPLIANT_ITEMS[@]} -eq 0 ]; then echo "Nenhum."; else for item in "${NON_COMPLIANT_ITEMS[@]}"; do echo -e "  ❌ ${item}"; done; fi
+              echo -e "\n--------------------------------------------------"
+              if [ ${#NON_COMPLIANT_ITEMS[@]} -gt 0 ]; then
+                  echo -e "\n${RED}Validação falhou!${NC} Encontrados ${#NON_COMPLIANT_ITEMS[@]} itens não conformes."
+                  exit 1
+              else
+                  echo -e "\n${GREEN}Validação concluída com sucesso!${NC} Todos os itens estão em conformidade."
+                  exit 0
+              fi
+          }
+
+          # --- Script Principal ---
+          if [[ ! -f "$DEPLOY_FILE_PATH" ]]; then
+              echo -e "${RED}Erro: Arquivo de deployment não encontrado em '$DEPLOY_FILE_PATH'. Verifique a variável DEPLOY_FILE_PATH no script da pipeline.${NC}"
+              exit 1
+          fi
+
+          echo -e "${YELLOW}Iniciando validação do arquivo: $DEPLOY_FILE_PATH${NC}\n"
+
+          # --- LISTA DE VERIFICAÇÕES ---
+          run_check "Todo container deve definir 'securityContext'" '.spec.template.spec.containers[] | select(.securityContext == null) | .name'
+          run_check "securityContext.runAsUser deve ser '2000'" '.spec.template.spec.containers[] | select(.securityContext.runAsUser != 2000) | .name'
+          run_check "securityContext.privileged deve ser 'false'" '.spec.template.spec.containers[] | select(.securityContext.privileged != false) | .name'
+          run_check "securityContext.allowPrivilegeEscalation deve ser 'false'" '.spec.template.spec.containers[] | select(.securityContext.allowPrivilegeEscalation != false) | .name'
+          run_check "securityContext.capabilities.drop deve conter 'ALL'" '.spec.template.spec.containers[] | select(.securityContext.capabilities.drop | contains(["ALL"]) | not) | .name'
+          
+          # --- Adicione novas validações aqui ---
+
+          # --- FIM DAS VERIFICAÇÕES ---
+          print_summary
