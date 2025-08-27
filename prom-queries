@@ -1,0 +1,42 @@
+# Quantidade de Build Definition
+count(azure_devops_build_definition_info)
+
+# Quantidade de build definitions por projeto Azure
+count by (projectName) (
+  azure_devops_build_definition_info
+  * on(projectID) group_left(projectName)
+  azure_devops_project_info
+)
+
+# Listar todos os build definitions com o nome do projeto
+azure_devops_build_definition_info
+* on(projectID) group_left(projectName)
+azure_devops_project_info
+
+# Percentual de builds por status (sucesso, falha
+sum by (result) (rate(azure_devops_stats_project_builds[5m])) / sum(rate(azure_devops_stats_project_builds[5m])) * 100
+
+# Total de builds por Agent Pool e por Projeto
+sum by (agentPoolName, projectName) (
+  increase(azure_devops_stats_agentpool_builds[1h])
+  * on(agentPoolID) group_left(agentPoolName)
+  azure_devops_agentpool_info
+  * on(projectID) group_left(projectName)
+  azure_devops_project_info
+)
+
+# Tempo total de execução de build por Agent Pool e por Projeto (em segundos)
+sum by (agentPoolName, projectName) (
+  increase(azure_devops_stats_agentpool_builds_duration_sum[1d])
+  * on(agentPoolID) group_left(agentPoolName)
+  azure_devops_agentpool_info
+  * on(projectID) group_left(projectName)
+  azure_devops_project_info
+)
+
+# Tempo total de execução de build por Agent Pool
+sum by (agentPoolName) (
+  increase(azure_devops_stats_agentpool_builds_duration_sum[1d])
+  * on(agentPoolID) group_left(agentPoolName)
+  azure_devops_agentpool_info
+)
