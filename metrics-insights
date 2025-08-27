@@ -1,0 +1,48 @@
+Métricas para Acompanhar Execuções de Builds no Azure DevOps
+Aqui estão algumas categorias e métricas específicas que fornecem insights valiosos sobre seus pipelines de build. Muitas delas podem ser criadas combinando as queries que já temos no Canvas.
+
+1. Vazão e Frequência (Throughput)
+Essas métricas ajudam a entender o volume de trabalho que seus pipelines estão processando.
+
+Total de Builds por Período: Acompanhe o número total de builds executados por dia, semana ou mês. Isso ajuda a identificar tendências de atividade.
+
+Query Relacionada: sum(increase(azure_devops_stats_project_builds[1d]))
+
+Taxa de Builds por Pipeline: Identifique quais pipelines são executados com mais frequência. Isso pode ajudar a priorizar otimizações.
+
+Query Relacionada: sum by (buildDefinitionName) (increase(azure_devops_stats_project_builds[1d]) * on(buildDefinitionID) group_left(buildDefinitionName) azure_devops_build_definition_info)
+
+2. Performance e Duração
+Métricas de performance são cruciais para garantir que os desenvolvedores não percam tempo esperando pelos builds.
+
+Duração Média dos Builds: Monitore o tempo médio que um build leva para ser concluído. Um aumento repentino pode indicar um problema.
+
+Query Relacionada: rate(azure_devops_stats_project_builds_duration_sum[5m]) / rate(azure_devops_stats_project_builds_duration_count[5m])
+
+Tempo de Espera na Fila (Queue Time): Meça quanto tempo os builds ficam na fila antes de um agente ficar disponível. Tempos de fila longos podem indicar que você precisa de mais agentes.
+
+Query Relacionada: rate(azure_devops_stats_agentpool_builds_wait_sum[5m]) / rate(azure_devops_stats_agentpool_builds_wait_count[5m])
+
+Builds Mais Lentos (P95/P99): Identifique os builds que estão demorando mais do que o normal (percentil 95 ou 99). Eles são ótimos candidatos para otimização.
+
+3. Qualidade e Confiabilidade
+Essas métricas medem a estabilidade e a confiabilidade dos seus pipelines.
+
+Taxa de Sucesso/Falha: A porcentagem de builds que são concluídos com sucesso versus os que falham. (Já coberto pela Query 4).
+
+Tempo Médio Para Recuperação (MTTR - Mean Time To Recovery): Meça o tempo médio entre a falha de um build em um branch e o próximo build bem-sucedido no mesmo branch. Um MTTR baixo indica que sua equipe consegue corrigir problemas rapidamente.
+
+"Flakiness" de Builds: Identifique pipelines que falham e passam sem que haja mudanças no código. Builds "flaky" podem minar a confiança no seu processo de CI.
+
+4. Utilização de Recursos
+Entenda como seus agentes e pools de agentes estão sendo utilizados.
+
+Uso de Agent Pools: Tempo total de execução de builds em cada agent pool. (Já coberto pela Query 7).
+
+Tamanho da Fila por Agent Pool: Monitore o número de builds aguardando na fila para cada pool específico.
+
+Query Relacionada: azure_devops_agentpool_queue_length
+
+Taxa de Ocupação dos Agentes: Calcule a porcentagem de agentes que estão ocupados em um determinado momento.
+
+Query Relacionada: azure_devops_agentpool_usage / azure_devops_agentpool_size
