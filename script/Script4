@@ -1,0 +1,61 @@
+#!/bin/bash
+set -x # Mantendo o debug por enquanto
+
+# Diretórios a serem verificados (adapte para seus testes)
+K8S_PATHS=("k8s/dev" "k8s/hml" "k8s/prd")
+
+compliant_count=0
+non_compliant_count=0
+error_details=""
+
+declare -a checks=(
+  "all(.spec.template.spec.containers[]; .securityContext != null);O bloco securityContext é obrigatório"
+  "all(.spec.template.spec.containers[]; .securityContext.privileged == false);Containers privilegiados não são permitidos"
+  "all(.spec.template.spec.containers[]; .securityContext.allowPrivilegeEscalation == false);Escalação de privilégio não é permitida"
+  "all(.spec.template.spec.containers[]; .securityContext.runAsNonRoot == true);Containers devem rodar como non-root"
+  "all(.spec.template.spec.containers[]; .resources.limits.cpu != null);Containers devem ter limites de CPU definidos"
+  "all(.spec.template.spec.containers[]; .resources.limits.memory != null);Containers devem ter limites de memória definidos"
+)
+
+for d in "${K8S_PATHS[@]}"; do
+  echo "--> Verificando diretório: $d"
+  find "$d" -type f \( -name "*.yaml" -o -name "*.yml" \) | while read -r manifest; do
+    if [ ! -f "$manifest" ]; then continue; fi
+    echo "    Validando arquivo: $manifest"
+
+    for rule in "${checks[@]}"; do
+      # ======================= A GRANDE MUDANÇA ESTÁ AQUI =======================
+      # Substituímos o 'read' por um método de divisão de string mais robusto.
+      yq_expression="${rule%%;*}"  # Pega tudo ANTES do primeiro ';'
+      error_message="${rule#*;}"   # Pega tudo DEPOIS do primeiro ';'
+      # ========================================================================
+
+      result=$(yq eval "$yq_expression" "$manifest" 2>/dev/null || echo "error")
+
+      if [[ "$result" == "true" ]]; then
+        ((compliant_count++))
+      else
+        ((non_compliant_count++))
+        error_details+="[FALHA] Arquivo: $manifest\n        Regra: $error_message\n"
+      fi
+    done
+  done
+done
+
+set +x
+
+# --- Report Final ---
+echo "================================================"
+echo "              Report da Validação"
+echo "================================================"
+echo "Verificações em conformidade: $compliant_count"
+echo "Verificações fora de conformidade: $non_compliant_count"
+echo "------------------------------------------------"
+
+if [ $non_compliant_count -gt 0 ]; then
+  echo -e "\n🔴 ENCONTRADOS PROBLEMAS DE CONFORMIDADE:\n"
+  echo -e "$error_details"
+  exit 1
+else
+  echo -e "\n🟢 Todos os manifestos estão em conformidade!\n"
+fi
