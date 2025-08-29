@@ -1,0 +1,77 @@
+- task: CmdLine@2
+  displayName: 'Validate Kubernetes Manifests'
+  inputs:
+    script: |
+      # Instala o yq se não estiver presente (necessário para alguns agentes de build)
+      if ! command -v yq &> /dev/null
+      then
+          echo "yq não encontrado. Instalando..."
+          sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && sudo chmod +x /usr/bin/yq
+      fi
+
+      echo "================================================"
+      echo "   Iniciando Validação de Manifestos K8s"
+      echo "================================================"
+
+      # --- Variáveis para o Report Final ---
+      compliant_count=0
+      non_compliant_count=0
+      error_details=""
+
+      # --- Central de Validações ---
+      # Adicione novas regras aqui seguindo o formato:
+      # "expressao_yq_que_retorna_true_ou_false;Mensagem de erro em caso de falha"
+      declare -a checks=(
+        'all(.spec.template.spec.containers[]; .securityContext != null);O bloco securityContext é obrigatório para todos os containers'
+        'all(.spec.template.spec.containers[]; .securityContext.privileged == false);Containers com modo privilegiado (privileged: true) não são permitidos'
+        'all(.spec.template.spec.containers[]; .securityContext.allowPrivilegeEscalation == false);Escalação de privilégio (allowPrivilegeEscalation: true) não é permitida'
+        'all(.spec.template.spec.containers[]; .securityContext.runAsNonRoot == true);Todos os containers devem rodar como non-root (runAsNonRoot: true)'
+        'all(.spec.template.spec.containers[]; .resources.limits.cpu != null);Todos os containers devem ter limites de CPU definidos (.resources.limits.cpu)'
+        'all(.spec.template.spec.containers[]; .resources.limits.memory != null);Todos os containers devem ter limites de memória definidos (.resources.limits.memory)'
+        'all(.spec.template.spec.containers[]; .readinessProbe != null);Todos os containers devem ter uma sonda de prontidão (readinessProbe)'
+      )
+
+      # Loop em todos os diretórios passados como parâmetro
+      for d in ${{ parameters.BuildkitWorkingDirectory }}; do
+        echo "--> Verificando diretório: $d"
+
+        # Encontra todos os arquivos yaml/yml no diretório
+        find "$d" -name "*.yaml" -o -name "*.yml" | while read -r manifest; do
+          echo "    Validando arquivo: $manifest"
+
+          # Aplica cada uma das validações definidas acima
+          for rule in "${checks[@]}"; do
+            IFS=';' read -r yq_expression error_message <<< "$rule"
+
+            # Roda a validação com yq. O '|| true' evita que o script pare se o yq der erro (ex: path não existe)
+            result=$(yq eval "$yq_expression" "$manifest" || true)
+
+            if [[ "$result" == "true" ]]; then
+              ((compliant_count++))
+            else
+              ((non_compliant_count++))
+              # Adiciona o detalhe do erro para o report final
+              error_details+="[FALHA] Arquivo: $manifest\n        Regra: $error_message\n"
+            fi
+          done
+        done
+      done
+
+      # --- Report Final ---
+      echo "================================================"
+      echo "              Report da Validação"
+      echo "================================================"
+      echo "Verificações em conformidade: $compliant_count"
+      echo "Verificações fora de conformidade: $non_compliant_count"
+      echo "------------------------------------------------"
+
+      if [ $non_compliant_count -gt 0 ]; then
+        echo -e "\n🔴 ENCONTRADOS PROBLEMAS DE CONFORMIDADE:\n"
+        echo -e "$error_details"
+        # Na pipeline do Azure DevOps, isso fará o passo falhar
+        exit 1
+      else
+        echo -e "\n🟢 Todos os manifestos estão em conformidade com as regras definidas!\n"
+      fi
+  condition: and(succeeded(), ${{ parameters.Condition }})
+  continueOnError: false
