@@ -1,0 +1,26 @@
+count by (projectName, agentPoolName) (
+    azure_devops_agentpool_agent_job
+    * on(agentPoolAgentID) group_left(agentPoolID)
+    azure_devops_agentpool_agent_info
+    * on(scopeID) group_left(projectName)
+    label_replace(azure_devops_project_info, "scopeID", "$1", "projectID", "(.+)")
+    * on(agentPoolID) group_left(agentPoolName)
+    azure_devops_agentpool_info
+)
+
+----------------------------------------------
+
+### Maiores usuarios de um agentPool
+sum by (projectName) (
+    (
+        changes(azure_devops_build_latest_status{type="finished"}[$__range])
+        * on(buildID, projectID)
+        (
+            azure_devops_build_latest_info
+            * on(agentPoolID) group_left()
+            (azure_devops_agentpool_info{agentPoolName="Azure Pipelines"})
+        )
+    )
+    * on(projectID) group_left(projectName)
+    azure_devops_project_info
+)
