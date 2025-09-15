@@ -54,3 +54,16 @@ count by (projectName) (
 )
 -------------------------
 ###
+count(
+  max_over_time(
+    (
+      azure_devops_build_latest_info
+      * on(agentPoolID) group_left()
+        (azure_devops_agentpool_info{agentPoolName="Azure Pipelines"})
+      * on(projectID) group_left(projectName)
+        (azure_devops_project_info)
+      * on(buildDefinitionID) group_left(buildDefinitionName)
+        (azure_devops_build_definition_info)
+    )[$__range:]
+  )
+) by (projectName)
