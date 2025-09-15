@@ -24,3 +24,33 @@ sum by (projectName) (
     * on(projectID) group_left(projectName)
     azure_devops_project_info
 )
+-----------------------------------------
+### Ver com mais atenção
+
+sum by (projectName) (
+    (
+        (count_over_time(azure_devops_build_latest_info[$__range]) > 0)
+        * on(agentPoolID) group_left()
+        (azure_devops_agentpool_info{agentPoolName="Azure Pipelines"})
+    )
+    * on(projectID) group_left(projectName)
+    azure_devops_project_info
+)
+
+--------------------
+### Chegou perto
+
+count by (projectName) (
+    max_over_time(
+        (
+            # Subconsulta que filtra os builds pelo pool e adiciona o nome do projeto
+            azure_devops_build_latest_info
+            * on(agentPoolID) group_left()
+            (azure_devops_agentpool_info{agentPoolName="Azure Pipelines"})
+            * on(projectID) group_left(projectName)
+            azure_devops_project_info
+        )[$__range:]
+    )
+)
+-------------------------
+###
