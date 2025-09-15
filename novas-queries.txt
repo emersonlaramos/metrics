@@ -1,3 +1,35 @@
+################# bateu com testes na conta pessoal #####
+
+sum by (projectName) (
+    count by (jobRequestId, projectName) (
+        (
+            max_over_time(
+                (
+                    label_replace(
+                        label_replace(
+                            azure_devops_agentpool_agent_job,
+                            "projectID", "$1", "scopeID", "(.*)"
+                        ),
+                        "buildDefinitionID", "$1", "definitionID", "(.*)"
+                    )
+                    * on(agentPoolAgentID) group_left(agentPoolID)
+                    azure_devops_agentpool_agent_info
+                )[$__range:]
+            )
+        )
+        * on(agentPoolID) group_left() (azure_devops_agentpool_info)
+        * on(projectID) group_left(projectName) azure_devops_project_info
+        * on(buildDefinitionID) group_left(buildDefinitionName) azure_devops_build_definition_info
+    )
+)
+
+----------------------------------------
+
+
+
+
+
+
 count by (projectName, agentPoolName) (
     azure_devops_agentpool_agent_job
     * on(agentPoolAgentID) group_left(agentPoolID)
