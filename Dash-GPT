@@ -1,0 +1,96 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Agentes Online por Pool",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "count by(agentPoolName) (azure_devops_agentpool_agent_info{status=\"online\", enabled=\"true\"})",
+          "legendFormat": "{{agentPoolName}}"
+        }
+      ],
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] } },
+      "gridPos": { "h": 6, "w": 8, "x": 0, "y": 0 }
+    },
+    {
+      "type": "bargauge",
+      "title": "Capacidade Total de Agentes",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "azure_devops_agentpool_size",
+          "legendFormat": "{{agentPoolName}}"
+        }
+      ],
+      "gridPos": { "h": 6, "w": 8, "x": 8, "y": 0 }
+    },
+    {
+      "type": "gauge",
+      "title": "Utilização (%) por Pool",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "( count by(agentPoolName) (azure_devops_agentpool_agent_job{planType!=\"PoolMaintenance\"} * on(agentPoolAgentID) group_left(agentPoolName) azure_devops_agentpool_agent_info) ) / on(agentPoolName) group_left() azure_devops_agentpool_size * 100",
+          "legendFormat": "{{agentPoolName}}"
+        }
+      ],
+      "gridPos": { "h": 6, "w": 8, "x": 16, "y": 0 },
+      "options": {
+        "reduceOptions": { "calcs": ["lastNotNull"] },
+        "orientation": "horizontal",
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true
+      }
+    },
+    {
+      "type": "timeseries",
+      "title": "Comprimento da Fila por Pool",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "azure_devops_agentpool_queue_length",
+          "legendFormat": "{{agentPoolName}}"
+        }
+      ],
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 6 }
+    },
+    {
+      "type": "timeseries",
+      "title": "Jobs em Execução por Pool",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "count by(agentPoolName) (azure_devops_agentpool_agent_job{planType!=\"PoolMaintenance\"} * on(agentPoolAgentID) group_left(agentPoolName) azure_devops_agentpool_agent_info)",
+          "legendFormat": "{{agentPoolName}}"
+        }
+      ],
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 6 }
+    },
+    {
+      "type": "table",
+      "title": "Detalhes por Agente",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "azure_devops_agentpool_agent_info",
+          "legendFormat": "{{agentPoolName}} - {{agentName}}"
+        }
