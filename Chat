@@ -1,0 +1,134 @@
+Boa, bora transformar aqueles insights em queries PromQL que você pode usar direto no Grafana com azure_devops_stats_agentpool_builds_duration e outras métricas de stats.
+Vou montar exemplos usando funções típicas (avg_over_time, histogram_quantile, increase, etc.).
+
+
+---
+
+🔎 Queries PromQL para Grafana
+
+1. Gargalos: execução vs espera
+
+# Execução média (últimos 30m)
+avg_over_time(azure_devops_stats_agentpool_builds_duration_seconds_sum[30m])
+  / avg_over_time(azure_devops_stats_agentpool_builds_duration_seconds_count[30m])
+
+# Espera média (últimos 30m)
+avg_over_time(azure_devops_stats_agentpool_builds_wait_seconds_sum[30m])
+  / avg_over_time(azure_devops_stats_agentpool_builds_wait_seconds_count[30m])
+
+> Se a espera for maior que execução → falta capacidade nos pools.
+
+
+
+
+---
+
+2. Eficiência por agent pool
+
+# Duração média por pool
+(
+  sum by (agentpool) (rate(azure_devops_stats_agentpool_builds_duration_seconds_sum[1h]))
+  /
+  sum by (agentpool) (rate(azure_devops_stats_agentpool_builds_duration_seconds_count[1h]))
+)
+
+> Mostra quais pools têm builds mais lentos → candidatos a otimização ou redistribuição.
+
+
+
+
+---
+
+3. Regressões em pipelines
+
+# P95 de duração (última hora) – comparável com períodos passados
+histogram_quantile(0.95,
+  sum by (le, project) (rate(azure_devops_stats_agentpool_builds_duration_seconds_bucket[1h]))
+)
+
+> Se subir em relação à semana passada → regressão.
+
+
+
+
+---
+
+4. Alerta de builds anormalmente longos
+
+# Percentil 95 acima de 30 minutos nos últimos 15m
+histogram_quantile(0.95,
+  sum by (le, agentpool) (rate(azure_devops_stats_agentpool_builds_duration_seconds_bucket[15m]))
+) > 1800
+
+> Configurar no Prometheus Alertmanager para disparar alerta.
+
+
+
+
+---
+
+5. Comparação entre projetos
+
+# Média de duração por projeto (últimos 30m)
+(
+  sum by (project) (rate(azure_devops_stats_agentpool_builds_duration_seconds_sum[30m]))
+  /
+  sum by (project) (rate(azure_devops_stats_agentpool_builds_duration_seconds_count[30m]))
+)
+
+> Ranking de projetos mais rápidos/lentos no Grafana.
+
+
+
+
+---
+
+6. Impacto de incidentes
+
+# Tendência de aumento de duração em todos pools (últimos 6h)
+avg_over_time(
+  (
+    sum by (agentpool) (rate(azure_devops_stats_agentpool_builds_duration_seconds_sum[5m]))
+    /
+    sum by (agentpool) (rate(azure_devops_stats_agentpool_builds_duration_seconds_count[5m]))
+  )[6h:]
+)
+
+> Dá para usar em gráfico de linha para ver picos em incidentes.
+
+
+
+
+---
+
+7. Estimativa de custo (tempo total consumido)
+
+# Total de horas de build por projeto no último dia
+sum by (project) (increase(azure_devops_stats_agentpool_builds_duration_seconds_sum[1d])) / 3600
+
+> Se você paga por uso de agentes, vira um indicador direto de custo.
+
+
+
+
+---
+
+8. Capacity planning
+
+# Quantidade de builds executados por pool nas últimas 24h
+sum by (agentpool) (increase(azure_devops_stats_agentpool_builds_duration_seconds_count[24h]))
+
+# Tempo total gasto em builds por pool nas últimas 24h
+sum by (agentpool) (increase(azure_devops_stats_agentpool_builds_duration_seconds_sum[24h])) / 3600
+
+> Dá para comparar demanda (builds/dia) vs capacidade atual (horas de agente/dia).
+
+
+
+
+---
+
+👉 Essas queries já podem ser plugadas em painéis Grafana (média, percentis, ranking por projeto/pool) e em alertas Prometheus.
+
+Quer que eu monte um painel exemplo do Grafana (JSON) já com esses gráficos prontos pra você importar direto?
+
