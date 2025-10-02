@@ -1,0 +1,36 @@
+package azuredevopsclient
+
+import (
+    "encoding/json"
+    "testing"
+)
+
+func TestReasonUnmarshal_String(t *testing.T) {
+    data := []byte(`"Manual"`)
+    var r Reason
+    if err := json.Unmarshal(data, &r); err != nil {
+        t.Fatalf("erro ao fazer unmarshal de string: %v", err)
+    }
+    if r != "Manual" {
+        t.Errorf("esperava Manual, obteve %s", r)
+    }
+}
+
+func TestReasonUnmarshal_Int(t *testing.T) {
+    data := []byte(`2`)
+    var r Reason
+    if err := json.Unmarshal(data, &r); err != nil {
+        t.Fatalf("erro ao fazer unmarshal de int: %v", err)
+    }
+    if r != "2" {
+        t.Errorf("esperava \"2\", obteve %s", r)
+    }
+}
+
+func TestReasonUnmarshal_Invalid(t *testing.T) {
+    data := []byte(`{"foo":"bar"}`)
+    var r Reason
+    if err := json.Unmarshal(data, &r); err == nil {
+        t.Errorf("esperava erro para json inválido, mas não ocorreu")
+    }
+}
