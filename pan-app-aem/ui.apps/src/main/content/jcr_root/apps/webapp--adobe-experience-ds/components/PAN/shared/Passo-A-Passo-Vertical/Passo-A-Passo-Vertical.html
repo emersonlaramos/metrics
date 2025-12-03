@@ -1,0 +1,90 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<ul id="${properties.sectionID}" class="passo-a-passo-vertical" data-cmp-is="Passo-A-Passo-Vertical">
+
+    <sly data-sly-test="${!properties.esconderTopico1}">
+        <li class="passo-a-passo-vertical__passo">
+            <div class="passo-a-passo-vertical__numero-passo">
+                1
+            </div>
+            <div class="passo-a-passo-vertical__conteudo-passo">
+                <h3 class="typography-title-3 passo-a-passo-vertical__title"  data-sly-element="${properties.tagTituloPasso}">${properties.tituloTopico1}</h3>
+                <p class="typography-body-2 passo-a-passo-vertical__text" data-sly-element="${properties.tagTextoPasso}">${properties.textoTopico1 @context='html'}</p>
+            </div>
+        </li>
+    </sly> 
+ 
+    <sly data-sly-test="${!properties.esconderTopico2}">
+        <li class="passo-a-passo-vertical__passo">
+            <div class="passo-a-passo-vertical__numero-passo">
+                2
+            </div>
+            <div class="passo-a-passo-vertical__conteudo-passo">
+                <h3 class="typography-title-3 passo-a-passo-vertical__title" data-sly-element="${properties.tagTituloPasso}">${properties.tituloTopico2}</h3>
+                <p class="typography-body-2 passo-a-passo-vertical__text" data-sly-element="${properties.tagTextoPasso}">${properties.textoTopico2 @context='html'}</p>
+            </div>
+        </li>
+    </sly>
+
+    <sly data-sly-test="${!properties.esconderTopico3}">
+        <li class="passo-a-passo-vertical__passo">
+            <div class="passo-a-passo-vertical__numero-passo">
+                3
+            </div>
+            <div class="passo-a-passo-vertical__conteudo-passo">
+                <h3 class="typography-title-3 passo-a-passo-vertical__title" data-sly-element="${properties.tagTituloPasso}">${properties.tituloTopico3}</h3>
+                <p class="typography-body-2 passo-a-passo-vertical__text" data-sly-element="${properties.tagTextoPasso}">${properties.textoTopico3 @context='html'}</p>
+            </div>
+        </li>
+    </sly>
+
+    <sly data-sly-test="${!properties.esconderTopico4}">
+        <li class="passo-a-passo-vertical__passo">
+            <div class="passo-a-passo-vertical__numero-passo">
+                4
+            </div>
+            <div class="passo-a-passo-vertical__conteudo-passo">
+                <h3 class="typography-title-3 passo-a-passo-vertical__title" data-sly-element="${properties.tagTituloPasso}">${properties.tituloTopico4}</h3>
+                <p class="typography-body-2 passo-a-passo-vertical__text" data-sly-element="${properties.tagTextoPasso}">${properties.textoTopico4 @context='html'}</p>
+            </div>
+        </li>
+    </sly>
+
+    <sly data-sly-test="${!properties.esconderTopico5}">
+        <li class="passo-a-passo-vertical__passo">
+            <div class="passo-a-passo-vertical__numero-passo">
+                5
+            </div>
+            <div class="passo-a-passo-vertical__conteudo-passo">
+                <h3 class="typography-title-3 passo-a-passo-vertical__title" data-sly-element="${properties.tagTituloPasso}">${properties.tituloTopico5}</h3>
+                <p class="typography-body-2 passo-a-passo-vertical__text" data-sly-element="${properties.tagTextoPasso}">${properties.textoTopico5 @context='html'}</p>
+            </div>
+        </li>
+    </sly>
+
+    <sly data-sly-test="${!properties.esconderTopico6}">
+        <li class="passo-a-passo-vertical__passo">
+            <div class="passo-a-passo-vertical__numero-passo">
+                6
+            </div>
+            <div class="passo-a-passo-vertical__conteudo-passo">
+                <h3 class="typography-title-3 passo-a-passo-vertical__title" data-sly-element="${properties.tagTituloPasso}">${properties.tituloTopico6}</h3>
+                <p class="typography-body-2 passo-a-passo-vertical__text" data-sly-element="${properties.tagTextoPasso}">${properties.textoTopico6 @context='html'}</p>
+            </div>
+        </li>
+    </sly>
+
+    <sly data-sly-test="${!properties.esconderTopico7}">
+        <li class="passo-a-passo-vertical__passo">
+            <div class="passo-a-passo-vertical__numero-passo">
+                7
+            </div>
+            <div class="passo-a-passo-vertical__conteudo-passo">
+                <h3 class="typography-title-3 passo-a-passo-vertical__title" data-sly-element="${properties.tagTituloPasso}">${properties.tituloTopico7}</h3>
+                <p class="typography-body-2 passo-a-passo-vertical__text" data-sly-element="${properties.tagTextoPasso}">${properties.textoTopico7 @context='html'}</p>
+            </div>
+        </li>
+    </sly>
+
+</ul>

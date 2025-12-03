@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Propriedades Formulario-PreLead"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <Tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <tab-variantes
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Variantes"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <colorVariant
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                deleteHint="{Boolean}true"
+                                fieldLabel="Cores de fundo"
+                                name="./colorVariant"
+                                vertical="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <branco
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Branco"
+                                        value="bg-branco" />
+                                    <cinza
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Cinza"
+                                        value="bg-cinza" />
+                                    <azul
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Azul"
+                                        value="bg-azul" />
+                                    <preto
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Preto"
+                                        value="bg-preto" />
+                                </items>
+                            </colorVariant>
+                        </items>
+                    </tab-variantes>
+                    <tab-textos
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Textos"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <Titulo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Titulo (máximo 48 caracteres)"
+                                maxlength="{Long}48"
+                                name="./titulo"
+                                value="Título com 2 linhas aqui!" />
+                            <TituloFeedback
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Titulo tela de sucesso (Feedback) (máximo 48 caracteres)"
+                                maxlength="{Long}48"
+                                name="./tituloFeedback"
+                                value="Título com 2 linhas aqui!" />
+                            <TextoFedeback
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Texto tela de sucesso (Feedback) (máximo 100 caracteres)"
+                                maxlength="{Long}100"
+                                name="./textoFeedback"
+                                value="Texto de apoio feedback aqui!" />
+                            <TextoFeedbackQrCodeBox
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Texto tela de sucesso (Feedback) QRCODE (máximo 45 caracteres)"
+                                maxlength="{Long}45"
+                                name="./textoQrCodeBox"
+                                value="Baixe o nosso app na Google Play e App Store" />
+                        </items>
+                    </tab-textos>
+                    <tab-link
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Link Apoio"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <linkApoio
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="Link apoio (máximo de 30 caracteres)"
+                                maxlength="{Long}30"
+                                name="./textApoio"
+                                value="Política de privacidade" />
+                            <DataTrack
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Button Data Track (máximo de 100 caracteres)"
+                                maxlength="{Long}100"
+                                name="./LinkDataTrack"
+                                value="#" />
+                            <Href
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                autocomplete="off"
+                                fieldLabel="Link do arquivo ou página."
+                                name="./linkHref"
+                                value="#" />
+                        </items>
+                    </tab-link>
+                    <tab-imagens
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Imagens"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tabs-imagens
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <tab-imagem
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Imagem"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <altImagem
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="ALT imagem"
+                                                maxlength="{Long}50"
+                                                name="./altImagem"
+                                                value="#" />
+                                            <imageMobileWebp
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem Mobile WEBP (375x348)"
+                                                fileNameParameter="./imageMobileNameParameterWebp"
+                                                fileReferenceParameter="./imageMobileReferenceWebp"
+                                                mimeTypes="[image/webp]"
+                                                multiple="{Boolean}false"
+                                                name="./imageMobileWebp"
+                                                title="Imagem Mobile WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                            <imageDesktopWebp
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem Desktop WEBP (670x748)"
+                                                fileNameParameter="./imageDesktopNameParameterWebp"
+                                                fileReferenceParameter="./imageDesktopReferenceWebp"
+                                                mimeTypes="[image/webp]"
+                                                multiple="{Boolean}false"
+                                                name="./imageDesktopWebp"
+                                                title="Imagem Desktop WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                        </items>
+                                    </tab-imagem>
+                                </items>
+                            </tabs-imagens>
+                        </items>
+                    </tab-imagens>
+                    <tab-form-settings
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Form Config"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <OrigemLead
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="Origem do lead (Qual Lp esta enviando o lead)"
+                                maxlength="{Long}200"
+                                name="./leadOrigin"
+                                value="Origem do lead" />
+                            <Api
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="API - Endpoint"
+                                maxlength="{Long}200"
+                                name="./endPointApi"
+                                value="API - Endpoint" />
+                            <ChaveRecaptcha
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="Chave Recaptcha"
+                                maxlength="{Long}50"
+                                name="./chaveRecaptcha"
+                                value="Chave recaptcha - HML ou PRD" />
+                            <Qrcode
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldLabel="QR Code - SVG ou WEBP"
+                                fileNameParameter="./qrCodeFormPreLeadNameParameterWebp"
+                                fileReferenceParameter="./qrCodeFormPreLeadReferenceWebp"
+                                mimeTypes="[image/webp,image/svg+xml]"
+                                multiple="{Boolean}false"
+                                name="./logo"
+                                title="QR Code"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true" />
+                            <TextoBotaoEnviar
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="Texto botão enviar dados (máximo de 16 caracteres)"
+                                maxlength="{Long}16"
+                                name="./textButton"
+                                value="Cadastre-se" />
+                            <DataTrackBotaoEnviar
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Data Track botão enviar dados"
+                                name="./ButtonDataTrack"
+                                value="#" />
+                            <TextoBotaoFeedbackMobile
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="Texto botão feedback mobile (máximo de 20 caracteres)"
+                                maxlength="{Long}22"
+                                name="./textoBotaoFeedback"
+                                value="Botão feedback mobile" />
+                            <DataTrackFeedback
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Data Track botão feedback mobile"
+                                name="./dataTrackFeedback"
+                                value="#" />
+                            <HrefFeedback
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                autocomplete="off"
+                                fieldDescription="ID seção = #ID_DA_SECAO"
+                                fieldLabel="Botão feedback mobile - Link ou ID da seção para scroll"
+                                maxlength="{Long}30"
+                                name="./ctaFeedback"
+                                value="#id_section" />
+                            <Target
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Botão feedback mobile - Target (no caso de link)"
+                                name="./dataTrackFeedback">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <self
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="{Boolean}true"
+                                        text="Mesma Página"
+                                        value="_self" />
+                                    <blank
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Nova Aba"
+                                        value="_blank" />
+                                </items>
+                            </Target>
+                            <buttonIconPosition
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                deleteHint="{Boolean}true"
+                                fieldLabel="Posição do icone"
+                                name="./buttonIconPosition"
+                                vertical="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <branco
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Justificado"
+                                        value="justified" />
+                                    <cinza
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Esquerda"
+                                        value="left" />
+                                    <azul
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Direita"
+                                        value="right" />
+                                </items>
+                            </buttonIconPosition>
+                            <buttonIcon
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldLabel="Icone do Botão"
+                                fileNameParameter="./buttonIconNameParameter"
+                                fileReferenceParameter="./buttonIconReference"
+                                mimeTypes="[image/png, image/svg]"
+                                multiple="{Boolean}false"
+                                name="./buttonIcon"
+                                title="icone do Botão (em branco para ficar sem)"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true" />
+                        </items>
+                    </tab-form-settings>
+                </items>
+            </Tabs>
+        </items>
+    </content>
+</jcr:root>

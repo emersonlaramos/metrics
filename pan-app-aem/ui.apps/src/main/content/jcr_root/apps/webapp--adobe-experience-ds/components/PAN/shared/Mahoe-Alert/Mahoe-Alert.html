@@ -1,0 +1,6 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<div data-cmp-is="Mahoe-Alert" class="${properties.fixedAlert ? '' : 'position-relative'}">
+    <mahoe-alert class="${properties.alertTextPosition} ${properties.fixedAlert ? '' : 'position-relative'}" name="${properties.alertName}" title="${properties.alertTitle}" type="${properties.alertType}" message="${properties.alertMessage}" show="${properties.hideAlert}"/>
+</div>

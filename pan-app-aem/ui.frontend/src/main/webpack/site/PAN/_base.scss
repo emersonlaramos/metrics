@@ -1,0 +1,93 @@
+@import './mahoe/mahoe.scss';
+
+//* templates
+//! Mudar isso! 
+@import './templates/DS/catalago-componentes.scss';
+
+// //* reset para alinhar row no centro automático
+.row {
+    width: unset;
+}
+
+body,
+html {
+    scroll-behavior: smooth;
+}
+
+.image-default {
+    width: 100%;
+    height: auto;
+}
+
+.position-relative {
+    position: relative;
+}
+
+picture {
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+small {
+    margin-bottom: 24px;
+}
+
+//* Padrão encontrado em todos os componentes do DS
+.bg {
+    &-branco {
+        background-color: var(--pan-color-neutral-white);
+    }
+
+    &-cinza {
+        background-color: var(--pan-color-neutral-lighter-bg);
+    }
+
+    &-azul {
+        background-color: var(--pan-color-primary-brand);
+    }
+
+    &-azul--dark {
+        background-color: var(--pan-color-primary-dark);
+    }
+
+    &-preto {
+        background-color: var(--pan-color-neutral-darker-bg);
+    }
+}
+
+.bg-linear {
+    &--cinza-branco {
+        background: linear-gradient(0deg, var(--pan-color-neutral-white) 0 50%, var(--pan-color-neutral-lighter-bg) 50% 100%);
+    }
+
+    &--preto-branco {
+        background: linear-gradient(0deg, var(--pan-color-neutral-white) 0 50%, var(--pan-color-neutral-darker-bg) 50% 100%);
+    }
+
+    &--azul-branco {
+        background: linear-gradient(0deg, var(--pan-color-neutral-white) 0 50%, var(--pan-color-primary-brand) 50% 100%);
+    }
+
+    &--branco-cinza {
+        background: linear-gradient(0deg, var(--pan-color-neutral-lighter-bg) 0 50%, var(--pan-color-neutral-white) 50% 100%);
+    }
+
+    &--branco-preto {
+        background: linear-gradient(0deg, var(--pan-color-neutral-darker-bg) 0 50%, var(--pan-color-neutral-white) 50% 100%);
+    }
+
+    &--branco-azul {
+        background: linear-gradient(0deg, var(--pan-color-primary-brand) 0 50%, var(--pan-color-neutral-white) 50% 100%);
+    }
+}
+
+.swiper-slide,
+.swiper-slide>* {
+    touch-action: pan-y;
+}

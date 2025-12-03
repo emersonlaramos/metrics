@@ -1,0 +1,74 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Tabela-Passos">
+    <div class="tabela-passos ${properties.colorVariant}"
+        data-sly-attribute.data-js="${properties.bannerId ? 'primeiraDobra' : ''}">
+        <div class="container tabela-passos__content">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-5 offset-md-1">
+                    <h2 class="typography-title-3" data-sly-element="${properties.tagPalavraDestaque}">
+                        ${properties.palavraDestaque}
+                    </h2>
+
+                    <h1 class="typography-big-text-2" data-sly-element="${properties.tagTitulo}">
+                        ${properties.titulo}
+                    </h1>
+
+                    <div class="typography-large" data-sly-element="${properties.paragrafo}">
+                        ${properties.paragrafo @context='html'}
+                    </div>
+
+                    <div class="col-12 col-md-6 mt-4" data-panelcontainer="${wcmmode.edit}">
+                        <sly
+                            data-sly-resource="${'Mahoe-Button' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}" />
+                    </div>
+
+                    <div class="typography-small" data-sly-element="${properties.textoSmall}">
+                        ${properties.textoSmall @context='html'}
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 mt-5 mt-md-0">
+                    <div class="tabela-passos__ul d-flex flex-row p-0 justify-content-center">
+                        <div class="barra-progresso order-1 mt-1 mb-2 mx-2"></div>
+                        <ul class="p-0 mb-0 order-0">
+                            <sly data-sly-list.tabelaPassosMultifield="${resource.getChildren}">
+                                <sly data-sly-test="${tabelaPassosMultifield.name == 'tabelaPassos'}">
+                                    <sly data-sly-list.tabelaPassos="${tabelaPassosMultifield.getChildren}">
+                                        <li class="lista d-flex flex-row">
+                                            <div class="lista__primeiro ${tabelaPassos.highlight ? 'highlight' : ''}">
+                                                <img class="image" alt="${tabelaPassos.alternativeTitlePrimeira ? tabelaPassos.alternativeTitlePrimeira : 'Imagem'}" width="47" height="47" src="${tabelaPassos.imageSourcePrimeira}" />
+                                                <p class="typography-large">${tabelaPassos.monthText}</p>
+                                            </div>
+                                        </li>
+                                    </sly>
+                                </sly>
+                            </sly>
+                        </ul>
+                        <ul class="p-0 mb-0 order-2">
+                            <sly data-sly-list.tabelaPassosMultifield="${resource.getChildren}">
+                                <sly data-sly-test="${tabelaPassosMultifield.name == 'tabelaPassos'}">
+                                    <sly data-sly-list.tabelaPassos="${tabelaPassosMultifield.getChildren}">
+                                        <li class="lista d-flex flex-row">
+                                            <div class="lista__segundo ${tabelaPassos.highlight != '' ? 'highlight' : ''}">
+                                                <img class="image" alt="${tabelaPassos.alternativeTitleSegunda ? tabelaPassos.alternativeTitleSegunda : 'Imagem'}" width="38" height="38" src="${tabelaPassos.imageSourceSegunda}" />
+                                                <div class="d-flex flex-column">
+                                                    <sly data-sly-test="${tabelaPassos.highlight && tabelaPassos.highlight != ''}">
+                                                        <span class="typography-small mt-0">${tabelaPassos.highlight}</span>
+                                                    </sly>
+                                                    <p class="typography-small d-block d-md-none">${tabelaPassos.descriptionText @context='html'}</p>
+                                                    <p class="typography-body-2 d-none d-md-block">${tabelaPassos.descriptionText @context='html'}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </sly>
+                                </sly>
+                            </sly>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

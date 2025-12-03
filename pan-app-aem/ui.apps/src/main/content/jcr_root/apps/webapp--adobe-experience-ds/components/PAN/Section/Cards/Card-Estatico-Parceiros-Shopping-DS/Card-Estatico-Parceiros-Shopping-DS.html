@@ -1,0 +1,63 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section data-cmp-is="Card-Estatico-Parceiros-Shopping-DS" sectionId="${properties.sectionID}">
+    <div class="card-estatico-parceiros-shopping">
+        <div class="container">
+
+            <div class="row d-flex justify-content-center mb-3 card-estatico-parceiros-shopping__text-content">
+                <div class="col-12 col-lg-8">
+                    <div class="card-estatico-parceiros-shopping__texts">
+                        <h2 data-sly-element="${properties.tagPalvraDestaque}" class="card-estatico-parceiros-shopping__subtitle typography-title-4">${properties.palavraDestaque}
+                        </h2> 
+                        <h1 data-sly-element="${properties.tagTitulo}" class="card-estatico-parceiros-shopping__title typography-big-text-2">${properties.tituloAntesCashback}
+                            <span class="card-estatico-parceiros-shopping__cashback-value"></span>
+                            ${properties.tituloDepoisCashback}</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-center mb-5 card-estatico-parceiros-shopping__actions">
+                <div class="col-12 col-lg-8">
+
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <input type="hidden" data-js="endpoint-path" data-sly-element="${properties.endpointAPI}" value="${properties.endpointAPI}">
+                        <div class="col-12 col-lg-5 mb-3 mb-lg-0">
+                            <mahoe-search hide-arrow placeholder="Buscar" variant="lined"
+                                id="input-card-parceiros-shopping-search"></mahoe-search>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <mahoe-button size="md" variant="primary buscado" disabled="true"
+                                id="button-card-parceiros-shopping-search">
+                                Buscar
+                            </mahoe-button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row card-estatico-parceiros-shopping__result">
+                <div class="col-12 position-relative p-0 px-lg-3">
+                    <div
+                        class="swiper card-estatico-parceiros-shopping__cards card-estatico-parceiros-shopping__cards-swiper mb-5">
+                        <div class="swiper-wrapper card-estatico-parceiros-shopping__cards-slider d-lg-flex justify-content-lg-center flex-lg-wrap"></div>
+                    </div>
+
+                    <div class="swiper-pagination card-estatico-parceiros-shopping__cards-pagination"></div>
+                </div>
+            </div>
+
+            <div class="row d-none d-lg-flex justify-content-center">
+                <div class="col-12 col-lg-2">
+                    <mahoe-button size="md" variant="secondary" data-js="button-card-parceiros-shopping-ver-mais">
+                        Ver mais
+                    </mahoe-button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>

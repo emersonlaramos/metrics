@@ -1,0 +1,61 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.Highlight-cardtexto {
+        padding: var(--pan-spacing-64) 0;
+
+
+      &__box {
+        width: 90%;
+        border-radius: var(--pan-border-radius-16);
+        padding: var(--pan-spacing-32) var(--pan-spacing-24);
+
+        @include min-desktop {
+            width: auto;
+            padding: var(--pan-spacing-64);
+        }
+
+
+        .button-container {
+            max-width: 100%;
+            width: 100%;
+
+            @include min-tablet {
+              width: 210px;
+            }
+          }
+      }
+    
+
+    .bg {
+        &-azul, &-azul--dark {
+            .typography-big-text-2 {
+                color: var(--pan-color-neutral-black);
+            }
+
+            .typography-title-3 {
+                color: var(--pan-color-neutral-white);
+            }
+        }
+
+        &-cinza {
+            .typography-big-text-2 {
+                color: var(--pan-color-neutral-black);
+            }
+
+            .typography-title-3 {
+                color: var(--pan-color-neutral-black);
+            }
+        }
+
+        &-preto {
+            .typography-big-text-2 {
+                color: var(--pan-color-neutral-white);
+            }
+
+            .typography-title-3 {
+                color: var(--pan-color-neutral-white);
+            }
+        }
+    }
+
+}

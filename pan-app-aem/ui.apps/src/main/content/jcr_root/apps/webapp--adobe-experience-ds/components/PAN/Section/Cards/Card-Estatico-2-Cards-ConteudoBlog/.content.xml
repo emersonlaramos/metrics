@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="Seção Card-Estatico-2-Cards.ConteudoBlog - Figma: Card-Estatico-2-Cards.ConteudoBlog"
+    jcr:primaryType="cq:Component"
+    jcr:title="Card-Estatico-2-Cards-ConteudoBlog"
+    componentGroup="DS Components - Section Cards"/>

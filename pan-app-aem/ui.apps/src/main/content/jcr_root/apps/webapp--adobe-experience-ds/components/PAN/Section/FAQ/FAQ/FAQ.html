@@ -1,0 +1,228 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section id="${properties.sectionID}" data-cmp-is="FAQ">
+    <div class="section-faq pt-5 pb-5 ${properties.colorVariant}">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2
+                        class="typography-big-text-2 d-flex justify-content-center"
+                    >
+                        ${properties.titleSection}
+                    </h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div
+                        class="section-faq__content"
+                        data-js="content-questions"
+                    >
+                        <div
+                            class="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                            data-js="div-questions"
+                        >
+                            <sly data-sly-list="${resource.children}">
+                                <sly data-sly-list="${item.children}">
+                                    
+                                    <mahoe-accordion
+                                        data-js="mahoe-accordion"
+                                        data-faq="faq-heading-tag-title"
+                                        accordion-title="${item.titleFaq}"
+                                        mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                        expanded="${itemList.index == 0 && properties.expandedFaq}"
+                                    >
+                                        <div data-sly-element="${item.textFaq}">
+                                            ${item.textFaq @context =
+                                            properties.textIsRich ? 'html' :
+                                            'text'}
+                                        </div>
+                                        <div
+                                            class="row passo-a-passo d-flex flex-wrap ${item.textPassos1 ? '' : 'd-none'}"
+                                        >
+                                            <div class="wrapper-passo me-2">
+                                                <div
+                                                    class="wrapper-richtext mb-3"
+                                                >
+                                                    <div class="rich-number">
+                                                        1
+                                                    </div>
+                                                    <div
+                                                        class="richtext typography-small"
+                                                    >
+                                                        ${item.textPassos1
+                                                        @context =
+                                                        properties.textIsRich ?
+                                                        'html' : 'text'}
+                                                    </div>
+                                                </div>
+                                                <img
+                                                    loading="lazy"
+                                                    class="passo-img"
+                                                    src="${item.imagePasso1ReferenceWebp}"
+                                                    alt="${item.altImage1 ? item.altImage1 : 'Imagem'}"
+                                                    width="140"
+                                                    height="260"
+                                                />
+                                            </div>
+                                            <div
+                                                class="wrapper-passo me-2 ${item.textPassos2 ? '' : 'd-none'}"
+                                            >
+                                                <div
+                                                    class="wrapper-richtext mb-3 d-flex"
+                                                >
+                                                    <div class="rich-number">
+                                                        2
+                                                    </div>
+                                                    <div
+                                                        class="richtext typography-small"
+                                                    >
+                                                        ${item.textPassos2
+                                                        @context =
+                                                        properties.textIsRich ?
+                                                        'html' : 'text'}
+                                                    </div>
+                                                </div>
+                                                <img
+                                                    loading="lazy"
+                                                    class="passo-img"
+                                                    src="${item.imagePasso2ReferenceWebp}"
+                                                    alt="${item.altImage2 ? item.altImage2 : 'Imagem'}"
+                                                    width="140"
+                                                    height="260"
+                                                />
+                                            </div>
+                                            <div
+                                                class="wrapper-passo me-2 ${item.textPassos3 ? '' : 'd-none'}"
+                                            >
+                                                <div
+                                                    class="wrapper-richtext mb-3"
+                                                >
+                                                    <div class="rich-number">
+                                                        3
+                                                    </div>
+                                                    <div
+                                                        class="richtext typography-small"
+                                                    >
+                                                        ${item.textPassos3
+                                                        @context =
+                                                        properties.textIsRich ?
+                                                        'html' : 'text'}
+                                                    </div>
+                                                </div>
+                                                <img
+                                                    loading="lazy"
+                                                    class="passo-img"
+                                                    src="${item.imagePasso3ReferenceWebp}"
+                                                    alt="${item.altImage3 ? item.altImage3 : 'Imagem'}"
+                                                    width="140"
+                                                    height="260"
+                                                />
+                                            </div>
+                                            <div
+                                                class="wrapper-passo me-2 ${item.textPassos4 ? '' : 'd-none'}"
+                                            >
+                                                <div
+                                                    class="wrapper-richtext mb-3"
+                                                >
+                                                    <div class="rich-number">
+                                                        4
+                                                    </div>
+                                                    <div
+                                                        class="richtext typography-small"
+                                                    >
+                                                        ${item.textPassos4
+                                                        @context =
+                                                        properties.textIsRich ?
+                                                        'html' : 'text'}
+                                                    </div>
+                                                </div>
+                                                <img
+                                                    loading="lazy"
+                                                    class="passo-img"
+                                                    src="${item.imagePasso4ReferenceWebp}"
+                                                    alt="${item.altImage4 ? item.altImage4 : 'Imagem'}"
+                                                    width="140"
+                                                    height="260"
+                                                />
+                                            </div>
+                                            <div
+                                                class="wrapper-passo me-2 ${item.textPassos5 ? '' : 'd-none'}"
+                                            >
+                                                <div
+                                                    class="wrapper-richtext mb-3"
+                                                >
+                                                    <div class="rich-number">
+                                                        5
+                                                    </div>
+                                                    <div
+                                                        class="richtext typography-small"
+                                                    >
+                                                        ${item.textPassos5
+                                                        @context =
+                                                        properties.textIsRich ?
+                                                        'html' : 'text'}
+                                                    </div>
+                                                </div>
+                                                <img
+                                                    loading="lazy"
+                                                    class="passo-img"
+                                                    src="${item.imagePasso5ReferenceWebp}"
+                                                    alt="${item.altImage5 ? item.altImage5 : 'Imagem'}"
+                                                    width="140"
+                                                    height="260"
+                                                />
+                                            </div>
+                                            <div
+                                                class="wrapper-passo me-2 ${item.textPassos6 ? '' : 'd-none'}"
+                                            >
+                                                <div
+                                                    class="wrapper-richtext mb-3"
+                                                >
+                                                    <div class="rich-number">
+                                                        6
+                                                    </div>
+                                                    <div
+                                                        class="richtext typography-small"
+                                                    >
+                                                        ${item.textPassos6
+                                                        @context =
+                                                        properties.textIsRich ?
+                                                        'html' : 'text'}
+                                                    </div>
+                                                </div>
+                                                <img
+                                                    loading="lazy"
+                                                    class="passo-img"
+                                                    src="${item.imagePasso6ReferenceWebp}"
+                                                    alt="${item.altImage6 ? item.altImage6 : 'Imagem'}"
+                                                    width="140"
+                                                    height="260"
+                                                />
+                                            </div>
+                                        </div>
+                                    </mahoe-accordion>
+                                </sly>
+                            </sly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" data-js="buttonDivContent">
+                <div
+                    class="col-12 mt-5 d-flex justify-content-center"
+                    data-panelcontainer="${wcmmode.edit}"
+                >
+                    <sly
+                        data-sly-resource="${'Mahoe-Button' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,25 @@
+@import "../../../../../site/PAN/mixins/breakpoints";
+
+.Highlight-Top {
+    padding: var(--pan-spacing-48) 0;
+
+    .text-align-left {
+        text-align: left;
+    }
+    .text-align-center {
+        text-align: center;
+    }
+    .text-align-right {
+        text-align: right;
+    }
+
+    .typography-big-text-1 {
+        font-size: 32px;
+        margin-top: var(--pan-spacing-20);
+        color: var(--pan-color-neutral-white);
+
+        @include min-tablet {
+            font-size: 40px;
+        }
+    }
+}

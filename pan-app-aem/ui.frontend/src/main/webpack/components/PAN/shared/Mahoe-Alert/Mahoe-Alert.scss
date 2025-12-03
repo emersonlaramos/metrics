@@ -1,0 +1,13 @@
+@import '../../../../site/PAN/mixins/breakpoints';
+
+.alert {
+
+    &-text-left .alert__content{
+        margin: 0;
+    }
+
+    &-text-right .alert__content{
+        margin: 0 0 0 auto;
+    }
+
+}

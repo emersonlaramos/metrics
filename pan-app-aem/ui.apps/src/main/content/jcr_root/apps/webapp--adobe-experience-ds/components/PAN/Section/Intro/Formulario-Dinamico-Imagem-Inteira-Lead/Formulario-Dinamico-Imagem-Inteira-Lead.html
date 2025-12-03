@@ -1,0 +1,80 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section
+    id="${properties.sectionID}"
+    data-cmp-is="Formulario-Dinamico-Imagem-Inteira-Lead"
+>
+    <div class="formulario-dinamico-intro-imagem-inteira-lead">
+        <picture
+            class="formulario-dinamico-intro-imagem-inteira-lead__picture formulario-dinamico-intro-imagem-inteira-lead__picture--overlay"
+        >
+            <source
+                class="formulario-dinamico-intro-imagem-inteira-lead__image image-default"
+                media="(min-width: 768px)"
+                srcset="${properties.imageDesktopReferenceWebp}"
+                width="1440"
+                height="700"
+                loading="${properties.lazyload}"
+            />
+            <img
+                loading="${properties.lazyload}"
+                class="formulario-dinamico-intro-imagem-inteira-lead__image"
+                alt="${properties.altImagem ? properties.altImagem : 'Imagem'}"
+                width="375"
+                height="700"
+                src="${properties.imageMobileReferenceWebp}"
+            />
+        </picture>
+
+        <div
+            class="container formulario-dinamico-intro-imagem-inteira-lead__content d-flex align-items-center"
+        >
+            <div class="row">
+                <div
+                    class="col-12 col-md-5 col-lg-5 d-flex flex-column justify-content-center text"
+                >
+                    <h2
+                        class="typography-title-4"
+                        data-sly-element="${properties.tagPalavraDestaque}"
+                    >
+                        ${properties.palavraDestaque}
+                    </h2>
+                    <h1
+                        class="typography-big-text-2"
+                        data-sly-element="${properties.tagTitulo}"
+                    >
+                        ${properties.titulo}
+                    </h1>
+                    <p
+                        class="typography-large d-none d-lg-flex"
+                        data-sly-element="${properties.paragrafo}"
+                    >
+                        ${properties.paragrafo @context = properties.textIsRich
+                        ? 'html' : 'text'}
+                    </p>
+                    <p class="typography-small">${properties.textoSmall}</p>
+                </div>
+                <div class="col-12 col-md-5 offset-md-2 col-lg-4 offset-lg-3">
+                    <div class="d-flex flex-column">
+                        <div
+                            class="formulario-dinamico-intro-imagem-inteira-lead__card"
+                        >
+                            <div
+                                class="formulario-dinamico-intro-imagem-inteira-lead__form"
+                            >
+                                <div data-panelcontainer="${wcmmode.edit}">
+                                    <sly
+                                        data-sly-resource="${'Form-One-Column' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Dynamic-Forms/Form-One-Column'}"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

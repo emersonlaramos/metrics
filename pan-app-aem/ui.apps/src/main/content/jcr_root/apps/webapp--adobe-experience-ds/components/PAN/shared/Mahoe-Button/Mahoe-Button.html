@@ -1,0 +1,50 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<sly data-sly-set.colorVariant="${request.requestPathInfo.selectors}" />
+
+<sly data-sly-test="${!properties.hideButton}">
+    <sly data-sly-test="${properties.buttonText}">
+    <mahoe-button
+        button-role="${properties.buttonBehavior != '_link' && 'button' }"
+        href="${properties.buttonBehavior == '_link' && properties.buttonHref || properties.buttonBehavior == '_scroll' && properties.buttonScroll}"
+        icon="${properties.buttonIconReferenceParameter}"
+        icon-position="${properties.buttonIconPosition}"
+        name="${properties.buttonName ? properties.buttonName : properties.buttonText}"
+        size="${properties.buttonSize}"
+        target="${properties.buttonTarget}"
+        mode="${properties.buttonStyleBehavior == '_independent' ? properties.buttonMode : colorVariant[0] == 'bg-azul' && 'blue' || colorVariant[0] == 'bg-azul--dark' && 'blue' || colorVariant[0] == 'bg-preto' && 'dark' || colorVariant[0] == 'bg-branco' || colorVariant[0] == 'bg-cinza' && ''}"
+        variant="${properties.buttonVariant}"
+        data-track="${properties.buttonDataTrack}"
+        title="${properties.buttonTitle}"
+        data-js="${properties.buttonDataJS}"
+        class="${properties.buttonTextMobile && 'd-none d-md-flex'}"
+    >
+        ${properties.buttonText}
+    </mahoe-button>
+</sly>
+</sly>
+
+<sly data-sly-test="${!properties.hideButtonMobile}">
+    <sly data-sly-test="${properties.buttonTextMobile}">
+        <mahoe-button
+            button-role="${properties.buttonBehaviorMobile != '_link' && 'button' }"
+            href="${properties.buttonBehaviorMobile == '_link' && properties.buttonHrefMobile || properties.buttonBehaviorMobile == '_scroll' && properties.buttonScrollMobile}"
+            icon="${properties.buttonIconReferenceParameterMobile}"
+            icon-position="${properties.buttonIconPositionMobile}"
+            name="${properties.buttonNameMobile ? properties.buttonNameMobile : properties.buttonTextMobile}"
+            size="${properties.buttonSizeMobile}"
+            target="${properties.buttonTargetMobile}"
+            mode="${properties.buttonStyleBehaviorMobile == '_independent' ? properties.buttonModeMobile : colorVariant[0] == 'bg-azul' && 'blue' || colorVariant[0] == 'bg-azul--dark' && 'blue' || colorVariant[0] == 'bg-preto' && 'dark' || colorVariant[0] == 'bg-branco' || colorVariant[0] == 'bg-cinza' && ''}"
+            variant="${properties.buttonVariantMobile}"
+            data-track="${properties.buttonDataTrackMobile}"
+            title="${properties.buttonTitleMobile}"
+            data-js="${properties.buttonDataJSMobile}"
+            class="d-flex d-md-none"
+        >
+            ${properties.buttonTextMobile}
+        </mahoe-button>
+    </sly>
+</sly>

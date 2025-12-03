@@ -1,0 +1,54 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Imagem-ImagemVideo">
+    <div class="Imagem-ImagemVideo overflow-hidden">
+        <div class="position-relative">
+          <div class="position-absolute Imagem-ImagemVideo__z-index">
+            <picture class="Imagem-ImagemVideo__picture">
+              <source
+                class="Imagem-ImagemVideo__picture-img"
+                media="(min-width: 768px)"
+                srcset="${properties.imageDesktopReferenceWebp}"
+                loading="lazy"
+                width="1440" height="582"
+              />
+              <img
+                class="Imagem-ImagemVideo__picture-img"
+                alt="${properties.altImagem ? properties.altImagem : 'Imagem'}"
+                src="${properties.imageMobileReferenceWebp}"
+                width="375" height="628"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+        </div>
+        <div class="Imagem-ImagemVideo__content">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-5 Imagem-ImagemVideo__content-order">
+                <hgroup>
+                    <h3 class='typography-large' data-sly-element="${properties.tagSubTitulo}">${properties.subtitulo}</h3>
+                    <h2 class="typography-title-1" data-sly-element="${properties.tagTitulo}">${properties.titulo}</h2>
+                </hgroup>
+                <p class="typography-small" data-sly-element="${properties.tagDisclaimer}">${properties.disclaimer}</p>
+              </div>
+              <div class="col-12">
+                <div class="Imagem-ImagemVideo__content-button">
+                  <a target="_blank" data-track="${properties.CTAdataTrack}" title="${properties.CTAtitle}" href="${properties.CTAhref}" class="Imagem-ImagemVideo__button">
+                    <img
+                        class="Imagem-ImagemVideo__button-img"
+                        alt="Icone de play."
+                        src="${properties.imageIconPlayReferenceWebp}"
+                        width="88"
+                        height="88"
+                        loading="lazy"
+                      />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>

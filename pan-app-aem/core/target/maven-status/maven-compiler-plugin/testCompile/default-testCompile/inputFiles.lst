@@ -1,0 +1,5 @@
+/azp/_work/1/app/core/src/test/java/com/webapp/adobe/experience/ds/core/filters/LoggingFilterTest.java
+/azp/_work/1/app/core/src/test/java/com/webapp/adobe/experience/ds/core/testcontext/AppAemContext.java
+/azp/_work/1/app/core/src/test/java/com/webapp/adobe/experience/ds/core/schedulers/SimpleScheduledTaskTest.java
+/azp/_work/1/app/core/src/test/java/com/webapp/adobe/experience/ds/core/servlets/SimpleServletTest.java
+/azp/_work/1/app/core/src/test/java/com/webapp/adobe/experience/ds/core/listeners/SimpleResourceListenerTest.java

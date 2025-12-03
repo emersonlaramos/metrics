@@ -1,0 +1,408 @@
+@import "../../../../../site/PAN/mixins/breakpoints";
+
+.card-comparativocartoes-cardvitrine-ds {
+    padding: var(--pan-spacing-64) 0;
+    overflow: hidden;
+
+    .text-center {
+        text-align: center;
+    }
+    
+    .custom-card__link, .texto-destaque {
+        color: var(--pan-color-primary-brand);
+        font-weight: var(--pan-font-weight-bold);
+    }
+
+    .main-disclaimer {
+        width: 70%;
+        text-align: center;
+        margin: var(--pan-spacing-24) auto 0;
+
+        @include min-desktop {
+            margin: 0;
+        }
+    }
+
+    .title-wrapper {
+        text-align: center;
+        color: var(--pan-color-neutral-white);
+        
+        @include min-desktop {
+            width: 50%;
+        }
+    }
+    
+    .flip-card {
+        width: 264px;
+        perspective: 1000px;
+        background-color: transparent;
+
+        .card-label {
+            position: absolute;
+            top: 0;
+            margin: -10px 0 0;
+            padding: var(--pan-spacing-4) var(--pan-spacing-12);
+            border-radius: var(--pan-spacing-40);
+        }
+        
+        &>div {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        
+        &-inner {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box; 
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .transform {
+            transform: rotateY(180deg);
+
+            .flip-card-front {
+                pointer-events: none;
+                opacity: 0;
+            }
+        }
+        
+        &-front, &-back {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            grid-row-start: 1;
+            grid-column-start: 1;
+            backface-visibility: hidden;
+            transition: opacity 0.8s;
+        }
+    
+        &-back {
+            transform: rotateY(180deg);
+        }
+    }
+
+    .flip-card, .custom-card__content, .custom-card {
+        height: 100%;
+    }
+
+    .flip-card, .flip-card-inner, .custom-card {
+        width: 264px;
+    }
+    
+    .custom-card {
+        padding: var(--pan-spacing-24);
+        border-radius: var(--pan-spacing-16);
+        border: 2px solid transparent;
+        
+        &__content {
+            .subtitle {
+                color: var(--pan-color-neutral-mid);
+                opacity: 0.7;
+            }
+
+            .disclaimer {
+                color: var(--pan-color-neutral-light);
+            }
+        }
+
+        .button-wrapper {
+            width: 100%;
+        }
+
+        &__text {
+            p {
+                margin-bottom: var(--pan-spacing-16);
+            }
+            &:last-child {
+                margin-bottom: var(--pan-spacing-56);
+            }
+        }
+
+        &__image {
+            border-radius: var(--pan-spacing-8);
+            object-fit: cover;
+            width: 100%;
+            margin-bottom: var(--pan-spacing-32);
+        }
+
+        
+        &__link {
+            padding: var(--pan-spacing-16);
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+
+    .swiper {
+        max-width: 1152px;
+        padding: var(--pan-spacing-48) 0;
+
+        @include min-desktop {
+            padding: var(--pan-spacing-56) 0;
+        }
+
+        &-wrapper {
+            margin: auto;
+            justify-content: inherit;
+
+            @include desktop {
+                justify-content: center;
+            }
+        }
+        
+        &-slide {
+            width: unset;
+            height: unset;
+            margin: 0 var(--pan-spacing-12);
+        }
+
+        &-button-prev,
+        &-button-next {
+            position: initial;
+            width: var(--pan-spacing-48);
+            height: var(--pan-spacing-48);
+            justify-content: center;
+            align-items: center;
+            color: var(--pan-color-neutral-darker-bg);
+            margin-top: 0;
+            border-radius: var(--pan-spacing-16);
+    
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+    
+        &-button-prev {
+            transform: rotate(180deg);
+        }
+        
+        &-pagination {
+            &-card-vitrine {
+                margin-top: var(--pan-spacing-24);
+            }
+            
+            &-bullet {
+                opacity: 1;
+            }
+        }
+    }
+
+    .button-navigation {
+        align-items: center;
+    }
+
+    &.bg {
+        &-branco, &-preto {
+            .texto-destaque {
+                color: var(--pan-color-primary-brand);
+            }
+        }
+
+        &-branco {
+            .custom-card, .swiper-button-prev, .swiper-button-next {
+                background: var(--pan-color-neutral-lighter);
+            }
+
+            .custom-card {
+                &__content {
+                    .subtitle {
+                        color: var(--pan-color-neutral-mid);
+                    }
+    
+                    .disclaimer {
+                        color: var(--pan-color-neutral-light);
+                    }
+
+                    .card-label {
+                        background: var(--pan-color-primary-brand);
+                        color: var(--pan-color-neutral-white);
+                    }
+                }
+                
+                &__text {
+                    color: var(--pan-color-neutral-black);
+                }
+
+                &__link {
+                    color: var(--pan-color-primary-brand);
+                }
+            }
+
+            @media (max-width: 767.98px) {
+                .swiper-slide-active .custom-card {
+                    background: transparent;
+                    border: 2px solid var(--pan-color-primary-brand);
+    
+                    .mahoe-button {
+                        background: var(--pan-color-primary-brand);
+                        color: var(--pan-color-neutral-white);
+                    }
+                }
+            }
+
+            @include min-tablet {
+                .custom-card:hover {
+                    background: transparent;
+                    border: 2px solid var(--pan-color-primary-brand);
+    
+                    .mahoe-button {
+                        background: var(--pan-color-primary-brand);
+                        color: var(--pan-color-neutral-white);
+                    }
+                }
+            }
+
+            .typography-big-text-2 {
+                color: var(--pan-color-neutral-black);
+            }
+
+            .swiper-pagination-bullet {
+                background: var(--pan-color-neutral-lighter-bg);
+
+                &-active {
+                    background: var(--pan-color-primary-brand);
+                }
+            }
+        }
+
+        &-azul {
+            .custom-card, .swiper-button-prev, .swiper-button-next {
+                background: var(--pan-color-primary-dark);
+            }
+
+            .custom-card {
+                background: var(--pan-color-primary-dark);
+
+                .mahoe-button {
+                    border-color: var(--pan-color-neutral-black);
+                    color: var(--pan-color-neutral-black);
+                }
+
+                &__content {
+                    .subtitle, .disclaimer {
+                        color: var(--pan-color-neutral-white);
+                    }
+
+                    .card-label {
+                        background: var(--pan-color-neutral-black);
+                        color: var(--pan-color-neutral-white);
+                    }
+                }
+                
+                &__text {
+                    color: var(--pan-color-neutral-white);
+                }
+
+                &__link {
+                    color: var(--pan-color-neutral-black);
+                }
+            }
+
+            @media (max-width: 767.98px) {
+                .swiper-slide-active .custom-card {
+                    background: transparent;
+                    border: 2px solid var(--pan-color-neutral-black);
+    
+                    .mahoe-button {
+                        background: var(--pan-color-neutral-black);
+                        color: var(--pan-color-neutral-white);
+                    }
+                }
+            }
+
+            @include min-tablet {
+                .custom-card:hover {
+                    background: transparent;
+                    border: 2px solid var(--pan-color-neutral-black);
+    
+                    .mahoe-button {
+                        background: var(--pan-color-neutral-black);
+                        color: var(--pan-color-neutral-white);
+                    }
+                }
+            }
+            
+            .texto-destaque {
+                color: var(--pan-color-neutral-white);
+            }
+
+            .typography-title-4 {
+                color: var(--pan-color-neutral-black);
+            }
+
+            .swiper-pagination-bullet {
+                background: var(--pan-color-neutral-lighter);
+
+                &-active {
+                    background: var(--pan-color-neutral-black);
+                }
+            }
+        }
+
+        &-preto {
+            .custom-card, .swiper-button-prev, .swiper-button-next {
+                background: var(--pan-color-neutral-darker);
+            }
+
+            .custom-card {
+                .mahoe-button {
+                    border-color: var(--pan-color-neutral-white);
+                    color: var(--pan-color-neutral-white);
+                }
+
+                &__content {
+                    .subtitle, .disclaimer {
+                        color: var(--pan-color-neutral-white);
+                    }
+
+                    .card-label {
+                        background: var(--pan-color-neutral-white);
+                        color: var(--pan-color-neutral-black);
+                    }
+                }
+
+                &__text {
+                    color: var(--pan-color-neutral-white);
+                }
+
+                &__link {
+                    color: var(--pan-color-neutral-white);
+                }
+            }
+
+            @media (max-width: 767.98px) {
+                .swiper-slide-active .custom-card {
+                    background: transparent;
+                    border: 2px solid var(--pan-color-neutral-white);
+    
+                    .mahoe-button {
+                        background: var(--pan-color-neutral-white);
+                        color: var(--pan-color-neutral-black);
+                    }
+                }
+            }
+
+            @include min-tablet {
+                .custom-card:hover {
+                    background: transparent;
+                    border: 2px solid var(--pan-color-neutral-white);
+    
+                    .mahoe-button {
+                        background: var(--pan-color-neutral-white);
+                        color: var(--pan-color-neutral-black);
+                    }
+                }
+            }
+            
+            .swiper-pagination-bullet {
+                background: var(--pan-color-neutral-mid);
+
+                &-active {
+                    background: var(--pan-color-neutral-white);
+                }
+            }
+        }
+    }
+}

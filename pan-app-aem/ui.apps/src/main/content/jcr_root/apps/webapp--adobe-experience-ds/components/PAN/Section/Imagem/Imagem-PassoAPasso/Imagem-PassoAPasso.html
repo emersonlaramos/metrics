@@ -1,0 +1,49 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section id="${properties.sectionID}" data-cmp-is="Imagem-PassoAPasso">
+    <div class="imagem-passo-a-passo ${properties.colorVariant}">
+        <div class="container imagem-passo-a-passo__content">
+            <div
+                class="row justify-content-between ${properties.positionVariant == 'direita' ? 'flex-row' : 'flex-row-reverse'}"
+            >
+                <div class="col-12 col-md-6 d-none d-md-flex">
+                    <img
+                        loading="lazy"
+                        class="image-default"
+                        alt="${properties.altImagem ? properties.altImagem : 'Imagem'}"
+                        width="552"
+                        height="552"
+                        src="${properties.imageDesktopReferenceWebp}"
+                    />
+                </div>
+
+                <div
+                    class="col-12 col-md-5 d-flex flex-column justify-content-center"
+                >
+                    <h2
+                        class="typography-title-3 imagem-passo-a-passo__subtitle"
+                        data-sly-element="${properties.tagPalavraDestaque}"
+                    >
+                        ${properties.palavraDestaque}
+                    </h2>
+
+                    <h3
+                        class="typography-big-text-2 imagem-passo-a-passo__title"
+                        data-sly-element="${properties.tagTitulo}"
+                    >
+                        ${properties.titulo}
+                    </h3>
+
+                    <div data-panelcontainer="${wcmmode.edit}">
+                        <sly
+                            data-sly-resource="${'Passo-A-Passo-Vertical' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Passo-A-Passo-Vertical'}"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,105 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.section-faq {
+    &__content {
+        height: fit-content;
+        overflow: hidden;
+        transition: all 0.1s linear;
+
+        &.accordion--open {
+            height: 100%;
+            transition: all 0.2s linear;
+        }
+    }
+
+    .passo-a-passo {
+        display: flex;
+        justify-content: space-around;
+
+        .wrapper-passo {
+            margin-top: var(--pan-spacing-32);
+            width: 100%;
+            height: auto;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            @include min-desktop {
+                width: 180px;
+            }
+
+            .wrapper-richtext {
+                padding: var(--pan-spacing-8);
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: auto;
+                background-color: var(--pan-color-neutral-lighter);
+                border: none;
+                border-radius: var(--pan-spacing-8);
+                min-height: var(--pan-spacing-48);
+
+                @include min-desktop {
+                    align-items: flex-start;
+                    height: 100px;
+                }
+
+                .rich-number {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 2px solid var(--pan-color-neutral-black);
+                    border-radius: 50%;
+                    margin-right: var(--pan-spacing-16);
+                    height: var(--pan-spacing-24);
+                    width: var(--pan-spacing-24);
+                    font-weight: var(--pan-font-weight-bold);
+                    font-size: var(--pan-font-size-14);
+
+                    @include min-desktop {
+                        border: none;
+                        width: var(--pan-spacing-16);
+                        margin-right: var(--pan-spacing-4);
+
+                        &::after {
+                            content: '.';
+                            margin-left: 2px;
+                            color: var(--pan-color-neutral-black);
+                        }
+                    }
+                }
+
+                .richtext {
+                    width: 75%;
+                    height: calc(100% - var(--pan-spacing-4));
+                    margin-top: var(--pan-spacing-4);
+                }
+            }
+
+            .passo-img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    &.bg {
+        &-azul {
+            .blue {
+                background-color: var(--pan-color-primary-brand);
+            }
+        }
+
+        &-preto {
+            .typography-big-text-2 {
+                color: var(--pan-color-neutral-white);
+            }
+
+            .dark {
+                background-color: var(--pan-color-neutral-darker-bg);
+            }
+        }
+    }
+}

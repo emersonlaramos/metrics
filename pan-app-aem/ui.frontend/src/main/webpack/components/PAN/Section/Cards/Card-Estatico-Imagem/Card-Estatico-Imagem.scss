@@ -1,0 +1,100 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.card-estatico-imagem {
+    padding: var(--pan-spacing-48) 0 var(--pan-spacing-48) 0;
+
+    &__card-icon {
+        img {
+            max-width: var(--pan-spacing-32);
+            max-height: var(--pan-spacing-32);
+        }
+    }
+
+    &__disclaimer {
+        margin-bottom: var(--pan-spacing-24);
+        font-size: var(--pan-font-size-12);
+        font-weight: var(--pan-font-weight-normal);
+        line-height: var(--pan-line-height-132);
+        letter-spacing: var(--pan-letter-spacing-sm);
+    }
+
+    //Cores dos icones
+    &.bg {
+
+        &-azul,
+        &-preto {
+            mahoe-card .mahoe-card__link svg path {
+                stroke: var(--pan-color-neutral-white);
+            }
+
+            .swiper-pagination-bullet {
+                background: var(--pan-color-neutral-mid);
+                opacity: var(--swiper-pagination-bullet-inactive-opacity, .3);
+            }
+
+            .swiper-pagination-bullet-active {
+                background: var(--pan-color-neutral-white);
+                opacity: var(--swiper-pagination-bullet-opacity, 1);
+            }
+
+            .card-estatico-imagem__disclaimer {
+                color: var(--pan-color-neutral-white);
+            }
+        }
+
+        &-branco {
+            .typography-title-3 {
+                color: var(--pan-color-primary-brand);
+            }
+
+            .typography-title-1 {
+                color: var(--pan-color-neutral-darker);
+            }
+        }
+
+        &-cinza {
+            .typography-title-3 {
+                color: var(--pan-color-primary-brand);
+            }
+
+            .typography-title-1 {
+                color: var(--pan-color-neutral-darker);
+            }
+        }
+
+        &-azul {
+            .typography-title-3 {
+                color: var(--pan-color-neutral-black);
+            }
+
+            .typography-title-1 {
+                color: var(--pan-color-neutral-white);
+            }
+        }
+
+        &-preto {
+            .typography-title-3 {
+                color: var(--pan-color-primary-brand);
+            }
+
+            .typography-title-1 {
+                color: var(--pan-color-neutral-white);
+            }
+        }
+    }
+
+    @include max-mobile {
+        .overflow-mobile {
+            flex-wrap: unset;
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+
+    &__pagination {
+        height: 50px;
+    }
+}

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Mahoe Alert"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[webapp--aem-institucional.editor]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <tabConfigure
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Configurações Gerais"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <hideAlert
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                name="./hideAlert"
+                                text="Mostrar Alert?"
+                                uncheckedValue="{Boolean}false"
+                                checked="{Boolean}true"
+                                value="{Boolean}true"
+                            />
+                            <fixedAlert
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                checked="{Boolean}false"
+                                fieldDescription="Fixar Alert no topo da tela? - Position: Absolute faz com o que o ALERT fique sempre no topo da tela"
+                                name="./fixedAlert"
+                                text="Fixar Alert no topo da tela?"
+                                uncheckedValue="{Boolean}false"
+                                value="{Boolean}true" />
+                            <alertTypeText-info
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                text="Tipo do Alert (cor)" />
+                            <alertType
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                deleteHint="{Boolean}true"
+                                name="./alertType">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <warning
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Warning (amarelo)"
+                                        value="warning" />
+                                    <error
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Error (vermelho)"
+                                        value="error" />
+                                    <info
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Info (azul)"
+                                        value="info" />
+                                    <success
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Sucesso (verde)"
+                                        value="success" />
+
+                                </items>
+                            </alertType>
+                            <alertMessage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Mensagem do Alert"
+                                name="./alertMessage"
+                                value="Mensagem aqui" />
+
+                            <alertTypeText-info2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                text="Posição do texto" />
+                            <alertTextPosition
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                deleteHint="{Boolean}true"
+                                name="./alertTextPosition">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <center
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Centro (padrão DS)"
+                                        checked="{Boolean}true"
+                                        value="" />
+                                    <left
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Esquerda (começo)"
+                                        value="alert-text-left" />
+                                    <right
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Direita (final)"
+                                        value="alert-text-right" />
+
+                                </items>
+                            </alertTextPosition>
+                        </items>
+                    </tabConfigure>
+                    <tabSeo
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="SEO"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <alertName
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Nome (atributo NAME do HTML)"
+                                name="./alertName"
+                                value="" />
+                            <alertTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Atributo Title"
+                                name="./alertTitle"
+                                value="#" />
+                        </items>
+                    </tabSeo>
+                </items>
+            </tabs>
+
+        </items>
+    </content>
+</jcr:root>

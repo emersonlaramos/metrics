@@ -1,0 +1,79 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Conteudo-Numbers">
+    <div class="conteudo-numbers ${properties.colorVariant}" data-sly-attribute.data-js="${properties.bannerId ? 'primeiraDobra' : ''}">
+        <div class="container conteudo-numbers__content">
+            <div class="row ${properties.positionVariant == 'direita' ? 'flex-row' : 'flex-row-reverse'}">
+                <div class="col-12 col-sm-12 col-xl-5 d-flex flex-column justify-content-center">
+                    <h2 class="typography-title-4" data-sly-element="${properties.tagPalavraDestaque}">
+                        ${properties.palavraDestaque}
+                    </h2>
+
+                    <h1 class="typography-big-text-2" data-sly-element="${properties.tagTitulo}">
+                        ${properties.titulo} 
+                    </h1>
+
+                    <div class="typography-large" data-sly-element="${properties.paragrafo}">
+                        ${properties.paragrafo @context='html'}
+                    </div>
+
+                    <div class="conteudo-numbers__cards-wrapper d-flex d-flex">
+                        <div class="conteudo-numbers__cards-item d-flex flex-column justify-content-center align-items-center">
+                            <img
+                                class="icone"
+                                width="32"
+                                height="32"
+                                src="${properties.iconCard1ReferenceSvg}"
+                            />
+                            <h3 class="typography-title-1">${properties.tituloCard1}</h3>
+                            <p class="typography-body-2">${properties.texto1}</p>
+                        </div>
+                        <div class="conteudo-numbers__cards-item d-flex flex-column justify-content-center align-items-center">
+                            <img
+                                class="icone"
+                                width="32"
+                                height="32"
+                                src="${properties.iconCard2ReferenceSvg}"
+                            />
+                            <h3 class="typography-title-1">${properties.tituloCard2}</h3>
+                            <p class="typography-body-2">${properties.texto2}</p>
+                        </div>
+                        <div class="conteudo-numbers__cards-item d-flex flex-column justify-content-center align-items-center">
+                            <img
+                                class="icone"
+                                width="32"
+                                height="32"
+                                src="${properties.iconCard3ReferenceSvg}"
+                            />
+                            <h3 class="typography-title-1">${properties.tituloCard3}</h3>
+                            <p class="typography-body-2">${properties.texto3}</p>
+                        </div>
+                        <div class="conteudo-numbers__cards-item d-flex flex-column justify-content-center align-items-center">
+                            <img
+                                class="icone" 
+                                width="32"
+                                height="32"
+                                src="${properties.iconCard4ReferenceSvg}"
+                            />
+                            <h3 class="typography-title-1">${properties.tituloCard4}</h3>
+                            <p class="typography-body-2">${properties.texto4}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 offset-md-3 col-xl-6 offset-xl-1 d-flex align-items-xl-center">
+                    <picture class="conteudo-numbers__picture">
+                        <source class="image-default" media="(min-width: 768px)"
+                            srcset="${properties.imageDesktopReferenceWebp}" width="568" height="688" />
+                        <source class="image-default" srcset="${properties.imageMobileReferenceWebp}" width="303"
+                            height="335" />
+                        <img class="image-default" alt="${properties.altImagem ? properties.altImagem : 'Imagem'}" loading="${properties.lazyload}"
+                            title="${properties.titleImagem && properties.titleImagem || properties.altImagem}"
+                            width="303" height="335" src="${properties.imageMobileReferenceWebp}" />
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

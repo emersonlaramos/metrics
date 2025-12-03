@@ -1,0 +1,58 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.card-estatico-parceiros {
+    padding: var(--pan-spacing-64) 0;
+
+    &.bg {
+        &-cinza {
+            img {
+                filter: brightness(0);
+            }
+        }
+
+        &-blue,
+        &-preto {
+            img {
+                filter: brightness(100);
+            }
+        }
+
+        &-preto {
+            color: var(--pan-color-neutral-white);
+        }
+    }
+
+    &__content {
+        .typography-title-1 {
+            text-align: center;
+            padding: 0 var(--pan-spacing-16);
+        }
+    }
+
+    .c {
+        &-right1 {
+            right: 124px;
+        }
+
+        &-right2 {
+            right: 20px;
+        }
+    }
+
+    &__card,
+    .swiper-slide {
+        width: 200px !important;
+        height: 136px;
+        position: relative;
+    }
+
+    mahoe-card {
+        height: 136px;
+        text-align: center;
+    }
+
+    .mahoe-card__link {
+        display: none;
+    }
+
+}

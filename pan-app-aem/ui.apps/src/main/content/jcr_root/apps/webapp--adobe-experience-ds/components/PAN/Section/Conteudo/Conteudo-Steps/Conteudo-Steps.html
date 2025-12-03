@@ -1,0 +1,54 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+  data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Conteudo-Steps">
+  <div class="conteudo-steps">
+
+    <div class="container">
+      <div class="conteudo-steps__step-card">
+
+        <div class="row conteudo-steps__row">
+          <div class="col-12">
+            <div class="conteudo-steps__titulo">
+              <p class="typography-large m-0">${properties.titulo}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 justify-content-between">
+
+          <div class="col-12 col-lg-4 d-flex align-items-center">
+            <div class="conteudo-steps__step-number d-flex align-items-center justify-content-center">
+              <p class="typography-title-3 m-0">1</p>
+            </div>
+            <div class="conteudo-steps__step-content">
+              <p class="typography-title-4 m-0">${properties.step1}</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-4 d-flex align-items-center">
+            <div class="conteudo-steps__step-number d-flex align-items-center justify-content-center">
+              <p class="typography-title-3 m-0">2</p>
+            </div>
+            <div class="conteudo-steps__step-content">
+              <p class="typography-title-4 m-0">${properties.step2}</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-4 d-flex align-items-center">
+            <div class="conteudo-steps__step-number d-flex align-items-center justify-content-center">
+              <p class="typography-title-3 m-0">3</p>
+            </div>
+            <div class="conteudo-steps__step-content">
+              <p class="typography-title-4 m-0">${properties.step3}</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>

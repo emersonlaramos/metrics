@@ -1,0 +1,1 @@
+import "./Section-Imagem.scss";

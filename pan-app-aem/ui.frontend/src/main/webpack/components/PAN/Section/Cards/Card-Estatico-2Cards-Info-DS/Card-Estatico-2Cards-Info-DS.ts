@@ -1,0 +1,1 @@
+import "./Card-Estatico-2Cards-Info-DS.scss";

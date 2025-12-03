@@ -1,0 +1,145 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.card-estatico-2-cardsconteudo {
+    padding: var(--pan-spacing-64) 0;
+
+    &__card {
+        padding: var(--pan-spacing-24);
+        border-radius: var(--pan-spacing-16);
+        justify-content: space-between;
+
+        @include min-desktop {
+            padding: var(--pan-spacing-56);
+        }
+
+        &-description {
+            margin: var(--pan-spacing-8) 0 var(--pan-spacing-40) 0;
+        }
+    }
+
+    &__title-topic {
+        font-size: var(--pan-font-size-18);
+        font-weight: var(--pan-font-weight-bold);
+        margin-bottom: var(--pan-spacing-4);
+    }
+
+    &__list {
+        gap: var(--pan-spacing-32);
+
+        &-item {
+            flex-direction: row;
+            gap: var(--pan-spacing-24);
+            align-items: center;
+        }
+    }
+
+    &__video {
+        border-radius: var(--pan-spacing-16) var(--pan-spacing-16) 0 0;
+
+        &-link {
+            position: relative;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: var(--pan-spacing-16) var(--pan-spacing-16) 0 0;
+    }
+
+    &__playIcon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-44px, -44px);
+    }
+
+    &__content {
+        height: 100%;
+        padding: var(--pan-spacing-64) var(--pan-spacing-32);
+        border-radius: 0 0 var(--pan-spacing-16) var(--pan-spacing-16);
+
+        @include min-desktop {
+            padding: var(--pan-spacing-24) var(--pan-spacing-56);
+        }
+    }
+
+    &.bg {
+
+        &-branco,
+        &-cinza {
+            .card-estatico-2-cardsconteudo__card {
+                h3 {
+                    color: var(--pan-color-neutral-black);
+                }
+
+                p,
+                li,
+                span {
+                    color: var(--pan-color-neutral-white);
+                }
+
+                background-color: var(--pan-color-primary-brand);
+            }
+
+            .card-estatico-2-cardsconteudo__content {
+                article {
+                    color: var(--pan-color-neutral-white);
+                }
+
+                background-color: var(--pan-color-neutral-darker-bg);
+            }
+        }
+
+        &-preto {
+            .card-estatico-2-cardsconteudo__card {
+                h3 {
+                    color: var(--pan-color-neutral-black);
+                }
+
+                p,
+                li,
+                span {
+                    color: var(--pan-color-neutral-white);
+                }
+
+                background-color: var(--pan-color-primary-brand);
+            }
+
+            .card-estatico-2-cardsconteudo__content {
+                article {
+                    color: var(--pan-color-neutral-black);
+                }
+
+                background-color: var(--pan-color-neutral-white);
+            }
+        }
+
+        &-azul {
+            .card-estatico-2-cardsconteudo__card {
+                h3 {
+                    color: var(--pan-color-primary-brand);
+                }
+
+                p,
+                li {
+                    color: var(--pan-color-neutral-black);
+                }
+
+                span {
+                    color: var(--pan-color-neutral-white);
+                }
+
+                background-color: var(--pan-color-neutral-white);
+            }
+
+            .card-estatico-2-cardsconteudo__content {
+                article {
+                    color: var(--pan-color-neutral-white);
+                }
+
+                background-color: var(--pan-color-neutral-black);
+            }
+        }
+    }
+}

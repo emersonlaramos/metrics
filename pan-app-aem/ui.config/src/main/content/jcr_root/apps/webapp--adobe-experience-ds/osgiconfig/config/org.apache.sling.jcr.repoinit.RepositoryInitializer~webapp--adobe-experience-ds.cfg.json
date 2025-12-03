@@ -1,0 +1,26 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/webapp--adobe-experience-ds",
+        "create path (nt:unstructured) /content/dam/webapp--adobe-experience-ds/jcr:content",
+        "set properties on /content/dam/webapp--adobe-experience-ds/jcr:content\n  set cq:conf{String} to /conf/webapp--adobe-experience-ds\n  set jcr:title{String} to \"Design System - Componentes PAN\"\nend",
+        "create group WebApp_Adobe_AEM-CManager_Deploy with path /home/groups/webapp--adobe-experience-ds",
+        "create group WebApp_Adobe_AEM-CManager_Dev with path /home/groups/webapp--adobe-experience-ds",
+        "create group WebApp_Adobe_AEM-CManager_Owner with path /home/groups/webapp--adobe-experience-ds",
+        "create group WebApp_Adobe_AEM-CManager_Suporte with path /home/groups/webapp--adobe-experience-ds",
+        "create group WebApp_Adobe_AEM-HML-Author_Aprovador with path /home/groups/webapp--adobe-experience-ds",
+        "create group WebApp_Adobe_AEM-HML-Author_Dev with path /home/groups/webapp--adobe-experience-ds",
+        "create group WebApp_Adobe_AEM-HML-Author_Editors with path /home/groups/webapp--adobe-experience-ds",
+        "create group AEM-HML-Author_Aprovador with path /home/groups/webapp--adobe-experience-ds",
+        "create group AEM-HML-Author_Dev with path /home/groups/webapp--adobe-experience-ds",
+        "create group AEM-HML-Author_Editors with path /home/groups/webapp--adobe-experience-ds",
+        "create group AEM-PRD-Author_Aprovador with path /home/groups/webapp--adobe-experience-ds",
+        "create group AEM-PRD-Author_Dev with path /home/groups/webapp--adobe-experience-ds",
+        "create group AEM-PRD-Author_Editors with path /home/groups/webapp--adobe-experience-ds",
+        "create group WebApp_Adobe_AEM-PRD-Author_Aprovador with path /home/groups/webapp--adobe-experience-ds",
+        "create group WebApp_Adobe_AEM-PRD-Author_Dev with path /home/groups/webapp--adobe-experience-ds",
+        "create group WebApp_Adobe_AEM-PRD-Author_Editors with path /home/groups/webapp--adobe-experience-ds",
+        "set ACL for AEM-HML-Author_Aprovador, AEM-HML-Author_Dev, AEM-HML-Author_Editors, AEM-PRD-Author_Aprovador, AEM-PRD-Author_Dev, AEM-PRD-Author_Editors, WebApp_Adobe_AEM-CManager_Deploy, WebApp_Adobe_AEM-CManager_Dev, WebApp_Adobe_AEM-CManager_Owner, WebApp_Adobe_AEM-CManager_Dev,WebApp_Adobe_AEM-CManager_Dev,WebApp_Adobe_AEM-HML-Author_Aprovador,WebApp_Adobe_AEM-HML-Author_Dev,WebApp_Adobe_AEM-HML-Author_Editors,WebApp_Adobe_AEM-PRD-Author_Aprovador,WebApp_Adobe_AEM-PRD-Author_Dev,WebApp_Adobe_AEM-PRD-Author_Editors,WebApp_Adobe_AEM-CManager_Suporte\n allow jcr:all on /apps/,/libs/\nend",
+        "set ACL for WebApp_Adobe_AEM-CManager_Deploy, WebApp_Adobe_AEM-CManager_Owner, WebApp_Adobe_AEM-CManager_Dev\n allow jcr:all on /apps/,/libs/\nend",
+        "set ACL for WebApp_Adobe_AEM-CManager_Deploy, WebApp_Adobe_AEM-CManager_Owner, WebApp_Adobe_AEM-CManager_Dev\n allow jcr:write on /apps/,/libs/\nend"
+    ]
+}

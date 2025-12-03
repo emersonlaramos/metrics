@@ -1,0 +1,12 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section id="componente-exemplo" data-cmp-is="componente-exemplo">
+    <h1>${properties.title}</h1>
+
+    <mahoe-button size="md" variant="primary">
+        Button Label - Mahoe Component
+    </mahoe-button>
+</section>

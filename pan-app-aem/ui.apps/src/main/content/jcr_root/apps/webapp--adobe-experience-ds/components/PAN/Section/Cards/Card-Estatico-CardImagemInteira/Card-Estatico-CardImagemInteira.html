@@ -1,0 +1,62 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section
+    id="${properties.sectionID}"
+    data-cmp-is="Card-Estatico-Card.ImagemInteira"
+>
+    <div
+        class="section-card-estatico-card-imagem-inteira d-flex justify-content-center align-items-center"
+    >
+        <picture class="section-card-estatico-card-imagem-inteira__picture">
+            <source
+                class="section-card-estatico-card-imagem-inteira__image image-default"
+                media="(min-width: 768px)"
+                srcset="${properties.imageDesktopReferenceWebp}"
+                width="1440"
+                height="700"
+            />
+            <img
+                loading="lazy"
+                class="section-card-estatico-card-imagem-inteira__image image-default"
+                alt="${properties.altImagem ? properties.altImagem : 'Imagem'}"
+                width="375"
+                height="700"
+                src="${properties.imageMobileReferenceWebp}"
+            />
+        </picture>
+
+        <div
+            class="container section-card-estatico-card-imagem-inteira__content"
+        >
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <mahoe-card
+                        size="medium"
+                        card-title="${properties.tituloCard}"
+                        href="${properties.hrefCard}"
+                        target="${properties.targetCard}"
+                    >
+                        <div data-sly-test="${properties.iconCardReferenceSvg}">
+                            <img
+                                class="icone"
+                                width="32"
+                                height="32"
+                                src="${properties.iconCardReferenceSvg}"
+                                alt="${properties.altIcon ? properties.altIcon : 'Icone'}"
+                            />
+                        </div>
+
+                        <h2 class="typography-title-2">
+                            ${properties.tituloCard}
+                        </h2>
+
+                        <p class="typography-body-1">${properties.textoCard}</p>
+                    </mahoe-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

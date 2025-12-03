@@ -1,0 +1,184 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.imagem-cards-direita {
+    padding: var(--pan-spacing-64) 0 0;
+    overflow: hidden;
+
+    .typography-big-text-2 {
+        @media (min-width: 1200px) {
+            width: 70%;
+        }
+    }
+
+    &__picture {
+        overflow: visible;
+        object-fit: cover;
+        margin-top: var(--pan-spacing-48);
+
+        @include min-tablet {
+            margin: 0;
+        }
+    }
+
+    &__content {
+        @include min-tablet {
+            padding: var(--pan-spacing-56) 0 var(--pan-spacing-64);
+        }
+    }
+
+    .mahoe-card__content, .custom-card__content, .custom-card {
+        height: 100%;
+    }
+
+    .swiper {
+        overflow: visible;
+        padding-top: var(--pan-spacing-8);
+        
+        @media (min-width: 576px) {
+            overflow: hidden;
+        }
+        
+        @include min-desktop {
+            padding-top: var(--pan-spacing-24);
+        }
+
+        &-slide {
+            width: 144px;
+            min-height: 164px;
+
+            @include min-desktop {
+                width: auto;
+            }
+        }
+
+        &-button-prev,
+        &-button-next {
+            position: initial;
+            width: var(--pan-spacing-48);
+            height: var(--pan-spacing-48);
+            justify-content: center;
+            align-items: center;
+            color: var(--pan-color-neutral-darker-bg);
+            margin-top: 0;
+            margin-right: var(--pan-spacing-16);
+            border-radius: var(--pan-spacing-16);
+    
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+    
+        &-button-prev {
+            transform: rotate(180deg);
+        }
+
+        &-pagination-bullet {
+            opacity: 1;
+        }
+    }
+
+    .button-navigation {
+        margin: var(--pan-spacing-48) 0 var(--pan-spacing-40);
+    }
+
+    &__swiper--pagination {
+        margin: var(--pan-spacing-32) 0 var(--pan-spacing-16);
+    }
+
+    &.bg {
+        &-branco, &-cinza {
+            color: var(--pan-color-neutral-black);
+
+            .typography-title-4 {
+                color: var(--pan-color-primary-brand);
+            }
+        }
+
+        &-branco {
+            .swiper {
+                &-pagination-bullet {
+                    background: var(--pan-color-neutral-lighter-bg);
+                    
+                    &-active {
+                        background: var(--pan-color-primary-brand);
+                    }
+                }
+                
+                &-button-prev,
+                &-button-next,
+                .custom-card {
+                    border: 2px solid var(--pan-color-neutral-lighter-bg);
+                }
+            }
+        }
+
+        &-cinza {
+            .swiper {
+                &-pagination-bullet {
+                    background: var(--pan-color-neutral-light);
+                    
+                    &-active {
+                        background: var(--pan-color-primary-brand);
+                    }
+                }
+                
+                &-button-prev,
+                &-button-next,
+                .custom-card {
+                    border: 2px solid var(--pan-color-neutral-light);
+                }
+            }
+        }
+
+        &-azul {
+            color: var(--pan-color-neutral-white);
+
+            .typography-title-4 {
+                color: var(--pan-color-neutral-black);
+            }
+
+            .swiper {
+                &-pagination-bullet {
+                    background: var(--pan-color-neutral-white);
+                    
+                    &-active {
+                        background: var(--pan-color-neutral-black);
+                    }
+                }
+                
+                &-button-prev,
+                &-button-next,
+                .custom-card {
+                    color: var(--pan-color-neutral-white);
+                    border: 2px solid var(--pan-color-primary-dark);
+                }
+            }
+        }
+
+        &-preto {
+            color: var(--pan-color-neutral-white);
+
+            .typography-title-4 {
+                color: var(--pan-color-primary-brand);
+            }
+            
+            .swiper {
+                &-pagination-bullet {
+                    background: var(--pan-color-neutral-mid);
+                    
+                    &-active {
+                        background: var(--pan-color-neutral-white);
+                    }
+                }
+                
+                &-button-prev,
+                &-button-next,
+                .custom-card {
+                    color: var(--pan-color-neutral-white);
+                    border: 2px solid var(--pan-color-neutral-dark);
+                }
+            }
+        }
+    }
+}

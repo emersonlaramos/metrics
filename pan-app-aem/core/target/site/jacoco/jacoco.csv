@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Design System - Componentes PAN - Core,com.webapp.adobe.experience.ds.core.models,ImageSizeComponent,144,0,4,0,36,0,12,0,10,0
+Design System - Componentes PAN - Core,com.webapp.adobe.experience.ds.core.models,ImageSizeModel,24,0,0,0,11,0,7,0,7,0
+Design System - Componentes PAN - Core,com.webapp.adobe.experience.ds.core.filters,LoggingFilter,0,28,0,0,0,10,0,4,0,4
+Design System - Componentes PAN - Core,com.webapp.adobe.experience.ds.core.schedulers,SimpleScheduledTask,0,20,0,0,0,6,0,3,0,3
+Design System - Componentes PAN - Core,com.webapp.adobe.experience.ds.core.listeners,SimpleResourceListener,0,18,0,0,0,4,0,2,0,2
+Design System - Componentes PAN - Core,com.webapp.adobe.experience.ds.core.servlets,SimpleServlet,0,24,0,0,0,5,0,2,0,2

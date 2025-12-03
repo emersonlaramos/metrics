@@ -1,0 +1,75 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section
+    id="${properties.sectionID}"
+    data-cmp-is="Section-Intro-ImagemInteira.Video"
+>
+    <div class="section-intro-imagem-inteira-video">
+        <picture
+            class="section-intro-imagem-inteira-video__picture section-intro-imagem-inteira-video__picture--overlay"
+        >
+            <source
+                class="section-intro-imagem-inteira-video__image image-default"
+                media="(min-width: 768px)"
+                srcset="${properties.imageDesktopReferenceWebp}"
+                width="1440"
+                height="700"
+            />
+            <img
+                loading="${properties.lazyload}"
+                class="section-intro-imagem-inteira-video__image image-default"
+                alt="${properties.altImagem ? properties.altImagem : 'Imagem'}"
+                width="375"
+                height="700"
+                src="${properties.imageMobileReferenceWebp}"
+            />
+        </picture>
+
+        <div
+            class="container section-intro-imagem-inteira-video__content d-flex flex-column mt-md-5"
+        >
+            <div class="row">
+                <div class="col-12 col-md-8 col-lg-5 mt-md-5">
+                    <div class="d-flex flex-column">
+                        <div class="play-button offset-5 mb-4 d-md-none">
+                            <a
+                                href="${properties.CTAhref}"
+                                data-track="${properties.dataTrack @ context='scriptToken'}"
+                                target="${properties.ctaTarget}"
+                            >
+                            </a>
+                        </div>
+
+                        <h2
+                            class="typography-title-4"
+                            data-sly-element="${properties.tagPalavraDestaque}"
+                        >
+                            ${properties.palavraDestaque}
+                        </h2>
+
+                        <h1
+                            class="typography-big-text-2"
+                            data-sly-element="${properties.tagTitulo}"
+                        >
+                            ${properties.titulo}
+                        </h1>
+
+                        <small>${properties.textoSmall}</small>
+
+                        <div class="play-button mt-4 d-none d-md-block">
+                            <a
+                                href="${properties.CTAhref}"
+                                data-track="${properties.dataTrack @ context='scriptToken'}"
+                                target="${properties.ctaTarget}"
+                            >
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

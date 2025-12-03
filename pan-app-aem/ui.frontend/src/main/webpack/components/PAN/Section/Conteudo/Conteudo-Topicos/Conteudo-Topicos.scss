@@ -1,0 +1,20 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.conteudo-topicos {
+    padding: var(--pan-spacing-64) 0;
+
+    &.bg-azul {
+        .typography-body-2 {
+            color: var(--pan-color-neutral-white);
+        }
+    }
+
+    &.bg-preto {
+
+        .typography-title-1,
+        .typography-title-4,
+        .typography-body-2 {
+            color: var(--pan-color-neutral-white);
+        }
+    }
+}

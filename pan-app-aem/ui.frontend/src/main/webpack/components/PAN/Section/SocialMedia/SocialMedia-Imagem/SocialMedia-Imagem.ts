@@ -1,0 +1,1 @@
+import "./SocialMedia-Imagem.scss";

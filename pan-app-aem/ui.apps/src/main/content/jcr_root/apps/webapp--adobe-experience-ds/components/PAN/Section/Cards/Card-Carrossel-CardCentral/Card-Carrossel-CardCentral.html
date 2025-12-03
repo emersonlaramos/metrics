@@ -1,0 +1,168 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section id="${properties.sectionID}" data-cmp-is="card-Carrossel-CardCentral">
+    <div class="card-carrossel-cardcentral ${properties.colorVariant}" data-js="swiper-group-central">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-11 offset-lg-1 offset-manual">
+                    <div class="card-carrossel-cardcentral__content">
+                        <h2
+                            class="typography-big-text-2 mb-5"
+                            data-sly-element="${properties.tagTitulo}"
+                        >
+                            ${properties.titulo} 
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid card-carrossel-cardcentral__container">
+            <div class="row">
+                <div
+                    class="col-12 col-lg-11 offset-lg-1 col-xxl-10 offset-manual--fluid"
+                >
+                    <!-- Slider main container -->
+                    <div class="swiper swiper-cardCentral">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <sly
+                                data-sly-list.cardCarrosselCentralMultifield="${resource.getChildren}"
+                            >
+                                <sly
+                                    data-sly-test="${cardCarrosselCentralMultifield.name == 'cardCarrosselCentral'}"
+                                >
+                                    <sly
+                                        data-sly-list.cardCarrosselCentral="${cardCarrosselCentralMultifield.getChildren}"
+                                    >
+                                        <div
+                                            class="swiper-slide card-carrossel-cardcentral__slider"
+                                        >
+                                            <mahoe-card
+                                                class="card-carrossel-cardcentral__mahoe-card card"
+                                                card-style="${properties.styleCard}"
+                                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                                size="medium"
+                                                card-title="${cardCarrosselCentral.tituloCard}"
+                                                data-track="${cardCarrosselCentral.dataTrackCardBotao}"
+                                                href="${cardCarrosselCentral.hrefCard}"
+                                                target="${cardCarrosselCentral.targetCard}"
+                                            >
+                                                <div
+                                                    data-sly-test="${cardCarrosselCentral.iconCardReferenceSvg}"
+                                                >
+                                                    <img
+                                                        class="icone"
+                                                        width="32"
+                                                        height="32"
+                                                        src="${cardCarrosselCentral.iconCardReferenceSvg}"
+                                                        alt="${cardCarrosselCentral.altIcon ? cardCarrosselCentral.altIcon : 'Icone'}"
+                                                    />
+                                                </div>
+
+                                                <p
+                                                    class="typography-large"
+                                                    data-sly-element="${cardCarrosselCentral.TituloCard}"
+                                                >
+                                                    ${cardCarrosselCentral.tituloCard}
+                                                </p>
+
+                                                <p
+                                                    class="typography-body-2 m-0"
+                                                    data-sly-element="${cardCarrosselCentral.TextoCard}"
+                                                >
+                                                    ${cardCarrosselCentral.textoCard}
+                                                </p>
+                                            </mahoe-card>
+                                        </div>
+                                    </sly>
+                                </sly>
+                            </sly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-11 offset-lg-1 offset-manual">
+                    <div class="card-carrossel-cardcentral__buttons mt-md-3">
+                        <!-- pagination buttons -->
+                        <div
+                            class="swiper-pagination button-pagination d-block d-md-none"
+                        ></div>
+                        <div
+                            class="button-default mt-5"
+                            data-panelcontainer="${wcmmode.edit}"
+                        >
+                            <sly
+                                data-sly-resource="${'Mahoe-Button' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}"
+                            />
+                        </div>
+                        <!-- navigation buttons -->
+                        <div class="button-navigation d-none d-md-flex">
+                            <div
+                                class="swiper-button-prev card-carrossel-cardcentral__swiper-button--prev"
+                            >
+                                <svg
+                                    class="swiper-button-icon"
+                                    width="20"
+                                    height="12"
+                                    viewBox="0 0 20 12"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M0.714355 6H19.2858"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M14.2859 11L19.2859 6L14.2859 1"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+
+                            <div
+                                class="swiper-button-next card-carrossel-cardcentral__swiper-button--next"
+                            >
+                                <svg
+                                    class="swiper-button-icon"
+                                    width="20"
+                                    height="12"
+                                    viewBox="0 0 20 12"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M0.714355 6H19.2858"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M14.2859 11L19.2859 6L14.2859 1"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

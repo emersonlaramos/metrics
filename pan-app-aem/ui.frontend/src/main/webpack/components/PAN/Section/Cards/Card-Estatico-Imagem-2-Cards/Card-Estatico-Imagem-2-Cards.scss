@@ -1,0 +1,87 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.card-estatico-imagem-2-cards {
+    overflow: hidden;
+    padding: var(--pan-spacing-32) 0;
+
+    @include min-tablet {
+        padding: var(--pan-spacing-64) 0;
+    }
+
+    &__img {
+        object-fit: cover;
+
+        @include max-tablet {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__title {
+        color: var(--pan-color-neutral-black);
+        letter-spacing: var(--pan-letter-spacing-2xs);
+
+        .texto-destaque {
+            color: var(--pan-color-primary-brand);
+        }
+    }
+
+    .swiper {
+        overflow: visible;
+        margin-bottom: var(--pan-spacing-48);
+
+        &-wrapper {
+            width: 100%;
+            margin: auto;
+        }
+
+        &-slide {
+            display: inline-block;
+            width: 264px;
+            height: unset;
+
+            @include min-desktop {
+                margin-right: 24px;
+            }
+        }
+
+        #card-01:hover, #card-02:hover {
+            color: var(--pan-color-neutral-white);
+            background: var(--pan-color-primary-brand);
+
+            .mahoe-card__link svg path {
+                stroke: var(--pan-color-neutral-white);
+            }
+        }
+
+        &-pagination-bullet {
+            opacity: 1;
+        }
+    }
+
+    &__swiper--pagination {
+        margin: var(--pan-spacing-32) 0 var(--pan-spacing-16);
+    }
+
+    &.bg {
+        &-azul {
+            .card-estatico-imagem-2-cards__title {
+                .texto-destaque {color: var(--pan-color-neutral-white);}
+            }
+
+            #card-01:hover, #card-02:hover {
+                color: var(--pan-color-neutral-black);
+                background: var(--pan-color-neutral-white);
+    
+                .mahoe-card__link svg path {
+                    stroke: var(--pan-color-neutral-black);
+                }
+            }
+        }
+        &-preto {
+            .card-estatico-imagem-2-cards__title {
+                color: var(--pan-color-neutral-white);
+            }
+        }
+    }
+}

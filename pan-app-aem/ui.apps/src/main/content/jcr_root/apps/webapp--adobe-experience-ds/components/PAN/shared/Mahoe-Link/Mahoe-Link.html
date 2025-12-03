@@ -1,0 +1,24 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+    
+<!-- Define os selectors (caso haja) em uma variavel de nome MODE -->
+<sly data-sly-set.colorVariant="${request.requestPathInfo.selectors}" />
+
+<sly data-sly-test="${!properties.hideLink}" >
+    <mahoe-link
+        href="${properties.linkBehavior == '_link' && properties.linkHref || properties.linkBehavior == '_scroll' && properties.linkScroll}"
+        icon-src="${properties.linkIconReferenceParameter}"
+        icon-position="${properties.linkIconPosition}"
+        name="${properties.linkName ? properties.linkName : properties.linkText}"
+        size="${properties.linkSize}"
+        target="${properties.linkTarget}"
+        
+        mode="${properties.linkStyleBehavior == '_independent' ? properties.linkMode : colorVariant[0] == 'bg-azul' && 'blue' || colorVariant[0] == 'bg-azul--dark' && 'blue' || colorVariant[0] == 'bg-preto' && 'dark' || colorVariant[0] == 'bg-branco' && '' || colorVariant[0] == 'bg-cinza' && ''}"
+
+        data-track="${properties.linkDataTrack}"
+        title="${properties.linkTitle}"
+        data-js="${properties.linkBehavior == '_data_js' && properties.linkDataJS}"
+    >
+        ${properties.linkText}
+    </mahoe-link>
+</sly>

@@ -1,0 +1,38 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.card-estatico-mosaicoimagem {
+    padding: var(--pan-spacing-64) 0;
+
+    .mahoe-card{
+        margin: var(--pan-spacing-12) auto;
+    }
+
+    &__title{
+        margin-bottom: var(--pan-spacing-40);
+    }
+
+    &__superior-row{
+        @include min-desktop {
+            mahoe-card{
+                height: 489px;
+            }
+        }
+    }
+
+    &__inferior-row{
+        @include min-desktop {
+            mahoe-card{
+                height: 272px;
+            }
+        }
+    }
+
+    &.bg {
+        &-preto {
+            .card-estatico-mosaicoimagem__title{
+                color: var(--pan-color-neutral-white);
+            }
+        }
+    }
+}
+

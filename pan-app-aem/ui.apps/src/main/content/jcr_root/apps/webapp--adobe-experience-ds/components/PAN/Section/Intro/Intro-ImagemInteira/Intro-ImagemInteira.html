@@ -1,0 +1,54 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Section-Intro.ImagemInteira">
+    <div class="section-intro-imagem-inteira" data-sly-attribute.data-js="${properties.bannerId ? 'primeiraDobra' : ''}">
+        <picture class='section-intro-imagem-inteira__picture section-intro-imagem-inteira__picture--overlay'>
+            <source class='section-intro-imagem-inteira__image image-default' media='(min-width: 768px)'
+                srcset='${properties.imageDesktopReferenceWebp}' width="1440" height="700" />
+            <img class='section-intro-imagem-inteira__image image-default' alt="${properties.altImagem ? properties.altImagem : 'Imagem'}"
+                title="${properties.titleImagem && properties.titleImagem || properties.altImagem}" loading="${properties.lazyload}"
+                width="375" height="700" src='${properties.imageMobileReferenceWebp}' />
+        </picture>
+
+        <div class="container section-intro-imagem-inteira__content d-flex flex-column">
+            <div class="row">
+                <div class="col-12 col-md-8 col-lg-5">
+                    <div class="d-flex flex-column">
+                        <h2 class="typography-title-3 d-flex align-items-center"
+                            data-sly-element="${properties.tagPalavraDestaque}">
+                            <span data-sly-test="${properties.tagNovo}" class="tagnovo tagnovo--white"></span>
+                            ${properties.palavraDestaque}
+                        </h2>
+
+                        <h1 class="typography-big-text-2" data-sly-element="${properties.tagTitulo}">
+                            ${properties.titulo}
+                        </h1>
+
+                        <div class="typography-large mb-4" data-sly-element="${properties.paragrafo}">
+                            ${properties.paragrafo @context =
+                            properties.textIsRich ? 'html' : 'text'}
+                        </div>
+
+                        <div class="typography-small disclaimer" data-sly-element="${properties.textoSmall}">
+                            ${properties.textoSmall @context =
+                            properties.textIsRich ? 'html' : 'text'}
+                        </div>
+
+                        <div class="col-12 col-md-6 mt-4 d-flex flex-column flex-md-row">
+                            <div class="col-12 me-2 mb-3" data-panelcontainer="${wcmmode.edit}">
+                                <sly
+                                    data-sly-resource="${'Mahoe-Button' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}" />
+                            </div>
+
+                            <div class="col-12" data-panelcontainer="${wcmmode.edit}">
+                                <sly
+                                    data-sly-resource="${'Mahoe-Button-2' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

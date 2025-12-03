@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Propriedades Shared Componentes - Passo A Passo Vertical"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tab-topicos
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <topico1
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tópico 1"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <showTopic1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldLabel="Esconder Tópico?"
+                                name="./esconderTopico1"
+                                text="Esconder Tópico?"
+                                uncheckedValue="{Boolean}false"
+                                value="{Boolean}true"/>
+                            <tituloTopico1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Titulo"
+                                name="./tituloTopico1"
+                                value="Titulo tópico 1"/>
+                            <textoTopico1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Texto"
+                                name="./textoTopico1"
+                                removeSingleParagraphContainer="{Boolean}true"
+                                useFixedInlineToolbar="{Boolean}true"
+                                value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper fermentum,">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="bold,italic"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="-"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="modifylink,unlink"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <tracklinks
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                    ref="justify"/>
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                    ref="lists"/>
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </textoTopico1>
+                        </items>
+                    </topico1>
+                    <topico2
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tópico 2"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <showTopic2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldLabel="Esconder Tópico?"
+                                name="./esconderTopico2"
+                                text="Esconder Tópico?"
+                                uncheckedValue="{Boolean}false"
+                                value="{Boolean}true"/>
+                            <tituloTopico2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Titulo"
+                                name="./tituloTopico2"
+                                value="Titulo tópico 2"/>
+                            <textoTopico2
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Texto"
+                                name="./textoTopico2"
+                                removeSingleParagraphContainer="{Boolean}true"
+                                useFixedInlineToolbar="{Boolean}true"
+                                value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper fermentum,">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="bold,italic"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="-"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="modifylink,unlink"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <tracklinks
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                    ref="justify"/>
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                    ref="lists"/>
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </textoTopico2>
+                        </items>
+                    </topico2>
+                    <topico3
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tópico 3"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <showTopic3
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldLabel="Esconder Tópico?"
+                                name="./esconderTopico3"
+                                text="Esconder Tópico?"
+                                uncheckedValue="{Boolean}false"
+                                value="{Boolean}true"/>
+                            <tituloTopico3
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Titulo"
+                                name="./tituloTopico3"
+                                value="Titulo tópico 3"/>
+                            <textoTopico3
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Texto"
+                                name="./textoTopico3"
+                                removeSingleParagraphContainer="{Boolean}true"
+                                useFixedInlineToolbar="{Boolean}true"
+                                value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper fermentum,">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="bold,italic"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="-"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="modifylink,unlink"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <tracklinks
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                    ref="justify"/>
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                    ref="lists"/>
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </textoTopico3>
+                        </items>
+                    </topico3>
+                    <topico4
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tópico 4"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <showTopic4
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldLabel="Esconder Tópico?"
+                                name="./esconderTopico4"
+                                text="Esconder Tópico?"
+                                uncheckedValue="{Boolean}false"
+                                value="{Boolean}true"/>
+                            <tituloTopico4
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Titulo"
+                                name="./tituloTopico4"
+                                value="Titulo tópico 4"/>
+                            <textoTopico4
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Texto"
+                                name="./textoTopico4"
+                                removeSingleParagraphContainer="{Boolean}true"
+                                useFixedInlineToolbar="{Boolean}true"
+                                value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper fermentum,">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="bold,italic"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="-"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="modifylink,unlink"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <tracklinks
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                    ref="justify"/>
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                    ref="lists"/>
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </textoTopico4>
+                        </items>
+                    </topico4>
+                    <topico5
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tópico 5"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <showTopic5
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldLabel="Esconder Tópico?"
+                                name="./esconderTopico5"
+                                text="Esconder Tópico?"
+                                uncheckedValue="{Boolean}false"
+                                value="{Boolean}true"/>
+                            <tituloTopico5
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Titulo"
+                                name="./tituloTopico5"
+                                value="Titulo tópico 5"/>
+                            <textoTopico5
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Texto"
+                                name="./textoTopico5"
+                                removeSingleParagraphContainer="{Boolean}true"
+                                useFixedInlineToolbar="{Boolean}true"
+                                value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper fermentum,">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="bold,italic"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="-"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="modifylink,unlink"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <tracklinks
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                    ref="justify"/>
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                    ref="lists"/>
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </textoTopico5>
+                        </items>
+                    </topico5>
+                    <topico6
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tópico 6"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <showTopic6
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldLabel="Esconder Tópico?"
+                                name="./esconderTopico6"
+                                text="Esconder Tópico?"
+                                uncheckedValue="{Boolean}false"
+                                value="{Boolean}true"/>
+                            <tituloTopico6
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Titulo"
+                                name="./tituloTopico6"
+                                value="Titulo tópico 6"/>
+                            <textoTopico6
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Texto"
+                                name="./textoTopico6"
+                                removeSingleParagraphContainer="{Boolean}true"
+                                useFixedInlineToolbar="{Boolean}true"
+                                value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper fermentum,">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="bold,italic"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="-"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="modifylink,unlink"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <tracklinks
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                    ref="justify"/>
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                    ref="lists"/>
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </textoTopico6>
+                        </items>
+                    </topico6>
+                    <topico7
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tópico 7"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <showTopic7
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldLabel="Esconder Tópico?"
+                                name="./esconderTopico7"
+                                text="Esconder Tópico?"
+                                uncheckedValue="{Boolean}false"
+                                value="{Boolean}true"/>
+                            <tituloTopico7
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Titulo"
+                                name="./tituloTopico7"
+                                value="Titulo tópico 7"/>
+                            <textoTopico7
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Texto"
+                                name="./textoTopico7"
+                                removeSingleParagraphContainer="{Boolean}true"
+                                useFixedInlineToolbar="{Boolean}true"
+                                value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper fermentum,">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="bold,italic"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="-"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="modifylink,unlink"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <tracklinks
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                    ref="justify"/>
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                    ref="lists"/>
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </textoTopico7>
+                        </items>
+                    </topico7>
+                    <tab-seo
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="SEO"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <sectionID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="ID da Seção"
+                                name="./sectionID"
+                                value="" />
+                            <tagTituloPasso
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Tag dos titulos dos passos"
+                                name="./tagTituloPasso">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <p
+                                        jcr:primaryType="nt:unstructured"
+                                        text="P"
+                                        selected="true"
+                                        value="p" />
+                                    <h1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H1"
+                                        value="h1" />
+                                    <h2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H2"
+                                        value="h2" />
+                                    <h3
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H3"
+                                        value="h3" />
+                                    <h4
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H4"
+                                        value="h4" />
+                                    <h5
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H5"
+                                        value="h5" />
+                                    <h6
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H6"
+                                        value="h6" />
+                                </items>
+                            </tagTituloPasso>
+                            <tagTextoPasso
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Tag dos textos dos passos"
+                                name="./tagTextoPasso">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <p
+                                        jcr:primaryType="nt:unstructured"
+                                        text="P"
+                                        value="p" />
+                                    <h1
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="true"
+                                        text="H1"
+                                        value="h1" />
+                                    <h2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H2"
+                                        value="h2" />
+                                    <h3
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H3"
+                                        value="h3" />
+                                    <h4
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H4"
+                                        value="h4" />
+                                    <h5
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H5"
+                                        value="h5" />
+                                    <h6
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H6"
+                                        value="h6" />
+                                </items>
+                            </tagTextoPasso>
+                        </items>
+                    </tab-seo>
+                </items>
+            </tab-topicos>
+        </items>
+    </content>
+</jcr:root>

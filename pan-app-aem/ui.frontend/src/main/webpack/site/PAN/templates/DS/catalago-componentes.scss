@@ -1,0 +1,39 @@
+.catalago-componente__aside {
+    height: 100%;
+    width: 200px !important;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--pan-color-neutral-lighter-bg);
+    overflow-x: hidden;
+    padding: 0 0 0 8px;
+    box-shadow: -8px 1px 19px 0px black;
+
+    .cmp-title__text {
+        font-size: 22px;
+        margin: 8px 0 16px 0;
+        color: var(--pan-color-primary-dark);
+    }
+
+    ul.cmp-navigation__group {
+        list-style: none;
+        padding: 0;
+    }
+
+    li.cmp-navigation__item {
+        padding: 0 0 4px 10px;
+    }
+
+
+    a.cmp-navigation__item-link {
+        color: #080808;
+        cursor: pointer;
+    }
+}
+
+.catalago-componenente--main {    
+    margin-left: 200px !important;
+    width: 86% !important;
+    padding: 0 24px;
+}

@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Propriedades Card-Carrossel-CardMosaico-Imagem"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <Tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <tab-variantes
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Variantes"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <colorVariant
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                deleteHint="{Boolean}true"
+                                fieldLabel="Cores de fundo"
+                                name="./colorVariant"
+                                vertical="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <branco
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Branco"
+                                        value="bg-branco"/>
+                                    <cinza
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Cinza"
+                                        value="bg-cinza"/>
+                                    <azul
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Azul"
+                                        value="bg-azul"/>
+                                    <preto
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Preto"
+                                        value="bg-preto"/>
+                                </items>
+                            </colorVariant>
+                            <style-card
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                deleteHint="{Boolean}true"
+                                fieldLabel="Estilo do Card"
+                                name="./styleCard"
+                                vertical="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <cardSolid
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Fundo Solido"
+                                        value=""/>
+                                    <cardOutline
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Fundo Transparente com Borda"
+                                        value="lined"/>
+                                </items>
+                            </style-card>
+                        </items>
+                    </tab-variantes>
+                    <tab-textos
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Textos"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <PalavraDestaque
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="Palavra Destaque"
+                                name="./palavraDestaque"
+                                value="Palavra destaque"/>
+                            <Titulo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Titulo"
+                                name="./titulo"
+                                value="Título com max 3 linhas aqui!"/>
+                            <Paragrafo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Parágrafo"
+                                name="./paragrafo"
+                                removeSingleParagraphContainer="{Boolean}true"
+                                useFixedInlineToolbar="{Boolean}true"
+                                value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper fermentum">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="bold,italic"/>
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="-"/>
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="modifylink,unlink"/>
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                    <tracklinks
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*"/>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                    ref="justify"/>
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                    ref="lists"/>
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </Paragrafo>
+                        </items>
+                    </tab-textos>
+                    <tab-cards
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Cards Carrossel"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <presets
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <cardsSelect
+                                                granite:class="cq-dialog-dropdown-showhide"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Selecione a quantidade de cards"
+                                                name="./cardsSelect">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <tres
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="três"
+                                                        value="tres"/>
+                                                    <seis
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="seis"
+                                                        value="seis"/>
+                                                </items>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    cq-dialog-dropdown-showhide-target=".cardsSelect-showhide-target"/>
+                                            </cardsSelect>
+                                            <tres
+                                                granite:class="cardsSelect-showhide-target"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <tab-conteudo
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Conteúdo"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <tab-card1
+                                                                jcr:primaryType="nt:unstructured"
+                                                                jcr:title="Card 1"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                margin="{Boolean}true">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <imageCard1
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                        autoStart="{Boolean}false"
+                                                                        class="cq-droptarget"
+                                                                        fieldLabel="Imagem WEBP (359 x 455)"
+                                                                        fileNameParameter="./imageNameParameterWebp"
+                                                                        fileReferenceParameter="./imageCard1ReferenceWebp"
+                                                                        mimeTypes="[image/webp]"
+                                                                        multiple="{Boolean}false"
+                                                                        name="./imageCard1"
+                                                                        title="Imagem WEBP"
+                                                                        uploadUrl="${suffix.path}"
+                                                                        useHTML5="{Boolean}true"/>
+                                                                    <TituloCard1
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="Titulo"
+                                                                        name="./tituloCard1"
+                                                                        value="Título aqui!"/>
+                                                                    <DataTrackCardBotao1
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="CTA Data Track"
+                                                                        name="./dataTrackCardBotao1"
+                                                                        value="#"/>
+                                                                    <HrefCard1
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                        autocomplete="off"
+                                                                        fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                        fieldLabel="CTA Link ou ID da seção para scroll"
+                                                                        name="./hrefCard1"
+                                                                        value="#id_section"/>
+                                                                    <TargetCard1
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                        fieldLabel="CTA Link Target (no caso de link)"
+                                                                        name="./targetCard1">
+                                                                        <items jcr:primaryType="nt:unstructured">
+                                                                            <self
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                selected="{Boolean}true"
+                                                                                text="Mesma Página"
+                                                                                value="_self"/>
+                                                                            <blank
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Nova Aba"
+                                                                                value="_blank"/>
+                                                                        </items>
+                                                                    </TargetCard1>
+                                                                </items>
+                                                            </tab-card1>
+                                                            <tab-card2
+                                                                jcr:primaryType="nt:unstructured"
+                                                                jcr:title="Card 2"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                margin="{Boolean}true">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <IconeCard2
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                        autoStart="{Boolean}false"
+                                                                        class="cq-droptarget"
+                                                                        fieldLabel="Icone do Card (32 x 32) -- .SVG"
+                                                                        fileNameParameter="./iconCardNameParameterSvg"
+                                                                        fileReferenceParameter="./iconCard2ReferenceSvg"
+                                                                        mimeTypes="[image/svg]"
+                                                                        multiple="{Boolean}false"
+                                                                        name="./iconCard"
+                                                                        title="icone do Botão (opcional)"
+                                                                        uploadUrl="${suffix.path}"
+                                                                        useHTML5="{Boolean}true"/>
+                                                                    <TituloCard2
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="Titulo"
+                                                                        name="./tituloCard2"
+                                                                        value="Título aqui!"/>
+                                                                    <DataTrackCardBotao2
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="CTA Data Track"
+                                                                        name="./dataTrackCardBotao2"
+                                                                        value="#"/>
+                                                                    <HrefCard2
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                        autocomplete="off"
+                                                                        fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                        fieldLabel="CTA Link ou ID da seção para scroll"
+                                                                        name="./hrefCard2"
+                                                                        value="#id_section"/>
+                                                                    <TargetCard2
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                        fieldLabel="CTA Link Target (no caso de link)"
+                                                                        name="./targetCard2">
+                                                                        <items jcr:primaryType="nt:unstructured">
+                                                                            <self
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                selected="{Boolean}true"
+                                                                                text="Mesma Página"
+                                                                                value="_self"/>
+                                                                            <blank
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Nova Aba"
+                                                                                value="_blank"/>
+                                                                        </items>
+                                                                    </TargetCard2>
+                                                                </items>
+                                                            </tab-card2>
+                                                            <tab-card3
+                                                                jcr:primaryType="nt:unstructured"
+                                                                jcr:title="Card 3"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                margin="{Boolean}true">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <IconeCard3
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                        autoStart="{Boolean}false"
+                                                                        class="cq-droptarget"
+                                                                        fieldLabel="Icone do Card (32 x 32) -- .SVG"
+                                                                        fileNameParameter="./iconCardNameParameterSvg"
+                                                                        fileReferenceParameter="./iconCard3ReferenceSvg"
+                                                                        mimeTypes="[image/svg]"
+                                                                        multiple="{Boolean}false"
+                                                                        name="./iconCard"
+                                                                        title="icone do Botão (opcional)"
+                                                                        uploadUrl="${suffix.path}"
+                                                                        useHTML5="{Boolean}true"/>
+                                                                    <TituloCard3
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="Titulo"
+                                                                        name="./tituloCard3"
+                                                                        value="Título aqui!"/>
+                                                                    <DataTrackCardBotao3
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="CTA Data Track"
+                                                                        name="./dataTrackCardBotao3"
+                                                                        value="#"/>
+                                                                    <HrefCard3
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                        autocomplete="off"
+                                                                        fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                        fieldLabel="CTA Link ou ID da seção para scroll"
+                                                                        name="./hrefCard3"
+                                                                        value="#id_section"/>
+                                                                    <TargetCard3
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                        fieldLabel="CTA Link Target (no caso de link)"
+                                                                        name="./targetCard3">
+                                                                        <items jcr:primaryType="nt:unstructured">
+                                                                            <self
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                selected="{Boolean}true"
+                                                                                text="Mesma Página"
+                                                                                value="_self"/>
+                                                                            <blank
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Nova Aba"
+                                                                                value="_blank"/>
+                                                                        </items>
+                                                                    </TargetCard3>
+                                                                </items>
+                                                            </tab-card3>
+                                                        </items>
+                                                    </tab-conteudo>
+                                                </items>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    showhidetargetvalue="tres"/>
+                                            </tres>
+                                            <seis
+                                                granite:class="cardsSelect-showhide-target"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <tab-conteudo2
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Conteúdo"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <tab-card4
+                                                                jcr:primaryType="nt:unstructured"
+                                                                jcr:title="Card 1"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                margin="{Boolean}true">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <imageCard4
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                        autoStart="{Boolean}false"
+                                                                        class="cq-droptarget"
+                                                                        fieldLabel="Imagem WEBP"
+                                                                        fileNameParameter="./imageNameParameterWebp"
+                                                                        fileReferenceParameter="./imageCard4ReferenceWebp"
+                                                                        mimeTypes="[image/webp]"
+                                                                        multiple="{Boolean}false"
+                                                                        name="./imageCard4"
+                                                                        title="Imagem WEBP"
+                                                                        uploadUrl="${suffix.path}"
+                                                                        useHTML5="{Boolean}true"/>
+                                                                    <TituloCard4
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="Titulo"
+                                                                        name="./tituloCard4"
+                                                                        value="Título aqui!"/>
+                                                                    <DataTrackCardBotao4
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="CTA Data Track"
+                                                                        name="./dataTrackCardBotao4"
+                                                                        value="#"/>
+                                                                    <HrefCard4
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                        autocomplete="off"
+                                                                        fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                        fieldLabel="CTA Link ou ID da seção para scroll"
+                                                                        name="./hrefCard4"
+                                                                        value="#id_section"/>
+                                                                    <TargetCard4
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                        fieldLabel="CTA Link Target (no caso de link)"
+                                                                        name="./targetCard4">
+                                                                        <items jcr:primaryType="nt:unstructured">
+                                                                            <self
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                selected="{Boolean}true"
+                                                                                text="Mesma Página"
+                                                                                value="_self"/>
+                                                                            <blank
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Nova Aba"
+                                                                                value="_blank"/>
+                                                                        </items>
+                                                                    </TargetCard4>
+                                                                </items>
+                                                            </tab-card4>
+                                                            <tab-card5
+                                                                jcr:primaryType="nt:unstructured"
+                                                                jcr:title="Card 2"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                margin="{Boolean}true">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <IconeCard5
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                        autoStart="{Boolean}false"
+                                                                        class="cq-droptarget"
+                                                                        fieldLabel="Icone do Card (32 x 32) -- .SVG"
+                                                                        fileNameParameter="./iconCardNameParameterSvg"
+                                                                        fileReferenceParameter="./iconCard5ReferenceSvg"
+                                                                        mimeTypes="[image/svg]"
+                                                                        multiple="{Boolean}false"
+                                                                        name="./iconCard"
+                                                                        title="icone do Botão (opcional)"
+                                                                        uploadUrl="${suffix.path}"
+                                                                        useHTML5="{Boolean}true"/>
+                                                                    <TituloCard5
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="Titulo"
+                                                                        name="./tituloCard5"
+                                                                        value="Título aqui!"/>
+                                                                    <DataTrackCardBotao5
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="CTA Data Track"
+                                                                        name="./dataTrackCardBotao5"
+                                                                        value="#"/>
+                                                                    <HrefCard5
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                        autocomplete="off"
+                                                                        fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                        fieldLabel="CTA Link ou ID da seção para scroll"
+                                                                        name="./hrefCard5"
+                                                                        value="#id_section"/>
+                                                                    <TargetCard5
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                        fieldLabel="CTA Link Target (no caso de link)"
+                                                                        name="./targetCard5">
+                                                                        <items jcr:primaryType="nt:unstructured">
+                                                                            <self
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                selected="{Boolean}true"
+                                                                                text="Mesma Página"
+                                                                                value="_self"/>
+                                                                            <blank
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Nova Aba"
+                                                                                value="_blank"/>
+                                                                        </items>
+                                                                    </TargetCard5>
+                                                                </items>
+                                                            </tab-card5>
+                                                            <tab-card6
+                                                                jcr:primaryType="nt:unstructured"
+                                                                jcr:title="Card 3"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                margin="{Boolean}true">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <IconeCard6
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                        autoStart="{Boolean}false"
+                                                                        class="cq-droptarget"
+                                                                        fieldLabel="Icone do Card (32 x 32) -- .SVG"
+                                                                        fileNameParameter="./iconCardNameParameterSvg"
+                                                                        fileReferenceParameter="./iconCard6ReferenceSvg"
+                                                                        mimeTypes="[image/svg]"
+                                                                        multiple="{Boolean}false"
+                                                                        name="./iconCard"
+                                                                        title="icone do Botão (opcional)"
+                                                                        uploadUrl="${suffix.path}"
+                                                                        useHTML5="{Boolean}true"/>
+                                                                    <TituloCard6
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="Titulo"
+                                                                        name="./tituloCard6"
+                                                                        value="Título aqui!"/>
+                                                                    <DataTrackCardBotao6
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="CTA Data Track"
+                                                                        name="./dataTrackCardBotao6"
+                                                                        value="#"/>
+                                                                    <HrefCard6
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                        autocomplete="off"
+                                                                        fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                        fieldLabel="CTA Link ou ID da seção para scroll"
+                                                                        name="./hrefCard6"
+                                                                        value="#id_section"/>
+                                                                    <TargetCard6
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                        fieldLabel="CTA Link Target (no caso de link)"
+                                                                        name="./targetCard6">
+                                                                        <items jcr:primaryType="nt:unstructured">
+                                                                            <self
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                selected="{Boolean}true"
+                                                                                text="Mesma Página"
+                                                                                value="_self"/>
+                                                                            <blank
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Nova Aba"
+                                                                                value="_blank"/>
+                                                                        </items>
+                                                                    </TargetCard6>
+                                                                </items>
+                                                            </tab-card6>
+                                                            <tab-card7
+                                                                jcr:primaryType="nt:unstructured"
+                                                                jcr:title="Card 4"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                margin="{Boolean}true">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <IconeCard7
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                        autoStart="{Boolean}false"
+                                                                        class="cq-droptarget"
+                                                                        fieldLabel="Icone do Card (32 x 32) -- .SVG"
+                                                                        fileNameParameter="./iconCardNameParameterSvg"
+                                                                        fileReferenceParameter="./iconCard7ReferenceSvg"
+                                                                        mimeTypes="[image/svg]"
+                                                                        multiple="{Boolean}false"
+                                                                        name="./iconCard"
+                                                                        title="icone do Botão (opcional)"
+                                                                        uploadUrl="${suffix.path}"
+                                                                        useHTML5="{Boolean}true"/>
+                                                                    <TituloCard7
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="Titulo"
+                                                                        name="./tituloCard7"
+                                                                        value="Título aqui!"/>
+                                                                    <DataTrackCardBotao7
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="CTA Data Track"
+                                                                        name="./dataTrackCardBotao7"
+                                                                        value="#"/>
+                                                                    <HrefCard7
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                        autocomplete="off"
+                                                                        fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                        fieldLabel="CTA Link ou ID da seção para scroll"
+                                                                        name="./hrefCard7"
+                                                                        value="#id_section"/>
+                                                                    <TargetCard7
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                        fieldLabel="CTA Link Target (no caso de link)"
+                                                                        name="./targetCard7">
+                                                                        <items jcr:primaryType="nt:unstructured">
+                                                                            <self
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                selected="{Boolean}true"
+                                                                                text="Mesma Página"
+                                                                                value="_self"/>
+                                                                            <blank
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Nova Aba"
+                                                                                value="_blank"/>
+                                                                        </items>
+                                                                    </TargetCard7>
+                                                                </items>
+                                                            </tab-card7>
+                                                            <tab-card8
+                                                                jcr:primaryType="nt:unstructured"
+                                                                jcr:title="Card 5"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                margin="{Boolean}true">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <IconeCard8
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                        autoStart="{Boolean}false"
+                                                                        class="cq-droptarget"
+                                                                        fieldLabel="Icone do Card (32 x 32) -- .SVG"
+                                                                        fileNameParameter="./iconCardNameParameterSvg"
+                                                                        fileReferenceParameter="./iconCard8ReferenceSvg"
+                                                                        mimeTypes="[image/svg]"
+                                                                        multiple="{Boolean}false"
+                                                                        name="./iconCard"
+                                                                        title="icone do Botão (opcional)"
+                                                                        uploadUrl="${suffix.path}"
+                                                                        useHTML5="{Boolean}true"/>
+                                                                    <TituloCard8
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="Titulo"
+                                                                        name="./tituloCard8"
+                                                                        value="Título aqui!"/>
+                                                                    <DataTrackCardBotao8
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="CTA Data Track"
+                                                                        name="./dataTrackCardBotao8"
+                                                                        value="#"/>
+                                                                    <HrefCard8
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                        autocomplete="off"
+                                                                        fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                        fieldLabel="CTA Link ou ID da seção para scroll"
+                                                                        name="./hrefCard8"
+                                                                        value="#id_section"/>
+                                                                    <TargetCard8
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                        fieldLabel="CTA Link Target (no caso de link)"
+                                                                        name="./targetCard8">
+                                                                        <items jcr:primaryType="nt:unstructured">
+                                                                            <self
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                selected="{Boolean}true"
+                                                                                text="Mesma Página"
+                                                                                value="_self"/>
+                                                                            <blank
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Nova Aba"
+                                                                                value="_blank"/>
+                                                                        </items>
+                                                                    </TargetCard8>
+                                                                </items>
+                                                            </tab-card8>
+                                                            <tab-card9
+                                                                jcr:primaryType="nt:unstructured"
+                                                                jcr:title="Card 6"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                margin="{Boolean}true">
+                                                                <items jcr:primaryType="nt:unstructured">
+                                                                    <imageCard9
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                        autoStart="{Boolean}false"
+                                                                        class="cq-droptarget"
+                                                                        fieldLabel="Imagem WEBP (359 x 455)"
+                                                                        fileNameParameter="./imageNameParameterWebp"
+                                                                        fileReferenceParameter="./imageCard9ReferenceWebp"
+                                                                        mimeTypes="[image/webp]"
+                                                                        multiple="{Boolean}false"
+                                                                        name="./imageCard9"
+                                                                        title="Imagem WEBP"
+                                                                        uploadUrl="${suffix.path}"
+                                                                        useHTML5="{Boolean}true"/>
+                                                                    <TituloCard9
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="Titulo"
+                                                                        name="./tituloCard9"
+                                                                        value="Título aqui!"/>
+                                                                    <DataTrackCardBotao9
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                        autocomplete="off"
+                                                                        fieldLabel="CTA Data Track"
+                                                                        name="./dataTrackCardBotao9"
+                                                                        value="#"/>
+                                                                    <HrefCard9
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                        autocomplete="off"
+                                                                        fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                        fieldLabel="CTA Link ou ID da seção para scroll"
+                                                                        name="./hrefCard9"
+                                                                        value="#id_section"/>
+                                                                    <TargetCard9
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                        fieldLabel="CTA Link Target (no caso de link)"
+                                                                        name="./targetCard9">
+                                                                        <items jcr:primaryType="nt:unstructured">
+                                                                            <self
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                selected="{Boolean}true"
+                                                                                text="Mesma Página"
+                                                                                value="_self"/>
+                                                                            <blank
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Nova Aba"
+                                                                                value="_blank"/>
+                                                                        </items>
+                                                                    </TargetCard9>
+                                                                </items>
+                                                            </tab-card9>
+                                                        </items>
+                                                    </tab-conteudo2>
+                                                </items>
+                                                <granite:data
+                                                    jcr:primaryType="nt:unstructured"
+                                                    showhidetargetvalue="seis"/>
+                                            </seis>
+                                        </items>
+                                    </column>
+                                </items>
+                            </presets>
+                        </items>
+                    </tab-cards>
+                    <tab-seo
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="SEO"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <sectionID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="ID da Seção"
+                                name="./sectionID"
+                                value=""/>
+                        </items>
+                    </tab-seo>
+                </items>
+            </Tabs>
+        </items>
+    </content>
+</jcr:root>

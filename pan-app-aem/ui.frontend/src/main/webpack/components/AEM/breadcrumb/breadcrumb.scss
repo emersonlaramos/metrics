@@ -1,0 +1,88 @@
+.cmp-breadcrumb {}
+.cmp-breadcrumb__list {}
+.cmp-breadcrumb__item {}
+.cmp-breadcrumb__item--active {}
+.cmp-breadcrumb__item-link {}
+
+.bg {
+    &-branco {
+        .breadcrumb {
+            .cmp-breadcrumb__list {
+                color: var(--pan-color-neutral-black);
+                & li a {
+                    color: var(--pan-color-neutral-black);
+                }
+            }
+        }
+    }
+
+    &-cinza {
+        .breadcrumb {
+            .cmp-breadcrumb__list {
+                color: var(--pan-color-neutral-black);
+                & li a {
+                    color: var(--pan-color-neutral-black);
+                }
+            }
+        }
+    }
+
+    &-azul {
+        .breadcrumb {
+            .cmp-breadcrumb__list {
+                color: var(--pan-color-neutral-white);
+                & li a {
+                    color: var(--pan-color-neutral-white);
+                }
+            }
+        }
+    }
+
+    &-azul--dark {
+        .breadcrumb {
+            .cmp-breadcrumb__list {
+                color: var(--pan-color-neutral-white);
+                & li a {
+                    color: var(--pan-color-neutral-white);
+                }
+            }
+        }
+    }
+
+    &-preto {
+        .breadcrumb {
+            .cmp-breadcrumb__list {
+                color: var(--pan-color-neutral-white);
+                & li a {
+                    color: var(--pan-color-neutral-white);
+                }
+            }
+        }
+    }
+}
+
+.breadcrumb {
+    .cmp-breadcrumb__list {
+        font-family: var(--pan-font-family-base);
+        font-weight: var(--pan-font-weight-normal);
+        padding: 0;
+
+        & li a {
+            text-decoration: none;
+        }
+
+        & li.cmp-breadcrumb__item--active {
+            font-weight: var(--pan-font-weight-bold);
+        }
+
+        & li::before {
+            content: '>';
+            margin: 0 var(--pan-spacing-12);
+            font-weight: var(--pan-font-weight-normal);
+        }
+
+        & li:first-child::before {
+            content: unset;
+        }
+    }
+}

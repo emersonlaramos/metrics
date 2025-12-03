@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/webapp--adobe-experience-ds" mode="merge"/>
+    <filter root="/content/webapp--adobe-experience-ds" mode="merge"/>
+    <filter root="/content/dam/webapp--adobe-experience-ds/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/webapp--adobe-experience-ds" mode="merge"/>
+    <filter root="/content/jcr_root/content/dam/webapp--adobe-experience-ds/_jcr_content/folderThumbnail" mode="merge"/>
+    <filter root="/content/dam/webapp--adobe-experience-ds/jcr:content/folderThumbnail" mode="merge"/>
+</workspaceFilter>

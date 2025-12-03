@@ -1,0 +1,382 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section id="${properties.sectionID}" data-cmp-is="Card-Estatico-CardMisto">
+    <div class="card-estatico-cardMisto ${properties.colorVariant}">
+        <div class="container card-estatico-cardMisto__content">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="typography-big-text-2">${properties.titulo}</h2>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="d-none d-md-block"></div>
+
+                <div>
+                    <div class="grid-2">
+                        <mahoe-card
+                            class="card-estatico-cardMisto__custom-height"
+                            card-style="${properties.styleCard}"
+                            mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                            size="large"
+                            card-title="${properties.tituloCard1}"
+                            href="${properties.hrefCard1}"
+                            target="${properties.targetCard1}"
+                        >
+                            <div
+                                data-sly-test="${properties.iconCard1ReferenceSvg}"
+                            >
+                                <img
+                                    class="icone"
+                                    width="32"
+                                    height="32"
+                                    src="${properties.iconCard1ReferenceSvg}"
+                                    alt="${properties.altCard1 ? properties.altCard1 : 'Icone'}"
+                                />
+                            </div>
+
+                            <h2 class="typography-title-2">
+                                ${properties.tituloCard1}
+                            </h2>
+                        </mahoe-card>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="grid-3">
+                        <mahoe-card
+                            class="card-estatico-cardMisto__custom-height"
+                            card-style="${properties.styleCard}"
+                            mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                            size="small"
+                            card-title="${properties.tituloCard2}"
+                            href="${properties.hrefCard2}"
+                            target="${properties.targetCard2}"
+                        >
+                            <div
+                                data-sly-test="${properties.iconCard2ReferenceSvg}"
+                            >
+                                <img
+                                    class="icone"
+                                    width="32"
+                                    height="32"
+                                    src="${properties.iconCard2ReferenceSvg}"
+                                    alt="${properties.altCard2 ? properties.altCard2 : 'Icone'}"
+                                />
+                            </div>
+
+                            <h2 class="typography-title-2">
+                                ${properties.tituloCard2}
+                            </h2>
+                        </mahoe-card>
+
+                        <mahoe-card
+                            card-style="${properties.styleCard}"
+                            mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                            size="medium"
+                            card-title="${properties.tituloCard3}"
+                            href="${properties.hrefCard3}"
+                            target="${properties.targetCard3}"
+                        >
+                            <div
+                                data-sly-test="${properties.iconCard3ReferenceSvg}"
+                            >
+                                <img
+                                    class="icone"
+                                    width="32"
+                                    height="32"
+                                    src="${properties.iconCard3ReferenceSvg}"
+                                    alt="${properties.altCard3 ? properties.altCard3 : 'Icone'}"
+                                />
+                            </div>
+
+                            <h2 class="typography-title-2">
+                                ${properties.tituloCard3}
+                            </h2>
+                        </mahoe-card>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="grid-4">
+                        <div class="grid-5">
+                            <mahoe-card
+                                class="card-estatico-cardMisto__custom-height"
+                                card-style="${properties.styleCard}"
+                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                size="medium"
+                                card-title="${properties.tituloCard4}"
+                                href="${properties.hrefCard4}"
+                                target="${properties.targetCard4}"
+                            >
+                                <div
+                                    data-sly-test="${properties.iconCard4ReferenceSvg}"
+                                >
+                                    <img
+                                        class="icone"
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard4ReferenceSvg}"
+                                        alt="${properties.altCard4 ? properties.altCard4 : 'Icone'}"
+                                    />
+                                </div>
+
+                                <h2 class="typography-title-2">
+                                    ${properties.tituloCard4}
+                                </h2>
+                            </mahoe-card>
+                        </div>
+
+                        <div class="grid-6">
+                            <mahoe-card
+                                card-style="${properties.styleCard}"
+                                size="small"
+                                card-title="${properties.tituloCard5}"
+                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                href="${properties.hrefCard5}"
+                                target="${properties.targetCard5}"
+                            >
+                                <div
+                                    data-sly-test="${properties.iconCard5ReferenceSvg}"
+                                >
+                                    <img
+                                        class="icone"
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard5ReferenceSvg}"
+                                        alt="${properties.altCard5 ? properties.altCard5 : 'Icone'}"
+                                    />
+                                </div>
+
+                                <h2 class="typography-title-2">
+                                    ${properties.tituloCard5}
+                                </h2>
+                            </mahoe-card>
+
+                            <mahoe-card
+                                card-style="${properties.styleCard}"
+                                size="small"
+                                card-title="${properties.tituloCard6}"
+                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                href="${properties.hrefCard6}"
+                                target="${properties.targetCard6}"
+                            >
+                                <div
+                                    data-sly-test="${properties.iconCard6ReferenceSvg}"
+                                >
+                                    <img
+                                        class="icone"
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard6ReferenceSvg}"
+                                        alt="${properties.altCard6 ? properties.altCard6 : 'Icone'}"
+                                    />
+                                </div>
+
+                                <h2 class="typography-title-2">
+                                    ${properties.tituloCard6}
+                                </h2>
+                            </mahoe-card>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-none d-md-block"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section id="${properties.sectionID}" data-cmp-is="Card-Estatico-CardMisto">
+    <div class="card-estatico-cardMisto ${properties.colorVariant}">
+        <div class="container card-estatico-cardMisto__content">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="typography-big-text-2">${properties.titulo}</h2>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="d-none d-md-block"></div>
+
+                <div>
+                    <div class="grid-2">
+                        <mahoe-card
+                            class="card-estatico-cardMisto__custom-height"
+                            card-style="${properties.styleCard}"
+                            mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                            size="large"
+                            card-title="${properties.tituloCard1}"
+                            href="${properties.hrefCard1}"
+                            target="${properties.targetCard1}"
+                        >
+                            <div
+                                data-sly-test="${properties.iconCard1ReferenceSvg}"
+                            >
+                                <img
+                                    class="icone"
+                                    width="32"
+                                    height="32"
+                                    src="${properties.iconCard1ReferenceSvg}"
+                                    alt="${properties.altCard1 ? properties.altCard1 : 'Icone'}"
+                                />
+                            </div>
+
+                            <h2 class="typography-title-2">
+                                ${properties.tituloCard1}
+                            </h2>
+                        </mahoe-card>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="grid-3">
+                        <mahoe-card
+                            class="card-estatico-cardMisto__custom-height"
+                            card-style="${properties.styleCard}"
+                            mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                            size="small"
+                            card-title="${properties.tituloCard2}"
+                            href="${properties.hrefCard2}"
+                            target="${properties.targetCard2}"
+                        >
+                            <div
+                                data-sly-test="${properties.iconCard2ReferenceSvg}"
+                            >
+                                <img
+                                    class="icone"
+                                    width="32"
+                                    height="32"
+                                    src="${properties.iconCard2ReferenceSvg}"
+                                    alt="${properties.altCard2 ? properties.altCard2 : 'Icone'}"
+                                />
+                            </div>
+
+                            <h2 class="typography-title-2">
+                                ${properties.tituloCard2}
+                            </h2>
+                        </mahoe-card>
+
+                        <mahoe-card
+                            card-style="${properties.styleCard}"
+                            mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                            size="medium"
+                            card-title="${properties.tituloCard3}"
+                            href="${properties.hrefCard3}"
+                            target="${properties.targetCard3}"
+                        >
+                            <div
+                                data-sly-test="${properties.iconCard3ReferenceSvg}"
+                            >
+                                <img
+                                    class="icone"
+                                    width="32"
+                                    height="32"
+                                    src="${properties.iconCard3ReferenceSvg}"
+                                    alt="${properties.altCard3 ? properties.altCard3 : 'Icone'}"
+                                />
+                            </div>
+
+                            <h2 class="typography-title-2">
+                                ${properties.tituloCard3}
+                            </h2>
+                        </mahoe-card>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="grid-4">
+                        <div class="grid-5">
+                            <mahoe-card
+                                class="card-estatico-cardMisto__custom-height"
+                                card-style="${properties.styleCard}"
+                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                size="medium"
+                                card-title="${properties.tituloCard4}"
+                                href="${properties.hrefCard4}"
+                                target="${properties.targetCard4}"
+                            >
+                                <div
+                                    data-sly-test="${properties.iconCard4ReferenceSvg}"
+                                >
+                                    <img
+                                        class="icone"
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard4ReferenceSvg}"
+                                        alt="${properties.altCard4 ? properties.altCard4 : 'Icone'}"
+                                    />
+                                </div>
+
+                                <h2 class="typography-title-2">
+                                    ${properties.tituloCard4}
+                                </h2>
+                            </mahoe-card>
+                        </div>
+
+                        <div class="grid-6">
+                            <mahoe-card
+                                card-style="${properties.styleCard}"
+                                size="small"
+                                card-title="${properties.tituloCard5}"
+                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                href="${properties.hrefCard5}"
+                                target="${properties.targetCard5}"
+                            >
+                                <div
+                                    data-sly-test="${properties.iconCard5ReferenceSvg}"
+                                >
+                                    <img
+                                        class="icone"
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard5ReferenceSvg}"
+                                        alt="${properties.altCard5 ? properties.altCard5 : 'Icone'}"
+                                    />
+                                </div>
+
+                                <h2 class="typography-title-2">
+                                    ${properties.tituloCard5}
+                                </h2>
+                            </mahoe-card>
+
+                            <mahoe-card
+                                card-style="${properties.styleCard}"
+                                size="small"
+                                card-title="${properties.tituloCard6}"
+                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                href="${properties.hrefCard6}"
+                                target="${properties.targetCard6}"
+                            >
+                                <div
+                                    data-sly-test="${properties.iconCard6ReferenceSvg}"
+                                >
+                                    <img
+                                        class="icone"
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard6ReferenceSvg}"
+                                        alt="${properties.altCard6 ? properties.altCard6 : 'Icone'}"
+                                    />
+                                </div>
+
+                                <h2 class="typography-title-2">
+                                    ${properties.tituloCard6}
+                                </h2>
+                            </mahoe-card>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-none d-md-block"></div>
+            </div>
+        </div>
+    </div>
+</section>

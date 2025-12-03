@@ -1,0 +1,23 @@
+@import url("https://designsystem-cdn.bancopan.com.br/cdn-prd/design-tokens/css/breakpoints.css");
+
+//! Estamos importando as variaveis dos breakpoints, porem media queries não funcionanm com a função var(),
+//! uma possivel solução é usar env() porem não esta pronto ainda para criar variaveis de ambiente no css
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 577px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1600px,
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1152px,
+  xxl: 1440px,
+);
+
+$grid-gutter-width: 1.5rem;

@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Mahoe Button"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[webapp--aem-institucional.editor]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <tabDesktop
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Versão Desktop"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <tabsDesktop
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                                        maximized="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <tabConfigure
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Configurações Gerais"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <buttonText
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        autocomplete="off"
+                                                        fieldLabel="Texto"
+                                                        name="./buttonText"
+                                                        value="" />
+                                                    <HideButton
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                        checked="{Boolean}true"
+                                                        fieldDescription="Ocultar esse botão do componente"
+                                                        name="./hideButton"
+                                                        text="Ocultar botão?"
+                                                        uncheckedValue="{Boolean}false"
+                                                        value="{Boolean}true" />
+                                                </items>
+                                            </tabConfigure>
+                                            <tabIcone
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Ícone"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <buttonIconPosition
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                        deleteHint="{Boolean}true"
+                                                        fieldLabel="Posição do icone"
+                                                        name="./buttonIconPosition"
+                                                        vertical="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <branco
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Justificado"
+                                                                value="justified" />
+                                                            <cinza
+                                                                jcr:primaryType="nt:unstructured"
+                                                                checked="{Boolean}true"
+                                                                text="Esquerda"
+                                                                value="left" />
+                                                            <azul
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Direita"
+                                                                value="right" />
+                                                        </items>
+                                                    </buttonIconPosition>
+                                                    <buttonIcon
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                        autoStart="{Boolean}false"
+                                                        class="cq-droptarget"
+                                                        fieldDescription="Imagem em .SGV"
+                                                        fieldLabel="Icone do Botão"
+                                                        fileNameParameter="./buttonIconNameParameter"
+                                                        fileReferenceParameter="./buttonIconReferenceParameter"
+                                                        mimeTypes="[image/svg]"
+                                                        multiple="{Boolean}false"
+                                                        name="./buttonIcon"
+                                                        title="icone do Botão (opcional)"
+                                                        uploadUrl="${suffix.path}"
+                                                        useHTML5="{Boolean}true" />
+                                                </items>
+                                            </tabIcone>
+                                            <tabEstilo
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Estilo"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <wellGroup-mode
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <modeTitle
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                                margin="{Boolean}true"
+                                                                text="Mode (modo)" />
+                                                            <buttonStyleBehavior
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                class="cq-dialog-dropdown-showhide-multival"
+                                                                cq-dialog-dropdown-showhide-target=".style-showhide-target"
+                                                                deleteHint="{Boolean}true"
+                                                                name="./buttonStyleBehavior">
+                                                                <items
+                                                                    jcr:primaryType="nt:unstructured">
+                                                                    <inherit
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        checked="{Boolean}true"
+                                                                        text="Herdar (automatico do tema escolhido no componente principal)"
+                                                                        value="_inherit" />
+                                                                    <independent
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Independente (Escolha manualmente)"
+                                                                        value="_independent" />
+                                                                </items>
+                                                            </buttonStyleBehavior>
+                                                            <styleContainer
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/container"
+                                                                class="hide style-showhide-target"
+                                                                showhidetargetvalue="_independent">
+                                                                <items
+                                                                    jcr:primaryType="nt:unstructured">
+                                                                    <buttonMode
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                        deleteHint="{Boolean}true"
+                                                                        name="./buttonMode"
+                                                                        vertical="{Boolean}true">
+                                                                        <items
+                                                                            jcr:primaryType="nt:unstructured">
+                                                                            <none
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="None (Padrão - Sem modo)"
+                                                                                value="" />
+                                                                            <dark
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Dark (Branco - para fundos escuros)"
+                                                                                value="dark" />
+                                                                            <blue
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                checked="{Boolean}true"
+                                                                                text="Blue (Azul)"
+                                                                                value="blue" />
+                                                                        </items>
+                                                                    </buttonMode>
+                                                                </items>
+                                                            </styleContainer>
+                                                        </items>
+                                                    </wellGroup-mode>
+                                                    <wellGroup-variant
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <varianteTitle
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                                margin="{Boolean}true"
+                                                                text="Variant (Variante)" />
+                                                            <buttonVariant
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                deleteHint="{Boolean}true"
+                                                                name="./buttonVariant"
+                                                                vertical="{Boolean}true">
+                                                                <items
+                                                                    jcr:primaryType="nt:unstructured">
+                                                                    <branco
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Primary (Primário - padrão)"
+                                                                        value="primary" />
+                                                                    <cinza
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        checked="{Boolean}true"
+                                                                        text="Secondary (Secondário - Sem fundo)"
+                                                                        value="secondary" />
+                                                                    <azul
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Ghost (Outline - Sem fundo e Sem borda)"
+                                                                        value="ghost" />
+                                                                </items>
+                                                            </buttonVariant>
+                                                        </items>
+                                                    </wellGroup-variant>
+                                                    <wellGroup-size
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <sizeTitle
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                                margin="{Boolean}true"
+                                                                text="Size (Tamanho)" />
+                                                            <buttonSize
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                deleteHint="{Boolean}true"
+                                                                name="./buttonSize"
+                                                                vertical="{Boolean}true">
+                                                                <items
+                                                                    jcr:primaryType="nt:unstructured">
+                                                                    <xs
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Extra Small (Extra Pequeno)"
+                                                                        value="xs" />
+                                                                    <sm
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        checked="{Boolean}true"
+                                                                        text="Small (Pequeno)"
+                                                                        value="sm" />
+                                                                    <md
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Medium (Médio)"
+                                                                        value="md" />
+                                                                    <lg
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Large (Grande)"
+                                                                        value="lg" />
+                                                                </items>
+                                                            </buttonSize>
+                                                        </items>
+                                                    </wellGroup-size>
+                                                </items>
+                                            </tabEstilo>
+                                            <tabBehavior
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Comportamento do botão"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <buttonBehavior
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                                        class="cq-dialog-dropdown-showhide-multival"
+                                                        cq-dialog-dropdown-showhide-target=".type-showhide-target"
+                                                        deleteHint="{Boolean}true"
+                                                        fieldLabel="Escolha o comportamento do Botão"
+                                                        name="./buttonBehavior"
+                                                        vertical="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <link
+                                                                jcr:primaryType="nt:unstructured"
+                                                                checked="{Boolean}true"
+                                                                text="Link"
+                                                                value="_link" />
+                                                            <scroll
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Scroll (ID da Seção)"
+                                                                value="_scroll" />
+                                                            <data_js
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Estático"
+                                                                value="_data_js" />
+                                                        </items>
+                                                    </buttonBehavior>
+                                                    <space
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="1" />
+                                                    <linkContainer
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/container"
+                                                        class="type-showhide-target"
+                                                        showhidetargetvalue="_link">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <buttonHref
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                autocomplete="off"
+                                                                fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                fieldLabel="CTA Link ou ID da seção para scroll"
+                                                                name="./buttonHref"
+                                                                value="" />
+                                                            <buttonTarget
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                fieldLabel="CTA Link Target"
+                                                                name="./buttonTarget">
+                                                                <items
+                                                                    jcr:primaryType="nt:unstructured">
+                                                                    <self
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        selected="{Boolean}true"
+                                                                        text="Mesma Página"
+                                                                        value="_self" />
+                                                                    <blank
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Nova Aba"
+                                                                        value="_blank" />
+                                                                </items>
+                                                            </buttonTarget>
+                                                        </items>
+                                                    </linkContainer>
+                                                    <scrolLContainer
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/container"
+                                                        class="type-showhide-target"
+                                                        showhidetargetvalue="_scroll">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <buttonScroll
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                autocomplete="off"
+                                                                fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                fieldLabel="ID da seção para scroll"
+                                                                name="./buttonScroll"
+                                                                value="#id_section" />
+                                                        </items>
+                                                    </scrolLContainer>
+                                                    <staticContainer
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/container"
+                                                        class="type-showhide-target"
+                                                        showhidetargetvalue="_data_js">
+                                                        <items jcr:primaryType="nt:unstructured" />
+                                                    </staticContainer>
+                                                    <dataJSContainer
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/container">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <buttonDataJS
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                autocomplete="off"
+                                                                fieldLabel="Identificador (data-js)"
+                                                                name="./buttonDataJS"
+                                                                value="" />
+                                                        </items>
+                                                    </dataJSContainer>
+                                                </items>
+                                            </tabBehavior>
+                                            <tabSeo
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="SEO"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <buttonName
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        autocomplete="off"
+                                                        fieldLabel="Nome (atributo NAME do HTML)"
+                                                        name="./buttonName"
+                                                        required="true"
+                                                        value="" />
+                                                    <buttonTitle
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        autocomplete="off"
+                                                        fieldLabel="Atributo Title"
+                                                        name="./buttonTitle"
+                                                        value="#" />
+                                                    <buttonDataTrack
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        autocomplete="off"
+                                                        fieldLabel="Button Data Track"
+                                                        name="./buttonDataTrack"
+                                                        value="#" />
+                                                </items>
+                                            </tabSeo>
+                                        </items>
+                                    </tabsDesktop>
+                                </items>
+                            </content>
+                        </items>
+                    </tabDesktop>
+                    <tabMobile
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Versão Mobile"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <contentMobile
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <tabsMobile
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                                        maximized="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <tabConfigureMobile
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Configurações Gerais"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <buttonTextMobile
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        autocomplete="off"
+                                                        fieldLabel="Texto"
+                                                        name="./buttonTextMobile"
+                                                        value="" />
+                                                    <HideButtonMobile
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                        checked="{Boolean}true"
+                                                        fieldDescription="Ocultar esse botão do componente"
+                                                        name="./hideButtonMobile"
+                                                        text="Ocultar botão?"
+                                                        uncheckedValue="{Boolean}false"
+                                                        value="{Boolean}true" />
+                                                </items>
+                                            </tabConfigureMobile>
+                                            <tabIconeMobile
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Ícone"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <buttonIconPositionMobile
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                        deleteHint="{Boolean}true"
+                                                        fieldLabel="Posição do icone"
+                                                        name="./buttonIconPositionMobile"
+                                                        vertical="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <branco
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Justificado"
+                                                                value="justified" />
+                                                            <cinza
+                                                                jcr:primaryType="nt:unstructured"
+                                                                checked="{Boolean}true"
+                                                                text="Esquerda"
+                                                                value="left" />
+                                                            <azul
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Direita"
+                                                                value="right" />
+                                                        </items>
+                                                    </buttonIconPositionMobile>
+                                                    <buttonIconMobile
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                        autoStart="{Boolean}false"
+                                                        class="cq-droptarget"
+                                                        fieldDescription="Imagem em .SGV"
+                                                        fieldLabel="Icone do Botão"
+                                                        fileNameParameter="./buttonIconMobileNameParameter"
+                                                        fileReferenceParameter="./buttonIconMobileReferenceParameter"
+                                                        mimeTypes="[image/svg]"
+                                                        multiple="{Boolean}false"
+                                                        name="./buttonIconMobile"
+                                                        title="icone do Botão (opcional)"
+                                                        uploadUrl="${suffix.path}"
+                                                        useHTML5="{Boolean}true" />
+                                                </items>
+                                            </tabIconeMobile>
+                                            <tabEstiloMobile
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Estilo"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <wellGroup-mode
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <modeTitle
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                                margin="{Boolean}true"
+                                                                text="Mode (modo)" />
+                                                            <buttonStyleBehaviorMobile
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                class="cq-dialog-dropdown-showhide-multival"
+                                                                cq-dialog-dropdown-showhide-target=".style-showhide-target"
+                                                                deleteHint="{Boolean}true"
+                                                                name="./buttonStyleBehaviorMobile">
+                                                                <items
+                                                                    jcr:primaryType="nt:unstructured">
+                                                                    <inherit
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        checked="{Boolean}true"
+                                                                        text="Herdar (automatico do tema escolhido no componente principal)"
+                                                                        value="_inherit" />
+                                                                    <independent
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Independente (Escolha manualmente)"
+                                                                        value="_independent" />
+                                                                </items>
+                                                            </buttonStyleBehaviorMobile>
+                                                            <styleContainerMobile
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/foundation/container"
+                                                                class="hide style-showhide-target"
+                                                                showhidetargetvalue="_independent">
+                                                                <items
+                                                                    jcr:primaryType="nt:unstructured">
+                                                                    <buttonModeMobile
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                        deleteHint="{Boolean}true"
+                                                                        name="./buttonModeMobile"
+                                                                        vertical="{Boolean}true">
+                                                                        <items
+                                                                            jcr:primaryType="nt:unstructured">
+                                                                            <none
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="None (Padrão - Sem modo)"
+                                                                                value="" />
+                                                                            <dark
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                text="Dark (Branco - para fundos escuros)"
+                                                                                value="dark" />
+                                                                            <blue
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                checked="{Boolean}true"
+                                                                                text="Blue (Azul)"
+                                                                                value="blue" />
+                                                                        </items>
+                                                                    </buttonModeMobile>
+                                                                </items>
+                                                            </styleContainerMobile>
+                                                        </items>
+                                                    </wellGroup-mode>
+                                                    <wellGroup-variant
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <varianteTitle
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                                margin="{Boolean}true"
+                                                                text="Variant (Variante)" />
+                                                            <buttonVariantMobile
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                deleteHint="{Boolean}true"
+                                                                name="./buttonVariantMobile"
+                                                                vertical="{Boolean}true">
+                                                                <items
+                                                                    jcr:primaryType="nt:unstructured">
+                                                                    <branco
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Primary (Primário - padrão)"
+                                                                        value="primary" />
+                                                                    <cinza
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        checked="{Boolean}true"
+                                                                        text="Secondary (Secondário - Sem fundo)"
+                                                                        value="secondary" />
+                                                                    <azul
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Ghost (Outline - Sem fundo e Sem borda)"
+                                                                        value="ghost" />
+                                                                </items>
+                                                            </buttonVariantMobile>
+                                                        </items>
+                                                    </wellGroup-variant>
+                                                    <wellGroup-size
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <sizeTitle
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                                margin="{Boolean}true"
+                                                                text="Size (Tamanho)" />
+                                                            <buttonSizeMobile
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                deleteHint="{Boolean}true"
+                                                                name="./buttonSizeMobile"
+                                                                vertical="{Boolean}true">
+                                                                <items
+                                                                    jcr:primaryType="nt:unstructured">
+                                                                    <xs
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Extra Small (Extra Pequeno)"
+                                                                        value="xs" />
+                                                                    <sm
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        checked="{Boolean}true"
+                                                                        text="Small (Pequeno)"
+                                                                        value="sm" />
+                                                                    <md
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Medium (Médio)"
+                                                                        value="md" />
+                                                                    <lg
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Large (Grande)"
+                                                                        value="lg" />
+                                                                </items>
+                                                            </buttonSizeMobile>
+                                                        </items>
+                                                    </wellGroup-size>
+                                                </items>
+                                            </tabEstiloMobile>
+                                            <tabBehaviorMobile
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Comportamento do botão"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <buttonBehaviorMobile
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                                        class="cq-dialog-dropdown-showhide-multival"
+                                                        cq-dialog-dropdown-showhide-target=".type-showhide-target"
+                                                        deleteHint="{Boolean}true"
+                                                        fieldLabel="Escolha o comportamento do Botão"
+                                                        name="./buttonBehaviorMobile"
+                                                        vertical="{Boolean}false">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <link
+                                                                jcr:primaryType="nt:unstructured"
+                                                                checked="{Boolean}true"
+                                                                text="Link"
+                                                                value="_link" />
+                                                            <scroll
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Scroll (ID da Seção)"
+                                                                value="_scroll" />
+                                                            <data_js
+                                                                jcr:primaryType="nt:unstructured"
+                                                                text="Estático"
+                                                                value="_data_js" />
+                                                        </items>
+                                                    </buttonBehaviorMobile>
+                                                    <space
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                        level="1" />
+                                                    <linkContainerMobile
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/container"
+                                                        class="type-showhide-target"
+                                                        showhidetargetvalue="_link">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <buttonHrefMobile
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                autocomplete="off"
+                                                                fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                fieldLabel="CTA Link ou ID da seção para scroll"
+                                                                name="./buttonHrefMobile"
+                                                                value="" />
+                                                            <buttonTargetMobile
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                fieldLabel="CTA Link Target"
+                                                                name="./buttonTargetMobile">
+                                                                <items
+                                                                    jcr:primaryType="nt:unstructured">
+                                                                    <self
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        selected="{Boolean}true"
+                                                                        text="Mesma Página"
+                                                                        value="_self" />
+                                                                    <blank
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        text="Nova Aba"
+                                                                        value="_blank" />
+                                                                </items>
+                                                            </buttonTargetMobile>
+                                                        </items>
+                                                    </linkContainerMobile>
+                                                    <scrolLContainerMobile
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/container"
+                                                        class="type-showhide-target"
+                                                        showhidetargetvalue="_scroll">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <buttonScrollMobile
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                autocomplete="off"
+                                                                fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                fieldLabel="ID da seção para scroll"
+                                                                name="./buttonScrollMobile"
+                                                                value="#id_section" />
+                                                        </items>
+                                                    </scrolLContainerMobile>
+                                                    <staticContainerMobile
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/container"
+                                                        class="type-showhide-target"
+                                                        showhidetargetvalue="_data_js">
+                                                        <items jcr:primaryType="nt:unstructured" />
+                                                    </staticContainerMobile>
+                                                    <dataJSContainerMobile
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/container">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <buttonDataJSMobile
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                autocomplete="off"
+                                                                fieldLabel="Identificador (data-js)"
+                                                                name="./buttonDataJSMobile"
+                                                                value="" />
+                                                        </items>
+                                                    </dataJSContainerMobile>
+                                                </items>
+                                            </tabBehaviorMobile>
+                                            <tabSeoMobile
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="SEO"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <buttonNameMobile
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        autocomplete="off"
+                                                        fieldLabel="Nome (atributo NAME do HTML)"
+                                                        name="./buttonNameMobile"
+                                                        required="true"
+                                                        value="" />
+                                                    <buttonTitleMobile
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        autocomplete="off"
+                                                        fieldLabel="Atributo Title"
+                                                        name="./buttonTitleMobile"
+                                                        value="#" />
+                                                    <buttonDataTrackMobile
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                        autocomplete="off"
+                                                        fieldLabel="Button Data Track"
+                                                        name="./buttonDataTrackMobile"
+                                                        value="#" />
+                                                </items>
+                                            </tabSeoMobile>
+                                        </items>
+                                    </tabsMobile>
+                                </items>
+                            </contentMobile>
+                        </items>
+                    </tabMobile>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,103 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Card-Estatico-2-CardsConteudo">
+    <div class="card-estatico-2-cardsconteudo ${properties.colorVariant}">
+        <div class="container">
+            <div class="row g-4 p-3 p-md-0">
+                <div class="col-12 col-md-6 d-flex align-items-strech">
+                    <div class="card-estatico-2-cardsconteudo__card d-flex flex-column">
+                        <h3 class="typography-title-1">
+                            ${properties.tituloCard1}
+                        </h3>
+                        <p class="card-estatico-2-cardsconteudo__card-description typography-large">
+                            ${properties.paragrafoCard1}
+                        </p>
+
+                        <ul class="card-estatico-2-cardsconteudo__list d-flex flex-column p-0 p-md-0">
+                            <li class="card-estatico-2-cardsconteudo__list-item d-flex align-items-center">
+                                <img alt="icone" width="32" height="32" src="${properties.icon1SVGRefrence}" />
+                                <div>
+                                    <h2 class="card-estatico-2-cardsconteudo__title-topic">${properties.tituloTopico1}
+                                    </h2>
+                                    <div class="typography-large m-0">
+                                        ${properties.Frase1 @context='html'}
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="card-estatico-2-cardsconteudo__list-item d-flex align-items-center">
+                                <img alt="icone" width="32" height="32" src="${properties.icon2SVGRefrence}" />
+                                <div>
+                                    <h2 class="card-estatico-2-cardsconteudo__title-topic">${properties.tituloTopico2}
+                                    </h2>
+                                    <div class="typography-large m-0">
+                                        ${properties.Frase2 @context='html'}
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="card-estatico-2-cardsconteudo__list-item d-flex align-items-center">
+                                <img alt="icone" width="32" height="32" src="${properties.icon3SVGRefrence}" />
+                                <div>
+                                    <h2 class="card-estatico-2-cardsconteudo__title-topic">${properties.tituloTopico3}
+                                    </h2>
+                                    <div class="typography-large m-0">
+                                        ${properties.Frase3 @context='html'}
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="card-estatico-2-cardsconteudo__list-item d-flex align-items-center">
+                                <img alt="icone" width="32" height="32" src="${properties.icon4SVGRefrence}" />
+                                <div>
+                                    <h2 class="card-estatico-2-cardsconteudo__title-topic">${properties.tituloTopico4}
+                                    </h2>
+                                    <div class="typography-large m-0">
+                                        ${properties.Frase4 @context='html'}
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div data-panelcontainer="${wcmmode.edit}">
+                            <sly
+                                data-sly-resource="${'Mahoe-Button-1' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 d-flex">
+                    <div class="card-estatico-2-cardsconteudo__video d-flex flex-column">
+                        <a href="${properties.videoLink}" class="card-estatico-2-cardsconteudo__video-link"
+                            target="${properties.videoTarget}" title="Clique para assistir">
+                            <img loading="lazy" class="card-estatico-2-cardsconteudo__img" width="552" height="374"
+                                src="${properties.imgReference}" alt="Clique para assistir" />
+                            <div
+                                class="card-estatico-2-cardsconteudo__playIcon d-flex justify-content-center align-items-center ${properties.hideArrow}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88"
+                                    fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M44 88C68.3005 88 88 68.3005 88 44C88 19.6995 68.3005 0 44 0C19.6995 0 0 19.6995 0 44C0 68.3005 19.6995 88 44 88ZM55.666 45.7327C56.9993 44.9629 56.9993 43.0384 55.666 42.2686L39.666 33.031C38.3327 32.2612 36.666 33.2234 36.666 34.763V53.2383C36.666 54.7779 38.3327 55.7401 39.666 54.9703L55.666 45.7327Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="card-estatico-2-cardsconteudo__content d-flex flex-column">
+                            <article>
+                                <h3 class="typography-title-4">
+                                    ${properties.palavraDestaque}
+                                </h3>
+                                <h2 class="typography-big-text-2">
+                                    ${properties.tituloCard2}
+                                </h2>
+                            </article>
+
+                            <div class="col-6 col-lg-3" data-panelcontainer="${wcmmode.edit}">
+                                <sly
+                                    data-sly-resource="${'Mahoe-Button-2' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

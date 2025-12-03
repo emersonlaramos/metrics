@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[mobile/groups/responsive]"
+        cq:lastModified="{Date}2023-05-26T10:22:31.269-03:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/webapp--adobe-experience-ds/settings/wcm/templates/catalogo-de-componentes"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="webapp--adobe-experience-ds/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="webapp--adobe-experience-ds/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:created="{Date}2023-04-20T15:37:51.240-03:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2023-04-20T15:37:51.240-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="webapp--adobe-experience-ds/components/container"
+                editable="{Boolean}true">
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        offset="0"
+                        width="9"/>
+                </cq:responsive>
+            </container>
+            <experiencefragment
+                jcr:created="{Date}2023-05-26T10:22:08.371-03:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2023-05-26T10:22:31.260-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="webapp--adobe-experience-ds/components/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/webapp--adobe-experience-ds/br/pt/site/aside-ds/master"
+                id="aside-menu"/>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <xsmall
+                    jcr:primaryType="nt:unstructured"
+                    title="XSmall"
+                    width="{Long}576"/>
+                <small
+                    jcr:primaryType="nt:unstructured"
+                    title="Small"
+                    width="{Long}768"/>
+                <medium
+                    jcr:primaryType="nt:unstructured"
+                    title="Medium"
+                    width="{Long}992"/>
+                <large
+                    jcr:primaryType="nt:unstructured"
+                    title="Large"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

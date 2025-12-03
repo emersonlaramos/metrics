@@ -1,0 +1,94 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.Imagem-ImagemVideo {
+  height: 167.47vw;
+  position: relative;
+  background: rgba(13, 19, 23, .32);
+  overflow: hidden;
+
+  @include min-tablet {
+    height: 40vw;
+    position: initial;
+  }
+
+  &__picture {
+    z-index: -1;
+    position: absolute;
+
+    &-img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: flex-end;
+    text-align: left;
+    height: 100%;
+
+    @include min-tablet {
+      align-items: center;
+    }
+
+    &-order {
+      order: 1;
+      padding-bottom: var(--pan-spacing-32);
+
+      @include min-tablet {
+        order: initial;
+        padding-bottom: 0;
+      }
+    }
+
+    &-button {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 115px;
+
+      @include min-tablet {
+        margin: var(--pan-spacing-24) 0 0 0;
+        justify-content: flex-start;
+      }
+
+      @include min-desktop {
+        margin-top: var(--pan-spacing-48);
+      }
+    }
+  }
+
+  &__button {
+    transition: .2s linear;
+    border-radius: 50%;
+
+    &-img {
+      border-radius: 50%;
+    }
+
+    &:hover {
+      box-shadow: 0px 8px 8px rgb(0 0 0 / 16%);
+      margin-left: var(--pan-spacing-4);
+    }
+  }
+
+  .typography-title-1 {
+    color: var(--pan-color-neutral-white);
+    margin-bottom: var(--pan-spacing-32);
+
+    @include min-desktop {
+      margin-bottom: var(--pan-spacing-16);
+    }
+  }
+
+  .typography-large {
+    font-weight: 700;
+    color: var(--pan-color-neutral-white);
+    margin-bottom: var(--pan-spacing-24);
+  }
+
+  .typography-small {
+    color: var(--pan-color-neutral-white);
+    margin: 0;
+  }
+}

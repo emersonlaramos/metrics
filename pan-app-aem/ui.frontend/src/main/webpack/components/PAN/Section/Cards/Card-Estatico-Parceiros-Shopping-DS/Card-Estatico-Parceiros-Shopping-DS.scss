@@ -1,0 +1,64 @@
+@import "../../../../../site/PAN/mixins/breakpoints";
+
+.card-estatico-parceiros-shopping {
+    padding-top: var(--pan-spacing-64);
+    padding-bottom: var(--pan-spacing-64);
+
+    .position-relative {
+        position: relative;
+    }
+
+    &__texts {
+        text-align: center;
+    }
+
+    &__subtitle {
+        color: var(--pan-color-primary-brand);
+    }
+
+    &__search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--pan-spacing-24);
+    }
+
+    &__cards-slider {
+        @include min-desktop {
+            gap: var(--pan-spacing-24);
+        }
+    }
+
+    &__card {
+        background: var(--pan-color-neutral-lighter);
+        width: 100%;
+        max-width: 265px;
+        border-radius: var(--pan-border-radius-16);
+        text-decoration: none;
+
+        &-image {
+            max-width: 112px;
+        }
+
+        &-flag {
+            background-color: var(--pan-color-primary-brand);
+            color: var(--pan-color-neutral-white);
+            border-radius: 0 0 var(--pan-border-radius-16) var(--pan-border-radius-16);
+            gap: 16px;
+        }
+    }
+
+    &__error-api {
+        background-color: var(--pan-color-neutral-lighter);
+        padding: 32px;
+        border-radius: var(--pan-border-radius-16);
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+
+        @include min-desktop {
+            width: 100%;
+            height: 490px;
+        }
+    }
+}

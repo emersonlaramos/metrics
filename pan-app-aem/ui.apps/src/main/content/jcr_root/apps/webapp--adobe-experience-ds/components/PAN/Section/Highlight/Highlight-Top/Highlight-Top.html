@@ -1,0 +1,24 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Highlight-Top">
+    <div class="Highlight-Top bg-preto">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb ${properties.alignText}" data-panelcontainer="${wcmmode.edit}">
+                        <sly data-sly-resource="${'Breadcrumb-HighlightTop' @ resourceType='/apps/webapp--adobe-experience-ds/components/AEM/breadcrumb'}" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="typography-big-text-1 ${properties.alignText}" data-sly-element="${properties.tagTitulo}">
+                        ${properties.titulo}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

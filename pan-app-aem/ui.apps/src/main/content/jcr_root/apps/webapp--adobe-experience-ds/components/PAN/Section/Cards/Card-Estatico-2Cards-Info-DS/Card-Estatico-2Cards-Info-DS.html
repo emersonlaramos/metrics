@@ -1,0 +1,130 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section
+    id="${properties.sectionID}"
+    data-cmp-is="Card-Estatico-2Cards-info-DS"
+>
+    <div class="Card-Estatico-2Cards-Info-DS ${properties.colorVariant}">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2
+                        class="Card-Estatico-2Cards-Info-DS__title typography-big-text-2"
+                    >
+                        ${properties.titulo}
+                    </h2>
+                    <div
+                        class="Card-Estatico-2Cards-Info-DS__wrapper-cards flex-lg-row"
+                    >
+                        <div
+                            class="Card-Estatico-2Cards-Info-DS__card col-lg-5"
+                        >
+                            <img
+                                loading="lazy"
+                                alt="${properties.altImagemCard1 ? properties.altImagemCard1 : 'Imagem'}"
+                                src="${properties.imageCard1ReferenceWebp}"
+                                class="Card-Estatico-2Cards-Info-DS__card-img"
+                            />
+                            <a
+                                target="_blank"
+                                data-track="${properties.dataTrackCard1}"
+                                class="Card-Estatico-2Cards-Info-DS__card-cta"
+                                href="${properties.linkCard1}"
+                            >
+                                <div>
+                                    <span
+                                        class="Card-Estatico-2Cards-Info-DS__title-card"
+                                        >${properties.titleLinkCard1}</span
+                                    >
+                                    <p
+                                        class="Card-Estatico-2Cards-Info-DS__text"
+                                    >
+                                        ${properties.subTituloCard1}
+                                    </p>
+                                </div>
+                                <svg
+                                    class="Card-Estatico-2Cards-Info-DS__arrow"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 22 20"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M1.71387 10H20.2853"
+                                        stroke="white"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M15.2852 15L20.2852 10L15.2852 5"
+                                        stroke="white"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <div
+                            class="Card-Estatico-2Cards-Info-DS__card col-lg-5 col-12"
+                        >
+                            <img
+                                loading="lazy"
+                                alt="${properties.altImagemCard2 ? properties.altImagemCard2 : 'Imagem'}"
+                                src="${properties.imageCard2ReferenceWebp}"
+                                class="Card-Estatico-2Cards-Info-DS__card-img"
+                            />
+                            <a
+                                target="_blank"
+                                data-track="${properties.dataTrackCard2}"
+                                class="Card-Estatico-2Cards-Info-DS__card-cta"
+                                href="${properties.linkCard2}"
+                            >
+                                <div>
+                                    <span
+                                        class="Card-Estatico-2Cards-Info-DS__title-card"
+                                        >${properties.titleLinkCard2}</span
+                                    >
+                                    <p
+                                        class="Card-Estatico-2Cards-Info-DS__text"
+                                    >
+                                        ${properties.subTituloCard2}
+                                    </p>
+                                </div>
+                                <svg
+                                    class="Card-Estatico-2Cards-Info-DS__arrow"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 22 20"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M1.71387 10H20.2853"
+                                        stroke="white"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M15.2852 15L20.2852 10L15.2852 5"
+                                        stroke="white"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

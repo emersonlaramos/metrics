@@ -1,0 +1,90 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Card-Estatico-ComparativoCartoes">
+
+    <div class="card-estatico-comparativocartoes ${properties.colorVariant}">
+
+        <div class="container p-0">
+            <div class="row m-0">
+                <div class="col d-flex flex-column align-items-center">
+                    <p class="typography-large" data-sly-element="${properties.tagPalavraDestaque}">
+                        ${properties.palavraDestaque}</p>
+                    <h2 class="typography-big-text-2" data-sly-element="${properties.tagTitulo}">${properties.titulo}
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid p-0">
+            <div class="row m-0">
+                <div class="col p-0">
+                    <div class="swiper card-estatico-comparativocartoes__cards d-flex swiper-comparativocartoes">
+                        <div class="swiper-wrapper">
+                            <sly data-sly-list.comparativoCartoesMultifield="${resource.getChildren}">
+                                <sly data-sly-test="${comparativoCartoesMultifield.name == 'comparativoCartoes'}">
+                                    <sly data-sly-list.comparativoCartoes="${comparativoCartoesMultifield.getChildren}">
+                                        <div class="swiper-slide">
+                                            <mahoe-card size="small" class="custom-card">
+                                                <div
+                                                    class="custom-card__content d-flex flex-column justify-content-between">
+                                                    <div>
+                                                        <h3 class="typography-title-2">${comparativoCartoes.tituloCard2}
+                                                        </h3>
+                                                        <p class="typography-body-1">${comparativoCartoes.informacao2}
+                                                        </p>
+                                                        <div class="bullets">
+                                                            <div class="typography-body-1">
+                                                                ${comparativoCartoes.marcadores2 @context='html'}</div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="button-wrapper"
+                                                            data-panelcontainer="${wcmmode.edit}">
+                                                            <sly
+                                                                data-sly-resource="${comparativoCartoes @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}" />
+                                                        </div>
+                                                        <div
+                                                            class="typography-small disclaimer m-0 ${comparativoCartoes.hideDisclaimerCheckbox && 'd-none'}">
+                                                            ${comparativoCartoes.disclaimer @context='html'}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </mahoe-card>
+                                            <p
+                                                class="typography-small card-label ${comparativoCartoes.hideLabelCheckbox && 'd-none'}">
+                                                ${comparativoCartoes.firstCardLabel}
+                                            </p>
+                                        </div>
+                                    </sly>
+                                </sly>
+                            </sly>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row m-0">
+                <div class="col">
+                    <div class="card-estatico-comparativocartoes__swiper--pagination justify-content-center"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="card-estatico-comparativocartoes__link"
+                        data-panelcontainer="${wcmmode.edit && 'LINKINHO' }"
+                        data-placeholder-text="${wcmmode.edit && 'Editar aqui linkinho' @ i18n}">
+                        <sly
+                            data-sly-resource="${'comparativoCartoes-Link' @ decorationTagName='div', resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Link', selectors=[properties.colorVariant]}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>

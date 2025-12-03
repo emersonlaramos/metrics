@@ -1,0 +1,174 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<sly data-sly-set.colorVariant="${request.requestPathInfo.selectors}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Card-Estatico-CardAgrupado">
+    <div class="card-estatico-cardAgrupado ${properties.colorVariant}">
+        <div class="container">
+            <div class="row d-flex justify-content-between align-items-center">
+                <div class="col-12 col-lg-5">
+                    <h3
+                        class="typography-title-4"
+                        data-sly-element="${properties.tagPalavraDestaque}"
+                    >
+                        ${properties.palavraDestaque}
+                    </h3>
+                    <h2
+                        class="typography-big-text-2"
+                        data-sly-element="${properties.tagTitulo}"
+                    >
+                        ${properties.titulo}
+                    </h2>
+                    <p
+                        class="typography-large card-estatico-cardAgrupado__texto"
+                    >
+                        ${properties.texto}
+                    </p>
+
+                    <div class="col-lg-3" data-panelcontainer="${wcmmode.edit}">
+                        <sly
+                            data-sly-resource="${'Mahoe-Button-1' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}"
+                        />
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="row row-cols-2 mb-4 mb-lg-0">
+                        <div class="col mb-4">
+                            <mahoe-card
+                                href="${properties.linkCard1}"
+                                target="_blank"
+                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                            >
+                                <div
+                                    class="card-estatico-cardAgrupado__card-icon"
+                                    data-sly-test="${properties.iconCard1ReferenceSvg}"
+                                >
+                                    <img
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard1ReferenceSvg}"
+                                        alt="${properties.altIcon1 ? properties.altIcon1 : 'Icone'}"
+                                    />
+                                </div>
+                                <div
+                                    class="card-estatico-cardAgrupado__card-content mt-2"
+                                >
+                                    <div
+                                        class="typography-large"
+                                        data-sly-element="${properties.textoCard1}"
+                                    >
+                                        ${properties.textoCard1 @context =
+                                        properties.textIsRich ? 'html' : 'text'}
+                                    </div>
+                                </div>
+                            </mahoe-card>
+                        </div>
+
+                        <div class="col mb-4">
+                            <mahoe-card
+                                href="${properties.linkCard2}"
+                                target="_blank"
+                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                            >
+                                <div
+                                    class="card-estatico-cardAgrupado__card-icon"
+                                    data-sly-test="${properties.iconCard2ReferenceSvg}"
+                                >
+                                    <img
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard2ReferenceSvg}"
+                                        alt="${properties.altIcon2 ? properties.altIcon2 : 'Icone'}"
+                                    />
+                                </div>
+                                <div
+                                    class="card-estatico-cardAgrupado__card-content mt-2"
+                                >
+                                    <div
+                                        class="typography-large"
+                                        data-sly-element="${properties.textoCard2}"
+                                    >
+                                        ${properties.textoCard2 @context =
+                                        properties.textIsRich ? 'html' : 'text'}
+                                    </div>
+                                </div>
+                            </mahoe-card>
+                        </div>
+
+                        <div class="col">
+                            <mahoe-card
+                                href="${properties.linkCard3}"
+                                target="_blank"
+                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                            >
+                                <div
+                                    class="card-estatico-cardAgrupado__card-icon"
+                                    data-sly-test="${properties.iconCard3ReferenceSvg}"
+                                >
+                                    <img
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard3ReferenceSvg}"
+                                        alt="${properties.altIcon3 ? properties.altIcon3 : 'Icone'}"
+                                    />
+                                </div>
+                                <div
+                                    class="card-estatico-cardAgrupado__card-content mt-2"
+                                >
+                                    <div
+                                        class="typography-large"
+                                        data-sly-element="${properties.textoCard3}"
+                                    >
+                                        ${properties.textoCard3 @context =
+                                        properties.textIsRich ? 'html' : 'text'}
+                                    </div>
+                                </div>
+                            </mahoe-card>
+                        </div>
+
+                        <div class="col">
+                            <mahoe-card
+                                href="${properties.linkCard4}"
+                                target="_blank"
+                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                            >
+                                <div
+                                    class="card-estatico-cardAgrupado__card-icon"
+                                    data-sly-test="${properties.iconCard4ReferenceSvg}"
+                                >
+                                    <img
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard4ReferenceSvg}"
+                                        alt="${properties.altIcon4 ? properties.altIcon4 : 'Icone'}"
+                                    />
+                                </div>
+                                <div
+                                    class="card-estatico-cardAgrupado__card-content mt-2"
+                                >
+                                    <div
+                                        class="typography-large"
+                                        data-sly-element="${properties.textoCard4}"
+                                    >
+                                        ${properties.textoCard4 @context =
+                                        properties.textIsRich ? 'html' : 'text'}
+                                    </div>
+                                </div>
+                            </mahoe-card>
+                        </div>
+                    </div>
+
+                    <div data-panelcontainer="${wcmmode.edit}">
+                        <sly
+                            data-sly-resource="${'Mahoe-Button-2' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

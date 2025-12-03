@@ -1,0 +1,149 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section
+    id="${properties.sectionID}"
+    data-cmp-is="Card-Carrossel-Imagem-CardsDireita"
+>
+    <div class="imagem-cards-direita ${properties.colorVariant}">
+        <div class="container">
+            <div
+                class="row justify-content-between ${properties.positionVariant == 'direita' ? 'flex-row' : 'flex-row-reverse'}"
+            >
+                <div
+                    class="col-12 col-md-6 d-flex flex-column justify-content-center imagem-cards-direita__content"
+                >
+                    <h2
+                        class="typography-title-4"
+                        data-sly-element="${properties.tagPalavraDestaque}"
+                    >
+                        ${properties.palavraDestaque}
+                    </h2>
+                    <h1
+                        class="typography-big-text-2 d-none d-md-flex"
+                        data-sly-element="${properties.tagTitulo}"
+                    >
+                        ${properties.tituloDesk}
+                    </h1>
+                    <h1
+                        class="typography-big-text-2 d-md-none"
+                        data-sly-element="${properties.tagTitulo}"
+                    >
+                        ${properties.tituloMob}
+                    </h1>
+
+                    <div class="swiper swiper-cards-direita m-0">
+                        <div class="swiper-wrapper">
+                            <sly
+                                data-sly-list.imagemCardsDireitaMultifield="${resource.getChildren}"
+                            >
+                                <sly
+                                    data-sly-test="${imagemCardsDireitaMultifield.name == 'imagemCardsDireita'}"
+                                >
+                                    <sly
+                                        data-sly-list.imagemCardsDireita="${imagemCardsDireitaMultifield.getChildren}"
+                                    >
+                                        <div class="swiper-slide">
+                                            <mahoe-card
+                                                size="small"
+                                                class="custom-card"
+                                                card-style="lined"
+                                            >
+                                                <div
+                                                    class="custom-card__content d-flex flex-column justify-content-center"
+                                                >
+                                                    <p
+                                                        class="typography-body-1 m-0"
+                                                    >
+                                                        ${imagemCardsDireita.textCard}
+                                                    </p>
+                                                </div>
+                                            </mahoe-card>
+                                        </div>
+                                    </sly>
+                                </sly>
+                            </sly>
+                        </div>
+                    </div>
+
+                    <div class="button-navigation d-none d-md-flex">
+                        <div class="swiper-button-prev">
+                            <svg
+                                class="swiper-button-icon"
+                                width="20"
+                                height="12"
+                                viewBox="0 0 20 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M0.714355 6H19.2858"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M14.2859 11L19.2859 6L14.2859 1"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </div>
+
+                        <div class="swiper-button-next">
+                            <svg
+                                class="swiper-button-icon"
+                                width="20"
+                                height="12"
+                                viewBox="0 0 20 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M0.714355 6H19.2858"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M14.2859 11L19.2859 6L14.2859 1"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div
+                        class="imagem-cards-direita__swiper--pagination d-flex d-md-none justify-content-center"
+                    ></div>
+
+                    <div data-panelcontainer="${wcmmode.edit}">
+                        <sly
+                            data-sly-resource="${'imagem-cards-direita__Mahoe-Button' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}"
+                        />
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-5 d-flex justify-content-center">
+                    <img
+                        loading="lazy"
+                        class="imagem-cards-direita__picture image-default"
+                        width="456"
+                        height="678"
+                        alt="${properties.altImagem ? properties.altImagem : 'Imagem'}"
+                        src="${properties.imageReference}"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

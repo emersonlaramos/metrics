@@ -1,0 +1,36 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<!-- Define os selectors (caso haja) em uma variavel de nome MODE -->
+<sly data-sly-set.colorVariant="${request.requestPathInfo.selectors}" />
+
+<mahoe-card
+    href="${properties.cardHref}"
+    data-track="${properties.cardDataTrack}"
+    title="${properties.cardTitle}"
+    target="${properties.cardTarget}"
+    mode="${properties.cardStyleBehavior == '_independent' ? properties.cardMode : colorVariant[0] == 'bg-azul' && 'blue' || colorVariant[0] == 'bg-preto' && 'dark' || colorVariant[0] == 'bg-branco' || colorVariant[0] == 'bg-cinza' && ''}"
+    size="${properties.cardSize}"
+    bg-src="${properties.cardVariantBehavior == 'image' && properties.cardImageReference}"
+    card-style="${properties.cardStyle}"
+    variant="${properties.cardVariantBehavior}"
+>
+    <img
+        data-sly-test="${properties.cardIconReference}"
+        src="${properties.cardIconReference}"
+        width="32"
+        height="32"
+        alt="Icone do card"
+    />
+    <p class="typography-small">${properties.cardPalavraDestaque}</p>
+    <h2 class="typography-large">${properties.cardTitulo}</h2>
+    <p class="typography-body-2 m-0">${properties.cardText}</p>
+    <img
+        loading="lazy"
+        data-sly-test="${properties.cardVariantBehavior == 'illustration'}"
+        src="${properties.cardIllustrationImageReference}"
+        alt="Ilustração"
+    />
+</mahoe-card>

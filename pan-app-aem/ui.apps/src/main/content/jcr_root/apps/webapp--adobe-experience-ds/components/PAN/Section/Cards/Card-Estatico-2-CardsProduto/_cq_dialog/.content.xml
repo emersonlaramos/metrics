@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Propriedades Card-Estatico-2-CardsProduto"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <Tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <tab-variantes
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Variantes"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <colorVariant
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                deleteHint="{Boolean}true"
+                                fieldLabel="Cores de fundo"
+                                name="./colorVariant"
+                                vertical="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <branco
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Branco"
+                                        value="bg-branco" />
+                                    <cinza
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Cinza"
+                                        value="bg-cinza" />
+                                    <azul
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Azul"
+                                        value="bg-azul" />
+                                    <preto
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Preto"
+                                        value="bg-preto" />
+                                </items>
+                            </colorVariant>
+                            <verticalVariant
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                deleteHint="{Boolean}true"
+                                fieldLabel="Alinhamento vertical do texto"
+                                name="./verticalVariant"
+                                vertical="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <baixo
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Baixo"
+                                        value="baixo" />
+                                    <cima
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Cima"
+                                        value="cima" />
+                                </items>
+                            </verticalVariant>
+                            <horizontalVariant
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                deleteHint="{Boolean}true"
+                                fieldLabel="Alinhamento horizontal do texto"
+                                name="./horizontalVariant"
+                                vertical="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <esquerda
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Esquerda"
+                                        value="esquerda" />
+                                    <centro
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Centro"
+                                        value="centro" />
+                                </items>
+                            </horizontalVariant>
+                        </items>
+                    </tab-variantes>
+                    <tab-textos
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Cards"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tabsCards
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <TabCard1
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Card 1"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <TituloCard1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Titulo"
+                                                name="./tituloCard1"
+                                                value="Título aqui!" />
+                                            <hideSentence1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Ocultar o parágrafo do card"
+                                                text="Ocultar Parágrafo?"
+                                                uncheckedValue="{Boolean}false"
+                                                checked="{Boolean}true"
+                                                value="{Boolean}true"
+                                                name="./hideSentence1" />
+                                            <ParagrafoCard1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Parágrafo"
+                                                name="./paragrafoCard1"
+                                                value="O cartão de crédito pra quem quer ir mais longe." />
+                                            <imageCard1Webp
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem Card1 WEBP (552x385)  - Imagem de Background não tem opção ALT"
+                                                fileNameParameter="./imageCard1NameParameterWebp"
+                                                fileReferenceParameter="./imageCard1ReferenceWebp"
+                                                mimeTypes="[image/webp]"
+                                                multiple="{Boolean}false"
+                                                name="./imageCard1Webp"
+                                                title="Imagem Card1 WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                        </items>
+                                    </TabCard1>
+                                    <TabCard2
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Card 2"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <TituloCard2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Titulo"
+                                                name="./tituloCard2"
+                                                value="Título aqui!" />
+                                            <hideSentence2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Ocultar o parágrafo do card"
+                                                text="Ocultar Parágrafo?"
+                                                uncheckedValue="{Boolean}false"
+                                                checked="{Boolean}true"
+                                                value="{Boolean}true"
+                                                name="./hideSentence2" />
+                                            <ParagrafoCard2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Parágrafo"
+                                                name="./paragrafoCard2"
+                                                value="O cartão de crédito pra quem quer ir mais longe." />
+                                            <imageCard2Webp
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem Card2 WEBP (552x385) - Imagem de Background não tem opção ALT"
+                                                fileNameParameter="./imageCard2NameParameterWebp"
+                                                fileReferenceParameter="./imageCard2ReferenceWebp"
+                                                mimeTypes="[image/webp]"
+                                                multiple="{Boolean}false"
+                                                name="./imageCard2Webp"
+                                                title="Imagem Card2 WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                        </items>
+                                    </TabCard2>
+                                </items>
+                            </tabsCards>
+                        </items>
+                    </tab-textos>
+                    <tab-seo
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="SEO"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <sectionID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="ID da Seção"
+                                name="./sectionID"
+                                value="" />
+                        </items>
+                    </tab-seo>
+                </items>
+            </Tabs>
+        </items>
+    </content>
+</jcr:root>

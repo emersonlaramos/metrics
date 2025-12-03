@@ -1,0 +1,128 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+ 
+.Card-Estatico-2Cards-Info-DS{  
+ 
+    &__title {
+        margin-top: var(--pan-spacing-32);
+        text-align: center;
+    }
+ 
+    &__wrapper-cards {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+ 
+    &__card{
+        margin-bottom: var(--pan-spacing-24);
+        width: 100%;
+        max-width: 480px;
+    }
+ 
+    &__card-img {
+        height: auto;
+        width: 100%;
+        border-radius: var(--pan-border-radius-16) var(--pan-border-radius-16) 0px 0px;
+        max-width: 100%;
+        max-height: 223px;
+       
+    }
+ 
+    &__card-cta {
+        height: 90px;
+        justify-content: space-around;
+        display: flex;
+        text-decoration: none;
+        align-items: center;
+        background-color:#3A404A;
+        border-radius: 0 0 var(--pan-border-radius-16) var(--pan-border-radius-16);
+
+        @include min-tablet{
+            height: 124px;
+        }
+    }
+    &__title-card{
+        font-size: var(--pan-font-size-14);
+        font-family: var(--pan-font-family-base);
+
+        @include min-tablet{
+            font-size: var(--pan-font-size-16);   
+        }
+    }
+
+    &__text{
+        font-size: var(--pan-font-size-24);
+        font-weight: 700;
+        font-family: var(--pan-font-family-base);
+        margin-bottom: 0;
+        max-width: 100%;
+
+        @include min-tablet{
+            font-size: var(--pan-font-size-32);   
+        }
+    }
+
+    &__arrow{
+        @include min-tablet{
+            height: 32px;
+            width: 32px;   
+        }
+       
+    }
+ 
+    &.bg{
+
+        &--branco {
+            background-color: var(--pan-color-neutral-white);
+
+                .Card-Estatico-2Cards-Info-DS__title{
+                    color: var(--pan-color-neutral-black);
+                }
+                .Card-Estatico-2Cards-Info-DS__title-card, .Card-Estatico-2Cards-Info-DS__text{
+                    color: var(--pan-color-neutral-white);
+                }
+        }
+
+        &--azul {
+            background-color: var(--pan-color-primary-brand);
+
+                .Card-Estatico-2Cards-Info-DS__card-cta{
+                    background-color: var(--pan-color-neutral-black);
+                }
+
+                .Card-Estatico-2Cards-Info-DS__title, .Card-Estatico-2Cards-Info-DS__title-card, .Card-Estatico-2Cards-Info-DS__text{
+                    color: var(--pan-color-neutral-white);
+                }
+        }
+
+        &--preto {
+            background-color: var(--pan-color-neutral-darker);
+
+            .Card-Estatico-2Cards-Info-DS__title {
+                color: var(--pan-color-neutral-white);
+                }
+
+            .Card-Estatico-2Cards-Info-DS__title-card, .Card-Estatico-2Cards-Info-DS__text {
+                color: var(--pan-color-neutral-black);
+                }
+            .Card-Estatico-2Cards-Info-DS__card-cta {
+                background-color: var(--pan-color-neutral-white);
+                }
+ 
+            .Card-Estatico-2Cards-Info-DS__arrow {
+                filter: invert(1);
+                }
+            
+        }
+        
+        &--cinza {
+            background-color: var(--pan-color-neutral-lighter);
+
+                .Card-Estatico-2Cards-Info-DS__title-card, .Card-Estatico-2Cards-Info-DS__text{
+                    color: var(--pan-color-neutral-white);
+                }
+        
+        }
+    }
+}

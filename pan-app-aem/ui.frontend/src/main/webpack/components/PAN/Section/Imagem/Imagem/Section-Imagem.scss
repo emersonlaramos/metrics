@@ -1,0 +1,70 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.section-imagem {
+  &.bg {
+    &-branco {
+      .typography-title-3 {
+        color: var(--pan-color-primary-brand);
+      }
+    }
+
+    &-azul {
+
+      .typography-title-3,
+      .typography-small {
+        color: var(--pan-color-neutral-black);
+      }
+
+      .typography-big-text-2,
+      .typography-large {
+        color: var(--pan-color-neutral-lighter);
+      }
+    }
+
+    &-cinza {
+      .typography-title-3 {
+        color: var(--pan-color-primary-brand);
+      }
+
+      .typography-big-text-2,
+      .typography-large,
+      .typography-small {
+        color: var(--pan-color-neutral-black);
+      }
+    }
+
+    &-preto {
+      .typography-title-3 {
+        color: var(--pan-color-primary-brand);
+      }
+
+      .typography-big-text-2,
+      .typography-large {
+        color: var(--pan-color-neutral-lighter);
+      }
+
+      .typography-small {
+        color: var(--pan-color-neutral-light);
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    padding-top: var(--pan-spacing-32);
+
+    .typography-small {
+      margin-top: var(--pan-spacing-24);
+      display: block;
+      text-align: center;
+
+      a {
+        color: inherit;
+      }
+
+      @include min-tablet {
+        text-align: left;
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.conteudo-steps {
+    padding: var(--pan-spacing-64) 0;
+
+    &__titulo {
+        border-radius: var(--pan-border-radius-32);
+        color: var(--pan-color-neutral-white);
+        background-color: var(--pan-color-primary-brand);
+        width: fit-content;
+        padding: var(--pan-spacing-8) var(--pan-spacing-24);
+    }
+
+    &__step {
+        &-card {
+            position: relative;
+            padding: var(--pan-spacing-64) var(--pan-spacing-24);
+            background-color: var(--pan-color-neutral-lighter);
+            border-radius: var(--pan-border-radius-16);
+        }
+
+        &-number {
+            width: 100%;
+            max-width: 40px;
+            height: 40px;
+            color: var(--pan-color-neutral-white);
+            background-color: var(--pan-color-primary-brand);
+        }
+    }
+
+    &__row {
+        position: absolute;
+        top: -15px;
+    }
+
+    &__step-content {
+        width: fit-content;
+        margin-left: var(--pan-spacing-24);
+    }
+
+}

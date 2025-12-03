@@ -1,0 +1,94 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Conteudo-Topicos.Imagem">
+
+    <div class="conteudo-topicos-imagem">
+        <div class="conteudo-topicos-imagem__content">
+            <div class="container">
+                <div class="row d-flex align-items-center ${properties.imagePosition}">
+                    <div class="col-12 col-md-5">
+                        <!--MOBILE -->
+                        <div class="col-12 d-md-none">
+                            <div class="conteudo-topicos-imagem__content__mobile">
+                                <h2 class="typography-title-4" data-sly-element="${properties.tagPalavraDestaque}">
+                                    ${properties.palavraDestaque}</h2>
+                                    
+                                <h1 class="typography-big-text-2" data-sly-element="${properties.tagTitulo}">
+                                    ${properties.titulo}</h1>
+
+                                <ul class="conteudo-topicos-imagem__topicos">
+                                    <sly data-sly-list.topicosMultifield="${resource.getChildren}">
+                                        <sly data-sly-test="${topicosMultifield.name == 'topicos'}">
+                                            <sly data-sly-list.topicos="${topicosMultifield.getChildren}">
+                                                <li class="d-flex ${topicos.textoTopico ? '' : 'align-items-center'}">
+                                                    <div class="conteudo-topicos-imagem__icone me-4">
+                                                        <img class="icone ${topicos.textoTopico ? 'mt-1' : ''}"
+                                                            width="32" height="32"
+                                                            src="${topicos.iconTopicoReferenceSvg}"
+                                                            alt="${topicos.altIconTopico ? topicos.altIconTopico : 'Ícone'}" />
+                                                    </div>
+                                                    <div class="conteudo-topicos-imagem__textContent">
+                                                        <p
+                                                            class="typography-large conteudo-topicos-imagem__titleMobile ${topicos.textoTopico ? 'mb-1' : 'mb-0'}">
+                                                            ${topicos.tituloTopico}</p>
+
+                                                        <div class="typography-body-2">
+                                                            ${topicos.textoTopico @context='html'}
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </sly>
+                                        </sly>
+                                    </sly>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--DESKTOP-->
+                        <div class="col-md-12 d-none d-md-block">
+                            <div class="d-flex flex-column">
+                                <h2 class="typography-title-4" data-sly-element="${properties.tagPalavraDestaque}">
+                                    ${properties.palavraDestaque}</h2>
+
+                                <h1 class="typography-big-text-2" data-sly-element="${properties.tagTitulo}">
+                                    ${properties.titulo}</h1>
+
+                                <ul class="conteudo-topicos-imagem__topicos">
+                                    <sly data-sly-list.topicosMultifield="${resource.getChildren}">
+                                        <sly data-sly-test="${topicosMultifield.name == 'topicos'}">
+                                            <sly data-sly-list.topicos="${topicosMultifield.getChildren}">
+                                                <li>
+                                                    <div class="conteudo-topicos-imagem__icone">
+                                                        <img class="icone" width="32" height="32"
+                                                            src="${topicos.iconTopicoReferenceSvg}"
+                                                            alt="${topicos.altIconTopico ? topicos.altIconTopico : 'Ícone'}" />
+                                                    </div>
+                                                    <div class="conteudo-topicos-imagem__texto typography-large">
+                                                        ${topicos.tituloTopico @context='html'}
+                                                    </div>
+                                                </li>
+                                            </sly>
+                                        </sly>
+                                    </sly>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-5" data-panelcontainer="${wcmmode.edit}">
+                                <sly
+                                    data-sly-resource="${'Mahoe-Button' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button'}" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-7 d-none d-md-flex">
+                        <img loading="lazy" class="image-default" alt='${properties.altImagem}'
+                            src='${properties.imageReferenceWebp}' />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

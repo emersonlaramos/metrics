@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Propriedades Card-Estatico-2Cards-Info-DS"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <Tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <tab-variantes
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Variantes"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+ 
+                        <!-- A partir daqui, nós estamos setando as cores do fundo, que afetarão
+                        o restante dos elementos visiveis no componente.-->
+                            <colorVariant
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                deleteHint="{Boolean}true"
+                                fieldLabel="Cores de fundo"
+                                name="./colorVariant"
+                                vertical="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <branco
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Branco"
+                                        value="bg--branco"/>
+                                    <cinza
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Cinza"
+                                        value="bg--cinza"/>
+                                    <azul
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Azul"
+                                        value="bg--azul"/>
+                                    <preto
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Preto"
+                                        value="bg--preto"/>
+                                </items>
+                            </colorVariant>
+ 
+                            <!-- Fim das cores-->
+                           
+                        </items>
+                    </tab-variantes>
+                    <tab-textos
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Cards"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tabsCards
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <Titulo
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Titulo"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Titulo"
+                                                name="./titulo"
+                                                value="Título aqui!"/>
+                                    <TabCard1
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Card 1"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <imageCard1Webp
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem Card1 WEBP (456x199)"
+                                                fileNameParameter="./imageCard1NameParameterWebp"
+                                                fileReferenceParameter="./imageCard1ReferenceWebp"
+                                                mimeTypes="[image/webp]"
+                                                multiple="{Boolean}false"
+                                                name="./imageCard1Webp"
+                                                title="Imagem Card1 WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <altImagemCard
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="ALT imagem Card 1"
+                                                name="./altImagemCard1"
+                                                value="#" />
+                                            <titleCard
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Titulo Card 1"
+                                                name="./titleLinkCard1"
+                                                value="Titulo Card 1" />
+                                            <SubTituloCard
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Subtitulo card 1"
+                                                name="./subTituloCard1"
+                                                value="Subtítulo card 1" />
+                                            <linkCard
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Link"
+                                                name="./linkCard1"
+                                                value="" />
+                                            <dataTrackCard
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Data-track"
+                                                name="./dataTrackCard1"
+                                                value="Data-track Card 1 aqui!" />
+                                        </items>
+                                    </TabCard1>
+                                    <TabCard2
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Card 2"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <imageCard2Webp
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem Card2 WEBP (456x199)"
+                                                fileNameParameter="./imageCard2NameParameterWebp"
+                                                fileReferenceParameter="./imageCard2ReferenceWebp"
+                                                mimeTypes="[image/webp]"
+                                                multiple="{Boolean}false"
+                                                name="./imageCard2Webp"
+                                                title="Imagem Card2 WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <altImagemCard
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="ALT imagem Card 2"
+                                                name="./altImagemCard2"
+                                                value="#" />
+                                            <titleCard
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Titulo Card 2"
+                                                name="./titleLinkCard2"
+                                                value="Titulo Card 2" />
+                                            <SubTituloCard
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Subtitulo card 2"
+                                                name="./subTituloCard2"
+                                                value="Subtítulo card 2" />
+                                            <linkCard
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Link"
+                                                name="./linkCard2"
+                                                value="" />
+                                            <dataTrackCard
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Data-track"
+                                                name="./dataTrackCard2"
+                                                value="Data-track Card 2 aqui!" />
+                                        </items>
+                                    </TabCard2>
+                                </items>
+                            </tabsCards>
+                        </items>
+                    </tab-textos>
+                    <tab-seo
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="SEO"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <sectionID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="ID da Seção"
+                                name="./sectionID"
+                                value=""/>
+                        </items>
+                    </tab-seo>
+                </items>
+            </Tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,44 @@
+@import '../mahoe/breakpoints';
+
+$mobile-xs: map-get($grid-breakpoints, xs);
+$mobile-sm: map-get($grid-breakpoints, sm);
+$tablet-md: map-get($grid-breakpoints, md);
+$tablet-lg: map-get($grid-breakpoints, lg);
+$desktop-xl: map-get($grid-breakpoints, xl);
+$desktop-xxl: map-get($grid-breakpoints, xxl);
+
+@mixin min-mobile {
+    @media (min-width: $mobile-xs) {
+        @content;
+    }
+}
+
+@mixin max-mobile {
+    @media (max-width: $mobile-sm) {
+        @content;
+    }
+}
+
+@mixin min-tablet {
+    @media (min-width: $tablet-md) {
+        @content;
+    }
+}
+
+@mixin max-tablet {
+    @media (max-width: $tablet-lg) {
+        @content;
+    }
+}
+
+@mixin min-desktop {
+    @media (min-width: $tablet-lg) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktop-xl) {
+        @content;
+    }
+}

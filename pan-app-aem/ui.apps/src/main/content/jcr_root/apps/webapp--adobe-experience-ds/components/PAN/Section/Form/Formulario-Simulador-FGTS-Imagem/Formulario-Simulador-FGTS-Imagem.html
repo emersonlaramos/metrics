@@ -1,0 +1,61 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+<section id="${properties.sectionID}" data-cmp-is="Formulario-Simulador-FGTS-Imagem">
+    <div class="simulador-fgts-imagem ${properties.colorVariant}">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 simulador-fgts-imagem__wrapper-content">
+                    <hgroup>
+                        <h3 class="typography-body-2" data-sly-element="${properties.tagSubTitulo}">
+                            ${properties.subtitulo}</h3>
+                        <h2 class="typography-title-1" data-sly-element="${properties.tagTitulo}">${properties.titulo}
+                        </h2>
+                    </hgroup>
+                    <form class="simulador-fgts-imagem__form" data-js="simulador-fgts-imagem-form">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <mahoe-input label="Qual é seu saldo do FGTS?" mask="currency" placeholder="R$ 0,00"
+                                    data-js="valor-saldo-fgts" />
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <mahoe-select label="Seu mês de aniversário" id="mahoe-select" placeholder="Mês" />
+                            </div>
+                        </div>
+                        <input type="hidden" data-js="simulador-fgts-imagem-endpoint"
+                            data-sly-element="${properties.endpointAPI}" value="${properties.endpointAPI}">
+                    </form>
+                    <div class="simulador-fgts-imagem__response">
+                        <p
+                            class="simulador-fgts-imagem__response-text m-0 d-flex justify-content-center align-items-center">
+                            <span class="typography-body-1">Você pode antecipar até:</span>
+                            <span class="typography-title-3 simulador-fgts-imagem__response-value"> R$ 0,00</span>
+                        </p>
+                    </div>
+                    <div class="simulador-fgts-imagem__links d-flex justify-content-between align-items-center">
+                        <mahoe-link href="${properties.linkHref}" data-track="${properties.LinkDataTrack}"
+                            target="_blank" title="${properties.LinkDataTrack}">
+                            ${properties.textApoio}
+                        </mahoe-link>
+                        <div class="wrapper-button">
+                            <mahoe-button data-track="${properties.ButtonDataTrack}" title="${properties.ButtonTitle}"
+                                size="md" variant="primary" href="${properties.ButtonHref}" target="_blank"
+                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : ''}">
+                                <span class="d-xl-none">${properties.textMobileButton}</span>
+                                <span class="d-none d-xl-block">${properties.textDesktopButton}</span>
+                            </mahoe-button>
+                        </div>
+                    </div>
+                    <div class="simulador-fgts-imagem__disclaimer">
+                        <p class="typography-small m-0" data-sly-element="${properties.tagDisclaimer}">
+                            ${properties.disclaimer}
+                        </p>
+                    </div>
+                </div>
+                <div class="d-none d-lg-flex col-lg-6 align-items-end">
+                    <img loading="lazy" class='d-block mw-100 image-default' alt='${properties.altImagem}' width="656"
+                        height="561" src='${properties.imageDesktopReferenceWebp}' />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

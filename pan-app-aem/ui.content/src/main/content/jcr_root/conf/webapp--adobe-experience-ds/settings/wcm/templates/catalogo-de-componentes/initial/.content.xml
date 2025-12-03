@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:template="/conf/webapp--adobe-experience-ds/settings/wcm/templates/catalogo-de-componentes"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="webapp--adobe-experience-ds/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="webapp--adobe-experience-ds/components/container"
+            layout="responsiveGrid">
+            <container_523350281
+                jcr:created="{Date}2023-04-20T14:55:23.783-03:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2023-04-20T14:55:26.477-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="webapp--adobe-experience-ds/components/container"/>
+            <container_235448466
+                jcr:created="{Date}2023-04-20T14:56:09.812-03:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2023-04-20T14:57:08.476-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="webapp--adobe-experience-ds/components/container"/>
+            <container
+                jcr:created="{Date}2023-04-20T15:37:51.240-03:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2023-04-20T15:37:56.146-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="webapp--adobe-experience-ds/components/container"/>
+        </root>
+    </jcr:content>
+</jcr:root>

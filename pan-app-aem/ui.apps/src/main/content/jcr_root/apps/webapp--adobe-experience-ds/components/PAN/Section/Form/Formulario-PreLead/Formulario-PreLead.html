@@ -1,0 +1,134 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+<section id="${properties.sectionID}" data-cmp-is="Formulario-PreLead">
+    <div class="formulario-pre-lead ${properties.colorVariant}">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-5 offset-lg-2">
+                    <form class="pre-lead-form" data-js="pre-lead-form">
+                        <input type="hidden" data-js="form-lead__endpoint" value="${properties.endPointApi}" />
+                        <input type="hidden" data-js="form-lead__lead-origin" value="${properties.leadOrigin}" />
+                        <input type="hidden" data-js="pre-lead-siteKey" value="${properties.chaveRecaptcha}" />
+                        <div class="col-lg-10">
+                            <h2
+                                class="typography-title-1"
+                                data-sly-element="${properties.tagTitulo}"
+                            >
+                                ${properties.titulo}
+                            </h2>
+                        </div>
+                        <div class="form-row col-lg-10">
+                            <div class="form-group --required-input">
+                                <mahoe-input
+                                    data-js="pre-lead-email-input"
+                                    label="E-mail"
+                                    placeholder="nome@email.com"
+                                    type="text"
+                                ></mahoe-input>
+                            </div>
+                        </div>
+                        <div class="form-row col-lg-10">
+                            <div class="pre-lead-form__button-wrapper">
+                                <mahoe-button
+                                    class="pre-lead-form__button"
+                                    data-track="${properties.ButtonDataTrack}"
+                                    type="submit"
+                                    disabled
+                                    data-js="pre-lead-submit-button"
+                                    size="md"
+                                    variant="primary"
+                                    mode="${properties.colorVariant == 'bg-azul' ? 'blue' : ''}"
+                                >
+                                    ${properties.textButton}
+                                </mahoe-button>
+                            </div>
+                        </div>
+                        <div class="form-row col-lg-10">
+                            <span
+                                class="error-message typography-small mt-2"
+                                data-js="pre-lead-form-error"
+                                aria-live="polite"
+                            >
+                                Não foi possível enviar seus dados. <br />
+                                Tente novamente.
+                            </span>
+                        </div>
+                        <div class="form-row col-lg-10">
+                            <div
+                                class="d-flex justify-content-center pre-lead-form__link"
+                            >
+                                <mahoe-link
+                                    class="pre-lead-form__link-text"
+                                    href="${properties.linkHref}"
+                                    data-track="${properties.LinkDataTrack}"
+                                    target="_blank"
+                                >
+                                    ${properties.textApoio}
+                                </mahoe-link>
+                            </div>
+                        </div>
+                    </form>
+                    <div
+                        class="form-sucesso-qr-code-img"
+                        data-js="pre-lead-form-sucesso-qr-code"
+                    >
+                        <h2 class="typography-title-1">
+                            ${properties.tituloFeedback}
+                        </h2>
+                        <p class="typography-large">
+                            ${properties.textoFeedback}
+                        </p>
+                        <div class="qr-code-wrap d-none d-lg-flex">
+                            <p class="typography-body-1 mb-0">
+                                ${properties.textoQrCodeBox}
+                            </p>
+                            <img
+                                loading="lazy"
+                                class="qr-code-img"
+                                alt="Imagem QR Code"
+                                width="100"
+                                height="100"
+                                src="${properties.qrCodeFormPreLeadReferenceWebp}"
+                            />
+                        </div>
+                        <div class="d-lg-none">
+                            <mahoe-button
+                                href="${properties.ctaFeedback}"
+                                size="md"
+                                variant="primary"
+                                icon-position="${properties.buttonIconPosition}"
+                                icon="${properties.buttonIconReference}"
+                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : ''}"
+                                data-track="${properties.dataTrackFeedback}"
+                                target="${properties.dataTrackFeedback}"
+                            >
+                                ${properties.textoBotaoFeddback}
+                            </mahoe-button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-lg-flex col-12 col-md-6 col-lg-4 align-items-end">
+                    <picture>
+                        <source
+                            class="card-estatico-imagem__image image-default"
+                            media="(min-width: 768px)"
+                            srcset="${properties.imageDesktopReferenceWebp}"
+                            width="1440"
+                            height="700"
+                        />
+                        <img
+                            loading="lazy"
+                            class="pre-lead-form__img image-default d-block"
+                            alt="${properties.altImagem ? properties.altImagem : 'Imagem'}"
+                            width="375"
+                            height="700"
+                            src="${properties.imageMobileReferenceWebp}"
+                        />
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

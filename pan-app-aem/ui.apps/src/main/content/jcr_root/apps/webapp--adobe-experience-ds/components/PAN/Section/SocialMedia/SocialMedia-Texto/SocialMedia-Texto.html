@@ -1,0 +1,470 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section class="SectionSocialMedia" data-cmp-is="SocialMedia-Texto">
+    <div class="socialmedia-texto ${properties.colorVariant}">
+        <div class="container">
+            <sly data-sly-test.isLink="${properties.styleVariant == 'imagem'}">
+                <div
+                    class="row justify-content-center align-items-center d-none d-lg-flex"
+                >
+                    <div class="col-12 col-lg-6 d-flex justify-content-center">
+                        <picture class="section-intro-imagem-inteira__picture">
+                            <source
+                                class="socialmedia-texto__picture"
+                                media="(min-width: 768px)"
+                                width="504"
+                                height="640"
+                                srcset="${properties.imgReferenceParameterWebp}"
+                                alt="${properties.altDesktop ? properties.altDesktop : 'Imagem'}"
+                            />
+                            <img
+                                loading="lazy"
+                                class="socialmedia-texto__picture"
+                                alt="${properties.altMobile ? properties.altMobile : 'Imagem'}"
+                                width="54"
+                                height="90"
+                                src="${properties.imageMobileReferenceWebp}"
+                            />
+                        </picture>
+                    </div>
+
+                    <div
+                        class="col-12 col-lg-5 d-flex flex-column justify-content-center"
+                    >
+                        <h3
+                            class="typography-title-4 socialmedia-texto__destaque"
+                        >
+                            ${properties.palavraDestaque}
+                        </h3>
+                        <h2
+                            class="typography-big-text-2 socialmedia-texto__title"
+                        >
+                            ${properties.desktopTitle}
+                        </h2>
+
+                        <ul class="socialmedia-texto__list d-flex flex-row">
+                            <li>
+                                <img
+                                    class="socialmedia-texto__list-people"
+                                    width="54"
+                                    height="54"
+                                    loading="lazy"
+                                    alt="${properties.perfil1 ? properties.perfil1 : 'Imagem'}"
+                                    src="${properties.perfil1ReferenceParameterWebp}"
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    class="socialmedia-texto__list-people"
+                                    width="54"
+                                    height="54"
+                                    loading="lazy"
+                                    alt="${properties.perfil2 ? properties.perfil2 : 'Imagem'}"
+                                    src="${properties.perfil2ReferenceParameterWebp}"
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    class="socialmedia-texto__list-people"
+                                    width="54"
+                                    height="54"
+                                    loading="lazy"
+                                    alt="${properties.perfil3 ? properties.perfil3 : 'Imagem'}"
+                                    src="${properties.perfil3ReferenceParameterWebp}"
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    class="socialmedia-texto__list-people"
+                                    width="54"
+                                    height="54"
+                                    loading="lazy"
+                                    alt="${properties.perfil4 ? properties.perfil4 : 'Imagem'}"
+                                    src="${properties.perfil4ReferenceParameterWebp}"
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    class="socialmedia-texto__list-people"
+                                    width="54"
+                                    height="54"
+                                    loading="lazy"
+                                    alt="${properties.perfil5 ? properties.perfil5 : 'Imagem'}"
+                                    src="${properties.perfil5ReferenceParameterWebp}"
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    class="socialmedia-texto__list-people"
+                                    width="54"
+                                    height="54"
+                                    loading="lazy"
+                                    alt="${properties.perfil6 ? properties.perfil6 : 'Imagem'}"
+                                    src="${properties.perfil6ReferenceParameterWebp}"
+                                />
+                            </li>
+                            <li>
+                                <span
+                                    class="socialmedia-texto__list-number typography-body-1"
+                                    >${properties.followers}</span
+                                >
+                            </li>
+                        </ul>
+
+                        <p
+                            class="typography-body-1 socialmedia-texto__paragrafo"
+                        >
+                            ${properties.desktopText}
+                        </p>
+
+                        <ul
+                            class="socialmedia-texto__list justify-content-between d-flex m-0"
+                        >
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon1Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone1}"
+                                    target="${properties.targetIcone1}"
+                                    title="${properties.altIcone1}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone1 ? properties.altIcone1 : 'Icone'}"
+                                        src="${properties.icon1SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon2Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone2}"
+                                    target="${properties.targetIcone2}"
+                                    title="${properties.altIcone2}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone2 ? properties.altIcone2 : 'Icone'}"
+                                        src="${properties.icon2SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon3Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone3}"
+                                    target="${properties.targetIcone3}"
+                                    title="${properties.altIcone3}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone3 ? properties.altIcone3 : 'Icone'}"
+                                        src="${properties.icon3SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon4Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone4}"
+                                    target="${properties.targetIcone4}"
+                                    title="${properties.altIcone4}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone4 ? properties.altIcone4 : 'Icone'}"
+                                        src="${properties.icon4SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon5Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone5}"
+                                    target="${properties.targetIcone5}"
+                                    title="${properties.altIcone5}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone5 ? properties.altIcone5 : 'Icone'}"
+                                        src="${properties.icon5SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon6Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone6}"
+                                    target="${properties.targetIcone6}"
+                                    title="${properties.altIcone6}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone6 ? properties.altIcone6 : 'Icone'}"
+                                        src="${properties.icon6SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row d-flex d-lg-none">
+                    <div
+                        class="col-12 col-lg-6 offset-lg-3 d-flex flex-column align-items-center socialmedia-texto__content"
+                    >
+                        <img
+                            loading="lazy"
+                            class="socialmedia-texto__logo"
+                            width="54"
+                            height="90"
+                            alt="${properties.altLogo ? properties.altLogo : 'Logo'}"
+                            src="${properties.LogoReferenceParameterWebp}"
+                        />
+                        <div
+                            class="d-flex flex-column align-items-center socialmedia-texto__textfields"
+                        >
+                            <h2 class="typography-big-text-2">
+                                ${properties.mobileTitle}
+                            </h2>
+                            <p class="typography-body-1">
+                                ${properties.mobileText}
+                            </p>
+                        </div>
+
+                        <ul
+                            class="socialmedia-texto__list justify-content-between d-flex m-0"
+                        >
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon1Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone1}"
+                                    target="${properties.targetIcone1}"
+                                    title="${properties.altIcone1}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone1 ? properties.altIcone1 : 'Icone'}"
+                                        src="${properties.icon1SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon2Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone2}"
+                                    target="${properties.targetIcone2}"
+                                    title="${properties.altIcone2}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone2 ? properties.altIcone2 : 'Icone'}"
+                                        src="${properties.icon2SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon3Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone3}"
+                                    target="${properties.targetIcone3}"
+                                    title="${properties.altIcone3}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone3 ? properties.altIcone3 : 'Icone'}"
+                                        src="${properties.icon3SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon4Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone4}"
+                                    target="${properties.targetIcone4}"
+                                    title="${properties.altIcone4}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone4 ? properties.altIcone4 : 'Icone'}"
+                                        src="${properties.icon4SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon5Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone5}"
+                                    target="${properties.targetIcone5}"
+                                    title="${properties.altIcone5}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone5 ? properties.altIcone5 : 'Icone'}"
+                                        src="${properties.icon5SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon6Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone6}"
+                                    target="${properties.targetIcone6}"
+                                    title="${properties.altIcone6}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone6 ? properties.altIcone6 : 'Icone'}"
+                                        src="${properties.icon6SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </sly>
+
+            <sly data-sly-test.isLink="${properties.styleVariant == 'texto'}">
+                <div class="row">
+                    <div
+                        class="col-12 col-lg-6 offset-lg-3 d-flex flex-column align-items-center socialmedia-texto__content"
+                    >
+                        <img
+                            loading="lazy"
+                            class="socialmedia-texto__logo"
+                            width="54"
+                            height="90"
+                            alt="${properties.altLogo ? properties.altLogo : 'Logo'}"
+                            src="${properties.LogoReferenceParameterWebp}"
+                        />
+                        <div
+                            class="d-flex flex-column align-items-center socialmedia-texto__textfields"
+                        >
+                            <h2
+                                class="typography-big-text-2"
+                                data-sly-element="${properties.tagmobileTitle}"
+                            >
+                                ${properties.mobileTitle}
+                            </h2>
+                            <p
+                                class="typography-body-1"
+                                data-sly-element="${properties.tagmobileText}"
+                            >
+                                ${properties.mobileText}
+                            </p>
+                        </div>
+
+                        <ul
+                            class="socialmedia-texto__list justify-content-between d-flex m-0"
+                        >
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon1Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone1}"
+                                    target="${properties.targetIcone1}"
+                                    title="${properties.altIcone1}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone1 ? properties.altIcone1 : 'Icone'}"
+                                        src="${properties.icon1SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon2Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone2}"
+                                    target="${properties.targetIcone2}"
+                                    title="${properties.altIcone2}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone2 ? properties.altIcone2 : 'Icone'}"
+                                        src="${properties.icon2SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon3Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone3}"
+                                    target="${properties.targetIcone3}"
+                                    title="${properties.altIcone3}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone3 ? properties.altIcone3 : 'Icone'}"
+                                        src="${properties.icon3SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon4Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone4}"
+                                    target="${properties.targetIcone4}"
+                                    title="${properties.altIcone4}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone4 ? properties.altIcone4 : 'Icone'}"
+                                        src="${properties.icon4SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon5Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone5}"
+                                    target="${properties.targetIcone5}"
+                                    title="${properties.altIcone5}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone5 ? properties.altIcone5 : 'Icone'}"
+                                        src="${properties.icon5SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                            <li
+                                class="socialmedia-texto__list-item ${properties.hideIcon6Checkbox && 'd-none'}"
+                            >
+                                <a
+                                    class="socialmedia-texto__link"
+                                    href="${properties.linkIcone6}"
+                                    target="${properties.targetIcone6}"
+                                    title="${properties.altIcone6}"
+                                >
+                                    <img
+                                        class="socialmedia-texto__icon"
+                                        alt="${properties.altIcone6 ? properties.altIcone6 : 'Icone'}"
+                                        src="${properties.icon6SVGRefrenceParameter}"
+                                /></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </sly>
+        </div>
+    </div>
+</section>

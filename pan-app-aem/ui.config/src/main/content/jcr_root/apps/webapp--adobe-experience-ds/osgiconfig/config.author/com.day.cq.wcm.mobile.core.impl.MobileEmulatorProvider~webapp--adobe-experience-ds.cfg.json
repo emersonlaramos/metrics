@@ -1,0 +1,6 @@
+{
+  "mobile.resourceTypes": [
+    "webapp--adobe-experience-ds/components/page"
+  ],
+  "README": "Indicate which page resource types should display the mobile emulators."
+}

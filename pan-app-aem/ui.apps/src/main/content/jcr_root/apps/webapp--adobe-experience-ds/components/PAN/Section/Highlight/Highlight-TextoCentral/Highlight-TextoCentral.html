@@ -1,0 +1,34 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Highlight-TextoCentral">
+    <div class="Highlight-textocentral ${properties.colorVariant}">
+        <div class="Highlight-textocentral__content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <sly data-sly-test="${properties.titulo}">
+                            <h2 class="typography-big-text-2 ${properties.alignTitulo}"
+                                data-sly-element="${properties.tagTitulo}">
+                                ${properties.titulo}
+                            </h2>
+                        </sly>
+                        <sly data-sly-test="${properties.texto}">
+                            <div class="typography-large mt-md-2 ${properties.alignTexto}"
+                                data-sly-element="${properties.texto}">
+                                ${properties.texto @context='html'}
+                            </div>
+                        </sly>
+                    </div>
+
+                    <div class="col-12" data-sly-test="${properties.button == 'yes'}">
+                        <div class="button-container mt-4 mt-md-5" data-panelcontainer="${wcmmode.edit}">
+                            <sly
+                                data-sly-resource="${'Mahoe-Button' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Carousel-PAN - Component"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[core.wcm.components.commons.editor.dialog.childreneditor.v1,core.wcm.components.carousel.v1.editor]"
+>
+    <content
+        jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        sling:hideResource="true"></properties>
+                    <accessibility
+                        jcr:primaryType="nt:unstructured"
+                        sling:hideResource="true"></accessibility>
+
+                    <tab-config
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Configuração Slider"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <paginationVisibility
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Visibilidade da Paginação (bullets/ pontos)"
+                                name="./paginationVisibility">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <paginationBoth
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Ambos"
+                                        value="" />
+                                    <paginationMobile
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Apenas Mobile"
+                                        selected="true"
+                                        value="d-flex d-lg-none" />
+                                    <paginationDesktop
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Apenas Desktop"
+                                        value="d-none d-lg-flex" />
+                                </items>
+                            </paginationVisibility>
+
+                            <autoplay
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldDescription="Slides automáticos. Quando habilitado, os slides passam automaticamente"
+                                name="./autoplay"
+                                text="Habilitar Autoplay?"
+                                uncheckedValue="{Boolean}false"
+                                value="{Boolean}true" />
+
+                            <delay
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Esse campo só funciona se o AUTOPLAY estiver selecionado"
+                                fieldLabel="Delay (em segundos)"
+                                name="./delay" 
+                                value="3" 
+                                defaultvalue="3" />
+
+                            <loop
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldDescription="Ao chegar no final, retorna para o primeiro slide"
+                                name="./loop"
+                                text="Habilitar Loop"
+                                uncheckedValue="{Boolean}false"
+                                checked="true"
+                                value="{Boolean}true" />
+
+                            <!-- 
+                                ? A fazer: Para habilitar essas opções precisamos tambem configurar BREAKPOINTS para não impactar mobile 
+
+                            <centeredSlides
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                fieldDescription="Centralizar faz com que o slide/ item do meio seja o o primeiro a ser mostrado."
+                                name="./centeredSlides"
+                                text="Centralizar slides?"
+                                uncheckedValue="{Boolean}false"
+                                value="{Boolean}true" />
+                                
+                            <slidesPerView
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Adicionar o número desejado de slides à mostra por página"
+                                fieldLabel="Itens por visualização (página)"
+                                name="./slidesPerView" />
+
+                            <slidesPerGroup
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Adicionar o número desejado de slides por página ao movimentar"
+                                fieldLabel="Itens por grupo (página)"
+                                name="./slidesPerGroup" />
+
+                            <spaceBetween
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Valor em pixels (px) do espaço entre os itens/ slides. só funciona se Itens por visualização for maior que 1 - Deixe 0 para quando for 1"
+                                fieldLabel="Espaço entre os itens/ slides (em px)"
+                                name="./spaceBetween" /> -->
+
+
+                            <arrowsVisibility
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Visibilidade da Navegação (arrows/ setas)"
+                                name="./arrowsVisibility">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <arrowsBoth
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Ambos"
+                                        value="" />
+                                    <arrowsMobile
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Apenas Mobile"
+                                        value="d-flex d-lg-none" />
+                                    <arrowsDesktop
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="true"
+                                        text="Apenas Desktop"
+                                        value="d-none d-lg-flex" />
+
+                                </items>
+                            </arrowsVisibility>
+
+                        </items>
+                    </tab-config>
+
+                    <tab-seo
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="SEO"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <sectionID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="ID da Seção"
+                                name="./sectionID"
+                                value="" />
+                        </items>
+                    </tab-seo>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

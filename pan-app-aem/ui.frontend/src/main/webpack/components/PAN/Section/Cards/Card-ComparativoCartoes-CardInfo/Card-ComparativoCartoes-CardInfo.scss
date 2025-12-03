@@ -1,0 +1,201 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.card-comprativocartoes-cardinfo {
+    padding: var(--pan-spacing-64) 0;
+
+    &__content {
+        .typography-title-4, .texto-destaque {
+            color: var(--pan-color-primary-brand);
+            font-weight: var(--pan-font-weight-bold);
+        }
+
+        .typography-big-text-2 {
+            text-align: center;
+            color: var(--pan-color-neutral-white);
+            margin-bottom: var(--pan-spacing-56);
+            
+            @include min-desktop {
+                width: 50%;
+            }
+        }
+    }
+    
+    .swiper {
+        max-width: 1152px;
+
+        .mahoe-card__content, .custom-card__content, .custom-card {
+            height: 100%;
+        }
+
+        .custom-card {
+            .subtitle {
+                opacity: 0.7;
+            }
+
+            .button-wrapper {
+                width: 100%;
+            }
+
+            &__text p {
+                margin-bottom: var(--pan-spacing-16);
+            }
+
+            &__image {
+                object-fit: cover;
+                width: 100%;
+                margin-bottom: var(--pan-spacing-32);
+            }
+
+            &__link {
+                padding: var(--pan-spacing-16);
+                font-weight: var(--pan-font-weight-bold);
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+        
+        &-wrapper {
+            margin: auto;
+            width: unset;
+        }
+        
+        &-slide {
+            height: unset;
+            margin: 0 var(--pan-spacing-12);
+        }
+
+        &-slide, .custom-card {
+            width: 293px;
+            
+            @include min-desktop {
+                width: 360px;
+            }
+        }
+
+        &-button-prev,
+        &-button-next {
+            position: initial;
+            width: var(--pan-spacing-48);
+            height: var(--pan-spacing-48);
+            justify-content: center;
+            align-items: center;
+            color: var(--pan-color-neutral-darker-bg);
+            margin-top: 0;
+            margin-right: var(--pan-spacing-16);
+            border-radius: var(--pan-spacing-16);
+    
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+    
+        &-button-prev {
+            transform: rotate(180deg);
+        }
+
+        &-pagination {
+            &-ds-cardinfo {
+                margin-top: var(--pan-spacing-24);
+            }
+
+            &-bullet {
+                opacity: 1;
+            }
+        }
+    }
+
+    .button-navigation {
+        align-items: center;
+    }
+
+    &.bg {
+        &-branco {
+            .custom-card, .swiper-button-prev, .swiper-button-next {
+                background: var(--pan-color-neutral-lighter);
+            }
+
+            .custom-card {
+                &__text {
+                    color: var(--pan-color-neutral-black);
+                }
+
+                &__link {
+                    color: var(--pan-color-primary-brand);
+                }
+            }
+
+            .typography-big-text-2 {
+                color: var(--pan-color-neutral-black);
+            }
+
+            .swiper-pagination-bullet {
+                background: var(--pan-color-neutral-lighter-bg);
+
+                &-active {
+                    background: var(--pan-color-primary-brand);
+                }
+            }
+        }
+
+        &-azul {
+            .custom-card, .swiper-button-prev, .swiper-button-next {
+                background: var(--pan-color-primary-dark);
+            }
+
+            .custom-card {
+                &__text {
+                    color: var(--pan-color-neutral-white);
+                }
+
+                &__link {
+                    color: var(--pan-color-neutral-black);
+                }
+            }
+
+            .typography-title-4 {
+                color: var(--pan-color-neutral-black);
+            }
+
+            .texto-destaque {
+                color: var(--pan-color-neutral-white);
+            }
+
+            .swiper-pagination-bullet {
+                background: var(--pan-color-neutral-lighter);
+
+                &-active {
+                    background: var(--pan-color-neutral-black);
+                }
+            }
+        }
+
+        &-preto {
+            .custom-card, .swiper-button-prev, .swiper-button-next {
+                background: var(--pan-color-neutral-darker);
+
+                svg path {
+                    color: var(--pan-color-neutral-white);
+                }
+            }
+
+            .custom-card {
+                &__text {
+                    color: var(--pan-color-neutral-white);
+                }
+
+                &__link {
+                    color: var(--pan-color-neutral-white);
+                }
+            }
+            
+            .swiper-pagination-bullet {
+                background: var(--pan-color-neutral-mid);
+
+                &-active {
+                    background: var(--pan-color-neutral-white);
+                }
+            }
+        }
+    }
+}

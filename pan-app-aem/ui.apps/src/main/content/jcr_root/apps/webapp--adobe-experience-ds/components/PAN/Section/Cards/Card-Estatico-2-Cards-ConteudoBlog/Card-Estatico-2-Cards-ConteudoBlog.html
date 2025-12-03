@@ -1,0 +1,110 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section
+    id="${properties.sectionID}"
+    data-cmp-is="Card-Estatico-2-Cards-ConteudoBlog"
+>
+    <div class="card-estatico-2-cards-conteudoblog ${properties.colorVariant}">
+        <div class="container">
+            <div class="row g-4 p-3 p-md-0">
+                <div
+                    class="col-12 textfields d-inherit d-md-flex flex-column align-items-center"
+                >
+                    <h3
+                        class="typography-title-4"
+                        data-sly-element="${properties.tagPalavraDestaque}"
+                    >
+                        ${properties.palavraDestaque}
+                    </h3>
+                    <h2
+                        class="typography-big-text-2"
+                        data-sly-element="${properties.tagTitulo}"
+                    >
+                        ${properties.titulo}
+                    </h2>
+                </div>
+
+                <div class="col-12 col-md-6 d-flex">
+                    <div
+                        class="card-estatico-2-cards-conteudoblog__card d-flex flex-column"
+                    >
+                        <div>
+                            <img
+                                loading="lazy"
+                                class="card-estatico-2-cards-conteudoblog__image"
+                                alt="${properties.altImagemCard1 ? properties.altImagemCard1 : 'Imagem'}"
+                                width="552"
+                                height="374"
+                                src="${properties.imageRefCard1}"
+                            />
+                        </div>
+
+                        <div
+                            class="card-estatico-2-cards-conteudoblog__content d-flex flex-column justify-content-between"
+                        >
+                            <hgroup>
+                                <h3 class="typography-title-4">
+                                    ${properties.palavraDestaqueCard1}
+                                </h3>
+                                <h2 class="typography-big-text-2">
+                                    ${properties.tituloCard1}
+                                </h2>
+                            </hgroup>
+
+                            <div
+                                class="col-6 col-lg-4 col-md-6"
+                                data-panelcontainer="${wcmmode.edit}"
+                            >
+                                <sly
+                                    data-sly-resource="${'Mahoe-Button-card-estatico-2-cards-conteudoblog-card1' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 d-flex">
+                    <div
+                        class="card-estatico-2-cards-conteudoblog__card d-flex flex-column"
+                    >
+                        <div>
+                            <img
+                                loading="lazy"
+                                class="card-estatico-2-cards-conteudoblog__image"
+                                alt="${properties.altImagemCard2 ? properties.altImagemCard2 : 'Imagem'}"
+                                width="552"
+                                height="374"
+                                src="${properties.imageRefCard2}"
+                            />
+                        </div>
+
+                        <div
+                            class="card-estatico-2-cards-conteudoblog__content d-flex flex-column justify-content-between"
+                        >
+                            <hgroup>
+                                <h3 class="typography-title-4">
+                                    ${properties.palavraDestaqueCard2}
+                                </h3>
+                                <h2 class="typography-big-text-2">
+                                    ${properties.tituloCard2}
+                                </h2>
+                            </hgroup>
+
+                            <div
+                                class="col-6 col-lg-4 col-md-6"
+                                data-panelcontainer="${wcmmode.edit}"
+                            >
+                                <sly
+                                    data-sly-resource="${'Mahoe-Button-card-estatico-2-cards-conteudoblog-card2' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

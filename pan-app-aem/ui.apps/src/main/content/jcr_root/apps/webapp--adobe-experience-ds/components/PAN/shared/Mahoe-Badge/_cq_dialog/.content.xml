@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Mahoe Badge"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[webapp--aem-institucional.editor]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <list
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                composite="{Boolean}true"
+                fieldLabel="Adicione uma Badge">
+                <field
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                    name="./listBadge">
+                    <items jcr:primaryType="nt:unstructured">
+                        <tabs
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                            maximized="{Boolean}true">
+                            <items jcr:primaryType="nt:unstructured">
+                                <tabConfigure
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Configurações Gerais"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    margin="{Boolean}true">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <HideBadge
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                            checked="{Boolean}false"
+                                            fieldDescription="Ocultar esse botão do componente"
+                                            name="./hideBadge"
+                                            text="Ocultar Badge?"
+                                            uncheckedValue="{Boolean}false"
+                                            value="{Boolean}true" />
+                                        <badgeTypeBehavior
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/foundation/form/select"
+                                            deleteHint="{Boolean}true"
+                                            name="./badgeTypeBehavior">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <tag
+                                                    jcr:primaryType="nt:unstructured"
+                                                    checked="{Boolean}true"
+                                                    text="Tag"
+                                                    value="tag" />
+                                                <badge
+                                                    jcr:primaryType="nt:unstructured"
+                                                    checked="{Boolean}true"
+                                                    text="Badge"
+                                                    value="badge" />
+                                                <minimal
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Minimal"
+                                                    value="minimal" />
+                                            </items>
+                                        </badgeTypeBehavior>
+                                        <badgeInformation
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            autocomplete="off"
+                                            fieldLabel="Informação da Badge"
+                                            name="./badgeInformation"
+                                            value="" />
+                                        <badgeDescription
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            autocomplete="off"
+                                            fieldLabel="Descrição da Badge"
+                                            name="./badgeDescription"
+                                            value="" />
+                                        <tabIcone
+                                            jcr:primaryType="nt:unstructured"
+                                            jcr:title="Ícone"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            margin="{Boolean}true">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <badgeIcon
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                    autoStart="{Boolean}false"
+                                                    class="cq-droptarget"
+                                                    fieldDescription="Icone da Badge em .SVG (Opcional)"
+                                                    fieldLabel="Icone da Badge em .SVG (Opcional)"
+                                                    fileNameParameter="./badgeIconNameParameter"
+                                                    fileReferenceParameter="./badgeIconReferenceParameter"
+                                                    mimeTypes="[image/svg]"
+                                                    multiple="{Boolean}false"
+                                                    name="./badgeIcon"
+                                                    title="Icone da Badge em .SVG (Opcional)"
+                                                    uploadUrl="${suffix.path}"
+                                                    useHTML5="{Boolean}true" />
+                                            </items>
+                                        </tabIcone>
+                                    </items>
+                                </tabConfigure>
+                                <tabEstilo
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="Estilo"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    margin="{Boolean}true">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <wellGroup-mode
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <modeTitle
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                    margin="{Boolean}true"
+                                                    text="Mode (modo)" />
+                                                <badgeStyleBehavior
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    class="cq-dialog-dropdown-showhide-multival"
+                                                    cq-dialog-dropdown-showhide-target=".style-showhide-target"
+                                                    deleteHint="{Boolean}true"
+                                                    name="./badgeStyleBehavior">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <inherit
+                                                            jcr:primaryType="nt:unstructured"
+                                                            checked="{Boolean}true"
+                                                            text="Herdar (automatico do tema escolhido no componente principal)"
+                                                            value="_inherit" />
+                                                        <independent
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Independente (Escolha manualmente)"
+                                                            value="_independent" />
+                                                    </items>
+                                                </badgeStyleBehavior>
+                                                <styleContainer
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/container"
+                                                    class="hide style-showhide-target"
+                                                    showhidetargetvalue="_independent">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <badgeMode
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                            deleteHint="{Boolean}true"
+                                                            name="./badgeMode"
+                                                            vertical="{Boolean}true">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <none
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="None (Padrão - Sem modo)"
+                                                                    value="" />
+                                                                <dark
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Dark (Branco - para fundos escuros)"
+                                                                    value="dark" />
+                                                                <blue
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    checked="{Boolean}true"
+                                                                    text="Blue (Azul)"
+                                                                    value="blue" />
+                                                            </items>
+                                                        </badgeMode>
+                                                    </items>
+                                                </styleContainer>
+                                            </items>
+                                        </wellGroup-mode>
+                                        <wellGroup-variant
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <corTitle
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                    margin="{Boolean}true"
+                                                    text="Cor" />
+                                                <badgeVariation
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/foundation/form/select"
+                                                    deleteHint="{Boolean}true"
+                                                    name="./badgeVariation">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <blue
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Azul"
+                                                            value="blue" />
+                                                        <green
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Verde"
+                                                            value="green" />
+                                                        <grey
+                                                            jcr:primaryType="nt:unstructured"
+                                                            checked="{Boolean}true"
+                                                            text="Cinza"
+                                                            value="grey" />
+                                                        <pink
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Rosa"
+                                                            value="pink" />
+                                                        <purple
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Roxo"
+                                                            value="purple" />
+                                                        <red
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Vermelho"
+                                                            value="red" />
+                                                        <yellow
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Amarelo"
+                                                            value="yellow" />
+                                                    </items>
+                                                </badgeVariation>
+                                            </items>
+                                        </wellGroup-variant>
+                                        <wellGroup-size
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/well">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <sizeTitle
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                    margin="{Boolean}true"
+                                                    text="Size (Tamanho)" />
+                                                <badgeSize
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                    deleteHint="{Boolean}true"
+                                                    name="./badgeSize"
+                                                    vertical="{Boolean}true">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <sm
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Small (Pequeno)"
+                                                            value="" />
+                                                        <md
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Medium (Médio)"
+                                                            checked="{Boolean}true"
+                                                            value="badge-md" />
+                                                        <lg
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Large (Grande)"
+                                                            value="badge-lg" />
+                                                    </items>
+                                                </badgeSize>
+                                            </items>
+                                        </wellGroup-size>
+                                    </items>
+                                </tabEstilo>
+                                <tabSeo
+                                    jcr:primaryType="nt:unstructured"
+                                    jcr:title="SEO"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    margin="{Boolean}true">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <badgeName
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            autocomplete="off"
+                                            fieldLabel="Nome (atributo NAME do HTML)"
+                                            name="./badgeName"
+                                            value="" />
+                                        <badgeTitle
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            autocomplete="off"
+                                            fieldLabel="Atributo Title"
+                                            name="./badgeTitle"
+                                            value="#" />
+                                    </items>
+                                </tabSeo>
+                            </items>
+                        </tabs>
+                    </items>
+                </field>
+            </list>
+        </items>
+    </content>
+</jcr:root>

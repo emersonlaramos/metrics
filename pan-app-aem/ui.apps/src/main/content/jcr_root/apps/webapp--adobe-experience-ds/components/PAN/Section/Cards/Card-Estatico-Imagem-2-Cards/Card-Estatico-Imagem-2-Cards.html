@@ -1,0 +1,89 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section
+    id="${properties.sectionID}"
+    data-cmp-is="Card-Estatico-Imagem-2-Cards"
+>
+    <div class="card-estatico-imagem-2-cards ${properties.colorVariant}">
+        <div class="container">
+            <div class="row">
+                <div
+                    class="col-12 col-lg-6 order-lg-2 d-flex flex-column justify-content-center"
+                >
+                    <div class="row">
+                        <div class="col-12">
+                            <h2
+                                class="card-estatico-imagem-2-cards__title typography-big-text-2"
+                            >
+                                ${properties.titulo @context='html'}
+                            </h2>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="swiper d-flex swiper-imagem-2-cards">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <mahoe-card
+                                            data-js="cards"
+                                            id="card-01"
+                                            data-track="${properties.dataTrackCard1}"
+                                            mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                            href="${properties.CTAhrefCard1}"
+                                            target="${properties.ctaTargetCard1}"
+                                        >
+                                            <p class="typography-body-1">
+                                                ${properties.textoCard1}
+                                            </p>
+                                        </mahoe-card>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <mahoe-card
+                                            data-js="cards"
+                                            id="card-02"
+                                            data-track="${properties.dataTrackCard2}"
+                                            mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                            href="${properties.CTAhrefCard2}"
+                                            target="${properties.ctaTargetCard2}"
+                                        >
+                                            <p class="typography-body-1">
+                                                ${properties.textoCard2}
+                                            </p>
+                                        </mahoe-card>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6 order-lg-1">
+                    <div
+                        class="d-flex align-items-center justify-content-center"
+                    >
+                        <img
+                            loading="lazy"
+                            data-js="images"
+                            class="card-estatico-imagem-2-cards__img d-inherit"
+                            alt="${properties.altImagemCard1 ? properties.altImagemCard1 : 'Imagem'}"
+                            width="514"
+                            height="594"
+                            src="${properties.imageCard1DesktopReferenceWebp}"
+                        />
+                        <img
+                            loading="lazy"
+                            data-js="images"
+                            class="card-estatico-imagem-2-cards__img d-none"
+                            alt="${properties.altImagemCard2 ? properties.altImagemCard2 : 'Imagem'}"
+                            width="514"
+                            height="594"
+                            src="${properties.imageCard2DesktopReferenceWebp}"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

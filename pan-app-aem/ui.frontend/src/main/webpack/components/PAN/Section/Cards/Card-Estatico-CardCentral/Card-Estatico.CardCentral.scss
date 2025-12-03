@@ -1,0 +1,40 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.card-estatico-cardCentral {
+    padding: var(--pan-spacing-56) 0;
+    
+    @include min-tablet {
+        padding: var(--pan-spacing-64) 0;
+    }
+
+    &__texts {
+        margin-bottom: var(--pan-spacing-12);
+        
+        @include min-desktop {        
+            margin-bottom: var(--pan-spacing-48);
+            align-items: center;
+        }
+
+        &-link {
+            margin-top: var(--pan-spacing-32);
+            justify-content: flex-start;
+
+            @include min-desktop {
+                margin-top: 0;
+                justify-content:flex-end;
+            }
+        }
+    }
+
+    .mahoe-card {
+        overflow-wrap: normal;
+    }
+
+    &.bg {
+        &-preto {
+            .typography-big-text-2 {
+                color: var(--pan-color-neutral-white);
+            }
+        }
+    }
+}

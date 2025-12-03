@@ -1,0 +1,76 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.card-estatico-2-cards-conteudoblog {
+    padding: var(--pan-spacing-64) 0;
+    overflow: hidden;
+
+    .textfields {
+        margin-top: var(--pan-spacing-12);
+    }
+
+    &__image {
+        width: 100%;
+        object-fit: cover;
+        border-radius: var(--pan-spacing-16) var(--pan-spacing-16) 0 0;
+    }
+
+    &__content {
+        height: 100%;
+        padding: var(--pan-spacing-48) var(--pan-spacing-32);
+        border-radius: 0 0 var(--pan-spacing-16) var(--pan-spacing-16);
+
+        @include min-desktop {
+            padding: var(--pan-spacing-48) var(--pan-spacing-40) var(--pan-spacing-40);
+        }
+    }
+
+    &.bg {
+        &-branco, &-cinza {
+            .textfields {
+                .typography-title-4 {
+                    color: var(--pan-color-primary-brand);
+                }
+                color: var(--pan-color-neutral-black);
+            }
+            .card-estatico-2-cards-conteudoblog__content {
+                background-color: var(--pan-color-neutral-darker-bg);
+
+                hgroup {
+                    color: var(--pan-color-neutral-white);
+                }
+            }
+        }
+
+        &-preto {
+            .textfields {
+                .typography-title-4 {
+                    color: var(--pan-color-primary-brand);
+                }
+                color: var(--pan-color-neutral-white);
+            }
+            .card-estatico-2-cards-conteudoblog__content {
+                background-color: var(--pan-color-neutral-white);
+                
+                hgroup {
+                    color: var(--pan-color-neutral-black);
+                }
+            }
+        }
+
+        &-azul {
+            .textfields {
+                .typography-title-4 {
+                    color: var(--pan-color-neutral-black);
+                }
+                color: var(--pan-color-neutral-white);
+            }
+            .card-estatico-2-cards-conteudoblog__content {
+                background-color: var(--pan-color-neutral-black);
+
+                hgroup {
+                    color: var(--pan-color-neutral-white);
+                }
+            }
+        }
+    }
+}

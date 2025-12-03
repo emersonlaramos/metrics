@@ -1,0 +1,97 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.conteudo-numbers {
+  &__content {
+    position: relative;
+    padding-top: var(--pan-spacing-48);
+    padding-bottom: var(--pan-spacing-48);
+  }
+
+  &__cards {
+    &-wrapper {
+      flex-wrap: wrap;
+      margin-top: var(--pan-spacing-32);
+      @include min-tablet {
+        gap: var(--pan-spacing-24);
+      }
+    }
+
+    &-item {
+      width: 100%;
+      padding: var(--pan-spacing-32);
+      border-radius: var(--pan-border-radius-16);
+      margin-bottom: var(--pan-spacing-24);
+      background-color: var(--pan-color-neutral-lighter-bg);
+
+      @include min-tablet {
+        width: calc(25% - 18px);
+        padding: var(--pan-spacing-24);
+      }
+
+      @include desktop {
+        width: calc(50% - 12px);
+        margin-bottom: 0;
+      }
+
+      .icone {
+        margin-bottom: var(--pan-spacing-12); 
+      }
+
+      .typography-title-1, .typography-body-2 {
+        color: var(--pan-color-neutral-white);
+        text-align: center;
+        margin-bottom: 0;
+      }
+
+      .typography-title-1 {
+        margin-bottom: var(--pan-spacing-12);
+      }
+
+      .typography-body-2 {
+        @include min-desktop {height: 56px;}
+      }
+    }
+  }
+
+  &.bg {
+    &-branco {
+      .typography-title-4 {
+        color: var(--pan-color-primary-brand);
+      }
+
+      .typography-title-1, .typography-body-2 {
+        color: var(--pan-color-neutral-black);
+      }
+    }
+
+    &-azul {
+      .typography-title-4{
+        color: var(--pan-color-neutral-black);
+      }
+
+      .typography-big-text-2,
+      .typography-large {
+        color: var(--pan-color-neutral-lighter);
+      }
+
+      .conteudo-numbers__cards-item {
+        background-color: var(--pan-color-primary-dark);
+      }
+    }
+
+    &-preto {
+      .typography-title-4 {
+        color: var(--pan-color-primary-brand);
+      }
+
+      .typography-big-text-2,
+      .typography-large {
+        color: var(--pan-color-neutral-lighter);
+      }
+      
+      .conteudo-numbers__cards-item {
+        background-color: var(--pan-color-neutral-darker);
+      }
+    }
+  }
+}

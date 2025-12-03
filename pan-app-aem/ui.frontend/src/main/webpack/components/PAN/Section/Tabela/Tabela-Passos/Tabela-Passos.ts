@@ -1,0 +1,1 @@
+import "./Tabela-Passos.scss";

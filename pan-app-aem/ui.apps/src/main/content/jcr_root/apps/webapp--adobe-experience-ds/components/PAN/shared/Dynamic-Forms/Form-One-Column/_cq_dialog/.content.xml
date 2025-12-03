@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Formulário dinãmico de uma coluna"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[webapp--aem-institucional.editor]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <tab-text-form
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Título e Botão (submit)"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <TituloFormulario
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="Titulo do formulário"
+                                name="./tituloFormulario"
+                                value="" />
+                            <BotaoEnviar
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="Texto do botão enviar"
+                                name="./submitButtonText"
+                                value="" />
+                        </items>
+                    </tab-text-form>
+                    <tab-create-form
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Campos do formulário"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <wellGroup-choice-type
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/well">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <choiceTypeTitle
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/text"
+                                        margin="{Boolean}true"
+                                        text="Escolha o tipo de campo (texto ou checkbox)" />
+                                    <choiceTypeData
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                        class="cq-dialog-dropdown-showhide-multival"
+                                        cq-dialog-dropdown-showhide-target=".style-showhide-target"
+                                        deleteHint="{Boolean}true"
+                                        name="./choiceTypeData">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <inputText
+                                                jcr:primaryType="nt:unstructured"
+                                                checked="{Boolean}true"
+                                                text="Campo de texto: (Nome, E-mail, Telefone, etc...)"
+                                                value="_inputText" />
+                                            <inputCheckbox
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Checkbox (termos de aceite)"
+                                                value="_inputCheckbox" />
+                                        </items>
+                                    </choiceTypeData>
+                                    <inputTypeTextContainer
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container"
+                                        class="hide style-showhide-target"
+                                        showhidetargetvalue="_inputText">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <input-text-message
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                text="Adicionar um campo do tipo texto."
+                                                margin="{Boolean}true"
+                                            />
+                                            <include-input-text
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                fieldLabel="Incluir campos do formulário">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./includeInputText">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <input-text-info
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                            fieldDescription="Define o label do campo criado!"
+                                                            text="Tipo do campo (Nome, E-mail, Telefone, etc...)" />
+                                                        <input-type
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/select"
+                                                            deleteHint="{Boolean}true"
+                                                            name="./inputType">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <nome
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Nome"
+                                                                    value="data-nome" />
+                                                                <email
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="E-mail"
+                                                                    value="data-email" />
+                                                                <telefone
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Telefone"
+                                                                    value="data-telefone" />
+                                                                <cpf
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="CPF"
+                                                                    value="data-cpf" />
+                                                                <cnpj
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="CNPJ"
+                                                                    value="data-cnpj" />
+                                                                <cpfOrCnpj
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="CPF ou CNPJ"
+                                                                    value="data-cpf-cnpj" />
+                                                                <currency
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Dinheiro"
+                                                                    value="data-currency" />
+                                                                <dataNascimento
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Data de Nascimento"
+                                                                    value="data-date-of-birth" />
+                                                            </items>
+                                                        </input-type>
+                                                        <input-mask
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/foundation/form/select"
+                                                            deleteHint="{Boolean}true"
+                                                            fieldLabel="Selecione o tipo de máscara a ser aplicado no campo de texto."
+                                                            name="./inputMask">
+                                                            <items jcr:primaryType="nt:unstructured">
+                                                                <common
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Nome, E-mail, Telefone, Cpf e Cnpj"
+                                                                    value="" />
+                                                                <nome
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Moeda (R$)"
+                                                                    value="currency" />
+                                                                <email
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    text="Data (DD/MM/YYYY)"
+                                                                    value="date" />
+                                                            </items>
+                                                        </input-mask>
+                                                        <input-name-info
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Cria o atributo (name) do campo, este valor deve ser o mesmo passado no contrato da API fornecido pelo backend!"
+                                                            fieldLabel="Atributo name, deve ser o mesmo fornecido pelo backend."
+                                                            name="./dataName" />
+                                                        <placeholder-text
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Define o label do campo criado!"
+                                                            fieldLabel="Texto do campo (ex: Nome, E-mail, Telefone, etc...)."
+                                                            name="./placeholderText" />
+                                                        <required
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            fieldDescription="Define se o preenchimento do campo é obrigatório ou não!"
+                                                            name="./required"
+                                                            text="Campo obrigatório?"
+                                                            uncheckedValue="false"
+                                                            margin="{Boolean}true"
+                                                            value="true" />
+                                                    </items>
+                                                </field>
+                                            </include-input-text>
+                                        </items>
+                                    </inputTypeTextContainer>
+                                    <inputTypeCheckboxContainer
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/container"
+                                        class="hide style-showhide-target"
+                                        showhidetargetvalue="_inputCheckbox">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <checkbox-message
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                text="Adicionar um campo do tipo checkbox."
+                                                margin="{Boolean}true"
+                                            />
+                                            <include-input-checkbox
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                fieldLabel="Incluir checkbox">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    name="./includeInputCheckbox">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <input-name-info
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Cria o atributo (name) do campo, este valor deve ser o mesmo passado no contrato da API fornecido pelo backend!"
+                                                            fieldLabel="Atributo name, deve ser o mesmo fornecido pelo backend."
+                                                            name="./dataCheckboxName" />
+                                                        <label-text
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Define o label do campo criado!"
+                                                            fieldLabel="Texto do label do checkbox."
+                                                            name="./labelText" />
+                                                        <required
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            fieldDescription="Define se o preenchimento do campo é obrigatório ou não!"
+                                                            name="./requiredCheckbox"
+                                                            text="Campo obrigatório?"
+                                                            uncheckedValue="false"
+                                                            margin="{Boolean}true"
+                                                            value="true" />
+                                                        <required-text
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Define o texto a ser exibido caso o campo obrigatório esteja vazio ou preenchido incorretamente!"
+                                                            fieldLabel="Mensagem de erro a ser exibida caso o campo obrigatório não seja preenchido."
+                                                            name="./textoCampoObrigatorio" />
+                                                        <show-disclaimer
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                            fieldDescription="Define se vai exisitir disclaimer ou não!"
+                                                            name="./showDisclaimer"
+                                                            text="Incluir disclaimer?"
+                                                            uncheckedValue=""
+                                                            margin="{Boolean}true"
+                                                            value="d-block" />
+                                                        <Disclaimer
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                            fieldLabel="Texto legal (disclaimer)"
+                                                            name="./textoSmall"
+                                                            removeSingleParagraphContainer="{Boolean}true"
+                                                            useFixedInlineToolbar="{Boolean}true"
+                                                            value="*Sujeito à análise de crédito e condições do produto.">
+                                                            <rtePlugins
+                                                                jcr:primaryType="nt:unstructured">
+                                                                <format
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="bold,italic" />
+                                                                <justify
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="-" />
+                                                                <links
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="modifylink,unlink" />
+                                                                <lists
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="*" />
+                                                                <tracklinks
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    features="*" />
+                                                            </rtePlugins>
+                                                            <uiSettings
+                                                                jcr:primaryType="nt:unstructured">
+                                                                <cui
+                                                                    jcr:primaryType="nt:unstructured">
+                                                                    <inline
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                                                        <popovers
+                                                                            jcr:primaryType="nt:unstructured">
+                                                                            <justify
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                                                ref="justify" />
+                                                                            <lists
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                                                ref="lists" />
+                                                                        </popovers>
+                                                                    </inline>
+                                                                </cui>
+                                                            </uiSettings>
+                                                        </Disclaimer>
+                                                    </items>
+                                                </field>
+                                            </include-input-checkbox>
+                                        </items>
+                                    </inputTypeCheckboxContainer>
+                                </items>
+                            </wellGroup-choice-type>
+                        </items>
+                    </tab-create-form>
+                    <tab-feedback-form
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Feedback"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <TituloFeedback
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Titulo tela de sucesso (Feedback) (máximo 48 caracteres)"
+                                maxlength="{Long}48"
+                                name="./tituloFeedback"
+                                value="" />
+                            <TextoFedeback
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Texto tela de sucesso (Feedback) (máximo 100 caracteres)"
+                                maxlength="{Long}100"
+                                name="./textoFeedback"
+                                value="" />
+                            <TextoFeedbackQrCodeBox
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Texto tela de sucesso (Feedback) QRCODE (máximo 45 caracteres)"
+                                maxlength="{Long}45"
+                                name="./textoQrCodeBox"
+                                value="" />
+                            <Qrcode
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldLabel="QR Code - SVG ou WEBP"
+                                fileNameParameter="./qrCodeFormPreLeadNameParameterWebp"
+                                fileReferenceParameter="./qrCodeFormPreLeadReferenceWebp"
+                                mimeTypes="[image/webp,image/svg+xml]"
+                                multiple="{Boolean}false"
+                                name="./logo"
+                                title="QR Code"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true" />
+                            <TextoBotaoFeedbackMobile
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="Texto botão feedback mobile (máximo de 20 caracteres)"
+                                maxlength="{Long}22"
+                                name="./textoBotaoFeedback"
+                                value="" />
+                            <DataTrackFeedback
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Data Track botão feedback mobile"
+                                name="./dataTrackFeedback"
+                                value="#" />
+                            <HrefFeedback
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                autocomplete="off"
+                                fieldDescription="ID seção = #ID_DA_SECAO"
+                                fieldLabel="Botão feedback mobile - Link ou ID da seção para scroll"
+                                maxlength="{Long}30"
+                                name="./ctaFeedback"
+                                value="#id_section" />
+                            <Target
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Botão feedback mobile - Target (no caso de link)"
+                                name="./dataTrackFeedback">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <self
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="{Boolean}true"
+                                        text="Mesma Página"
+                                        value="_self" />
+                                    <blank
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Nova Aba"
+                                        value="_blank" />
+                                </items>
+                            </Target>
+                            <buttonIconPosition
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                deleteHint="{Boolean}true"
+                                fieldLabel="Posição do icone"
+                                name="./buttonIconPosition"
+                                vertical="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <branco
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Justificado"
+                                        value="justified" />
+                                    <cinza
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Esquerda"
+                                        value="left" />
+                                    <azul
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Direita"
+                                        value="right" />
+                                </items>
+                            </buttonIconPosition>
+                            <buttonIcon
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldLabel="Icone do Botão"
+                                fileNameParameter="./buttonIconNameParameter"
+                                fileReferenceParameter="./buttonIconReference"
+                                mimeTypes="[image/png, image/svg]"
+                                multiple="{Boolean}false"
+                                name="./buttonIcon"
+                                title="icone do Botão (em branco para ficar sem)"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true" />
+                        </items>
+                    </tab-feedback-form>
+                    <tab-form-settings
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Form Config"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <Api
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="API - Endpoint"
+                                maxlength="{Long}200"
+                                name="./endPointApi"
+                                value="API - Endpoint" />
+                            <Grupo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="Grupo"
+                                maxlength="{Long}200"
+                                name="./groupInput" />
+                            <ChaveRecaptcha
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="Chave Recaptcha"
+                                maxlength="{Long}50"
+                                name="./chaveRecaptcha"
+                                value="" />
+                        </items>
+                    </tab-form-settings>
+                </items>
+            </tabs>
+
+        </items>
+    </content>
+</jcr:root>

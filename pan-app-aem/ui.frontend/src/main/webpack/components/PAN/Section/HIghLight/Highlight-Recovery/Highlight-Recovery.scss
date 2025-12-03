@@ -1,0 +1,17 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.Highlight-Recovery {
+    &__background {
+        padding: var(--pan-spacing-64) 0;
+    }
+
+    .typography-small {color: var(--pan-color-neutral-white);}
+
+    .bg {
+        &-branco {
+            .typography-big-text-2, .typography-large,  .typography-small {
+                color: var(--pan-color-neutral-black);
+            }
+        }
+    }
+}

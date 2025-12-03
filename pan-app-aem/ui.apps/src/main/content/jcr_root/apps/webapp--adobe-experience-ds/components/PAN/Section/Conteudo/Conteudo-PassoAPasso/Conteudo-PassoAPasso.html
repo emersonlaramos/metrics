@@ -1,0 +1,65 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section id="${properties.sectionID}" data-cmp-is="Conteudo-PassoAPasso">
+    <div class="conteudo-passo-a-passo ${properties.colorVariant}">
+        <div class="container conteudo-passo-a-passo__content">
+            <div class="row">
+                <div class="col-12 col-lg-4 col-xl- d-flex align-items-center">
+                    <div class="d-flex flex-column">
+                        <h2
+                            class="typography-title-3 conteudo-passo-a-passo__subtitle"
+                            data-sly-element="${properties.tagPalavraDestaque}"
+                        >
+                            ${properties.palavraDestaque}
+                        </h2>
+
+                        <h1
+                            class="typography-big-text-2 conteudo-passo-a-passo__title"
+                            data-sly-element="${properties.tagTitulo}"
+                        >
+                            ${properties.titulo}
+                        </h1>
+
+                        <div
+                            class="typography-large conteudo-passo-a-passo__text"
+                            data-sly-element="${properties.paragrafo}"
+                        >
+                            ${properties.paragrafo @context='html'}
+                        </div>
+
+                        <small>${properties.textoSmall}</small>
+
+                        <div
+                            class="col-12 col-md-6 mt-2 mb-5"
+                            data-panelcontainer="${wcmmode.edit}"
+                        >
+                            <sly
+                                data-sly-resource="${'Mahoe-Button' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-4 col-xl-3 d-none d-lg-flex">
+                    <img
+                        loading="lazy"
+                        class="conteudo-passo-a-passo__image image-default"
+                        alt="${properties.altImagem ? properties.altImagem : 'Imagem'}"
+                        src="${properties.imageReferenceWebp}"
+                    />
+                </div>
+
+                <div class="col-12 col-lg-4 col-xl-5 d-flex align-items-center">
+                    <div data-panelcontainer="${wcmmode.edit}">
+                        <sly
+                            data-sly-resource="${'Passo-A-Passo-Vertical' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Passo-A-Passo-Vertical'}"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

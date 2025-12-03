@@ -1,0 +1,16 @@
+@import '../../../../site/PAN/mixins/breakpoints';
+
+.badge {
+
+    &-md {
+        .mahoe-badge__information, .mahoe-badge__description {
+            font-size: 16px !important;
+        }
+    }
+
+    &-lg {
+        .mahoe-badge__information, .mahoe-badge__description {
+            font-size: 20px !important;
+        }
+    }
+}

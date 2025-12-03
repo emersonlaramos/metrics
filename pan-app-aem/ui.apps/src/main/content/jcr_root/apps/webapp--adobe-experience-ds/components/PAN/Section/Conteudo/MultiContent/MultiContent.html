@@ -1,0 +1,136 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section id="${properties.sectionID}" data-cmp-is="MultiContent">
+    <div class="multicontent">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center mb-4">
+                    <div
+                        class="col-12 d-flex flex-column justify-content-center align-items-center"
+                    >
+                        <h3
+                            class="typography-title-3 multicontent__subtitle"
+                            data-sly-element="${properties.tagPalavraDestaque}"
+                        >
+                            ${properties.palavraDestaque}
+                        </h3>
+                        <h2
+                            class="col-lg-7 typography-big-text-2 multicontent__title"
+                            data-sly-element="${properties.tagTitulo}"
+                        >
+                            ${properties.titulo}
+                        </h2>
+                        <div
+                            class="multicontent__buttons d-flex align-items-center"
+                        >
+                            <button
+                                class="multicontent__buttons-button"
+                                data-track="${properties.dataTrackBotao1}"
+                                data-js="button"
+                            >
+                                ${properties.botao1}
+                            </button>
+                            <button
+                                class="multicontent__buttons-button"
+                                data-track="${properties.dataTrackBotao2}"
+                                data-js="button"
+                            >
+                                ${properties.botao2}
+                            </button>
+                            <button
+                                class="multicontent__buttons-button ${properties.botao3 ? '' : 'd-none'}"
+                                data-track="${properties.dataTrackBotao3}"
+                                data-js="button"
+                            >
+                                ${properties.botao3}
+                            </button>
+                            <button
+                                class="multicontent__buttons-button ${properties.botao4 ? '' : 'd-none'}"
+                                data-track="${properties.dataTrackBotao4}"
+                                data-js="button"
+                            >
+                                ${properties.botao4}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <sly
+                        data-sly-list.MultiContentMultifield="${resource.getChildren}"
+                    >
+                        <sly
+                            data-sly-test="${MultiContentMultifield.name == 'MultiContent'}"
+                        >
+                            <sly
+                                data-sly-list.MultiContent="${MultiContentMultifield.getChildren}"
+                            >
+                                <div
+                                    class="row d-flex justify-content-lg-between flex-lg-row-reverse d-none"
+                                    data-js="bloco"
+                                >
+                                    <img
+                                        loading="lazy"
+                                        class="multicontent__image mb-4 mb-lg-0 col-12 col-lg-6"
+                                        alt="${MultiContent.altImagem ? MultiContent.altImagem : 'Imagem'}"
+                                        src="${MultiContent.imageReferenceWebp}"
+                                        width="552"
+                                        height="500"
+                                    />
+
+                                    <div
+                                        class="bloco__content d-flex flex-column justify-content-center mt-lg-5 col-12 col-lg-5"
+                                    >
+                                        <p
+                                            class="typography-big-text-2 multicontent__blockTitle mb-3"
+                                        >
+                                            ${MultiContent.tituloBloco}
+                                        </p>
+                                        <div
+                                            class="typography-large multicontent__blockText"
+                                            data-sly-element="${MultiContent.textoBloco}"
+                                        >
+                                            ${MultiContent.textoBloco
+                                            @context='html'}
+                                        </div>
+                                        <div class="col-12 col-md-4 mt-2 mb-5">
+                                            <sly
+                                                data-sly-set.colorVariant="${request.requestPathInfo.selectors}"
+                                            />
+                                            <sly
+                                                data-sly-test="${!MultiContent.hideButton}"
+                                            >
+                                                <sly
+                                                    data-sly-test="${MultiContent.buttonText}"
+                                                >
+                                                    <mahoe-button
+                                                        button-role="${MultiContent.buttonBehavior != '_link' && 'button' }"
+                                                        href="${MultiContent.buttonBehavior == '_link' && MultiContent.buttonHref || MultiContent.buttonBehavior == '_scroll' && MultiContent.buttonScroll}"
+                                                        icon="${MultiContent.buttonIconReferenceParameter}"
+                                                        icon-position="${MultiContent.buttonIconPosition}"
+                                                        name="${MultiContent.buttonName ? MultiContent.buttonName : MultiContent.buttonText}"
+                                                        size="${MultiContent.buttonSize}"
+                                                        target="${MultiContent.buttonTarget}"
+                                                        mode="${MultiContent.buttonMode}"
+                                                        variant="${MultiContent.buttonVariant}"
+                                                        data-track="${MultiContent.buttonDataTrack}"
+                                                        title="${MultiContent.buttonTitle}"
+                                                        data-js="${MultiContent.buttonDataJS}"
+                                                    >
+                                                        ${MultiContent.buttonText}
+                                                    </mahoe-button>
+                                                </sly>
+                                            </sly>
+                                        </div>
+                                    </div>
+                                </div>
+                            </sly>
+                        </sly>
+                    </sly>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,2042 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Propriedades Nps-Aquisicao"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <Tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <tabTela1
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tela inicial"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <space
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                level="2" />
+                            <altImagem
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="ALT imagem tela 1"
+                                name="./altImagemTela1"
+                                value="#" />
+                            <imageMobileWebp
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Resolução referente a 6 colunas"
+                                fieldLabel="Imagem Mobile Tela 1 WEBP/GIF (375 x 364)"
+                                fileNameParameter="./imageMobileTela1NameParameterWebp"
+                                fileReferenceParameter="./imageMobileTela1ReferenceWebp"
+                                mimeTypes="[image/webp,image/gif]"
+                                multiple="{Boolean}false"
+                                name="./imageMobileWebp"
+                                title="Imagem Mobile WEBP"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true" />
+                            <imageDesktopWebp
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Resolução referente a 6 colunas"
+                                fieldLabel="Imagem Desktop Tela 1 WEBP/GIF (710 x 688)"
+                                fileNameParameter="./imageDesktopTela1NameParameterWebp"
+                                fileReferenceParameter="./imageDesktopTela1ReferenceWebp"
+                                mimeTypes="[image/webp,image/gif]"
+                                multiple="{Boolean}false"
+                                name="./imageDesktopWebp"
+                                title="Imagem Desktop WEBP"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true" />
+                            <palavraDestaque
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="Palavra Destaque"
+                                name="./palavraDestaquePrimeiraTela"
+                                value="" />
+                            <titulo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Titulo"
+                                name="./tituloPrimeiraTela"
+                                value="" />
+                            <paragrafo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                fieldLabel="Parágrafo"
+                                name="./paragrafoPrimeiraTela"
+                                removeSingleParagraphContainer="{Boolean}true"
+                                useFixedInlineToolbar="{Boolean}true"
+                                value="">
+                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                    <format
+                                        jcr:primaryType="nt:unstructured"
+                                        features="bold,italic" />
+                                    <justify
+                                        jcr:primaryType="nt:unstructured"
+                                        features="-" />
+                                    <links
+                                        jcr:primaryType="nt:unstructured"
+                                        features="modifylink,unlink" />
+                                    <lists
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <tracklinks
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*" />
+                                    <paraformat
+                                        jcr:primaryType="nt:unstructured"
+                                        features="*">
+                                        <formats jcr:primaryType="nt:unstructured">
+                                            <default_p
+                                                jcr:primaryType="nt:unstructured"
+                                                description="Paragraph"
+                                                tag="p" />
+                                        </formats>
+                                    </paraformat>
+                                </rtePlugins>
+                                <uiSettings jcr:primaryType="nt:unstructured">
+                                    <cui jcr:primaryType="nt:unstructured">
+                                        <inline
+                                            jcr:primaryType="nt:unstructured"
+                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                            <popovers jcr:primaryType="nt:unstructured">
+                                                <justify
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                    ref="justify" />
+                                                <lists
+                                                    jcr:primaryType="nt:unstructured"
+                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                    ref="lists" />
+                                            </popovers>
+                                        </inline>
+                                    </cui>
+                                </uiSettings>
+                            </paragrafo>
+                            <textoBotao
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Texto botão"
+                                name="./textoBotaoTela1"
+                                value="" />
+                            <titleBotao
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Title botão"
+                                name="./titleBotaoTela1"
+                                value="" />
+                            <dataTrackBotaoTela1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="Data-Track do botão da Tela inicial"
+                                name="./dataTrackBotaoTela1"
+                                value="" />
+                            <iconeBotaoTela1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                fieldDescription="Ícone do botão iniciar pesquisa"
+                                fieldLabel="Ícone botão WEBP/GIF/SVG (20 x 20)"
+                                fileNameParameter="./iconeBotaoTela1NameParameterSvg"
+                                fileReferenceParameter="./iconeBotaoTela1ReferenceSvg"
+                                mimeTypes="[image/svg]"
+                                multiple="{Boolean}false"
+                                name="./iconeBotaoTela1"
+                                title="Ícone botão tela 1"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true" />
+                        </items>
+                    </tabTela1>
+                    <quizes
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Perguntas"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <space
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                level="2" />
+                            <navigationButtons
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Botoões de navegação Voltar/Próximo"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <textoBotaoVoltar
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        autocomplete="off"
+                                        fieldLabel="Texto botão voltar"
+                                        name="./textoBotaoVoltar"
+                                        value="" />
+                                    <textoBotaoProximo
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        autocomplete="off"
+                                        fieldLabel="Texto botão próximo"
+                                        name="./textoBotaoProximo"
+                                        value="" />
+                                    <iconeBotoesNavegacaoPrev
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldDescription="Ícone dos botão voltar"
+                                        fieldLabel="Ícone botão voltar WEBP/GIF/SVG (20 x 20)"
+                                        fileNameParameter="./iconeBotaoNavigationPrevNameParameterSvg"
+                                        fileReferenceParameter="./iconeBotaoNavigationPrevReferenceSvg"
+                                        mimeTypes="[image/svg]"
+                                        multiple="{Boolean}false"
+                                        name="./iconeBotaoNavigationPrev"
+                                        title="Ícone do botão voltar"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true" />
+                                    <iconeBotoesNavegacaoNext
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                        autoStart="{Boolean}false"
+                                        class="cq-droptarget"
+                                        fieldDescription="Ícone do botão próximo"
+                                        fieldLabel="Ícone botão próximo WEBP/GIF/SVG (20 x 20)"
+                                        fileNameParameter="./iconeBotaoNavigationNextNameParameterSvg"
+                                        fileReferenceParameter="./iconeBotaoNavigationNextReferenceSvg"
+                                        mimeTypes="[image/svg]"
+                                        multiple="{Boolean}false"
+                                        name="./iconeBotaoNavigationNext"
+                                        title="Ícone do botão próximo"
+                                        uploadUrl="${suffix.path}"
+                                        useHTML5="{Boolean}true" />
+                                </items>
+                            </navigationButtons>
+                            <space
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                level="3" />
+                            <tabPergunta1
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Pergunta 1"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <fieldset
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Configure a Pergunta 1"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <dataTrackNextPergunta1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Data-Track do botão 'Próximo' da Pergunta 1"
+                                                name="./dataTrackNextPergunta1"
+                                                value="" />
+                                            <dataTrackPrevPergunta1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Data-Track do botão 'Voltar' da Pergunta 1"
+                                                name="./dataTrackPrevPergunta1"
+                                                value="" />
+                                            <altImagemPergunta1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="ALT imagem pergunta 1"
+                                                name="./altImagemPergunta1"
+                                                value="#" />
+                                            <imageMobileWebpPergunta1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldDescription="Resolução referente a 6 colunas"
+                                                fieldLabel="Imagem Mobile pergunta 1 WEBP/GIF (375 x 364)"
+                                                fileNameParameter="./imageMobilePergunta1NameParameterWebp"
+                                                fileReferenceParameter="./imageMobilePergunta1ReferenceWebp"
+                                                mimeTypes="[image/webp,image/gif]"
+                                                multiple="{Boolean}false"
+                                                name="./imageMobileWebp"
+                                                title="Imagem Mobile WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                            <imageDesktopWebpPergunta1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldDescription="Resolução referente a 6 colunas"
+                                                fieldLabel="Imagem Desktop pergunta 1 WEBP/GIF (710 x 688)"
+                                                fileNameParameter="./imageDesktopPergunta1NameParameterWebp"
+                                                fileReferenceParameter="./imageDesktopPergunta1ReferenceWebp"
+                                                mimeTypes="[image/webp,image/gif]"
+                                                multiple="{Boolean}false"
+                                                name="./imageDesktopWebp"
+                                                title="Imagem Desktop WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                            <palavraDestaquePergunta1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Palavra Destaque pergunta 1"
+                                                name="./palavraDestaquePergunta1"
+                                                value="" />
+                                            <tituloPergunta1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Titulo pergunta 1"
+                                                name="./tituloPergunta1"
+                                                value="" />
+                                        </items>
+                                    </fieldset>
+                                </items>
+                            </tabPergunta1>
+                            <space
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                level="3" />
+                            <tabPergunta2
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Pergunta 2"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <fieldset
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Configure a Pergunta 2"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <dataTrackNextPergunta2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Data-Track do botão 'Próximo' da Pergunta 2"
+                                                name="./dataTrackNextPergunta2"
+                                                value="" />
+                                            <dataTrackPrevPergunta2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Data-Track do botão 'Voltar' da Pergunta 2"
+                                                name="./dataTrackPrevPergunta2"
+                                                value="" />
+                                            <altImagemPergunta2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="ALT imagem pergunta 2"
+                                                name="./altImagemPergunta2"
+                                                value="#" />
+                                            <imageMobileWebpPergunta2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldDescription="Resolução referente a 6 colunas"
+                                                fieldLabel="Imagem Mobile pergunta 2 WEBP/GIF (375 x 364)"
+                                                fileNameParameter="./imageMobilePergunta2NameParameterWebp"
+                                                fileReferenceParameter="./imageMobilePergunta2ReferenceWebp"
+                                                mimeTypes="[image/webp,image/gif]"
+                                                multiple="{Boolean}false"
+                                                name="./imageMobileWebp"
+                                                title="Imagem Mobile WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                            <imageDesktopWebpPergunta2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldDescription="Resolução referente a 6 colunas"
+                                                fieldLabel="Imagem Desktop pergunta 2 WEBP/GIF (710 x 688)"
+                                                fileNameParameter="./imageDesktopPergunta2NameParameterWebp"
+                                                fileReferenceParameter="./imageDesktopPergunta2ReferenceWebp"
+                                                mimeTypes="[image/webp,image/gif]"
+                                                multiple="{Boolean}false"
+                                                name="./imageDesktopWebp"
+                                                title="Imagem Desktop WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                            <palavraDestaquePergunta2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Palavra Destaque pergunta 2"
+                                                name="./palavraDestaquePergunta2"
+                                                value="" />
+                                            <tituloPergunta2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Titulo pergunta 2"
+                                                name="./tituloPergunta2"
+                                                value="" />
+                                            <paragrafoPergunta2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                fieldLabel="Parágrafo pergunta 2"
+                                                name="./paragrafoPergunta2"
+                                                removeSingleParagraphContainer="{Boolean}true"
+                                                useFixedInlineToolbar="{Boolean}true"
+                                                value="">
+                                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                                    <format
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="bold,italic" />
+                                                    <justify
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="-" />
+                                                    <links
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="modifylink,unlink" />
+                                                    <lists
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*" />
+                                                    <tracklinks
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*" />
+                                                    <paraformat
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*">
+                                                        <formats jcr:primaryType="nt:unstructured">
+                                                            <default_p
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Paragraph"
+                                                                tag="p" />
+                                                        </formats>
+                                                    </paraformat>
+                                                </rtePlugins>
+                                                <uiSettings jcr:primaryType="nt:unstructured">
+                                                    <cui jcr:primaryType="nt:unstructured">
+                                                        <inline
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                                            <popovers
+                                                                jcr:primaryType="nt:unstructured">
+                                                                <justify
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                                    ref="justify" />
+                                                                <lists
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                                    ref="lists" />
+                                                            </popovers>
+                                                        </inline>
+                                                    </cui>
+                                                </uiSettings>
+                                            </paragrafoPergunta2>
+                                        </items>
+                                    </fieldset>
+                                </items>
+                            </tabPergunta2>
+                            <space
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                level="3" />
+                            <tabPergunta3
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Pergunta 3"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <fieldset
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Configure a Pergunta 3"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <dataTrackNextPergunta3
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Data-Track do botão 'Próximo' da Pergunta 3"
+                                                name="./dataTrackNextPergunta3"
+                                                value="" />
+                                            <dataTrackPrevPergunta3
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Data-Track do botão 'Voltar' da Pergunta 3"
+                                                name="./dataTrackPrevPergunta3"
+                                                value="" />
+                                            <altImagemPergunta3
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="ALT imagem pergunta 3"
+                                                name="./altImagemPergunta3"
+                                                value="#" />
+                                            <imageMobileWebpPergunta3
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldDescription="Resolução referente a 6 colunas"
+                                                fieldLabel="Imagem Mobile pergunta 3 WEBP/GIF (375 x 364)"
+                                                fileNameParameter="./imageMobilePergunta3NameParameterWebp"
+                                                fileReferenceParameter="./imageMobilePergunta3ReferenceWebp"
+                                                mimeTypes="[image/webp,image/gif]"
+                                                multiple="{Boolean}false"
+                                                name="./imageMobileWebp"
+                                                title="Imagem Mobile WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                            <imageDesktopWebpPergunta3
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldDescription="Resolução referente a 6 colunas"
+                                                fieldLabel="Imagem Desktop pergunta 3 WEBP/GIF (710 x 688)"
+                                                fileNameParameter="./imageDesktopPergunta3NameParameterWebp"
+                                                fileReferenceParameter="./imageDesktopPergunta3ReferenceWebp"
+                                                mimeTypes="[image/webp,image/gif]"
+                                                multiple="{Boolean}false"
+                                                name="./imageDesktopWebp"
+                                                title="Imagem Desktop WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                            <palavraDestaquePergunta3
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Palavra Destaque pergunta 3"
+                                                name="./palavraDestaquePergunta3"
+                                                value="" />
+                                            <tituloPergunta3
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Titulo pergunta 3"
+                                                name="./tituloPergunta3"
+                                                value="" />
+                                        </items>
+                                    </fieldset>
+                                </items>
+                            </tabPergunta3>
+                            <space
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                level="3" />
+                            <tabPergunta4
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Pergunta 4"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <fieldset
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Configure a Pergunta 4"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <dataTrackNextPergunta4
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Data-Track do botão 'Próximo' da Pergunta 4"
+                                                name="./dataTrackNextPergunta4"
+                                                value="" />
+                                            <dataTrackPrevPergunta4
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Data-Track do botão 'Voltar' da Pergunta 4"
+                                                name="./dataTrackPrevPergunta4"
+                                                value="" />
+                                            <altImagemPergunta4
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="ALT imagem pergunta 4"
+                                                name="./altImagemPergunta4"
+                                                value="#" />
+                                            <imageMobileWebpPergunta4
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldDescription="Resolução referente a 6 colunas"
+                                                fieldLabel="Imagem Mobile pergunta 4 WEBP/GIF (375 x 364)"
+                                                fileNameParameter="./imageMobilePergunta4NameParameterWebp"
+                                                fileReferenceParameter="./imageMobilePergunta4ReferenceWebp"
+                                                mimeTypes="[image/webp,image/gif]"
+                                                multiple="{Boolean}false"
+                                                name="./imageMobileWebp"
+                                                title="Imagem Mobile WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                            <imageDesktopWebpPergunta4
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldDescription="Resolução referente a 6 colunas"
+                                                fieldLabel="Imagem Desktop pergunta 4 WEBP/GIF (710 x 688)"
+                                                fileNameParameter="./imageDesktopPergunta4NameParameterWebp"
+                                                fileReferenceParameter="./imageDesktopPergunta4ReferenceWebp"
+                                                mimeTypes="[image/webp,image/gif]"
+                                                multiple="{Boolean}false"
+                                                name="./imageDesktopWebp"
+                                                title="Imagem Desktop WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                            <palavraDestaquePergunta4
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Palavra Destaque pergunta 4"
+                                                name="./palavraDestaquePergunta4"
+                                                value="" />
+                                            <tituloPergunta4
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Titulo pergunta 4"
+                                                name="./tituloPergunta4"
+                                                value="" />
+                                            <multipla-escolha-4
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Multípla escolha"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <list
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                        composite="{Boolean}true"
+                                                        fieldLabel="Insira as opções">
+                                                        <field
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                            name="./opcaoMultiplaEscolha4">
+                                                            <items
+                                                                jcr:primaryType="nt:unstructured">
+                                                                <TextoOpcao
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    autocomplete="off"
+                                                                    fieldLabel="Texto opção"
+                                                                    name="./texto"
+                                                                    value="" />
+                                                                <IdOpcao
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    autocomplete="off"
+                                                                    fieldDescription="ID da opção ex:  opcao_01, cada opção de multípla escolha deve ter o seu próprio Id"
+                                                                    fieldLabel="Id - único para cada opção"
+                                                                    name="./idOpcao"
+                                                                    value="" />
+                                                                <Grupo
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    autocomplete="off"
+                                                                    fieldDescription="Identificador referente a qual grupo a opção pertence, todas as opções pertencentes ao mesmo grupo devem ter o mesmo grupo preenchido ex: motivacao, concorrencia, facilidade, etc..."
+                                                                    fieldLabel="Id - único para cada grupo"
+                                                                    name="./nameGroup"
+                                                                    value="" />
+                                                            </items>
+                                                        </field>
+                                                    </list>
+                                                </items>
+                                            </multipla-escolha-4>
+                                            <labelInputTextoOutros
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Label do input de texto - (Outros)"
+                                                name="./inputOutrosLabelStep4"
+                                                value="" />
+                                            <placeholderInputTextoOutros
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Placeholder do input de texto - (Outros)"
+                                                name="./inputOutrosPlaceholderStep4"
+                                                value="" />
+                                        </items>
+                                    </fieldset>
+                                </items>
+                            </tabPergunta4>
+                            <space
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                level="3" />
+                            <tabPergunta5
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Pergunta 5"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <fieldset
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Configure a Pergunta 5"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <dataTrackNextPergunta5
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Data-Track do botão 'Próximo' da Pergunta 5"
+                                                name="./dataTrackNextPergunta5"
+                                                value="" />
+                                            <dataTrackPrevPergunta5
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Data-Track do botão 'Voltar' da Pergunta 5"
+                                                name="./dataTrackPrevPergunta5"
+                                                value="" />
+                                            <altImagemPergunta5
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="ALT imagem pergunta 5"
+                                                name="./altImagemPergunta5"
+                                                value="#" />
+                                            <imageMobileWebpPergunta5
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldDescription="Resolução referente a 6 colunas"
+                                                fieldLabel="Imagem Mobile pergunta 5 WEBP/GIF (375 x 364)"
+                                                fileNameParameter="./imageMobilePergunta5NameParameterWebp"
+                                                fileReferenceParameter="./imageMobilePergunta5ReferenceWebp"
+                                                mimeTypes="[image/webp,image/gif]"
+                                                multiple="{Boolean}false"
+                                                name="./imageMobileWebp"
+                                                title="Imagem Mobile WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                            <imageDesktopWebpPergunta5
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldDescription="Resolução referente a 6 colunas"
+                                                fieldLabel="Imagem Desktop pergunta 5 WEBP/GIF (710 x 688)"
+                                                fileNameParameter="./imageDesktopPergunta5NameParameterWebp"
+                                                fileReferenceParameter="./imageDesktopPergunta5ReferenceWebp"
+                                                mimeTypes="[image/webp,image/gif]"
+                                                multiple="{Boolean}false"
+                                                name="./imageDesktopWebp"
+                                                title="Imagem Desktop WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                            <palavraDestaquePergunta5
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Palavra Destaque pergunta 5"
+                                                name="./palavraDestaquePergunta5"
+                                                value="" />
+                                            <tituloPergunta5
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Titulo pergunta 5"
+                                                name="./tituloPergunta5"
+                                                value="" />
+                                            <multipla-escolha-5
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Multípla escolha"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <list
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                        composite="{Boolean}true"
+                                                        fieldLabel="Insira as opções">
+                                                        <field
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                            name="./opcaoMultiplaEscolha5">
+                                                            <items
+                                                                jcr:primaryType="nt:unstructured">
+                                                                <TextoOpcao
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    autocomplete="off"
+                                                                    fieldLabel="Texto opção"
+                                                                    name="./texto"
+                                                                    value="" />
+                                                                <IdOpcao
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    autocomplete="off"
+                                                                    fieldDescription="ID da opção ex:  opcao_01, cada opção de multípla escolha deve ter o seu próprio Id"
+                                                                    fieldLabel="Id - único para cada opção"
+                                                                    name="./idOpcao"
+                                                                    value="" />
+                                                                <Grupo
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    autocomplete="off"
+                                                                    fieldDescription="Identificador referente a qual grupo a opção pertence, todas as opções pertencentes ao mesmo grupo devem ter o mesmo grupo preenchido ex: motivacao, concorrencia, facilidade, etc..."
+                                                                    fieldLabel="Id - único para cada grupo"
+                                                                    name="./nameGroup"
+                                                                    value="" />
+                                                            </items>
+                                                        </field>
+                                                    </list>
+                                                </items>
+                                            </multipla-escolha-5>
+                                            <labelInputTextoOutros
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Label do input de texto - (Outros)"
+                                                name="./inputOutrosLabelStep5"
+                                                value="" />
+                                            <placeholderInputTextoOutros
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Placeholder do input de texto - (Outros)"
+                                                name="./inputOutrosPlaceholderStep5"
+                                                value="" />
+                                        </items>
+                                    </fieldset>
+                                </items>
+                            </tabPergunta5>
+                            <space
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                level="3" />
+                            <tabPergunta6
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Pergunta 6"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <fieldset
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Configure a Pergunta 6"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <textoBotaoConcluir
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Texto botão concluir (submit)"
+                                                name="./submitButtonText"
+                                                value="" />
+                                            <dataTrackNextPergunta6
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Data-Track do botão concluir (submit)"
+                                                name="./dataTrackNextPergunta6"
+                                                value="" />
+                                            <dataTrackPrevPergunta6
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Data-Track do botão 'Voltar' da Pergunta 6"
+                                                name="./dataTrackPrevPergunta6"
+                                                value="" />
+                                            <altImagemPergunta6
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="ALT imagem pergunta 6"
+                                                name="./altImagemPergunta6"
+                                                value="#" />
+                                            <imageMobileWebpPergunta6
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldDescription="Resolução referente a 6 colunas"
+                                                fieldLabel="Imagem Mobile pergunta 6 WEBP/GIF (375 x 364)"
+                                                fileNameParameter="./imageMobilePergunta6NameParameterWebp"
+                                                fileReferenceParameter="./imageMobilePergunta6ReferenceWebp"
+                                                mimeTypes="[image/webp,image/gif]"
+                                                multiple="{Boolean}false"
+                                                name="./imageMobileWebp"
+                                                title="Imagem Mobile WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                            <imageDesktopWebpPergunta6
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldDescription="Resolução referente a 6 colunas"
+                                                fieldLabel="Imagem Desktop pergunta 6 WEBP/GIF (710 x 688)"
+                                                fileNameParameter="./imageDesktopPergunta6NameParameterWebp"
+                                                fileReferenceParameter="./imageDesktopPergunta6ReferenceWebp"
+                                                mimeTypes="[image/webp,image/gif]"
+                                                multiple="{Boolean}false"
+                                                name="./imageDesktopWebp"
+                                                title="Imagem Desktop WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                            <palavraDestaquePergunta6
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Palavra Destaque pergunta 6"
+                                                name="./palavraDestaquePergunta6"
+                                                value="" />
+                                            <tituloPergunta6
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Titulo pergunta 6"
+                                                name="./tituloPergunta6"
+                                                value="" />
+                                            <multipla-escolha-6
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Multípla escolha"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <list
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                        composite="{Boolean}true"
+                                                        fieldLabel="Insira as opções">
+                                                        <field
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                            name="./opcaoMultiplaEscolha6">
+                                                            <items
+                                                                jcr:primaryType="nt:unstructured">
+                                                                <TextoOpcao
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    autocomplete="off"
+                                                                    fieldLabel="Texto opção"
+                                                                    name="./texto"
+                                                                    value="" />
+                                                                <IdOpcao
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    autocomplete="off"
+                                                                    fieldDescription="ID da opção ex:  opcao_01, cada opção de multípla escolha deve ter o seu próprio Id"
+                                                                    fieldLabel="Id - único para cada opção"
+                                                                    name="./idOpcao"
+                                                                    value="" />
+                                                                <Grupo
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                    autocomplete="off"
+                                                                    fieldDescription="Identificador referente a qual grupo a opção pertence, todas as opções pertencentes ao mesmo grupo devem ter o mesmo grupo preenchido ex: motivacao, concorrencia, facilidade, etc..."
+                                                                    fieldLabel="Id - único para cada grupo"
+                                                                    name="./nameGroup"
+                                                                    value="" />
+                                                            </items>
+                                                        </field>
+                                                    </list>
+                                                </items>
+                                            </multipla-escolha-6>
+                                            <labelInputTextoOutros
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Label do input de texto - (Outros)"
+                                                name="./inputOutrosLabelStep6"
+                                                value="" />
+                                            <placeholderInputTextoOutros
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Placeholder do input de texto - (Outros)"
+                                                name="./inputOutrosPlaceholderStep6"
+                                                value="" />
+                                        </items>
+                                    </fieldset>
+                                </items>
+                            </tabPergunta6>
+                            <space
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                level="3" />
+                            <tabTelaFinal
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Tela final"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <fieldset
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Configure a Tela Final"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <altImagemPergunta3
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="ALT imagem tela final"
+                                                name="./altImagemTelaFinal"
+                                                value="#" />
+                                            <imageMobileWebpTelaFinal
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldDescription="Resolução referente a 6 colunas"
+                                                fieldLabel="Imagem Mobile tela final WEBP/GIF (375 x 364)"
+                                                fileNameParameter="./imageMobileTelaFinalNameParameterWebp"
+                                                fileReferenceParameter="./imageMobileTelaFinalReferenceWebp"
+                                                mimeTypes="[image/webp,image/gif]"
+                                                multiple="{Boolean}false"
+                                                name="./imageMobileWebp"
+                                                title="Imagem Mobile WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                            <imageDesktopWebpTelaFinal
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldDescription="Resolução referente a 6 colunas"
+                                                fieldLabel="Imagem Desktop tela final WEBP/GIF (710 x 688)"
+                                                fileNameParameter="./imageDesktopTelaFinalNameParameterWebp"
+                                                fileReferenceParameter="./imageDesktopTelaFinalReferenceWebp"
+                                                mimeTypes="[image/webp,image/gif]"
+                                                multiple="{Boolean}false"
+                                                name="./imageDesktopWebp"
+                                                title="Imagem Desktop WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true" />
+                                            <palavraDestaqueTelaFinal
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Palavra Destaque tela final"
+                                                name="./palavraDestaqueTelaFinal"
+                                                value="" />
+                                            <tituloTelaFinal
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Titulo tela final"
+                                                name="./tituloTelaFinal"
+                                                value="" />
+                                            <paragrafoTelaFinal
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                                fieldLabel="Parágrafo tela final"
+                                                name="./paragrafoTelaFinal"
+                                                removeSingleParagraphContainer="{Boolean}true"
+                                                useFixedInlineToolbar="{Boolean}true"
+                                                value="">
+                                                <rtePlugins jcr:primaryType="nt:unstructured">
+                                                    <format
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="bold,italic" />
+                                                    <justify
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="-" />
+                                                    <links
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="modifylink,unlink" />
+                                                    <lists
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*" />
+                                                    <tracklinks
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*" />
+                                                    <paraformat
+                                                        jcr:primaryType="nt:unstructured"
+                                                        features="*">
+                                                        <formats jcr:primaryType="nt:unstructured">
+                                                            <default_p
+                                                                jcr:primaryType="nt:unstructured"
+                                                                description="Paragraph"
+                                                                tag="p" />
+                                                        </formats>
+                                                    </paraformat>
+                                                </rtePlugins>
+                                                <uiSettings jcr:primaryType="nt:unstructured">
+                                                    <cui jcr:primaryType="nt:unstructured">
+                                                        <inline
+                                                            jcr:primaryType="nt:unstructured"
+                                                            toolbar="[format#bold,format#italic,format#underline,#justify,#lists,links#modifylink,links#unlink,#paraformat]">
+                                                            <popovers
+                                                                jcr:primaryType="nt:unstructured">
+                                                                <justify
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[justify#justifyleft,justify#justifycenter,justify#justifyright,justify#justifyjustify]"
+                                                                    ref="justify" />
+                                                                <lists
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    items="[lists#unordered,lists#ordered,lists#outdent,lists#indent]"
+                                                                    ref="lists" />
+                                                            </popovers>
+                                                        </inline>
+                                                    </cui>
+                                                </uiSettings>
+                                            </paragrafoTelaFinal>
+                                        </items>
+                                    </fieldset>
+                                </items>
+                            </tabTelaFinal>
+                        </items>
+                    </quizes>
+                    <tab-form-settings
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Form Config"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tab-form-tabs
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <tab-btn
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Botão Finalizar"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <buttonText
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Texto"
+                                                name="./buttonText"
+                                                value="" />
+                                        </items>
+                                    </tab-btn>
+                                    <tab-botao
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Botão Concluir"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items
+                                            jcr:primaryType="nt:unstructured">
+                                            <tabs
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                                                maximized="{Boolean}true">
+                                                <items
+                                                    jcr:primaryType="nt:unstructured">
+                                                    <tabDesktop
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Versão Desktop"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}true">
+                                                        <items
+                                                            jcr:primaryType="nt:unstructured">
+                                                            <content
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                                <items
+                                                                    jcr:primaryType="nt:unstructured">
+                                                                    <tabsDesktop
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                                                                        maximized="{Boolean}true">
+                                                                        <items
+                                                                            jcr:primaryType="nt:unstructured">
+                                                                            <tabConfigure
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                jcr:title="Texto"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                                margin="{Boolean}true">
+                                                                                <items
+                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                    <finishButtonText
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                        autocomplete="off"
+                                                                                        fieldLabel="Texto"
+                                                                                        name="./finishButtonText"
+                                                                                        value="" />
+                                                                                    <HidefinishButton
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                                        checked="{Boolean}true"
+                                                                                        fieldDescription="Ocultar esse botão do componente"
+                                                                                        name="./hidefinishButton"
+                                                                                        text="Ocultar botão?"
+                                                                                        uncheckedValue="{Boolean}false"
+                                                                                        value="{Boolean}true" />
+                                                                                </items>
+                                                                            </tabConfigure>
+                                                                            <tabIcone
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                jcr:title="Ícone"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                                margin="{Boolean}true">
+                                                                                <items
+                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                    <finishButtonIconPosition
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                                        deleteHint="{Boolean}true"
+                                                                                        fieldLabel="Posição do icone"
+                                                                                        name="./finishButtonIconPosition"
+                                                                                        vertical="{Boolean}false">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                            <branco
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                text="Justificado"
+                                                                                                value="justified" />
+                                                                                            <cinza
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                checked="{Boolean}true"
+                                                                                                text="Esquerda"
+                                                                                                value="left" />
+                                                                                            <azul
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                text="Direita"
+                                                                                                value="right" />
+                                                                                        </items>
+                                                                                    </finishButtonIconPosition>
+                                                                                    <finishButtonIcon
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                                        autoStart="{Boolean}false"
+                                                                                        class="cq-droptarget"
+                                                                                        fieldDescription="Imagem em .SGV"
+                                                                                        fieldLabel="Icone do Botão"
+                                                                                        fileNameParameter="./finishButtonIconNameParameter"
+                                                                                        fileReferenceParameter="./finishButtonIconReferenceParameter"
+                                                                                        mimeTypes="[image/svg]"
+                                                                                        multiple="{Boolean}false"
+                                                                                        name="./finishButtonIcon"
+                                                                                        title="icone do Botão (opcional)"
+                                                                                        uploadUrl="${suffix.path}"
+                                                                                        useHTML5="{Boolean}true" />
+                                                                                </items>
+                                                                            </tabIcone>
+                                                                            <tabEstilo
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                jcr:title="Estilo"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                                margin="{Boolean}true">
+                                                                                <items
+                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                    <wellGroup-mode
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                            <modeTitle
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                                                                margin="{Boolean}true"
+                                                                                                text="Mode (modo)" />
+                                                                                            <finishButtonStyleBehavior
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                                                class="cq-dialog-dropdown-showhide-multival"
+                                                                                                cq-dialog-dropdown-showhide-target=".style-showhide-target"
+                                                                                                deleteHint="{Boolean}true"
+                                                                                                name="./finishButtonStyleBehavior">
+                                                                                                <items
+                                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                                    <inherit
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        checked="{Boolean}true"
+                                                                                                        text="Herdar (automatico do tema escolhido no componente principal)"
+                                                                                                        value="_inherit" />
+                                                                                                    <independent
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Independente (Escolha manualmente)"
+                                                                                                        value="_independent" />
+                                                                                                </items>
+                                                                                            </finishButtonStyleBehavior>
+                                                                                            <styleContainer
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/foundation/container"
+                                                                                                class="hide style-showhide-target"
+                                                                                                showhidetargetvalue="_independent">
+                                                                                                <items
+                                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                                    <finishButtonMode
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                                                        deleteHint="{Boolean}true"
+                                                                                                        name="./finishButtonMode"
+                                                                                                        vertical="{Boolean}true">
+                                                                                                        <items
+                                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                                            <none
+                                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                                text="None (Padrão - Sem modo)"
+                                                                                                                value="" />
+                                                                                                            <dark
+                                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                                text="Dark (Branco - para fundos escuros)"
+                                                                                                                value="dark" />
+                                                                                                            <blue
+                                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                                checked="{Boolean}true"
+                                                                                                                text="Blue (Azul)"
+                                                                                                                value="blue" />
+                                                                                                        </items>
+                                                                                                    </finishButtonMode>
+                                                                                                </items>
+                                                                                            </styleContainer>
+                                                                                        </items>
+                                                                                    </wellGroup-mode>
+                                                                                    <wellGroup-variant
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                            <varianteTitle
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                                                                margin="{Boolean}true"
+                                                                                                text="Variant (Variante)" />
+                                                                                            <finishButtonVariant
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                                                deleteHint="{Boolean}true"
+                                                                                                name="./finishButtonVariant"
+                                                                                                vertical="{Boolean}true">
+                                                                                                <items
+                                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                                    <branco
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Primary (Primário - padrão)"
+                                                                                                        value="primary" />
+                                                                                                    <cinza
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        checked="{Boolean}true"
+                                                                                                        text="Secondary (Secondário - Sem fundo)"
+                                                                                                        value="secondary" />
+                                                                                                    <azul
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Ghost (Outline - Sem fundo e Sem borda)"
+                                                                                                        value="ghost" />
+                                                                                                </items>
+                                                                                            </finishButtonVariant>
+                                                                                        </items>
+                                                                                    </wellGroup-variant>
+                                                                                    <wellGroup-size
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                            <sizeTitle
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                                                                margin="{Boolean}true"
+                                                                                                text="Size (Tamanho)" />
+                                                                                            <finishButtonSize
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                                                deleteHint="{Boolean}true"
+                                                                                                name="./finishButtonSize"
+                                                                                                vertical="{Boolean}true">
+                                                                                                <items
+                                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                                    <xs
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Extra Small (Extra Pequeno)"
+                                                                                                        value="xs" />
+                                                                                                    <sm
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        checked="{Boolean}true"
+                                                                                                        text="Small (Pequeno)"
+                                                                                                        value="sm" />
+                                                                                                    <md
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Medium (Médio)"
+                                                                                                        value="md" />
+                                                                                                    <lg
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Large (Grande)"
+                                                                                                        value="lg" />
+                                                                                                </items>
+                                                                                            </finishButtonSize>
+                                                                                        </items>
+                                                                                    </wellGroup-size>
+                                                                                </items>
+                                                                            </tabEstilo>
+                                                                            <tabBehavior
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                jcr:title="Comportamento"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                                margin="{Boolean}true">
+                                                                                <items
+                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                    <finishButtonBehavior
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                                        class="cq-dialog-dropdown-showhide-multival"
+                                                                                        cq-dialog-dropdown-showhide-target=".type-showhide-target"
+                                                                                        deleteHint="{Boolean}true"
+                                                                                        fieldLabel="Escolha o comportamento do Botão"
+                                                                                        name="./finishButtonBehavior"
+                                                                                        vertical="{Boolean}false">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                            <link
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                checked="{Boolean}true"
+                                                                                                text="Link"
+                                                                                                value="_link" />
+                                                                                            <scroll
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                text="Scroll (ID da Seção)"
+                                                                                                value="_scroll" />
+                                                                                            <data_js
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                text="Estático"
+                                                                                                value="_data_js" />
+                                                                                        </items>
+                                                                                    </finishButtonBehavior>
+                                                                                    <space
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                                                        level="1" />
+                                                                                    <linkContainer
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/foundation/container"
+                                                                                        class="type-showhide-target"
+                                                                                        showhidetargetvalue="_link">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                            <finishButtonHref
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                                                autocomplete="off"
+                                                                                                fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                                                fieldLabel="CTA Link ou ID da seção para scroll"
+                                                                                                name="./finishButtonHref"
+                                                                                                value="" />
+                                                                                            <finishButtonTarget
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                                                fieldLabel="CTA Link Target"
+                                                                                                name="./finishButtonTarget">
+                                                                                                <items
+                                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                                    <self
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        selected="{Boolean}true"
+                                                                                                        text="Mesma Página"
+                                                                                                        value="_self" />
+                                                                                                    <blank
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Nova Aba"
+                                                                                                        value="_blank" />
+                                                                                                </items>
+                                                                                            </finishButtonTarget>
+                                                                                        </items>
+                                                                                    </linkContainer>
+                                                                                    <scrolLContainer
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/foundation/container"
+                                                                                        class="type-showhide-target"
+                                                                                        showhidetargetvalue="_scroll">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                            <finishButtonScroll
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                                autocomplete="off"
+                                                                                                fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                                                fieldLabel="ID da seção para scroll"
+                                                                                                name="./finishButtonScroll"
+                                                                                                value="#id_section" />
+                                                                                        </items>
+                                                                                    </scrolLContainer>
+                                                                                    <staticContainer
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/foundation/container"
+                                                                                        class="type-showhide-target"
+                                                                                        showhidetargetvalue="_data_js">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured" />
+                                                                                    </staticContainer>
+                                                                                    <dataJSContainer
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/foundation/container">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                            <finishButtonDataJS
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                                autocomplete="off"
+                                                                                                fieldLabel="Identificador (data-js)"
+                                                                                                name="./finishButtonDataJS"
+                                                                                                value="" />
+                                                                                        </items>
+                                                                                    </dataJSContainer>
+                                                                                </items>
+                                                                            </tabBehavior>
+                                                                            <tabSeo
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                jcr:title="SEO"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                                margin="{Boolean}true">
+                                                                                <items
+                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                    <finishButtonName
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                        autocomplete="off"
+                                                                                        fieldLabel="Nome (atributo NAME do HTML)"
+                                                                                        name="./finishButtonName"
+                                                                                        value="" />
+                                                                                    <finishButtonTitle
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                        autocomplete="off"
+                                                                                        fieldLabel="Atributo Title"
+                                                                                        name="./finishButtonTitle"
+                                                                                        value="#" />
+                                                                                    <finishButtonDataTrack
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                        autocomplete="off"
+                                                                                        fieldLabel="finishButton Data Track"
+                                                                                        name="./finishButtonDataTrack"
+                                                                                        value="#" />
+                                                                                </items>
+                                                                            </tabSeo>
+                                                                        </items>
+                                                                    </tabsDesktop>
+                                                                </items>
+                                                            </content>
+                                                        </items>
+                                                    </tabDesktop>
+                                                    <tabMobile
+                                                        jcr:primaryType="nt:unstructured"
+                                                        jcr:title="Versão Mobile"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                        margin="{Boolean}true">
+                                                        <items
+                                                            jcr:primaryType="nt:unstructured">
+                                                            <contentMobile
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                                <items
+                                                                    jcr:primaryType="nt:unstructured">
+                                                                    <tabsMobile
+                                                                        jcr:primaryType="nt:unstructured"
+                                                                        sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                                                                        maximized="{Boolean}true">
+                                                                        <items
+                                                                            jcr:primaryType="nt:unstructured">
+                                                                            <tabConfigureMobile
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                jcr:title="Texto"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                                margin="{Boolean}true">
+                                                                                <items
+                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                    <finishButtonTextMobile
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                        autocomplete="off"
+                                                                                        fieldLabel="Texto"
+                                                                                        name="./finishButtonTextMobile"
+                                                                                        value="" />
+                                                                                    <HidefinishButtonMobile
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                                                        checked="{Boolean}true"
+                                                                                        fieldDescription="Ocultar esse botão do componente"
+                                                                                        name="./hidefinishButtonMobile"
+                                                                                        text="Ocultar botão?"
+                                                                                        uncheckedValue="{Boolean}false"
+                                                                                        value="{Boolean}true" />
+                                                                                </items>
+                                                                            </tabConfigureMobile>
+                                                                            <tabIconeMobile
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                jcr:title="Ícone"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                                margin="{Boolean}true">
+                                                                                <items
+                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                    <finishButtonIconPositionMobile
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                                        deleteHint="{Boolean}true"
+                                                                                        fieldLabel="Posição do icone"
+                                                                                        name="./finishButtonIconPositionMobile"
+                                                                                        vertical="{Boolean}false">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                            <branco
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                text="Justificado"
+                                                                                                value="justified" />
+                                                                                            <cinza
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                checked="{Boolean}true"
+                                                                                                text="Esquerda"
+                                                                                                value="left" />
+                                                                                            <azul
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                text="Direita"
+                                                                                                value="right" />
+                                                                                        </items>
+                                                                                    </finishButtonIconPositionMobile>
+                                                                                    <finishButtonIconMobile
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                                                        autoStart="{Boolean}false"
+                                                                                        class="cq-droptarget"
+                                                                                        fieldDescription="Imagem em .SGV"
+                                                                                        fieldLabel="Icone do Botão"
+                                                                                        fileNameParameter="./finishButtonIconMobileNameParameter"
+                                                                                        fileReferenceParameter="./finishButtonIconReferenceParameterMobile"
+                                                                                        mimeTypes="[image/svg]"
+                                                                                        multiple="{Boolean}false"
+                                                                                        name="./finishButtonIconMobile"
+                                                                                        title="icone do Botão (opcional)"
+                                                                                        uploadUrl="${suffix.path}"
+                                                                                        useHTML5="{Boolean}true" />
+                                                                                </items>
+                                                                            </tabIconeMobile>
+                                                                            <tabEstiloMobile
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                jcr:title="Estilo"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                                margin="{Boolean}true">
+                                                                                <items
+                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                    <wellGroup-mode
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                            <modeTitle
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                                                                margin="{Boolean}true"
+                                                                                                text="Mode (modo)" />
+                                                                                            <finishButtonStyleBehaviorMobile
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                                                class="cq-dialog-dropdown-showhide-multival"
+                                                                                                cq-dialog-dropdown-showhide-target=".style-showhide-target"
+                                                                                                deleteHint="{Boolean}true"
+                                                                                                name="./finishButtonStyleBehaviorMobile">
+                                                                                                <items
+                                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                                    <inherit
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        checked="{Boolean}true"
+                                                                                                        text="Herdar (automatico do tema escolhido no componente principal)"
+                                                                                                        value="_inherit" />
+                                                                                                    <independent
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Independente (Escolha manualmente)"
+                                                                                                        value="_independent" />
+                                                                                                </items>
+                                                                                            </finishButtonStyleBehaviorMobile>
+                                                                                            <styleContainerMobile
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/foundation/container"
+                                                                                                class="hide style-showhide-target"
+                                                                                                showhidetargetvalue="_independent">
+                                                                                                <items
+                                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                                    <finishButtonModeMobile
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                                                        deleteHint="{Boolean}true"
+                                                                                                        name="./finishButtonModeMobile"
+                                                                                                        vertical="{Boolean}true">
+                                                                                                        <items
+                                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                                            <none
+                                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                                text="None (Padrão - Sem modo)"
+                                                                                                                value="" />
+                                                                                                            <dark
+                                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                                text="Dark (Branco - para fundos escuros)"
+                                                                                                                value="dark" />
+                                                                                                            <blue
+                                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                                checked="{Boolean}true"
+                                                                                                                text="Blue (Azul)"
+                                                                                                                value="blue" />
+                                                                                                        </items>
+                                                                                                    </finishButtonModeMobile>
+                                                                                                </items>
+                                                                                            </styleContainerMobile>
+                                                                                        </items>
+                                                                                    </wellGroup-mode>
+                                                                                    <wellGroup-variant
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                            <varianteTitle
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                                                                margin="{Boolean}true"
+                                                                                                text="Variant (Variante)" />
+                                                                                            <finishButtonVariantMobile
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                                                deleteHint="{Boolean}true"
+                                                                                                name="./finishButtonVariantMobile"
+                                                                                                vertical="{Boolean}true">
+                                                                                                <items
+                                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                                    <branco
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Primary (Primário - padrão)"
+                                                                                                        value="primary" />
+                                                                                                    <cinza
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        checked="{Boolean}true"
+                                                                                                        text="Secondary (Secondário - Sem fundo)"
+                                                                                                        value="secondary" />
+                                                                                                    <azul
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Ghost (Outline - Sem fundo e Sem borda)"
+                                                                                                        value="ghost" />
+                                                                                                </items>
+                                                                                            </finishButtonVariantMobile>
+                                                                                        </items>
+                                                                                    </wellGroup-variant>
+                                                                                    <wellGroup-size
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/well">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                            <sizeTitle
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/text"
+                                                                                                margin="{Boolean}true"
+                                                                                                text="Size (Tamanho)" />
+                                                                                            <finishButtonSizeMobile
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                                                                                deleteHint="{Boolean}true"
+                                                                                                name="./finishButtonSizeMobile"
+                                                                                                vertical="{Boolean}true">
+                                                                                                <items
+                                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                                    <xs
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Extra Small (Extra Pequeno)"
+                                                                                                        value="xs" />
+                                                                                                    <sm
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        checked="{Boolean}true"
+                                                                                                        text="Small (Pequeno)"
+                                                                                                        value="sm" />
+                                                                                                    <md
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Medium (Médio)"
+                                                                                                        value="md" />
+                                                                                                    <lg
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Large (Grande)"
+                                                                                                        value="lg" />
+                                                                                                </items>
+                                                                                            </finishButtonSizeMobile>
+                                                                                        </items>
+                                                                                    </wellGroup-size>
+                                                                                </items>
+                                                                            </tabEstiloMobile>
+                                                                            <tabBehaviorMobile
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                jcr:title="Comportamento"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                                margin="{Boolean}true">
+                                                                                <items
+                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                    <finishButtonBehaviorMobile
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/foundation/form/select"
+                                                                                        class="cq-dialog-dropdown-showhide-multival"
+                                                                                        cq-dialog-dropdown-showhide-target=".type-showhide-target"
+                                                                                        deleteHint="{Boolean}true"
+                                                                                        fieldLabel="Escolha o comportamento do Botão"
+                                                                                        name="./finishButtonBehaviorMobile"
+                                                                                        vertical="{Boolean}false">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                            <link
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                checked="{Boolean}true"
+                                                                                                text="Link"
+                                                                                                value="_link" />
+                                                                                            <scroll
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                text="Scroll (ID da Seção)"
+                                                                                                value="_scroll" />
+                                                                                            <data_js
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                text="Estático"
+                                                                                                value="_data_js" />
+                                                                                        </items>
+                                                                                    </finishButtonBehaviorMobile>
+                                                                                    <space
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/heading"
+                                                                                        level="1" />
+                                                                                    <linkContainerMobile
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/foundation/container"
+                                                                                        class="type-showhide-target"
+                                                                                        showhidetargetvalue="_link">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                            <finishButtonHrefMobile
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                                                                                autocomplete="off"
+                                                                                                fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                                                fieldLabel="CTA Link ou ID da seção para scroll"
+                                                                                                name="./finishButtonHrefMobile"
+                                                                                                value="" />
+                                                                                            <finishButtonTargetMobile
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                                                                fieldLabel="CTA Link Target"
+                                                                                                name="./finishButtonTargetMobile">
+                                                                                                <items
+                                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                                    <self
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        selected="{Boolean}true"
+                                                                                                        text="Mesma Página"
+                                                                                                        value="_self" />
+                                                                                                    <blank
+                                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                                        text="Nova Aba"
+                                                                                                        value="_blank" />
+                                                                                                </items>
+                                                                                            </finishButtonTargetMobile>
+                                                                                        </items>
+                                                                                    </linkContainerMobile>
+                                                                                    <scrolLContainerMobile
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/foundation/container"
+                                                                                        class="type-showhide-target"
+                                                                                        showhidetargetvalue="_scroll">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                            <finishButtonScrollMobile
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                                autocomplete="off"
+                                                                                                fieldDescription="ID seção = #ID_DA_SECAO"
+                                                                                                fieldLabel="ID da seção para scroll"
+                                                                                                name="./finishButtonScrollMobile"
+                                                                                                value="#id_section" />
+                                                                                        </items>
+                                                                                    </scrolLContainerMobile>
+                                                                                    <staticContainerMobile
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/foundation/container"
+                                                                                        class="type-showhide-target"
+                                                                                        showhidetargetvalue="_data_js">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured" />
+                                                                                    </staticContainerMobile>
+                                                                                    <dataJSContainerMobile
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/foundation/container">
+                                                                                        <items
+                                                                                            jcr:primaryType="nt:unstructured">
+                                                                                            <finishButtonDataJSMobile
+                                                                                                jcr:primaryType="nt:unstructured"
+                                                                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                                autocomplete="off"
+                                                                                                fieldLabel="Identificador (data-js)"
+                                                                                                name="./finishButtonDataJSMobile"
+                                                                                                value="" />
+                                                                                        </items>
+                                                                                    </dataJSContainerMobile>
+                                                                                </items>
+                                                                            </tabBehaviorMobile>
+                                                                            <tabSeoMobile
+                                                                                jcr:primaryType="nt:unstructured"
+                                                                                jcr:title="SEO"
+                                                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                                margin="{Boolean}true">
+                                                                                <items
+                                                                                    jcr:primaryType="nt:unstructured">
+                                                                                    <finishButtonNameMobile
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                        autocomplete="off"
+                                                                                        fieldLabel="Nome (atributo NAME do HTML)"
+                                                                                        name="./finishButtonNameMobile"
+                                                                                        value="" />
+                                                                                    <finishButtonTitleMobile
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                        autocomplete="off"
+                                                                                        fieldLabel="Atributo Title"
+                                                                                        name="./finishButtonTitleMobile"
+                                                                                        value="#" />
+                                                                                    <finishButtonDataTrackMobile
+                                                                                        jcr:primaryType="nt:unstructured"
+                                                                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                                        autocomplete="off"
+                                                                                        fieldLabel="finishButton Data Track"
+                                                                                        name="./finishButtonDataTrackMobile"
+                                                                                        value="#" />
+                                                                                </items>
+                                                                            </tabSeoMobile>
+                                                                        </items>
+                                                                    </tabsMobile>
+                                                                </items>
+                                                            </contentMobile>
+                                                        </items>
+                                                    </tabMobile>
+                                                </items>
+                                            </tabs>
+                                        </items>
+                                    </tab-botao>
+                                    <tab-captcha
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Captcha"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <Api
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="API - Endpoint"
+                                                maxlength="{Long}200"
+                                                name="./endPointApi"
+                                                value="API - Endpoint" />
+                                            <ChaveRecaptcha
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Chave Recaptcha"
+                                                maxlength="{Long}50"
+                                                name="./chaveRecaptcha"
+                                                value="6LfBpYkfAAAAAE3llrrAHo8OiCoxpQvX1pFq0YVi" />
+                                        </items>
+                                    </tab-captcha>
+                                </items>
+                            </tab-form-tabs>
+                        </items>
+                    </tab-form-settings>
+                    <tab-seo
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="SEO"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <sectionID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="ID da Seção"
+                                name="./sectionID"
+                                value="" />
+                            <tagPalavraDestaque
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Tag da Palavra destaque"
+                                name="./tagPalavraDestaque">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <h1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H1"
+                                        value="h1" />
+                                    <h2
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="true"
+                                        text="H2"
+                                        value="h2" />
+                                    <h3
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H3"
+                                        value="h3" />
+                                    <h4
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H4"
+                                        value="h4" />
+                                    <h5
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H5"
+                                        value="h5" />
+                                    <h6
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H6"
+                                        value="h6" />
+                                </items>
+                            </tagPalavraDestaque>
+                            <tagTitulo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Tag do titulo"
+                                name="./tagTitulo">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <h1
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="true"
+                                        text="H1"
+                                        value="h1" />
+                                    <h2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H2"
+                                        value="h2" />
+                                    <h3
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H3"
+                                        value="h3" />
+                                    <h4
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H4"
+                                        value="h4" />
+                                    <h5
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H5"
+                                        value="h5" />
+                                    <h6
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H6"
+                                        value="h6" />
+                                </items>
+                            </tagTitulo>
+                        </items>
+                    </tab-seo>
+                </items>
+            </Tabs>
+        </items>
+    </content>
+</jcr:root>

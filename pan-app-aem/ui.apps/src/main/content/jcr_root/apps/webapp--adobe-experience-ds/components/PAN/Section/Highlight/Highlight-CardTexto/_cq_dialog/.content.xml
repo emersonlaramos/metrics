@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Propriedades Highlight-CardTexto"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <Tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <tab-variantes
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Variantes"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <colorVariantBackground
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                deleteHint="{Boolean}true"
+                                fieldLabel="Cores de fundo, Superior e Inferior respectivamente"
+                                name="./colorVariantBackground"
+                                vertical="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <branco
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Branco (em ambos)"
+                                        value="bg-branco"/>
+                                    <cinza
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Cinza (em ambos)"
+                                        value="bg-cinza"/>
+                                    <azul
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Azul (em ambos)"
+                                        value="bg-azul"/>
+                                    <preto
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Preto (em ambos)"
+                                        value="bg-preto"/>
+                                    <cinza-branco
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Superior: Cinza / Inferior: Branco"
+                                        value="bg-linear--cinza-branco"/>
+                                    <preto-branco
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Superior: Preto / Inferior: Branco"
+                                        value="bg-linear--preto-branco"/>
+                                    <azul-branco
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Superior: Azul / Inferior: Branco"
+                                        value="bg-linear--azul-branco"/>
+                                    <branco-cinza
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Superior: Branco / Inferior: Cinza"
+                                        value="bg-linear--branco-cinza"/>
+                                    <branco-preto
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Superior: Branco / Inferior: Preto"
+                                        value="bg-linear--branco-preto"/>
+                                    <branco-azul
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Superior: Branco / Inferior: Azul"
+                                        value="bg-linear--branco-azul"/>
+                                </items>
+                            </colorVariantBackground>
+                            <colorVariantCard
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                deleteHint="{Boolean}true"
+                                fieldLabel="Cores de fundo do Card"
+                                name="./colorVariantCard"
+                                vertical="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <cinza
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Cinza"
+                                        value="bg-cinza"/>
+                                    <azul
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Azul"
+                                        value="bg-azul"/>
+                                    <azul-dark
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Azul Dark"
+                                        value="bg-azul--dark"/>
+                                    <preto
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Preto"
+                                        value="bg-preto"/>
+                                </items>
+                            </colorVariantCard>
+                        </items>
+                    </tab-variantes>
+                    <tab-textos
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Textos"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <Titulo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                fieldLabel="Titulo"
+                                name="./titulo"
+                                value="Exemplo de título com no máximo 3 linhas aqui!"/>
+                            <Paragrafo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                autocomplete="off"
+                                fieldLabel="Parágrafo"
+                                name="./paragrafo"
+                                value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper fermentum,"/>
+                        </items>
+                    </tab-textos>
+                    <tab-seo
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="SEO"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <sectionID
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                autocomplete="off"
+                                autofocus="{Boolean}true"
+                                fieldLabel="ID da Seção"
+                                name="./sectionID"
+                                value=""/>
+                            <tagTitulo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Tag do titulo"
+                                name="./tagTitulo">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <h1
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="true"
+                                        text="H1"
+                                        value="h1"/>
+                                    <h2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H2"
+                                        value="h2"/>
+                                    <h3
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H3"
+                                        value="h3"/>
+                                    <h4
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H4"
+                                        value="h4"/>
+                                    <h5
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H5"
+                                        value="h5"/>
+                                    <h6
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H6"
+                                        value="h6"/>
+                                </items>
+                            </tagTitulo>
+                        </items>
+                    </tab-seo>
+                </items>
+            </Tabs>
+        </items>
+    </content>
+</jcr:root>

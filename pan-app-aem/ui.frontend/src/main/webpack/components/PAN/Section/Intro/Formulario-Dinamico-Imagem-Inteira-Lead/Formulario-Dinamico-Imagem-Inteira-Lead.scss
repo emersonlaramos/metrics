@@ -1,0 +1,74 @@
+@import "../../../../../site/PAN/mixins/breakpoints";
+
+.cq-placeholder {
+  height: 0;
+}
+
+.formulario-dinamico-intro-imagem-inteira-lead {
+  display: grid;
+  grid-template-columns: 1fr;
+  color: var(--pan-color-neutral-white);
+  background-color: var(--pan-color-neutral-black);
+
+  &__picture {
+    position: relative;
+    grid-row-start: 1;
+    grid-column-start: 1;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+
+      @include min-tablet {
+        height: 100%;
+      }
+    }
+
+    &--overlay {
+      &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: linear-gradient(
+          0deg,
+          var(--pan-color-neutral-black) 20%,
+          rgba(13, 19, 23, 0.2) 100%
+        );
+
+        @include min-tablet {
+          background: var(--pan-color-neutral-black);
+          opacity: 0.32;
+        }
+      }
+    }
+  }
+
+  &__content {
+    padding: var(--pan-spacing-48) var(--pan-spacing-12);
+    position: relative;
+    grid-row-start: 1;
+    grid-column-start: 1;
+
+    .text {
+      gap: var(--pan-spacing-8);
+    }
+  }
+
+  &__card {
+    background-color: var(--pan-color-neutral-white);
+    color: var(--pan-color-neutral-black);
+    border-radius: var(--pan-spacing-16);
+  }
+
+  &__form {
+    padding: var(--pan-spacing-24);
+
+    @include min-desktop {
+      padding: var(--pan-spacing-32);
+    }
+  }
+}

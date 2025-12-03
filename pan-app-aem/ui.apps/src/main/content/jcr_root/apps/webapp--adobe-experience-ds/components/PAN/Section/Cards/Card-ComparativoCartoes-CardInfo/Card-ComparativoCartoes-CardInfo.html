@@ -1,0 +1,103 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Card-ComparativoCartoes-CardInfo">
+    <div class="card-comprativocartoes-cardinfo ${properties.colorVariant}">
+        <div class="container card-comprativocartoes-cardinfo__content">
+            <div class="row">
+                <div class="col-12 d-flex flex-column align-items-center">
+                    <h3 class="typography-title-4" data-sly-element="${properties.tagPalavraDestaque}">
+                        ${properties.palavraDestaque}
+                    </h3>
+                    <h2 class="typography-big-text-2">${properties.titulo}</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="button-navigation col-lg-1 d-lg-flex d-none">
+                    <div class="swiper-button-prev">
+                        <svg class="swiper-button-icon" width="20" height="12" viewBox="0 0 20 12" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.714355 6H19.2858" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14.2859 11L19.2859 6L14.2859 1" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="col p-0">
+                    <div class="swiper d-flex swiper-ds-cardinfo">
+                        <div class="swiper-wrapper">
+                            <sly data-sly-list.dsCardInfoMultifield="${resource.getChildren}">
+                                <sly data-sly-test="${dsCardInfoMultifield.name == 'dsCardInfo'}">
+                                    <sly data-sly-list.dsCardInfo="${dsCardInfoMultifield.getChildren}">
+                                        <div class="swiper-slide">
+                                            <mahoe-card size="small" class="custom-card"
+                                                card-style="${properties.styleCard}">
+                                                <div
+                                                    class="custom-card__content d-flex flex-column justify-content-between">
+                                                    <div>
+                                                        <sly data-sly-test="${dsCardInfo.imageCardinfoRef}">
+                                                            <img loading="lazy" class="custom-card__image" width="312"
+                                                                height="303" src="${dsCardInfo.imageCardinfoRef}"
+                                                                alt="${dsCardInfo.altCardinfo ? dsCardInfo.altCardinfo : 'Imagem do card'}" />
+                                                        </sly>
+                                                        <p class="typography-title-2 custom-card__text m-0">
+                                                            ${dsCardInfo.titulo}
+                                                        </p>
+                                                        <p class="typography-body-1 subtitle custom-card__text">
+                                                            ${dsCardInfo.subtitulo}
+                                                        </p>
+                                                        <div class="typography-large custom-card__text">
+                                                            ${dsCardInfo.topico
+                                                            @context='html'}
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex flex-column align-items-center">
+                                                        <div class="button-wrapper"
+                                                            data-panelcontainer="${wcmmode.edit}">
+                                                            <sly
+                                                                data-sly-resource="${dsCardInfo @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}" />
+                                                        </div>
+                                                        <a class="custom-card__link mt-3 d-block ${dsCardInfo.hideLink && 'd-none'}"
+                                                            href="${dsCardInfo.hrefCardinfo}"
+                                                            target="${dsCardInfo.targetCardinfo}"
+                                                            data-track="${dsCardInfo.dataTrackCardinfo @ context='scriptToken'}">
+                                                            ${dsCardInfo.linkCardinfo}
+                                                        </a>
+                                                        <div
+                                                            class="typography-small subtitle custom-card__text m-0 ${dsCardInfo.hideDisclaimer && 'd-none'}">
+                                                            ${dsCardInfo.disclaimer
+                                                            @context='html'}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </mahoe-card>
+                                        </div>
+                                    </sly>
+                                </sly>
+                            </sly>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-navigation col-lg-1 d-lg-flex d-none">
+                    <div class="swiper-button-next">
+                        <svg class="swiper-button-icon" width="20" height="12" viewBox="0 0 20 12" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.714355 6H19.2858" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14.2859 11L19.2859 6L14.2859 1" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="swiper-pagination-ds-cardinfo d-flex d-lg-none justify-content-center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

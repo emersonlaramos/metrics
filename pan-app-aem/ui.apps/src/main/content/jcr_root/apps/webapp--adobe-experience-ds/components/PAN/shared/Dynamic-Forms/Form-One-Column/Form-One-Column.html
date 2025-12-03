@@ -1,0 +1,153 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<div class="dynamic-forms-one-column" data-cmp-is="Form-One-Column">
+    <form action="" data-js="dynamic-forms-one-column-form" class="">
+        <input
+            type="hidden"
+            data-js="dynamic-forms-one-column-endpoint"
+            value="${properties.endPointApi}"
+        />
+        <input
+            type="hidden"
+            data-js="dynamic-forms-one-column-group"
+            value="${properties.groupInput}"
+        />
+        <input
+            type="hidden"
+            data-js="lead__captcha-siteKey"
+            value="${properties.chaveRecaptcha}"
+        />
+        <legend class="dynamic-forms-one-column__title typography-title-3">
+            ${properties.tituloFormulario}
+        </legend>
+
+        <sly data-sly-list.textInputMultiField="${resource.getChildren}">
+            <sly
+                data-sly-test="${textInputMultiField.name == 'includeInputText'}"
+            >
+                <sly data-sly-list.items="${textInputMultiField.getChildren}">
+                    <fieldset
+                        data-js="dynamic-forms-one-column-wrapper-${items.inputType}"
+                        class="dynamic-forms-one-column__wrapper-data"
+                    >
+                        <mahoe-input
+                            placeholder="${items.placeholderText}"
+                            data-js="dynamic-forms-one-column-input-${items.inputType}"
+                            data-all-inputs="dynamic-forms-one-column-input-text"
+                            type="text"
+                            variant="lined"
+                            data-name="${items.dataName}"
+                            maxlength
+                            required="${items.required}"
+                            mask="${items.inputMask}"
+                        ></mahoe-input>
+                    </fieldset>
+                </sly>
+            </sly>
+        </sly>
+
+        <sly data-sly-list.textCheckboxMultiField="${resource.getChildren}">
+            <sly
+                data-sly-test="${textCheckboxMultiField.name == 'includeInputCheckbox'}"
+            >
+                <sly
+                    data-sly-list.items="${textCheckboxMultiField.getChildren}"
+                >
+                    <fieldset
+                        class="dynamic-forms-one-column__wrapper-data"
+                        data-js="dynamic-forms-one-column-wrapper-data-checkbox"
+                        required="${items.requiredCheckbox}"
+                        data-valid
+                    >
+                        <label
+                            class="dynamic-forms-one-column__checkbox"
+                            data-js="dynamic-forms-one-column-input-data-checkbox"
+                        >
+                            <span class="typography-small"
+                                >${items.labelText}</span
+                            >
+                            <input
+                                type="checkbox"
+                                name="${items.dataCheckboxName}"
+                            />
+                            <span
+                                class="dynamic-forms-one-column__checkbox-checkmark"
+                            ></span>
+                        </label>
+                        <div
+                            class="dynamic-forms-one-column__error-feedback d-flex justify-content-end"
+                        >
+                            <span class="typography-small" data-js=""
+                                >O campo é obrigatório</span
+                            >
+                        </div>
+                        <div
+                            class="typography-small dynamic-forms-one-column__disclaimer ${items.showDisclaimer}"
+                            data-sly-element="${properties.textoSmall}"
+                        >
+                            ${items.textoSmall @context = properties.textIsRich
+                            ? 'html' : 'text'}
+                        </div>
+                    </fieldset>
+                </sly>
+            </sly>
+        </sly>
+        <fieldset
+            class="dynamic-forms-one-column__wrapper-button d-flex flex-column"
+        >
+            <mahoe-button
+                class="dynamic-forms-one-column__button"
+                data-js="dynamic-forms-one-column-submit-button"
+                size="md"
+                variant="primary"
+                type="submit"
+                disabled
+            >
+                ${properties.submitButtonText}
+            </mahoe-button>
+            <span
+                class="error-message typography-small mt-2"
+                data-js="dynamic-forms-one-column-form-error"
+                aria-live="polite"
+            >
+                Não foi possível enviar seus dados. <br />
+                Tente novamente.
+            </span>
+        </fieldset>
+    </form>
+    <!-- Feedback -->
+    <div
+        class="dynamic-forms-one-column__feedback"
+        data-js="dynamic-forms-one-column-feedback"
+    >
+        <h2 class="typography-title-1">${properties.tituloFeedback}</h2>
+        <p class="typography-body-1">${properties.textoFeedback}</p>
+        <div class="qr-code-wrap d-none d-lg-flex">
+            <p class="typography-body-1 mb-0">${properties.textoQrCodeBox}</p>
+            <img
+                class="qr-code-img"
+                alt="Imagem QR Code"
+                width="171"
+                height="171"
+                src="${properties.qrCodeFormPreLeadReferenceWebp}"
+            />
+        </div>
+        <div class="d-block d-lg-none">
+            <mahoe-button
+                href="${properties.ctaFeedback}"
+                size="md"
+                variant="primary"
+                icon-position="${properties.buttonIconPosition}"
+                icon="${properties.buttonIconReference}"
+                mode="blue"
+                data-track="${properties.dataTrackFeedback}"
+                target="${properties.dataTrackFeedback}"
+            >
+                ${properties.textoBotaoFeedback}
+            </mahoe-button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+com/webapp/adobe/experience/ds/core/testcontext/AppAemContext$1.class
+com/webapp/adobe/experience/ds/core/filters/LoggingFilterTest.class
+com/webapp/adobe/experience/ds/core/servlets/SimpleServletTest.class
+com/webapp/adobe/experience/ds/core/testcontext/AppAemContext.class
+com/webapp/adobe/experience/ds/core/schedulers/SimpleScheduledTaskTest.class
+com/webapp/adobe/experience/ds/core/listeners/SimpleResourceListenerTest.class

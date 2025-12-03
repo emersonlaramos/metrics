@@ -1,0 +1,51 @@
+.section-intro-imagem-inteira-video {
+    position: relative;
+    color: var(--pan-color-neutral-white);
+
+    &__picture {
+        position: relative;
+        display: block;
+        height: auto;
+
+        &--overlay {
+            &:after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background: linear-gradient(90deg, #0d131754 0%, rgb(13 19 23 / 0%) 100%);
+            }
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+
+    &__content {
+        position: absolute;
+        bottom: 20px;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: auto;
+        justify-content: end;
+
+        @media screen and (min-width: 768px) {
+            bottom: unset;
+            height: 100%;
+            align-items: unset;
+            justify-content: center;
+        }
+        
+        .play-button {
+            width: 88px;
+            height: 88px;
+            content: url("/content/dam/webapp--adobe-experience-ds/icon-play.svg");
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Propriedades SocialMedia-Texto"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[core.wcm.components.title.v2.editor]"
+    helpPath="https://www.adobe.com/go/aem_cmp_title_v3"
+    trackingFeature="core-components:title:v3">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <tab-variantes
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Variantes"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <styleVariant
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                deleteHint="{Boolean}true"
+                                fieldLabel="Versão do componente"
+                                name="./styleVariant"
+                                vertical="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <imagem
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Imagem"
+                                        value="imagem"/>
+                                    <texto
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Texto"
+                                        value="texto"/>
+                                </items>
+                            </styleVariant>
+                            <colorVariant
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                deleteHint="{Boolean}true"
+                                fieldLabel="Cores de fundo"
+                                name="./colorVariant"
+                                vertical="{Boolean}false">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <branco
+                                        jcr:primaryType="nt:unstructured"
+                                        checked="{Boolean}true"
+                                        text="Branco"
+                                        value="bg-branco"/>
+                                    <preto
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Preto"
+                                        value="bg-preto"/>
+                                </items>
+                            </colorVariant>
+                        </items>
+                    </tab-variantes>
+                    <tab-imagens
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Imagens"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tab-img
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <tab-logo
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Logo - Versão Texto"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <alt-logo
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Texto alternativo - logo do Pan (Necessário preencher em ambas as versões)"
+                                                name="./altLogo"
+                                                value="Logo do Banco Pan"/>
+                                            <logo
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem do logo do Pan em formato WEBP (54x90px - Necessário upload em qualquer versão)"
+                                                fileNameParameter="./logoNameParameterWebp"
+                                                fileReferenceParameter="./LogoReferenceParameterWebp"
+                                                mimeTypes="[image/webp]"
+                                                multiple="{Boolean}false"
+                                                name="./logo"
+                                                title="Imagem WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </tab-logo>
+                                    <tab-img-destaque
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Versão Imagem"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <alt-imagem
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Texto alternativo da imagem (Variante Imagem - não é necessário preencher na versão texto)"
+                                                name="./altImagem"
+                                                value="Foto de uma mulher segurando um celular e um cartão do Banco Pan"/>
+                                            <imagem
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem em formato WEBP (504x640px - não é necessário fazer upload na versão texto)"
+                                                fileNameParameter="./imgNameParameterWebp"
+                                                fileReferenceParameter="./imgReferenceParameterWebp"
+                                                mimeTypes="[image/webp]"
+                                                multiple="{Boolean}false"
+                                                name="./imagem"
+                                                title="Imagem WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </tab-img-destaque>
+                                    <tab-img-profiles
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Seguidores"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <Followers
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Insira a quantidade de seguidores desejada"
+                                                fieldLabel="Quantidade de seguidores nas redes sociais"
+                                                name="./followers"
+                                                value="+224mil"/>
+                                            <perfil1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem tipo perfil em formato WEBP (54x54px)"
+                                                fileNameParameter="./perfil1NameParameterWebp"
+                                                fileReferenceParameter="./perfil1ReferenceParameterWebp"
+                                                mimeTypes="[image/webp]"
+                                                multiple="{Boolean}false"
+                                                name="./perfil1"
+                                                title="Imagem WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <perfil2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem tipo perfil em formato WEBP (54x54px)"
+                                                fileNameParameter="./perfil2NameParameterWebp"
+                                                fileReferenceParameter="./perfil2ReferenceParameterWebp"
+                                                mimeTypes="[image/webp]"
+                                                multiple="{Boolean}false"
+                                                name="./perfil2"
+                                                title="Imagem WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <perfil3
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem tipo perfil em formato WEBP (54x54px)"
+                                                fileNameParameter="./perfil3NameParameterWebp"
+                                                fileReferenceParameter="./perfil3ReferenceParameterWebp"
+                                                mimeTypes="[image/webp]"
+                                                multiple="{Boolean}false"
+                                                name="./perfil3"
+                                                title="Imagem WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <perfil4
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem tipo perfil em formato WEBP (54x54px)"
+                                                fileNameParameter="./perfil4NameParameterWebp"
+                                                fileReferenceParameter="./perfil4ReferenceParameterWebp"
+                                                mimeTypes="[image/webp]"
+                                                multiple="{Boolean}false"
+                                                name="./perfil4"
+                                                title="Imagem WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <perfil5
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem tipo perfil em formato WEBP (54x54px)"
+                                                fileNameParameter="./perfil5NameParameterWebp"
+                                                fileReferenceParameter="./perfil5ReferenceParameterWebp"
+                                                mimeTypes="[image/webp]"
+                                                multiple="{Boolean}false"
+                                                name="./perfil5"
+                                                title="Imagem WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                            <perfil6
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem tipo perfil em formato WEBP (54x54px)"
+                                                fileNameParameter="./perfil6NameParameterWebp"
+                                                fileReferenceParameter="./perfil6ReferenceParameterWebp"
+                                                mimeTypes="[image/webp]"
+                                                multiple="{Boolean}false"
+                                                name="./perfil6"
+                                                title="Imagem WEBP"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </tab-img-profiles>
+                                </items>
+                            </tab-img>
+                        </items>
+                    </tab-imagens>
+                    <tab-textos
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Textos"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tab-versions
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <tab-imagem
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Versão Imagem (Desktop)"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <PalavraDestaque
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                autofocus="{Boolean}true"
+                                                fieldLabel="Palavra Destaque"
+                                                name="./palavraDestaque"
+                                                value="O PAN tá ON"/>
+                                            <tituloDesktop
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Insira o texto desejado para o título do componente"
+                                                fieldLabel="Título da versão imagem"
+                                                name="./desktopTitle"
+                                                value="Acompanhe as novidades do PAN nas redes sociais"/>
+                                            <textoDesktop
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Insira o texto desejado para o parágrafo do componente"
+                                                fieldLabel="Texto da versão imagem"
+                                                name="./desktopText"
+                                                value="Segue a gente lá:"/>
+                                        </items>
+                                    </tab-imagem>
+                                    <tab-texto
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Versão Texto e Mobile"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <tituloMobile
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Insira o texto desejado para o título do componente"
+                                                fieldLabel="Título (Versão mobile e texto)"
+                                                name="./mobileTitle"
+                                                value="Siga a gente"/>
+                                            <textoMobile
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Insira o texto desejado para o parágrafo do componente"
+                                                fieldLabel="Texto (Versão mobile e texto)"
+                                                name="./mobileText"
+                                                value="Aprenda a economizar, organizar as suas finanças e fazer o seu dinheiro render mais."/>
+                                        </items>
+                                    </tab-texto>
+                                </items>
+                            </tab-versions>
+                        </items>
+                    </tab-textos>
+                    <tab-icons
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Ícones"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tab-icon
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <tab-icon-1
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Ícone 1"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <HideIcon1Checkbox
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Ocultar esse ícone do componente"
+                                                name="./hideIcon1Checkbox"
+                                                text="Ocultar ícone?"
+                                                uncheckedValue="{Boolean}false"
+                                                value="{Boolean}true"/>
+                                            <altIcone1
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Texto alternativo para este ícone (acessibilidade)"
+                                                name="./altIcone1"
+                                                value="Logo da rede social X"/>
+                                            <link
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldDescription="Insira o link completo, incluindo o https://"
+                                                fieldLabel="Link de acesso"
+                                                name="./linkIcone1"
+                                                value="https://"/>
+                                            <Target
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Destino do CTA (Call to Action)"
+                                                name="./targetIcone1">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <self
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true"
+                                                        text="Mesma Página"
+                                                        value="_self"/>
+                                                    <blank
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Nova Aba"
+                                                        value="_blank"/>
+                                                </items>
+                                            </Target>
+                                            <icon1SVG
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem SVG do ícone (30x30px)"
+                                                fileNameParameter="./icon1SVGNameParameter"
+                                                fileReferenceParameter="./icon1SVGRefrenceParameter"
+                                                mimeTypes="[image/svg]"
+                                                multiple="{Boolean}false"
+                                                name="./icon1SVG"
+                                                title="Ícone SVG"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </tab-icon-1>
+                                    <tab-icon-2
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Ícone 2"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <HideIcon2Checkbox
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Ocultar esse ícone do componente"
+                                                name="./hideIcon2Checkbox"
+                                                text="Ocultar ícone?"
+                                                uncheckedValue="{Boolean}false"
+                                                value="{Boolean}true"/>
+                                            <altIcone2
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Texto alternativo para este ícone (acessibilidade)"
+                                                name="./altIcone2"
+                                                value="Logo da rede social X"/>
+                                            <link
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldDescription="Insira o link completo, incluindo o https://"
+                                                fieldLabel="Link de acesso"
+                                                name="./linkIcone2"
+                                                value="https://"/>
+                                            <Target
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Destino do CTA (Call to Action)"
+                                                name="./targetIcone2">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <self
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true"
+                                                        text="Mesma Página"
+                                                        value="_self"/>
+                                                    <blank
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Nova Aba"
+                                                        value="_blank"/>
+                                                </items>
+                                            </Target>
+                                            <icon2SVG
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem SVG do ícone (30x30px)"
+                                                fileNameParameter="./icon2SVGNameParameter"
+                                                fileReferenceParameter="./icon2SVGRefrenceParameter"
+                                                mimeTypes="[image/svg]"
+                                                multiple="{Boolean}false"
+                                                name="./icon2SVG"
+                                                title="Ícone SVG"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </tab-icon-2>
+                                    <tab-icon-3
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Ícone 3"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <HideIcon3Checkbox
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Ocultar esse ícone do componente"
+                                                name="./hideIcon3Checkbox"
+                                                text="Ocultar ícone?"
+                                                uncheckedValue="{Boolean}false"
+                                                value="{Boolean}true"/>
+                                            <altIcone3
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Texto alternativo para este ícone (acessibilidade)"
+                                                name="./altIcone3"
+                                                value="Logo da rede social X"/>
+                                            <link
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldDescription="Insira o link completo, incluindo o https://"
+                                                fieldLabel="Link de acesso"
+                                                name="./linkIcone3"
+                                                value="https://"/>
+                                            <Target
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Destino do CTA (Call to Action)"
+                                                name="./targetIcone3">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <self
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true"
+                                                        text="Mesma Página"
+                                                        value="_self"/>
+                                                    <blank
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Nova Aba"
+                                                        value="_blank"/>
+                                                </items>
+                                            </Target>
+                                            <icon3SVG
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem SVG do ícone (30x30px)"
+                                                fileNameParameter="./icon3SVGNameParameter"
+                                                fileReferenceParameter="./icon3SVGRefrenceParameter"
+                                                mimeTypes="[image/svg]"
+                                                multiple="{Boolean}false"
+                                                name="./icon3SVG"
+                                                title="Ícone SVG"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </tab-icon-3>
+                                    <tab-icon-4
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Ícone 4"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <HideIcon4Checkbox
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Ocultar esse ícone do componente"
+                                                name="./hideIcon4Checkbox"
+                                                text="Ocultar ícone?"
+                                                uncheckedValue="{Boolean}false"
+                                                value="{Boolean}true"/>
+                                            <altIcone4
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Texto alternativo para este ícone (acessibilidade)"
+                                                name="./altIcone4"
+                                                value="Logo da rede social X"/>
+                                            <link
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldDescription="Insira o link completo, incluindo o https://"
+                                                fieldLabel="Link de acesso"
+                                                name="./linkIcone4"
+                                                value="https://"/>
+                                            <Target
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Destino do CTA (Call to Action)"
+                                                name="./targetIcone4">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <self
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true"
+                                                        text="Mesma Página"
+                                                        value="_self"/>
+                                                    <blank
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Nova Aba"
+                                                        value="_blank"/>
+                                                </items>
+                                            </Target>
+                                            <icon4SVG
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem SVG do ícone (30x30px)"
+                                                fileNameParameter="./icon4SVGNameParameter"
+                                                fileReferenceParameter="./icon4SVGRefrenceParameter"
+                                                mimeTypes="[image/svg]"
+                                                multiple="{Boolean}false"
+                                                name="./icon4SVG"
+                                                title="Ícone SVG"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </tab-icon-4>
+                                    <tab-icon-5
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Ícone 5"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <HideIcon5Checkbox
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Ocultar esse ícone do componente"
+                                                name="./hideIcon5Checkbox"
+                                                text="Ocultar ícone?"
+                                                uncheckedValue="{Boolean}false"
+                                                value="{Boolean}true"/>
+                                            <altIcone5
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Texto alternativo para este ícone (acessibilidade)"
+                                                name="./altIcone5"
+                                                value="Logo da rede social X"/>
+                                            <link
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldDescription="Insira o link completo, incluindo o https://"
+                                                fieldLabel="Link de acesso"
+                                                name="./linkIcone5"
+                                                value="https://"/>
+                                            <Target
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Destino do CTA (Call to Action)"
+                                                name="./targetIcone5">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <self
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true"
+                                                        text="Mesma Página"
+                                                        value="_self"/>
+                                                    <blank
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Nova Aba"
+                                                        value="_blank"/>
+                                                </items>
+                                            </Target>
+                                            <icon5SVG
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem SVG do ícone (30x30px)"
+                                                fileNameParameter="./icon5SVGNameParameter"
+                                                fileReferenceParameter="./icon5SVGRefrenceParameter"
+                                                mimeTypes="[image/svg]"
+                                                multiple="{Boolean}false"
+                                                name="./icon5SVG"
+                                                title="Ícone SVG"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </tab-icon-5>
+                                    <tab-icon-6
+                                        jcr:primaryType="nt:unstructured"
+                                        jcr:title="Ícone 6"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <HideIcon6Checkbox
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Ocultar esse ícone do componente"
+                                                name="./hideIcon6Checkbox"
+                                                text="Ocultar ícone?"
+                                                uncheckedValue="{Boolean}false"
+                                                value="{Boolean}true"/>
+                                            <altIcone6
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldLabel="Texto alternativo para este ícone (acessibilidade)"
+                                                name="./altIcone6"
+                                                value="Logo da rede social X"/>
+                                            <link
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                autocomplete="off"
+                                                fieldDescription="Insira o link completo, incluindo o https://"
+                                                fieldLabel="Link de acesso"
+                                                name="./linkIcone6"
+                                                value="https://"/>
+                                            <Target
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Destino do CTA (Call to Action)"
+                                                name="./targetIcone6">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <self
+                                                        jcr:primaryType="nt:unstructured"
+                                                        selected="{Boolean}true"
+                                                        text="Mesma Página"
+                                                        value="_self"/>
+                                                    <blank
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Nova Aba"
+                                                        value="_blank"/>
+                                                </items>
+                                            </Target>
+                                            <icon6SVG
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                                autoStart="{Boolean}false"
+                                                class="cq-droptarget"
+                                                fieldLabel="Imagem SVG do ícone (30x30px)"
+                                                fileNameParameter="./icon6SVGNameParameter"
+                                                fileReferenceParameter="./icon6SVGRefrenceParameter"
+                                                mimeTypes="[image/svg]"
+                                                multiple="{Boolean}false"
+                                                name="./icon6SVG"
+                                                title="Ícone SVG"
+                                                uploadUrl="${suffix.path}"
+                                                useHTML5="{Boolean}true"/>
+                                        </items>
+                                    </tab-icon-6>
+                                </items>
+                            </tab-icon>
+                        </items>
+                    </tab-icons>
+                    <tab-seo
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="SEO"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tagPalavraDestaque
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Tag do Título (Variante de Texto)"
+                                name="./tagmobileTitle">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <h1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H1"
+                                        value="h1"/>
+                                    <h2
+                                        jcr:primaryType="nt:unstructured"
+                                        selected="true"
+                                        text="H2"
+                                        value="h2"/>
+                                    <h3
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H3"
+                                        value="h3"/>
+                                    <h4
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H4"
+                                        value="h4"/>
+                                    <h5
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H5"
+                                        value="h5"/>
+                                    <h6
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H6"
+                                        value="h6"/>
+                                </items>
+                            </tagPalavraDestaque>
+                            <tagmobileText
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldLabel="Tag do texto (Variante de Texto)"
+                                name="./tagmobileText">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <p
+                                        jcr:primaryType="nt:unstructured"
+                                        text="P"
+                                        value="p"
+                                        selected="true" />
+                                    <h1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H1"
+                                        value="h1" />
+                                    <h2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H2"
+                                        value="h2" />
+                                    <h3
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H3"
+                                        value="h3" />
+                                    <h4
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H4"
+                                        value="h4" />
+                                    <h5
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H5"
+                                        value="h5" />
+                                    <h6
+                                        jcr:primaryType="nt:unstructured"
+                                        text="H6"
+                                        value="h6" />
+                                </items>
+                            </tagmobileText>
+                        </items>
+                    </tab-seo>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

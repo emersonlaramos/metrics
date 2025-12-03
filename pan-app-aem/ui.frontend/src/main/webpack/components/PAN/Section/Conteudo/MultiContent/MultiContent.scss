@@ -1,0 +1,96 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.multicontent {
+    padding: var(--pan-spacing-64) 0;
+
+    &__subtitle {
+        color: var(--pan-color-primary-brand);
+        margin-bottom: var(--pan-spacing-24);
+    }
+
+    &__title {
+        text-align: center;
+        margin-bottom: var(--pan-spacing-32);
+
+        @include min-desktop {
+            margin-bottom: var(--pan-spacing-56);
+        }
+    }
+
+    &__buttons {
+        padding: var(--pan-spacing-12);
+        width: 100%;
+        overflow-x: scroll;
+        margin-bottom: var(--pan-spacing-24);
+        border-radius: var(--pan-spacing-16);
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @include min-desktop {
+            width: auto;
+            background-color: var(--pan-color-neutral-lighter);
+            height: 96px;
+        }
+
+        &:last-child {
+            margin: 0;
+        }
+
+        &-button {
+            border: none;
+            border-radius: var(--pan-spacing-8);
+            padding: var(--pan-spacing-12) var(--pan-spacing-16);
+            background-color: var(--pan-color-neutral-lighter);
+            font-size: var(--pan-font-size-18);
+            font-weight: var(--pan-font-weight-bold);
+            height: 45px;
+            width: auto;
+            margin-right: var(--pan-spacing-8);
+            white-space: nowrap;
+
+            @include min-desktop {
+                height: 72px;
+            }
+
+        }
+
+        .active {
+            color: var(--pan-color-neutral-white);
+            background-color: var(--pan-color-primary-brand);
+            transition: 0.2s linear;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+
+    &__blockText {
+        margin-bottom: var(--pan-spacing-48);
+    }
+
+    .transicao {
+        opacity: 0;
+        animation: fadeIn 0.2s linear forwards;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            animation-timing-function: ease-out;
+        }
+
+        50% {
+            opacity: 0.5;
+            animation-timing-function: ease-in-out;
+        }
+
+        100% {
+            opacity: 1;
+            animation-timing-function: ease-in;
+        }
+    }
+}

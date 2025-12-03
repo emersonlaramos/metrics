@@ -1,0 +1,304 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section id="${properties.sectionID}" data-cmp-is="Nps-Relacional">
+    <div class="nps-relacional" data-js="nps-relacional-fluxo-principal">
+        <img
+            class="nps-relacional__picture d-none d-lg-flex"
+            loading="lazy"
+            alt="${properties.altImagem ? properties.altImagem : 'Imagem'}"
+            width="1440"
+            height="688"
+            src="${properties.imageDesktopReference}"
+        />
+
+        <div
+            class="container nps-relacional__frame d-md-flex flex-column justify-content-center"
+        >
+            <div class="row justify-content-evenly">
+                <div
+                    class="col-12 col-md-6 col-lg-5 d-flex align-items-center p-0"
+                >
+                    <div class="nps-relacional__texts d-flex flex-column">
+                        <p
+                            class="typography-title-4 m-0"
+                            data-sly-element="${properties.tagPalavraDestaque}"
+                        >
+                            ${properties.palavraDestaque}
+                        </p>
+                        <h2
+                            class="typography-big-text-2 m-0 d-flex"
+                            data-sly-element="${properties.tagTitulo}"
+                        >
+                            ${properties.titulo @context='html'}
+                        </h2>
+                        <p class="typography-body-1 m-0">
+                            ${properties.paragrafo}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 p-0 d-flex justify-content-end">
+                    <div class="nps-relacional__form-container" id="form">
+                        <div class="nps-relacional__wrapper-form d-flex flex-column">
+                            <input type="hidden" data-js="nps-endpoint-input" value="${properties.endPointApi}" />
+                            <input type="hidden" data-js="nps-captcha-siteKey" value="${properties.chaveRecaptcha}" />
+                            <h2 class="typography-title-4 text-center"
+                                data-sly-element="${properties.tagTituloPergunta1}">
+                                ${properties.tituloPergunta1}
+                            </h2>
+                            <div class="nps-relacional__score">
+                                <ul class="nps-relacional__score-list">
+                                    <li class="nps-relacional__score-list-item">
+                                        <button
+                                            type="button"
+                                            class="nps-relacional__score-list-item-button typography-body-2"
+                                            type="button"
+                                            value="0"
+                                        >
+                                            0
+                                        </button>
+                                    </li>
+                                    <li class="nps-relacional__score-list-item">
+                                        <button
+                                            type="button"
+                                            class="nps-relacional__score-list-item-button typography-body-2"
+                                            type="button"
+                                            value="1"
+                                        >
+                                            1
+                                        </button>
+                                    </li>
+                                    <li class="nps-relacional__score-list-item">
+                                        <button
+                                            type="button"
+                                            class="nps-relacional__score-list-item-button typography-body-2"
+                                            type="button"
+                                            value="2"
+                                        >
+                                            2
+                                        </button>
+                                    </li>
+                                    <li class="nps-relacional__score-list-item">
+                                        <button
+                                            type="button"
+                                            class="nps-relacional__score-list-item-button typography-body-2"
+                                            type="button"
+                                            value="3"
+                                        >
+                                            3
+                                        </button>
+                                    </li>
+                                    <li class="nps-relacional__score-list-item">
+                                        <button
+                                            type="button"
+                                            class="nps-relacional__score-list-item-button typography-body-2"
+                                            type="button"
+                                            value="4"
+                                        >
+                                            4
+                                        </button>
+                                    </li>
+                                    <li class="nps-relacional__score-list-item">
+                                        <button
+                                            type="button"
+                                            class="nps-relacional__score-list-item-button typography-body-2"
+                                            type="button"
+                                            value="5"
+                                        >
+                                            5
+                                        </button>
+                                    </li>
+                                    <li class="nps-relacional__score-list-item">
+                                        <button
+                                            type="button"
+                                            class="nps-relacional__score-list-item-button typography-body-2"
+                                            type="button"
+                                            value="6"
+                                        >
+                                            6
+                                        </button>
+                                    </li>
+                                    <li class="nps-relacional__score-list-item">
+                                        <button
+                                            type="button"
+                                            class="nps-relacional__score-list-item-button typography-body-2"
+                                            type="button"
+                                            value="7"
+                                        >
+                                            7
+                                        </button>
+                                    </li>
+                                    <li class="nps-relacional__score-list-item">
+                                        <button
+                                            type="button"
+                                            class="nps-relacional__score-list-item-button typography-body-2"
+                                            type="button"
+                                            value="8"
+                                        >
+                                            8
+                                        </button>
+                                    </li>
+                                    <li class="nps-relacional__score-list-item">
+                                        <button
+                                            type="button"
+                                            class="nps-relacional__score-list-item-button typography-body-2"
+                                            type="button"
+                                            value="9"
+                                        >
+                                            9
+                                        </button>
+                                    </li>
+                                    <li class="nps-relacional__score-list-item">
+                                        <button
+                                            type="button"
+                                            class="nps-relacional__score-list-item-button typography-body-2"
+                                            type="button"
+                                            value="10"
+                                        >
+                                            10
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div
+                                class="nps-relacional__recomendation d-none d-lg-flex justify-content-lg-between"
+                            >
+                                <span class="nps-relacional__recomendation-text"
+                                    >Não recomendaria</span
+                                >
+                                <span class="nps-relacional__recomendation-text"
+                                    >Recomendaria</span
+                                >
+                            </div>
+                            <h2
+                                class="typography-body-2 text-space"
+                                data-sly-element="${properties.tagTituloPergunta2}"
+                            >
+                                ${properties.tituloPergunta2}
+                            </h2>
+                            <div class="nps-relacional__text-area">
+                                <div class="col-12 nps-relacional__testimony">
+                                    <form
+                                        class="nps-relacional__testimony-form"
+                                        data-js="nps-relacional-form"
+                                    >
+                                        <mahoe-textarea
+                                            data-js="nps-relacional-depoimento"
+                                            placeholder="Queremos te ouvir..."
+                                        />
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="nps-relacional__finish-button">
+                                <mahoe-button
+                                    class="nps-relacional__navigation-button-submit"
+                                    data-track="${properties.finishButtonDataTrack}"
+                                    type="button"
+                                    disabled
+                                    data-js="nps-relacional-button-submit"
+                                    size="md"
+                                    variant="primary"
+                                    mode="${properties.colorVariant == 'bg-azul' ? 'blue' : ''}"
+                                >
+                                    ${properties.finishButtonText}
+                                </mahoe-button>
+                            </div>
+                        </div>
+                        <div
+                            class="nps-relacional__wrapper-success d-none flex-column"
+                        >
+                            <h1 class="typography-title-1 title">
+                                ${properties.agradecimento}
+                            </h1>
+                            <div class="typography-body-1">
+                                ${properties.feedback}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div
+        class="nps-relacional nps-relacional--error d-none b-sizing"
+        data-js="nps-relacional-fluxo-erro"
+    >
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-5">
+                    <div class="nps-relacional__flag-error">
+                        <svg
+                            width="40"
+                            height="40"
+                            viewBox="0 0 40 40"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M19.9992 38.5725C30.2559 38.5725 38.5706 30.2578 38.5706 20.0011C38.5706 9.7444 30.2559 1.42969 19.9992 1.42969C9.74245 1.42969 1.42773 9.7444 1.42773 20.0011C1.42773 30.2578 9.74245 38.5725 19.9992 38.5725Z"
+                                stroke="#F3F4F9"
+                                stroke-width="2.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M20 10V18.5714"
+                                stroke="#F3F4F9"
+                                stroke-width="2.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M19.9989 28.572C20.7879 28.572 21.4275 27.9324 21.4275 27.1434C21.4275 26.3544 20.7879 25.7148 19.9989 25.7148C19.2099 25.7148 18.5703 26.3544 18.5703 27.1434C18.5703 27.9324 19.2099 28.572 19.9989 28.572Z"
+                                stroke="#F3F4F9"
+                                stroke-width="2.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </div>
+                    <div
+                        class="nps-relacional__text-error d-none"
+                        data-js="nps-relacional-fluxo-erro-respondida"
+                    >
+                        <h2 class="typography-big-text-2">
+                            Pesquisa já respondida ou ela não está mais
+                            disponível
+                        </h2>
+                    </div>
+                    <div
+                        class="nps-relacional__text-error d-none"
+                        data-js="nps-relacional-fluxo-erro-link-expirado"
+                    >
+                        <h2 class="typography-big-text-2">
+                            O link para esta pesquisa está inválido ou expirado
+                        </h2>
+                    </div>
+                    <div
+                        class="nps-relacional__text-error d-none"
+                        data-js="nps-relacional-fluxo-erro-manutencao"
+                    >
+                        <h2 class="typography-big-text-2">
+                            No momento não conseguimos abrir a página solicitada
+                        </h2>
+                        <p class="typography-large">
+                            Tente novamente mais tarde.
+                        </p>
+                    </div>
+                    <div class="nps-relacional__button-error d-flex">
+                        <mahoe-button
+                            size="md"
+                            variant="primary"
+                            title="Ir para o site do PAN!"
+                            href="https://www.bancopan.com.br/"
+                        >
+                            Ir para o site do PAN
+                        </mahoe-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,104 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.card-estatico-cardMisto {
+    padding: var(--pan-spacing-64) 0;
+
+    &.bg {
+        &-preto {
+            .typography-big-text-2 {
+                color: var(--pan-color-neutral-white);
+            }
+        }
+    }
+
+    &__content {
+        .typography-big-text-2 {
+            text-align: center;
+            margin-bottom: var(--pan-spacing-64);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            grid-row-gap: 20px;
+            
+            @include min-desktop {
+                grid-template-columns: auto auto auto auto auto;
+                grid-template-rows: auto auto;
+                grid-column-gap: 20px;
+                grid-row-gap: unset;
+            }
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-rows: auto;
+            grid-row-gap: 20px;
+
+            @include min-desktop {
+                height: 100%;
+
+                .card-estatico-cardMisto__custom-height {
+                    height: 100% !important;
+                }
+            }
+
+            .card-estatico-cardMisto__custom-height {
+                height: 320px;
+            }
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-row-gap: 20px;
+            grid-column-gap: 20px;
+
+            @include min-desktop {
+                grid-template-columns: unset;
+                grid-template-rows: auto auto;
+                grid-column-gap: unset;
+            }
+
+            @include max-tablet {
+                .card-estatico-cardMisto__custom-height {
+                    height: 100%;
+                }
+            }
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-rows: auto auto;
+            grid-row-gap: 20px;
+
+            @include min-desktop {
+                grid-template-columns: auto auto;
+                grid-column-gap: 20px;
+            }
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-row-gap: 20px;
+
+            @include min-desktop {
+                width: 94%;
+                grid-column: span 2;
+                grid-row-gap: unset;
+            }
+
+            .card-estatico-cardMisto__custom-height {
+                max-height: 320px;
+            }
+        }
+
+        .grid-6 {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-column-gap: 20px;
+        }
+    }
+
+}

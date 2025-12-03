@@ -1,0 +1,75 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.conteudo-topicos-imagem {
+    &__content {
+        .typography-big-text-2 {
+            @include min-desktop {font-size: 40px;}
+            margin-bottom: var(--pan-spacing-48);
+        }
+
+        .typography-title-4 {
+            color: var(--pan-color-primary-brand);
+        }
+    }
+
+    &__titleMobile { 
+        font-weight: var(--pan-font-weight-bold);
+    }
+
+    &__textContent {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__topicos {
+        list-style: none;
+        padding: 0;
+
+        li {
+            width: 100%;
+            margin-bottom: var(--pan-spacing-32);
+
+            @include min-tablet {
+                margin-bottom: var(--pan-spacing-24);
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+    &__icone,
+    &__texto {
+        display: inline-flex;
+    }
+
+    &__icone {
+        @include min-tablet {
+            width: 52px;
+            height: 52px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--pan-color-primary-brand);
+            border-radius: 50%;
+            margin-right: var(--pan-spacing-16);
+        }
+
+        .icone {
+            width: var(--pan-spacing-32);
+            height: var(--pan-spacing-32);
+        }
+    }
+
+    &__titulo {
+        margin: var(--pan-spacing-16) 0;
+    }
+
+    &__texto {
+        @include min-tablet {
+            width: 75%;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+}

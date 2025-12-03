@@ -1,0 +1,17 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<sly data-sly-set.colorVariant="${request.requestPathInfo.selectors}" />
+
+<div class="d-flex" data-cmp-is="Mahoe-Badge">
+    <sly data-sly-list.listBadgeMultifield="${resource.getChildren}">
+        <sly data-sly-test="${listBadgeMultifield.name == 'listBadge'}">
+            <sly data-sly-list.listBadge="${listBadgeMultifield.getChildren}">
+                <mahoe-badge title="${listBadge.badgeTitle}" name="${listBadge.badgeName}" class="${listBadge.hideBadge ? '.d-none': ''} ${listBadge.badgeSize} m-2" variation="${listBadge.badgeVariation}"
+                    information="${listBadge.badgeInformation}" description="${listBadge.badgeDescription}"
+                    type="${listBadge.badgeTypeBehavior}" icon="${listBadge.badgeIconReferenceParameter}"
+                    mode="${listBadge.badgeStyleBehavior == '_independent' ? listBadge.badgeMode : colorVariant[0] == 'bg-azul' && 'blue' || colorVariant[0] == 'bg-azul--dark' && 'default' || colorVariant[0] == 'bg-preto' && 'dark' || colorVariant[0] == 'bg-branco' || colorVariant[0] == 'bg-cinza' && 'default'}"></mahoe-badge>
+            </sly>
+        </sly>
+    </sly>
+</div>

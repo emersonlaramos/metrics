@@ -1,0 +1,1345 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section
+    style="overflow: hidden"
+    id="${properties.sectionID}"
+    data-cmp-is="Nps-Aquisicao"
+>
+    <div
+        class="nps-aquisicao d-flex b-sizing"
+        data-js="nps-aquisicao-fluxo-principal"
+    >
+        <input
+            type="hidden"
+            data-js="nps-endpoint-input"
+            value="${properties.endPointApi}"
+        />
+        <input
+            type="hidden"
+            data-js="nps-captcha-siteKey"
+            value="${properties.chaveRecaptcha}"
+        />
+        <!-- Home Slide -->
+        <div
+            class="nps-aquisicao__slide b-sizing d-flex"
+            data-js="nps-aquisicao-slides"
+        >
+            <div
+                class="nps-aquisicao__wrapper-content b-sizing d-flex flex-column justify-content-md-center"
+            >
+                <div class="nps-aquisicao__content b-sizing">
+                    <h2
+                        class="typography-title-4 text-space"
+                        data-sly-element="${properties.tagPalavraDestaquePrimeiraTela}"
+                    >
+                        ${properties.palavraDestaquePrimeiraTela}
+                    </h2>
+                    <h2
+                        class="typography-title-1 text-space"
+                        data-sly-element="${properties.tagTituloPrimeiraTela}"
+                    >
+                        ${properties.tituloPrimeiraTela}
+                    </h2>
+                    <div
+                        class="typography-body-1 text-space"
+                        data-sly-element="${properties.paragrafoPrimeiraTela}"
+                    >
+                        ${properties.paragrafoPrimeiraTela @context =
+                        properties.textIsRich ? 'html' : 'text'}
+                    </div>
+                    <div class="nps-aquisicao__presentation-button">
+                        <mahoe-button
+                            variant="primary"
+                            icon-position="right"
+                            icon="${properties.iconeBotaoTela1ReferenceSvg}"
+                            class="nps-aquisicao__button-start"
+                            data-track="${properties.dataTrackBotaoTela1}"
+                            title="${properties.titleBotaoTela1}"
+                            data-next="nps-aquisicao-next"
+                        >
+                            ${properties.textoBotaoTela1}
+                        </mahoe-button>
+                    </div>
+                </div>
+            </div>
+            <div class="nps-aquisicao__image">
+                <picture class="nps-aquisicao__picture">
+                    <source
+                        class="image-default"
+                        media="(min-width: 768px)"
+                        srcset="${properties.imageDesktopTela1ReferenceWebp}"
+                        width="568"
+                        height="688"
+                    />
+                    <img
+                        loading="lazy"
+                        class="image-default"
+                        alt="${properties.altImagemTela1 ? properties.altImagemTela1 : 'Imagem'}"
+                        width="303"
+                        height="335"
+                        src="${properties.imageMobileTela1ReferenceWebp}"
+                    />
+                </picture>
+            </div>
+        </div>
+        <!-- Step One -->
+        <div
+            class="nps-aquisicao__slide b-sizing d-flex"
+            data-js="nps-aquisicao-slides"
+        >
+            <div
+                class="nps-aquisicao__wrapper-content b-sizing d-flex flex-column justify-content-md-center"
+            >
+                <div class="nps-aquisicao__content b-sizing">
+                    <div class="nps-aquisicao__flag">
+                        <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M4.42773 7.85826L6.18488 9.26397C6.23207 9.30284 6.28733 9.33069 6.34663 9.34552C6.40594 9.36035 6.46781 9.36177 6.52773 9.34969C6.58823 9.33834 6.64558 9.31409 6.69587 9.27859C6.74616 9.2431 6.78821 9.19718 6.81916 9.14397L9.57059 4.42969"
+                                stroke="#E8E8F0"
+                                stroke-width="1.4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M6.99916 12.5725C10.0762 12.5725 12.5706 10.0781 12.5706 7.00112C12.5706 3.9241 10.0762 1.42969 6.99916 1.42969C3.92215 1.42969 1.42773 3.9241 1.42773 7.00112C1.42773 10.0781 3.92215 12.5725 6.99916 12.5725Z"
+                                stroke="white"
+                                stroke-width="1.4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                        <span class="typography-small d-block">
+                            Etapa 1 de 6
+                        </span>
+                    </div>
+                    <h2
+                        class="typography-title-4 text-space"
+                        data-sly-element="${properties.tagPalavraDestaquePergunta1}"
+                    >
+                        ${properties.palavraDestaquePergunta1}
+                    </h2>
+                    <h2
+                        class="typography-title-1 text-space"
+                        data-sly-element="${properties.tagTituloPergunta1}"
+                    >
+                        ${properties.tituloPergunta1}
+                    </h2>
+                    <div class="nps-aquisicao__score">
+                        <ul class="nps-aquisicao__score-list">
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="0"
+                                >
+                                    0
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="1"
+                                >
+                                    1
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="2"
+                                >
+                                    2
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="3"
+                                >
+                                    3
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="4"
+                                >
+                                    4
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="5"
+                                >
+                                    5
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="6"
+                                >
+                                    6
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="7"
+                                >
+                                    7
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="8"
+                                >
+                                    8
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="9"
+                                >
+                                    9
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="10"
+                                >
+                                    10
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="nps-aquisicao__recomendation d-none d-lg-flex justify-content-lg-between"
+                    >
+                        <span class="nps-aquisicao__recomendation-text"
+                            >Não recomendaria</span
+                        >
+                        <span class="nps-aquisicao__recomendation-text"
+                            >Recomendaria</span
+                        >
+                    </div>
+                    <div
+                        class="nps-aquisicao__navigation d-flex justify-content-between"
+                    >
+                        <div class="nps-aquisicao__navigation-left">
+                            <mahoe-button
+                                variant="ghost"
+                                icon-position="left"
+                                type="button"
+                                icon="${properties.iconeBotaoNavigationPrevReferenceSvg}"
+                                data-track="${properties.dataTrackPrevPergunta1}"
+                                class="nps-aquisicao__navigation-button--prev"
+                                data-prev="nps-aquisicao-prev"
+                            >
+                                ${properties.textoBotaoVoltar}
+                            </mahoe-button>
+                        </div>
+                        <div class="nps-aquisicao__navigation-right">
+                            <mahoe-button
+                                variant="secondary"
+                                disabled
+                                type="button"
+                                icon-position="right"
+                                icon="${properties.iconeBotaoNavigationNextReferenceSvg}"
+                                class="nps-aquisicao__navigation-button--next"
+                                data-next="nps-aquisicao-next"
+                                data-track="${properties.dataTrackNextPergunta1}"
+                                data-js="nps-aquisicao-button-step-1"
+                            >
+                                ${properties.textoBotaoProximo}
+                            </mahoe-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nps-aquisicao__image">
+                <picture class="nps-aquisicao__picture">
+                    <source
+                        class="image-default"
+                        media="(min-width: 768px)"
+                        srcset="
+                            ${properties.imageDesktopPergunta2ReferenceWebp}
+                        "
+                        width="568"
+                        height="688"
+                    />
+                    <img
+                        loading="lazy"
+                        class="image-default"
+                        alt="${properties.altImagemPergunta2 ? properties.altImagemPergunta2 : 'Imagem'}"
+                        width="303"
+                        height="335"
+                        src="${properties.imageMobilePergunta2ReferenceWebp}"
+                    />
+                </picture>
+            </div>
+        </div>
+        <!-- Step Two -->
+        <div
+            class="nps-aquisicao__slide nps-aquisicao__wrapper-testimony b-sizing d-flex"
+            data-js="nps-aquisicao-slides"
+        >
+            <div
+                class="nps-aquisicao__wrapper-content b-sizing d-flex flex-column justify-content-md-center"
+            >
+                <div class="nps-aquisicao__content b-sizing">
+                    <div class="nps-aquisicao__flag">
+                        <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M4.42773 7.85826L6.18488 9.26397C6.23207 9.30284 6.28733 9.33069 6.34663 9.34552C6.40594 9.36035 6.46781 9.36177 6.52773 9.34969C6.58823 9.33834 6.64558 9.31409 6.69587 9.27859C6.74616 9.2431 6.78821 9.19718 6.81916 9.14397L9.57059 4.42969"
+                                stroke="#E8E8F0"
+                                stroke-width="1.4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M6.99916 12.5725C10.0762 12.5725 12.5706 10.0781 12.5706 7.00112C12.5706 3.9241 10.0762 1.42969 6.99916 1.42969C3.92215 1.42969 1.42773 3.9241 1.42773 7.00112C1.42773 10.0781 3.92215 12.5725 6.99916 12.5725Z"
+                                stroke="white"
+                                stroke-width="1.4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                        <span class="typography-small d-block">
+                            Etapa 2 de 6
+                        </span>
+                    </div>
+                    <h2
+                        class="typography-title-4 text-space"
+                        data-sly-element="${properties.tagPalavraDestaquePergunta2}"
+                    >
+                        ${properties.palavraDestaquePergunta2}
+                    </h2>
+                    <h2
+                        class="typography-title-1 text-space"
+                        data-sly-element="${properties.tagTituloPergunta2}"
+                    >
+                        ${properties.tituloPergunta2}
+                    </h2>
+                    <div
+                        class="typography-large text-space"
+                        data-sly-element="${properties.paragrafoPergunta2}"
+                    >
+                        ${properties.paragrafoPergunta2 @context =
+                        properties.textIsRich ? 'html' : 'text'}
+                    </div>
+
+                    <div class="nps-aquisicao__text-area">
+                        <div class="col-12 nps-aquisicao__testimony">
+                            <form
+                                class="nps-aquisicao__testimony-form"
+                                data-js="nps-aquisicao-form"
+                            >
+                                <mahoe-textarea
+                                    data-js="nps-aquisicao-depoimento"
+                                    placeholder="Queremos te ouvir..."
+                                />
+                            </form>
+                        </div>
+                    </div>
+                    <div
+                        class="nps-aquisicao__navigation d-flex justify-content-between"
+                    >
+                        <div class="nps-aquisicao__navigation-left">
+                            <mahoe-button
+                                variant="ghost"
+                                icon-position="left"
+                                type="button"
+                                icon="${properties.iconeBotaoNavigationPrevReferenceSvg}"
+                                data-track="${properties.dataTrackPrevPergunta2}"
+                                class="nps-aquisicao__navigation-button--prev"
+                                data-prev="nps-aquisicao-prev"
+                            >
+                                ${properties.textoBotaoVoltar}
+                            </mahoe-button>
+                        </div>
+                        <div class="nps-aquisicao__navigation-right">
+                            <mahoe-button
+                                variant="secondary"
+                                type="button"
+                                icon-position="right"
+                                icon="${properties.iconeBotaoNavigationNextReferenceSvg}"
+                                class="nps-aquisicao__navigation-button--next"
+                                data-next="nps-aquisicao-next"
+                                data-track="${properties.dataTrackNextPergunta2}"
+                                data-js="nps-aquisicao-button-step-2"
+                            >
+                                ${properties.textoBotaoProximo}
+                            </mahoe-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nps-aquisicao__image">
+                <picture class="nps-aquisicao__picture">
+                    <source
+                        class="image-default"
+                        media="(min-width: 768px)"
+                        srcset="
+                            ${properties.imageDesktopPergunta2ReferenceWebp}
+                        "
+                        width="568"
+                        height="688"
+                    />
+                    <img
+                        loading="lazy"
+                        class="image-default"
+                        alt="${properties.altImagemPergunta2 ? properties.altImagemPergunta2 : 'Imagem'}"
+                        width="303"
+                        height="335"
+                        src="${properties.imageMobilePergunta2ReferenceWebp}"
+                    />
+                </picture>
+            </div>
+        </div>
+        <!-- Step Three -->
+        <div
+            class="nps-aquisicao__slide b-sizing d-flex"
+            data-js="nps-aquisicao-slides"
+        >
+            <div
+                class="nps-aquisicao__wrapper-content b-sizing d-flex flex-column justify-content-md-center"
+            >
+                <div class="nps-aquisicao__content b-sizing">
+                    <div class="nps-aquisicao__flag">
+                        <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M4.42773 7.85826L6.18488 9.26397C6.23207 9.30284 6.28733 9.33069 6.34663 9.34552C6.40594 9.36035 6.46781 9.36177 6.52773 9.34969C6.58823 9.33834 6.64558 9.31409 6.69587 9.27859C6.74616 9.2431 6.78821 9.19718 6.81916 9.14397L9.57059 4.42969"
+                                stroke="#E8E8F0"
+                                stroke-width="1.4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M6.99916 12.5725C10.0762 12.5725 12.5706 10.0781 12.5706 7.00112C12.5706 3.9241 10.0762 1.42969 6.99916 1.42969C3.92215 1.42969 1.42773 3.9241 1.42773 7.00112C1.42773 10.0781 3.92215 12.5725 6.99916 12.5725Z"
+                                stroke="white"
+                                stroke-width="1.4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                        <span class="typography-small d-block">
+                            Etapa 3 de 6
+                        </span>
+                    </div>
+                    <h2
+                        class="typography-title-4 text-space"
+                        data-sly-element="${properties.tagPalavraDestaquePergunta3}"
+                    >
+                        ${properties.palavraDestaquePergunta3}
+                    </h2>
+                    <h2
+                        class="typography-title-1 text-space"
+                        data-sly-element="${properties.tagTituloPergunta3}"
+                    >
+                        ${properties.tituloPergunta3}
+                    </h2>
+                    <div class="nps-aquisicao__score">
+                        <ul
+                            class="nps-aquisicao__score-list nps-aquisicao__score-list--2"
+                        >
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="0"
+                                >
+                                    0
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="1"
+                                >
+                                    1
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="2"
+                                >
+                                    2
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="3"
+                                >
+                                    3
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="4"
+                                >
+                                    4
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="5"
+                                >
+                                    5
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="6"
+                                >
+                                    6
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="7"
+                                >
+                                    7
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="8"
+                                >
+                                    8
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="9"
+                                >
+                                    9
+                                </button>
+                            </li>
+                            <li class="nps-aquisicao__score-list-item">
+                                <button
+                                    type="button"
+                                    class="nps-aquisicao__score-list-item-button typography-body-2"
+                                    type="button"
+                                    value="10"
+                                >
+                                    10
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                        class="nps-aquisicao__recomendation d-none d-lg-flex justify-content-lg-between"
+                    >
+                        <span class="nps-aquisicao__recomendation-text"
+                            >Muito Difícil</span
+                        >
+                        <span class="nps-aquisicao__recomendation-text"
+                            >Muito Fácil</span
+                        >
+                    </div>
+                    <div
+                        class="nps-aquisicao__navigation d-flex justify-content-between"
+                    >
+                        <div class="nps-aquisicao__navigation-left">
+                            <mahoe-button
+                                variant="ghost"
+                                icon-position="left"
+                                type="button"
+                                icon="${properties.iconeBotaoNavigationPrevReferenceSvg}"
+                                data-track="${properties.dataTrackPrevPergunta3}"
+                                class="nps-aquisicao__navigation-button--prev"
+                                data-prev="nps-aquisicao-prev"
+                            >
+                                ${properties.textoBotaoVoltar}
+                            </mahoe-button>
+                        </div>
+                        <div class="nps-aquisicao__navigation-right">
+                            <mahoe-button
+                                variant="secondary"
+                                disabled
+                                type="button"
+                                icon-position="right"
+                                icon="${properties.iconeBotaoNavigationNextReferenceSvg}"
+                                class="nps-aquisicao__navigation-button--next"
+                                data-next="nps-aquisicao-next"
+                                data-track="${properties.dataTrackNextPergunta3}"
+                                data-js="nps-aquisicao-button-step-3"
+                            >
+                                ${properties.textoBotaoProximo}
+                            </mahoe-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nps-aquisicao__image">
+                <picture class="nps-aquisicao__picture">
+                    <source
+                        class="image-default"
+                        media="(min-width: 768px)"
+                        srcset="
+                            ${properties.imageDesktopPergunta3ReferenceWebp}
+                        "
+                        width="568"
+                        height="688"
+                    />
+                    <img
+                        loading="lazy"
+                        class="image-default"
+                        alt="${properties.altImagemPergunta3 ? properties.altImagemPergunta3 : 'Imagem'}"
+                        width="303"
+                        height="335"
+                        src="${properties.imageMobilePergunta3ReferenceWebp}"
+                    />
+                </picture>
+            </div>
+        </div>
+        <!-- Step Four -->
+        <div
+            class="nps-aquisicao__slide b-sizing d-flex"
+            data-js="nps-aquisicao-slides"
+        >
+            <div
+                class="nps-aquisicao__wrapper-content b-sizing d-flex flex-column justify-content-md-center"
+            >
+                <div class="nps-aquisicao__content b-sizing">
+                    <div class="nps-aquisicao__flag">
+                        <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M4.42773 7.85826L6.18488 9.26397C6.23207 9.30284 6.28733 9.33069 6.34663 9.34552C6.40594 9.36035 6.46781 9.36177 6.52773 9.34969C6.58823 9.33834 6.64558 9.31409 6.69587 9.27859C6.74616 9.2431 6.78821 9.19718 6.81916 9.14397L9.57059 4.42969"
+                                stroke="#E8E8F0"
+                                stroke-width="1.4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M6.99916 12.5725C10.0762 12.5725 12.5706 10.0781 12.5706 7.00112C12.5706 3.9241 10.0762 1.42969 6.99916 1.42969C3.92215 1.42969 1.42773 3.9241 1.42773 7.00112C1.42773 10.0781 3.92215 12.5725 6.99916 12.5725Z"
+                                stroke="white"
+                                stroke-width="1.4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                        <span class="typography-small d-block">
+                            Etapa 4 de 6
+                        </span>
+                    </div>
+                    <h2
+                        class="typography-title-4 text-space"
+                        data-sly-element="${properties.tagPalavraDestaquePergunta4}"
+                    >
+                        ${properties.palavraDestaquePergunta4}
+                    </h2>
+                    <h2
+                        class="typography-title-1 text-space"
+                        data-sly-element="${properties.tagTituloPergunta4}"
+                    >
+                        ${properties.tituloPergunta4}
+                    </h2>
+
+                    <div class="nps-aquisicao__options">
+                        <p class="typography-body-1">
+                            Selecione todas que se aplicam:
+                        </p>
+                        <div
+                            class="nps-aquisicao__options-container"
+                            data-js="nps-aquisicao-options-container"
+                        >
+                            <sly
+                                data-sly-list.opcaoMultiplaEscolha4Multifield="${resource.getChildren}"
+                            >
+                                <sly
+                                    data-sly-test="${opcaoMultiplaEscolha4Multifield.name == 'opcaoMultiplaEscolha4'}"
+                                >
+                                    <sly
+                                        data-sly-list.opcaoMultiplaEscolha4="${opcaoMultiplaEscolha4Multifield.getChildren}"
+                                    >
+                                        <label
+                                            for="${opcaoMultiplaEscolha4.idOpcao}"
+                                            class="nps-aquisicao__options-label"
+                                        >
+                                            <span class="typography-small"
+                                                >${opcaoMultiplaEscolha4.texto}</span
+                                            >
+                                            <input
+                                                type="checkbox"
+                                                id="${opcaoMultiplaEscolha4.idOpcao}"
+                                                name="${opcaoMultiplaEscolha4.nameGroup}"
+                                                data-js="nps-aquisicao-options-input"
+                                                value="${opcaoMultiplaEscolha4.texto}"
+                                            />
+                                        </label>
+                                    </sly>
+                                </sly>
+                            </sly>
+                            <button
+                                class="nps-aquisicao__options-other-btn"
+                                type="button"
+                                data-js="nps-aquisicao-other-option-btn"
+                            >
+                                <span class="typography-small">Outros</span>
+                            </button>
+                            <div class="nps-aquisicao__options-other">
+                                <mahoe-input
+                                    auto-complete="off"
+                                    label="${properties.inputOutrosLabelStep4}"
+                                    placeholder="${properties.inputOutrosPlaceholderStep4}"
+                                    type="text"
+                                    data-js="nps-aquisicao-options-other-input"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="nps-aquisicao__navigation d-flex justify-content-between"
+                    >
+                        <div class="nps-aquisicao__navigation-left">
+                            <mahoe-button
+                                variant="ghost"
+                                icon-position="left"
+                                type="button"
+                                icon="${properties.iconeBotaoNavigationPrevReferenceSvg}"
+                                data-track="${properties.dataTrackPrevPergunta4}"
+                                class="nps-aquisicao__navigation-button--prev"
+                                data-prev="nps-aquisicao-prev"
+                            >
+                                ${properties.textoBotaoVoltar}
+                            </mahoe-button>
+                        </div>
+                        <div class="nps-aquisicao__navigation-right">
+                            <mahoe-button
+                                variant="secondary"
+                                disabled
+                                type="button"
+                                icon-position="right"
+                                icon="${properties.iconeBotaoNavigationNextReferenceSvg}"
+                                class="nps-aquisicao__navigation-button--next"
+                                data-next="nps-aquisicao-next"
+                                data-track="${properties.dataTrackNextPergunta4}"
+                                data-js="nps-aquisicao-button-step-4"
+                            >
+                                ${properties.textoBotaoProximo}
+                            </mahoe-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nps-aquisicao__image">
+                <picture class="nps-aquisicao__picture">
+                    <source
+                        class="image-default"
+                        media="(min-width: 768px)"
+                        srcset="
+                            ${properties.imageDesktopPergunta4ReferenceWebp}
+                        "
+                        width="568"
+                        height="688"
+                    />
+                    <img
+                        loading="lazy"
+                        class="image-default"
+                        alt="${properties.altImagemPergunta4 ? properties.altImagemPergunta4 : 'Imagem'}"
+                        width="303"
+                        height="335"
+                        src="${properties.imageMobilePergunta4ReferenceWebp}"
+                    />
+                </picture>
+            </div>
+        </div>
+        <!-- Step Five -->
+        <div
+            class="nps-aquisicao__slide b-sizing d-flex"
+            data-js="nps-aquisicao-slides"
+        >
+            <div
+                class="nps-aquisicao__wrapper-content b-sizing d-flex flex-column justify-content-md-center"
+            >
+                <div class="nps-aquisicao__content b-sizing">
+                    <div class="nps-aquisicao__flag">
+                        <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M4.42773 7.85826L6.18488 9.26397C6.23207 9.30284 6.28733 9.33069 6.34663 9.34552C6.40594 9.36035 6.46781 9.36177 6.52773 9.34969C6.58823 9.33834 6.64558 9.31409 6.69587 9.27859C6.74616 9.2431 6.78821 9.19718 6.81916 9.14397L9.57059 4.42969"
+                                stroke="#E8E8F0"
+                                stroke-width="1.4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M6.99916 12.5725C10.0762 12.5725 12.5706 10.0781 12.5706 7.00112C12.5706 3.9241 10.0762 1.42969 6.99916 1.42969C3.92215 1.42969 1.42773 3.9241 1.42773 7.00112C1.42773 10.0781 3.92215 12.5725 6.99916 12.5725Z"
+                                stroke="white"
+                                stroke-width="1.4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                        <span class="typography-small d-block">
+                            Etapa 5 de 6
+                        </span>
+                    </div>
+                    <h2
+                        class="typography-title-4 text-space"
+                        data-sly-element="${properties.tagPalavraDestaquePergunta5}"
+                    >
+                        ${properties.palavraDestaquePergunta5}
+                    </h2>
+                    <h2
+                        class="typography-title-1 text-space"
+                        data-sly-element="${properties.tagTituloPergunta5}"
+                    >
+                        ${properties.tituloPergunta5}
+                    </h2>
+
+                    <div class="nps-aquisicao__options">
+                        <p class="typography-body-1">
+                            Selecione todas que se aplicam:
+                        </p>
+                        <div
+                            class="nps-aquisicao__options-container"
+                            data-js="nps-aquisicao-options-container"
+                        >
+                            <sly
+                                data-sly-list.opcaoMultiplaEscolha5Multifield="${resource.getChildren}"
+                            >
+                                <sly
+                                    data-sly-test="${opcaoMultiplaEscolha5Multifield.name == 'opcaoMultiplaEscolha5'}"
+                                >
+                                    <sly
+                                        data-sly-list.opcaoMultiplaEscolha5="${opcaoMultiplaEscolha5Multifield.getChildren}"
+                                    >
+                                        <label
+                                            for="${opcaoMultiplaEscolha5.idOpcao}"
+                                            class="nps-aquisicao__options-label"
+                                        >
+                                            <span class="typography-small"
+                                                >${opcaoMultiplaEscolha5.texto}</span
+                                            >
+                                            <input
+                                                type="checkbox"
+                                                id="${opcaoMultiplaEscolha5.idOpcao}"
+                                                name="${opcaoMultiplaEscolha5.nameGroup}"
+                                                data-js="nps-aquisicao-options-input"
+                                                value="${opcaoMultiplaEscolha5.texto}"
+                                            />
+                                        </label>
+                                    </sly>
+                                </sly>
+                            </sly>
+                            <button
+                                class="nps-aquisicao__options-other-btn"
+                                type="button"
+                                data-js="nps-aquisicao-other-option-btn"
+                            >
+                                <span class="typography-small">Outros</span>
+                            </button>
+                            <div class="nps-aquisicao__options-other">
+                                <mahoe-input
+                                    auto-complete="off"
+                                    label="${properties.inputOutrosLabelStep5}"
+                                    placeholder="${properties.inputOutrosPlaceholderStep5}"
+                                    type="text"
+                                    data-js="nps-aquisicao-options-other-input"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="nps-aquisicao__navigation d-flex justify-content-between"
+                    >
+                        <div class="nps-aquisicao__navigation-left">
+                            <mahoe-button
+                                variant="ghost"
+                                icon-position="left"
+                                type="button"
+                                icon="${properties.iconeBotaoNavigationPrevReferenceSvg}"
+                                data-track="${properties.dataTrackPrevPergunta5}"
+                                class="nps-aquisicao__navigation-button--prev"
+                                data-prev="nps-aquisicao-prev"
+                            >
+                                ${properties.textoBotaoVoltar}
+                            </mahoe-button>
+                        </div>
+                        <div class="nps-aquisicao__navigation-right">
+                            <mahoe-button
+                                variant="secondary"
+                                disabled
+                                type="button"
+                                icon-position="right"
+                                icon="${properties.iconeBotaoNavigationNextReferenceSvg}"
+                                class="nps-aquisicao__navigation-button--next"
+                                data-next="nps-aquisicao-next"
+                                data-track="${properties.dataTrackNextPergunta5}"
+                                data-js="nps-aquisicao-button-step-5"
+                            >
+                                ${properties.textoBotaoProximo}
+                            </mahoe-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nps-aquisicao__image">
+                <picture class="nps-aquisicao__picture">
+                    <source
+                        class="image-default"
+                        media="(min-width: 768px)"
+                        srcset="
+                            ${properties.imageDesktopPergunta5ReferenceWebp}
+                        "
+                        width="568"
+                        height="688"
+                    />
+                    <img
+                        loading="lazy"
+                        class="image-default"
+                        alt="${properties.altImagemPergunta5 ? properties.altImagemPergunta5 : 'Imagem'}"
+                        width="303"
+                        height="335"
+                        src="${properties.imageMobilePergunta2ReferenceWebp}"
+                    />
+                </picture>
+            </div>
+        </div>
+        <!-- Final Step -->
+        <div
+            class="nps-aquisicao__slide nps-aquisicao__wrapper-last-step b-sizing d-flex"
+            data-js="nps-aquisicao-slides"
+        >
+            <div
+                class="nps-aquisicao__wrapper-content b-sizing d-flex flex-column justify-content-md-center"
+            >
+                <div class="nps-aquisicao__content b-sizing">
+                    <div class="nps-aquisicao__flag">
+                        <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M4.42773 7.85826L6.18488 9.26397C6.23207 9.30284 6.28733 9.33069 6.34663 9.34552C6.40594 9.36035 6.46781 9.36177 6.52773 9.34969C6.58823 9.33834 6.64558 9.31409 6.69587 9.27859C6.74616 9.2431 6.78821 9.19718 6.81916 9.14397L9.57059 4.42969"
+                                stroke="#E8E8F0"
+                                stroke-width="1.4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M6.99916 12.5725C10.0762 12.5725 12.5706 10.0781 12.5706 7.00112C12.5706 3.9241 10.0762 1.42969 6.99916 1.42969C3.92215 1.42969 1.42773 3.9241 1.42773 7.00112C1.42773 10.0781 3.92215 12.5725 6.99916 12.5725Z"
+                                stroke="white"
+                                stroke-width="1.4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                        <span class="typography-small d-block">
+                            Etapa 6 de 6
+                        </span>
+                    </div>
+                    <h2
+                        class="typography-title-4 text-space"
+                        data-sly-element="${properties.tagPalavraDestaquePergunta6}"
+                    >
+                        ${properties.palavraDestaquePergunta6}
+                    </h2>
+                    <h2
+                        class="typography-title-1 text-space"
+                        data-sly-element="${properties.tagTituloPergunta6}"
+                    >
+                        ${properties.tituloPergunta6}
+                    </h2>
+                    <div class="nps-aquisicao__options">
+                        <p class="typography-body-1">
+                            Selecione todas que se aplicam:
+                        </p>
+                        <div
+                            class="nps-aquisicao__options-container"
+                            data-js="nps-aquisicao-options-container"
+                        >
+                            <sly
+                                data-sly-list.opcaoMultiplaEscolha6Multifield="${resource.getChildren}"
+                            >
+                                <sly
+                                    data-sly-test="${opcaoMultiplaEscolha6Multifield.name == 'opcaoMultiplaEscolha6'}"
+                                >
+                                    <sly
+                                        data-sly-list.opcaoMultiplaEscolha6="${opcaoMultiplaEscolha6Multifield.getChildren}"
+                                    >
+                                        <label
+                                            for="${opcaoMultiplaEscolha6.idOpcao}"
+                                            class="nps-aquisicao__options-label"
+                                        >
+                                            <span class="typography-small"
+                                                >${opcaoMultiplaEscolha6.texto}</span
+                                            >
+                                            <input
+                                                type="checkbox"
+                                                id="${opcaoMultiplaEscolha6.idOpcao}"
+                                                name="${opcaoMultiplaEscolha6.nameGroup}"
+                                                data-js="nps-aquisicao-options-input"
+                                                value="${opcaoMultiplaEscolha6.texto}"
+                                            />
+                                        </label>
+                                    </sly>
+                                </sly>
+                            </sly>
+                            <button
+                                class="nps-aquisicao__options-other-btn"
+                                type="button"
+                                data-js="nps-aquisicao-other-option-btn"
+                            >
+                                <span class="typography-small">Outros</span>
+                            </button>
+                            <div class="nps-aquisicao__options-other">
+                                <mahoe-input
+                                    auto-complete="off"
+                                    label="${properties.inputOutrosLabelStep6}"
+                                    placeholder="${properties.inputOutrosPlaceholderStep6}"
+                                    type="text"
+                                    data-js="nps-aquisicao-options-other-input"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="nps-aquisicao__navigation d-flex justify-content-between"
+                    >
+                        <div class="nps-aquisicao__navigation-left">
+                            <mahoe-button
+                                variant="ghost"
+                                icon-position="left"
+                                type="button"
+                                icon="${properties.iconeBotaoNavigationPrevReferenceSvg}"
+                                data-track="${properties.dataTrackPrevPergunta6}"
+                                class="nps-aquisicao__navigation-button--prev"
+                                data-prev="nps-aquisicao-prev"
+                            >
+                                ${properties.textoBotaoVoltar}
+                            </mahoe-button>
+                        </div>
+                        <div class="nps-aquisicao__navigation-right">
+                            <mahoe-button
+                                variant="secondary"
+                                disabled
+                                class="nps-aquisicao__navigation-button-submit"
+                                data-track="${properties.dataTrackNextPergunta6}"
+                                data-submit="nps-aquisicao-button-submit"
+                                data-js="nps-aquisicao-button-step-6"
+                                type="button"
+                            >
+                                ${properties.submitButtonText}
+                            </mahoe-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nps-aquisicao__image">
+                <picture class="nps-aquisicao__picture">
+                    <source
+                        class="image-default"
+                        media="(min-width: 768px)"
+                        srcset="
+                            ${properties.imageDesktopPergunta6ReferenceWebp}
+                        "
+                        width="568"
+                        height="688"
+                    />
+                    <img
+                        loading="lazy"
+                        class="image-default"
+                        alt="${properties.altImagemPergunta6 ? properties.altImagemPergunta6 : 'Imagem'}"
+                        width="303"
+                        height="335"
+                        src="${properties.imageMobilePergunta6ReferenceWebp}"
+                    />
+                </picture>
+            </div>
+        </div>
+        <!-- Success -->
+        <div
+            class="nps-aquisicao__slide nps-aquisicao__wrapper-success b-sizing d-flex"
+            data-js="nps-aquisicao-slides"
+        >
+            <div
+                class="nps-aquisicao__wrapper-content b-sizing d-flex flex-column justify-content-md-center"
+            >
+                <div class="nps-aquisicao__content b-sizing">
+                    <div
+                        class="nps-aquisicao__flag nps-aquisicao__flag--finish"
+                    >
+                        <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M7.42006 1.9324L8.78292 4.68383C8.81392 4.75367 8.86268 4.81416 8.92434 4.85928C8.986 4.90439 9.05841 4.93256 9.13435 4.94097L12.1429 5.38669C12.23 5.39789 12.3122 5.43364 12.3797 5.48977C12.4473 5.54589 12.4975 5.62008 12.5244 5.70367C12.5514 5.78726 12.554 5.87679 12.532 5.96182C12.51 6.04684 12.4642 6.12384 12.4001 6.18383L10.2315 8.33526C10.1761 8.38697 10.1346 8.4517 10.1107 8.52355C10.0867 8.59541 10.0811 8.67211 10.0943 8.74669L10.6172 11.7724C10.6323 11.8593 10.6228 11.9488 10.5896 12.0306C10.5564 12.1123 10.5009 12.1831 10.4295 12.2349C10.358 12.2867 10.2735 12.3175 10.1854 12.3236C10.0974 12.3297 10.0094 12.311 9.93149 12.2695L7.22292 10.8381C7.15356 10.8041 7.07733 10.7864 7.00006 10.7864C6.9228 10.7864 6.84656 10.8041 6.77721 10.8381L4.06863 12.2695C3.99071 12.311 3.90272 12.3297 3.81469 12.3236C3.72665 12.3175 3.6421 12.2867 3.57065 12.2349C3.4992 12.1831 3.44373 12.1123 3.41054 12.0306C3.37735 11.9488 3.36778 11.8593 3.38292 11.7724L3.90578 8.7124C3.91903 8.63783 3.91342 8.56112 3.88947 8.48927C3.86552 8.41741 3.82398 8.35268 3.76863 8.30098L1.57435 6.18383C1.50943 6.1222 1.46378 6.04307 1.44292 5.95602C1.42206 5.86897 1.42689 5.77773 1.45682 5.69337C1.48676 5.60901 1.54051 5.53514 1.61158 5.48071C1.68264 5.42628 1.76796 5.39362 1.85721 5.38669L4.86578 4.94097C4.94172 4.93256 5.01413 4.90439 5.07579 4.85928C5.13745 4.81416 5.18621 4.75367 5.21721 4.68383L6.58006 1.9324C6.61718 1.85227 6.67644 1.78442 6.75086 1.73687C6.82528 1.68933 6.91175 1.66406 7.00006 1.66406C7.08838 1.66406 7.17485 1.68933 7.24927 1.73687C7.32369 1.78442 7.38295 1.85227 7.42006 1.9324V1.9324Z"
+                                stroke="#E8E8F0"
+                                stroke-width="1.4"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                        <span class="typography-small d-block">
+                            Finalizado
+                        </span>
+                    </div>
+                    <h2
+                        class="typography-title-4 text-space"
+                        data-sly-element="${properties.tagPalavraDestaqueTelaFinal}"
+                    >
+                        ${properties.palavraDestaqueTelaFinal}
+                    </h2>
+                    <h2
+                        class="typography-title-1 text-space"
+                        data-sly-element="${properties.tagTituloTelaFinal}"
+                    >
+                        ${properties.tituloTelaFinal}
+                    </h2>
+                    <div
+                        class="typography-large text-space"
+                        data-sly-element="${properties.paragrafoTelaFinal}"
+                    >
+                        ${properties.paragrafoTelaFinal @context =
+                        properties.textIsRich ? 'html' : 'text'}
+                    </div>
+                    <div class="nps-aquisicao__finish-button">
+                        <sly data-sly-test="${!properties.hidefinishButton}">
+                            <sly data-sly-test="${properties.finishButtonText}">
+                                <mahoe-button
+                                    button-role="${properties.finishButtonBehavior != '_link' && 'finishButton' }"
+                                    href="${properties.finishButtonBehavior == '_link' && properties.finishButtonHref || properties.finishButtonBehavior == '_scroll' && properties.finishButtonScroll}"
+                                    icon="${properties.finishButtonIconReferenceParameter}"
+                                    icon-position="${properties.finishButtonIconPosition}"
+                                    name="${properties.finishButtonName ? properties.finishButtonName : properties.finishButtonText}"
+                                    size="${properties.finishButtonSize}"
+                                    target="${properties.finishButtonTarget}"
+                                    mode="${properties.finishButtonStyleBehavior == '_independent' ? properties.finishButtonMode : colorVariant[0] == 'bg-azul' && 'blue' || colorVariant[0] == 'bg-azul--dark' && 'blue' || colorVariant[0] == 'bg-preto' && 'dark' || colorVariant[0] == 'bg-branco' || colorVariant[0] == 'bg-cinza' && ''}"
+                                    variant="${properties.finishButtonVariant}"
+                                    data-track="${properties.finishButtonDataTrack}"
+                                    title="${properties.finishButtonTitle}"
+                                    data-js="${properties.finishButtonDataJS}"
+                                    class="${properties.finishButtonTextMobile && 'd-none d-md-flex'}"
+                                >
+                                    ${properties.finishButtonText}
+                                </mahoe-button>
+                            </sly>
+                        </sly>
+                        <sly
+                            data-sly-test="${!properties.hidefinishButtonMobile}"
+                        >
+                            <sly
+                                data-sly-test="${properties.finishButtonTextMobile}"
+                            >
+                                <mahoe-button
+                                    button-role="${properties.finishButtonBehaviorMobile != '_link' && 'finishButton' }"
+                                    href="${properties.finishButtonBehaviorMobile == '_link' && properties.finishButtonHrefMobile || properties.finishButtonBehaviorMobile == '_scroll' && properties.finishButtonScrollMobile}"
+                                    icon="${properties.finishButtonIconReferenceParameterMobile}"
+                                    icon-position="${properties.finishButtonIconPositionMobile}"
+                                    name="${properties.finishButtonNameMobile ? properties.finishButtonNameMobile : properties.finishButtonTextMobile}"
+                                    size="${properties.finishButtonSizeMobile}"
+                                    target="${properties.finishButtonTargetMobile}"
+                                    mode="${properties.finishButtonStyleBehaviorMobile == '_independent' ? properties.finishButtonModeMobile : colorVariant[0] == 'bg-azul' && 'blue' || colorVariant[0] == 'bg-azul--dark' && 'blue' || colorVariant[0] == 'bg-preto' && 'dark' || colorVariant[0] == 'bg-branco' || colorVariant[0] == 'bg-cinza' && ''}"
+                                    variant="${properties.finishButtonVariantMobile}"
+                                    data-track="${properties.finishButtonDataTrackMobile}"
+                                    title="${properties.finishButtonTitleMobile}"
+                                    data-js="${properties.finishButtonDataJSMobile}"
+                                    class="d-flex d-md-none"
+                                >
+                                    ${properties.finishButtonTextMobile}
+                                </mahoe-button>
+                            </sly>
+                        </sly>
+                    </div>
+                </div>
+            </div>
+            <div class="nps-aquisicao__image">
+                <picture class="nps-aquisicao__picture">
+                    <source
+                        class="image-default"
+                        media="(min-width: 768px)"
+                        srcset="
+                            ${properties.imageDesktopTelaFinalReferenceWebp}
+                        "
+                        width="568"
+                        height="688"
+                    />
+                    <img
+                        loading="lazy"
+                        class="image-default"
+                        alt="${properties.altImagemTelaFinal ? properties.altImagemTelaFinal : 'Imagem'}"
+                        width="303"
+                        height="335"
+                        src="${properties.imageMobileTelaFinalReferenceWebp}"
+                    />
+                </picture>
+            </div>
+        </div>
+    </div>
+    <!-- Error steps -->
+    <div
+        class="nps-aquisicao nps-aquisicao--error d-none b-sizing"
+        data-js="nps-aquisicao-fluxo-erro"
+    >
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-5">
+                    <div class="nps-aquisicao__flag-error">
+                        <svg
+                            width="40"
+                            height="40"
+                            viewBox="0 0 40 40"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M19.9992 38.5725C30.2559 38.5725 38.5706 30.2578 38.5706 20.0011C38.5706 9.7444 30.2559 1.42969 19.9992 1.42969C9.74245 1.42969 1.42773 9.7444 1.42773 20.0011C1.42773 30.2578 9.74245 38.5725 19.9992 38.5725Z"
+                                stroke="#F3F4F9"
+                                stroke-width="2.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M20 10V18.5714"
+                                stroke="#F3F4F9"
+                                stroke-width="2.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M19.9989 28.572C20.7879 28.572 21.4275 27.9324 21.4275 27.1434C21.4275 26.3544 20.7879 25.7148 19.9989 25.7148C19.2099 25.7148 18.5703 26.3544 18.5703 27.1434C18.5703 27.9324 19.2099 28.572 19.9989 28.572Z"
+                                stroke="#F3F4F9"
+                                stroke-width="2.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </div>
+                    <div
+                        class="nps-aquisicao__text-error d-none"
+                        data-js="nps-aquisicao-fluxo-erro-respondida"
+                    >
+                        <h2 class="typography-big-text-2">
+                            Pesquisa já respondida ou ela não está mais
+                            disponível
+                        </h2>
+                    </div>
+                    <div
+                        class="nps-aquisicao__text-error d-none"
+                        data-js="nps-aquisicao-fluxo-erro-link-expirado"
+                    >
+                        <h2 class="typography-big-text-2">
+                            O link para esta pesquisa está inválido ou expirado
+                        </h2>
+                    </div>
+                    <div
+                        class="nps-aquisicao__text-error d-none"
+                        data-js="nps-aquisicao-fluxo-erro-manutencao"
+                    >
+                        <h2 class="typography-big-text-2">
+                            No momento não conseguimos abrir a página solicitada
+                        </h2>
+                        <p class="typography-large">
+                            Tente novamente mais tarde.
+                        </p>
+                    </div>
+                    <div class="nps-aquisicao__button-error">
+                        <mahoe-button
+                            size="md"
+                            variant="primary"
+                            title="Ir para o site do PAN!"
+                            href="https://www.bancopan.com.br/"
+                        >
+                            Ir para o site do PAN
+                        </mahoe-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

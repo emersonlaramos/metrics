@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:allowedTemplates="[/conf/webapp--adobe-experience-ds/settings/wcm/templates/(?!xf-).*]"
+        cq:conf="/conf/webapp--adobe-experience-ds"
+        cq:redirectTarget="/content/webapp--adobe-experience-ds/br/pt"
+        cq:template="/conf/webapp--adobe-experience-ds/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Design System - Componentes PAN"
+        sling:configRef="/conf/webapp--adobe-experience-ds"
+        sling:redirect="{Boolean}true"
+        sling:redirectStatus="{Long}302"
+        sling:resourceType="webapp--adobe-experience-ds/components/page">
+        <image jcr:primaryType="nt:unstructured">
+            <file/>
+        </image>
+    </jcr:content>
+    <catalogo-ds/>
+</jcr:root>

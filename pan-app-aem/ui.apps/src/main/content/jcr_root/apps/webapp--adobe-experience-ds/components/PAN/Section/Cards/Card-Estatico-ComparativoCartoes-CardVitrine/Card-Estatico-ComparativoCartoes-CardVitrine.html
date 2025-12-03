@@ -1,0 +1,191 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section
+    id="${properties.sectionID}"
+    data-cmp-is="Card-Estatico-ComparativoCartoes-CardVitrine"
+>
+    <div
+        class="card-comparativocartoes-cardvitrine-ds ${properties.colorVariant}"
+    >
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 d-flex flex-column align-items-center">
+                    <h3
+                        class="typography-title-4 texto-destaque"
+                        data-sly-element="${properties.tagPalavraDestaque}"
+                    >
+                        ${properties.palavraDestaque}
+                    </h3>
+                    <div class="title-wrapper">
+                        <h2
+                            class="typography-big-text-2 m-0"
+                            data-sly-element="${properties.tagTitulo}"
+                        >
+                            ${properties.titulo}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col p-0">
+                    <div class="swiper d-flex swiper-card-vitrine-ds">
+                        <div class="swiper-wrapper">
+                            <sly
+                                data-sly-list.cardVitrineMultifield="${resource.getChildren}"
+                            >
+                                <sly
+                                    data-sly-test="${cardVitrineMultifield.name == 'cardVitrine'}"
+                                >
+                                    <sly
+                                        data-sly-list.cardVitrine="${cardVitrineMultifield.getChildren}"
+                                    >
+                                        <div class="swiper-slide flip-card">
+                                            <div
+                                                class="custom-card flip-card-inner"
+                                                data-js="cards"
+                                            >
+                                                <div
+                                                    class="custom-card__content flip-card-front d-flex flex-column justify-content-between"
+                                                >
+                                                    <div>
+                                                        <img
+                                                            loading="lazy"
+                                                            class="custom-card__image"
+                                                            width="210"
+                                                            height="134"
+                                                            src="${cardVitrine.imageCardinfoRef}"
+                                                            alt="${cardVitrine.altCardinfo ? cardVitrine.altCardinfo : 'Imagem'}"
+                                                        />
+                                                        <p
+                                                            class="typography-title-2 custom-card__text m-0"
+                                                        >
+                                                            ${cardVitrine.titulo}
+                                                        </p>
+                                                        <p
+                                                            class="typography-body-1 subtitle custom-card__text"
+                                                        >
+                                                            ${cardVitrine.subtitulo}
+                                                        </p>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex flex-column align-items-center"
+                                                    >
+                                                        <div
+                                                            class="button-wrapper"
+                                                        >
+                                                            <mahoe-button
+                                                                href="${cardVitrine.ctaBotaoFrente}"
+                                                                size="lg"
+                                                                variant="secondary"
+                                                                mode="${cardVitrine.colorVariant == 'bg-azul' ? 'blue' : ''}"
+                                                                data-track="${cardVitrine.dataTrackBotaoFrente}"
+                                                                target="${cardVitrine.targetBotaoFrente}"
+                                                            >
+                                                                ${cardVitrine.textoBotaoFrente}
+                                                            </mahoe-button>
+                                                        </div>
+                                                        <a
+                                                            class="custom-card__link mt-3 d-block"
+                                                            target="#"
+                                                            data-js="frontNames"
+                                                            data-track="${cardVitrine.dataTrackLink}"
+                                                        >
+                                                            ${properties.linkFrente}
+                                                        </a>
+                                                    </div>
+                                                    <p
+                                                        class="typography-small card-label ${cardVitrine.hideCardLabel && 'd-none'}"
+                                                    >
+                                                        ${cardVitrine.cardLabel}
+                                                    </p>
+                                                </div>
+                                                <div
+                                                    class="custom-card__content flip-card-back d-flex flex-column justify-content-between"
+                                                >
+                                                    <div>
+                                                        <p
+                                                            class="typography-title-2 custom-card__text m-0"
+                                                        >
+                                                            ${cardVitrine.titulo}
+                                                        </p>
+                                                        <p
+                                                            class="typography-body-1 subtitle custom-card__text"
+                                                        >
+                                                            ${cardVitrine.subtitulo}
+                                                        </p>
+                                                        <div
+                                                            class="typography-large custom-card__text"
+                                                        >
+                                                            ${cardVitrine.bullet
+                                                            @context='html'}
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex flex-column align-items-center"
+                                                    >
+                                                        <div
+                                                            class="button-wrapper"
+                                                        >
+                                                            <mahoe-button
+                                                                href="${cardVitrine.ctaBotaoVerso}"
+                                                                size="lg"
+                                                                variant="secondary"
+                                                                mode="${cardVitrine.colorVariant == 'bg-azul' ? 'blue' : ''}"
+                                                                data-track="${cardVitrine.dataTrackBotaoVerso}"
+                                                                target="${cardVitrine.targetBotaoVerso}"
+                                                            >
+                                                                ${cardVitrine.textoBotaoVerso}
+                                                            </mahoe-button>
+                                                        </div>
+                                                        <a
+                                                            class="custom-card__link m-3 d-block"
+                                                            target="#"
+                                                            data-js="backNames"
+                                                            data-track="${cardVitrine.dataTrackLink2}"
+                                                        >
+                                                            ${properties.linkVerso}
+                                                        </a>
+                                                        <div
+                                                            class="typography-small disclaimer m-0 ${cardVitrine.hideDisclaimer && 'd-none'}"
+                                                        >
+                                                            ${cardVitrine.disclaimer
+                                                            @context='html'}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </sly>
+                                </sly>
+                            </sly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div
+                        class="swiper-pagination-card-vitrine-ds d-flex d-lg-none justify-content-center"
+                    ></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div
+                        class="d-flex text-center justify-content-center ${properties.hideMainDisclaimer && 'd-none'} mt-3"
+                    >
+                        <sly
+                            data-sly-resource="${'Mahoe-Link' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Link', selectors=[properties.colorVariant]}"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

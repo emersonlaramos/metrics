@@ -1,0 +1,28 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Highlight-CardTexto">
+    <div class="Highlight-cardtexto ${properties.colorVariantBackground}">
+
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="Highlight-cardtexto__box ${properties.colorVariantCard}">
+                    <div class="col-12 col-md-9 col-xl-7">
+                        <div class="d-flex flex-column">
+                            <h2 class="typography-big-text-2" data-sly-element="${properties.tagTitulo}">
+                                ${properties.titulo}
+                            </h2>
+                            <p class="typography-title-3 mt-2" data-sly-element="${properties.paragrafo}">
+                                ${properties.paragrafo @context='text'}
+                            </p>
+                            <div class="button-container mt-5" data-panelcontainer="${wcmmode.edit}">
+                                <sly
+                                    data-sly-resource="${'Mahoe-Button' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariantCard]}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

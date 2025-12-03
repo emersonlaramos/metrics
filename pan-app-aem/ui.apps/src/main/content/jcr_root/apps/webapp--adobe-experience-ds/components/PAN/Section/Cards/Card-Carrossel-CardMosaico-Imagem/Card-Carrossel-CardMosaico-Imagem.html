@@ -1,0 +1,584 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section
+    id="${properties.sectionID}"
+    data-cmp-is="Card-Carrossel-CardMosaico-Imagem"
+>
+    <div class="card-carrossel-cardMosaico-imagem ${properties.colorVariant}">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-5">
+                    <h3
+                        class="typography-title-4"
+                        data-sly-element="${properties.tagPalavraDestaque}"
+                    >
+                        ${properties.palavraDestaque}
+                    </h3>
+
+                    <h2
+                        class="typography-big-text-2"
+                        data-sly-element="${properties.tagTitulo}"
+                    >
+                        ${properties.titulo}
+                    </h2>
+
+                    <div
+                        class="typography-large"
+                        data-sly-element="${properties.paragrafo}"
+                    >
+                        ${properties.paragrafo @context='html'}
+                    </div>
+
+                    <div
+                        class="col-12 col-md-6 mt-5"
+                        data-panelcontainer="${wcmmode.edit}"
+                    >
+                        <sly
+                            data-sly-resource="${'Mahoe-Button-CardMosaico-Imagem' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}"
+                        />
+                    </div>
+                </div>
+
+                <div
+                    class="col-12 d-md-none"
+                    data-sly-test="${properties.cardsSelect == 'tres'}"
+                >
+                    <div class="swiper swiper-cardMosaico">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <mahoe-card
+                                    variant="image"
+                                    bg-src="${properties.imageCard1ReferenceWebp}"
+                                    size="large"
+                                    card-title="${properties.tituloCard1}"
+                                    href="${properties.hrefCard1}"
+                                    target="${properties.targetCard1}"
+                                >
+                                    <p
+                                        class="typography-large"
+                                        data-sly-element="${properties.TituloCard1}"
+                                    >
+                                        ${properties.tituloCard1}
+                                    </p>
+                                </mahoe-card>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <mahoe-card
+                                    card-style="${properties.styleCard}"
+                                    mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                    size="large"
+                                    card-title="${properties.tituloCard2}"
+                                    href="${properties.hrefCard2}"
+                                    target="${properties.targetCard2}"
+                                >
+                                    <img
+                                        class="icone"
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard2ReferenceSvg}"
+                                        alt="${properties.altIcon2 ? properties.altIcon2 : 'Icone'}"
+                                    />
+
+                                    <p
+                                        class="typography-large"
+                                        data-sly-element="${properties.TituloCard2}"
+                                    >
+                                        ${properties.tituloCard2}
+                                    </p>
+                                </mahoe-card>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <mahoe-card
+                                    card-style="${properties.styleCard}"
+                                    mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                    size="large"
+                                    card-title="${properties.tituloCard3}"
+                                    href="${properties.hrefCard3}"
+                                    target="${properties.targetCard3}"
+                                >
+                                    <img
+                                        class="icone"
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard3ReferenceSvg}"
+                                        alt="${properties.altIcon3 ? properties.altIcon3 : 'Icone'}"
+                                    />
+
+                                    <p
+                                        class="typography-large"
+                                        data-sly-element="${properties.TituloCard3}"
+                                    >
+                                        ${properties.tituloCard3}
+                                    </p>
+                                </mahoe-card>
+                            </div>
+                        </div>
+
+                        <div
+                            class="col-12 card-carrossel-cardMosaico-imagem__slider-pagination"
+                        >
+                            <div
+                                class="swiper-pagination swiper-pagination-button"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="col-md-7 d-none d-md-block"
+                    data-sly-test="${properties.cardsSelect == 'tres'}"
+                >
+                    <div class="wrapper">
+                        <div class="card-image custom-mr">
+                            <mahoe-card
+                                variant="image"
+                                bg-src="${properties.imageCard1ReferenceWebp}"
+                                size="large"
+                                card-title="${properties.tituloCard1}"
+                                href="${properties.hrefCard1}"
+                                target="${properties.targetCard1}"
+                            >
+                                <p
+                                    class="typography-large"
+                                    data-sly-element="${properties.TituloCard1}"
+                                >
+                                    ${properties.tituloCard1}
+                                </p>
+                            </mahoe-card>
+                        </div>
+
+                        <div>
+                            <mahoe-card
+                                card-style="${properties.styleCard}"
+                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                size="small"
+                                card-title="${properties.tituloCard2}"
+                                href="${properties.hrefCard2}"
+                                target="${properties.targetCard2}"
+                            >
+                                <img
+                                    class="icone"
+                                    width="32"
+                                    height="32"
+                                    src="${properties.iconCard2ReferenceSvg}"
+                                    alt="${properties.altIcon2 ? properties.altIcon2 : 'Icone'}"
+                                />
+
+                                <p
+                                    class="typography-large"
+                                    data-sly-element="${properties.TituloCard2}"
+                                >
+                                    ${properties.tituloCard2}
+                                </p>
+                            </mahoe-card>
+
+                            <div class="mt-md-3">
+                                <mahoe-card
+                                    card-style="${properties.styleCard}"
+                                    mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                    size="medium"
+                                    card-title="${properties.tituloCard3}"
+                                    href="${properties.hrefCard3}"
+                                    target="${properties.targetCard3}"
+                                >
+                                    <img
+                                        class="icone"
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard3ReferenceSvg}"
+                                        alt="${properties.altIcon3 ? properties.altIcon3 : 'Icone'}"
+                                    />
+
+                                    <p
+                                        class="typography-large"
+                                        data-sly-element="${properties.TituloCard3}"
+                                    >
+                                        ${properties.tituloCard3}
+                                    </p>
+                                </mahoe-card>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="col-12 d-md-none"
+                    data-sly-test="${properties.cardsSelect == 'seis'}"
+                >
+                    <div class="swiper swiper-cardMosaico">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <mahoe-card
+                                    variant="image"
+                                    bg-src="${properties.imageCard4ReferenceWebp}"
+                                    size="large"
+                                    card-title="${properties.tituloCard4}"
+                                    href="${properties.hrefCard4}"
+                                    target="${properties.targetCard4}"
+                                >
+                                    <p
+                                        class="typography-large"
+                                        data-sly-element="${properties.TituloCard4}"
+                                    >
+                                        ${properties.tituloCard4}
+                                    </p>
+                                </mahoe-card>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <mahoe-card
+                                    card-style="${properties.styleCard}"
+                                    mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                    size="large"
+                                    card-title="${properties.tituloCard5}"
+                                    href="${properties.hrefCard5}"
+                                    target="${properties.targetCard5}"
+                                >
+                                    <img
+                                        class="icone"
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard5ReferenceSvg}"
+                                        alt="${properties.altIcon5 ? properties.altIcon5 : 'Icone'}"
+                                    />
+
+                                    <p
+                                        class="typography-large"
+                                        data-sly-element="${properties.TituloCard5}"
+                                    >
+                                        ${properties.tituloCard5}
+                                    </p>
+                                </mahoe-card>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <mahoe-card
+                                    card-style="${properties.styleCard}"
+                                    mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                    size="large"
+                                    card-title="${properties.tituloCard6}"
+                                    href="${properties.hrefCard6}"
+                                    target="${properties.targetCard6}"
+                                >
+                                    <img
+                                        class="icone"
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard6ReferenceSvg}"
+                                        alt="${properties.altIcon6 ? properties.altIcon6 : 'Icone'}"
+                                    />
+
+                                    <p
+                                        class="typography-large"
+                                        data-sly-element="${properties.TituloCard6}"
+                                    >
+                                        ${properties.tituloCard6}
+                                    </p>
+                                </mahoe-card>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <mahoe-card
+                                    card-style="${properties.styleCard}"
+                                    mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                    size="large"
+                                    card-title="${properties.tituloCard7}"
+                                    href="${properties.hrefCard7}"
+                                    target="${properties.targetCard7}"
+                                >
+                                    <img
+                                        class="icone"
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard7ReferenceSvg}"
+                                        alt="${properties.altIcon7 ? properties.altIcon7 : 'Icone'}"
+                                    />
+
+                                    <p
+                                        class="typography-large"
+                                        data-sly-element="${properties.TituloCard7}"
+                                    >
+                                        ${properties.tituloCard7}
+                                    </p>
+                                </mahoe-card>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <mahoe-card
+                                    card-style="${properties.styleCard}"
+                                    mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                    size="large"
+                                    card-title="${properties.tituloCard8}"
+                                    href="${properties.hrefCard8}"
+                                    target="${properties.targetCard8}"
+                                >
+                                    <img
+                                        class="icone"
+                                        width="32"
+                                        height="32"
+                                        src="${properties.iconCard8ReferenceSvg}"
+                                        alt="${properties.altIcon8 ? properties.altIcon8 : 'Icone'}"
+                                    />
+
+                                    <p
+                                        class="typography-large"
+                                        data-sly-element="${properties.TituloCard8}"
+                                    >
+                                        ${properties.tituloCard8}
+                                    </p>
+                                </mahoe-card>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <mahoe-card
+                                    variant="image"
+                                    bg-src="${properties.imageCard9ReferenceWebp}"
+                                    size="large"
+                                    card-title="${properties.tituloCard9}"
+                                    href="${properties.hrefCard9}"
+                                    target="${properties.targetCard9}"
+                                >
+                                    <p
+                                        class="typography-large"
+                                        data-sly-element="${properties.TituloCard9}"
+                                    >
+                                        ${properties.tituloCard9}
+                                    </p>
+                                </mahoe-card>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-12 card-carrossel-cardMosaico-imagem__slider-pagination"
+                    >
+                        <div
+                            class="swiper-pagination swiper-pagination-button"
+                        ></div>
+                    </div>
+                </div>
+
+                <div
+                    class="col-md-7 d-none d-md-block"
+                    data-sly-test="${properties.cardsSelect == 'seis'}"
+                >
+                    <div class="swiper swiper-cardMosaico">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="wrapper">
+                                    <div class="card-image custom-mr">
+                                        <mahoe-card
+                                            variant="image"
+                                            bg-src="${properties.imageCard4ReferenceWebp}"
+                                            size="large"
+                                            card-title="${properties.tituloCard4}"
+                                            href="${properties.hrefCard4}"
+                                            target="${properties.targetCard4}"
+                                        >
+                                            <p
+                                                class="typography-large"
+                                                data-sly-element="${properties.TituloCard4}"
+                                            >
+                                                ${properties.tituloCard4}
+                                            </p>
+                                        </mahoe-card>
+                                    </div>
+
+                                    <div>
+                                        <mahoe-card
+                                            card-style="${properties.styleCard}"
+                                            mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                            size="small"
+                                            card-title="${properties.tituloCard5}"
+                                            href="${properties.hrefCard5}"
+                                            target="${properties.targetCard5}"
+                                        >
+                                            <img
+                                                class="icone"
+                                                width="32"
+                                                height="32"
+                                                src="${properties.iconCard5ReferenceSvg}"
+                                                alt="${properties.altIcon5 ? properties.altIcon5 : 'Icone'}"
+                                            />
+
+                                            <p
+                                                class="typography-large"
+                                                data-sly-element="${properties.TituloCard5}"
+                                            >
+                                                ${properties.tituloCard5}
+                                            </p>
+                                        </mahoe-card>
+
+                                        <div class="mt-md-3">
+                                            <mahoe-card
+                                                card-style="${properties.styleCard}"
+                                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                                size="medium"
+                                                card-title="${properties.tituloCard6}"
+                                                href="${properties.hrefCard6}"
+                                                target="${properties.targetCard6}"
+                                            >
+                                                <img
+                                                    class="icone"
+                                                    width="32"
+                                                    height="32"
+                                                    src="${properties.iconCard6ReferenceSvg}"
+                                                    alt="${properties.altIcon6 ? properties.altIcon6 : 'Icone'}"
+                                                />
+
+                                                <p
+                                                    class="typography-large"
+                                                    data-sly-element="${properties.TituloCard6}"
+                                                >
+                                                    ${properties.tituloCard6}
+                                                </p>
+                                            </mahoe-card>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="wrapper">
+                                    <div>
+                                        <mahoe-card
+                                            card-style="${properties.styleCard}"
+                                            mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                            size="medium"
+                                            card-title="${properties.tituloCard7}"
+                                            href="${properties.hrefCard7}"
+                                            target="${properties.targetCard7}"
+                                        >
+                                            <img
+                                                class="icone"
+                                                width="32"
+                                                height="32"
+                                                src="${properties.iconCard7ReferenceSvg}"
+                                                alt="${properties.altIcon7 ? properties.altIcon7 : 'Icone'}"
+                                            />
+
+                                            <p
+                                                class="typography-large"
+                                                data-sly-element="${properties.TituloCard7}"
+                                            >
+                                                ${properties.tituloCard7}
+                                            </p>
+                                        </mahoe-card>
+
+                                        <div class="mt-md-3">
+                                            <mahoe-card
+                                                card-style="${properties.styleCard}"
+                                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                                size="small"
+                                                card-title="${properties.tituloCard8}"
+                                                href="${properties.hrefCard8}"
+                                                target="${properties.targetCard8}"
+                                            >
+                                                <img
+                                                    class="icone"
+                                                    width="32"
+                                                    height="32"
+                                                    src="${properties.iconCard8ReferenceSvg}"
+                                                    alt="${properties.altIcon8 ? properties.altIcon8 : 'Icone'}"
+                                                />
+
+                                                <p
+                                                    class="typography-large"
+                                                    data-sly-element="${properties.TituloCard8}"
+                                                >
+                                                    ${properties.tituloCard8}
+                                                </p>
+                                            </mahoe-card>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-image custom-ml">
+                                        <mahoe-card
+                                            variant="image"
+                                            bg-src="${properties.imageCard9ReferenceWebp}"
+                                            size="large"
+                                            card-title="${properties.tituloCard9}"
+                                            href="${properties.hrefCard9}"
+                                            target="${properties.targetCard9}"
+                                        >
+                                            <p
+                                                class="typography-large"
+                                                data-sly-element="${properties.TituloCard9}"
+                                            >
+                                                ${properties.tituloCard9}
+                                            </p>
+                                        </mahoe-card>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="card-carrossel-cardMosaico-imagem__swiper-navigation"
+                    >
+                        <div class="d-flex">
+                            <div
+                                class="swiper-button-prev card-carrossel-cardMosaico-imagem__swiper-button--prev"
+                            >
+                                <svg
+                                    class="swiper-button-icon"
+                                    width="20"
+                                    height="12"
+                                    viewBox="0 0 20 12"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M0.714355 6H19.2858"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M14.2859 11L19.2859 6L14.2859 1"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+                            <div
+                                class="swiper-button-next card-carrossel-cardMosaico-imagem__swiper-button--next"
+                            >
+                                <svg
+                                    class="swiper-button-icon"
+                                    width="20"
+                                    height="12"
+                                    viewBox="0 0 20 12"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M0.714355 6H19.2858"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M14.2859 11L19.2859 6L14.2859 1"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

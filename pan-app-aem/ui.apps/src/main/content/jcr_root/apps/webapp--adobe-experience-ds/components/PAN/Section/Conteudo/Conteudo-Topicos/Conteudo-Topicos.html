@@ -1,0 +1,74 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Conteudo-Topicos">
+
+    <div class="conteudo-topicos ${properties.colorVariant}">
+        <div class="conteudo-topicos__content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="conteudo-topicos__content">
+                            <h2 class="typography-title-1 mb-5" data-sly-element="${properties.tagTitulo}">
+                                ${properties.titulo}</h2>
+
+                            <div class="conteudo-topicos__topicos d-flex flex-wrap">
+                                <sly data-sly-list.topicosMultifield="${resource.getChildren}">
+                                    <sly data-sly-test="${topicosMultifield.name == 'topicos'}">
+                                        <sly data-sly-list.topicos="${topicosMultifield.getChildren}">
+                                            <div
+                                                class="conteudo-topicos__topicos-topico mb-5 d-flex flex-column col-12 col-lg-6">
+                                                <div class="col-12 col-lg-10 conteudo-topicos__icone mb-3">
+                                                    <img class="icone" width="32" height="32"
+                                                        src="${topicos.iconTopicoReferenceSvg}"
+                                                        alt="${topicos.altIconTopico ? topicos.altIconTopico : 'Ícone'}" />
+                                                </div>
+
+                                                <div class="col-12 col-lg-10 conteudo-topicos__titulo">
+                                                    <p class="typography-title-4">
+                                                        ${topicos.tituloTopico}</p>
+                                                </div>
+
+                                                <div class="col-12 col-lg-10 conteudo-topicos__texto">
+                                                    <div class="typography-body-2">
+                                                        ${topicos.textoTopico @context='html'}</div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="conteudo-topicos__topicos-topico mb-5 d-flex flex-column col-12 col-lg-6">
+                                                <div class="col-12 col-lg-10 conteudo-topicos__icone mb-3">
+                                                    <img class="icone" width="32" height="32"
+                                                        src="${topicos.iconTopicoReferenceSvg2}"
+                                                        alt="${topicos.altIconTopico2 ? topicos.altIconTopico2 : 'Ícone'}" />
+                                                </div>
+
+                                                <div class="col-12 col-lg-10 conteudo-topicos__titulo">
+                                                    <p class="typography-title-4">
+                                                        ${topicos.tituloTopico2}</p>
+                                                </div>
+
+                                                <div class="col-12 col-lg-10 conteudo-topicos__texto">
+                                                    <div class="typography-body-2">
+                                                        ${topicos.textoTopico2 @context='html'}</div>
+                                                </div>
+                                            </div>
+                                        </sly>
+                                    </sly>
+                                </sly>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 col-lg-2" data-panelcontainer="${wcmmode.edit}">
+                                    <sly
+                                        data-sly-resource="${'Mahoe-Button' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button'}" />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

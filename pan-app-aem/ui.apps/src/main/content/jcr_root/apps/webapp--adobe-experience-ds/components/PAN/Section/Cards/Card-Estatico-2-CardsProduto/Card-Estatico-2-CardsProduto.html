@@ -1,0 +1,67 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section
+    id="${properties.sectionID}"
+    data-cmp-is="Card-Estatico-2-CardsProduto"
+>
+    <div class="card-estatico-2-cardsproduto ${properties.colorVariant}">
+        <div class="container">
+            <div class="row g-4 p-3 p-md-0">
+                <div class="col-12 col-md-6">
+                    <mahoe-card
+                        variant="image"
+                        size="large"
+                        class="custom-card ${properties.verticalVariant} ${properties.horizontalVariant}"
+                        bg-src="${properties.imageCard1ReferenceWebp}"
+                    >
+                        <h2 class="typography-big-text-2">
+                            ${properties.tituloCard1}
+                        </h2>
+                        
+                        <p class="typography-large  ${properties.hideSentence1 && 'd-none'}">
+                            ${properties.paragrafoCard1}
+                        </p>
+
+                        <div
+                            data-panelcontainer="${wcmmode.edit}"
+                            class="button__wrapper"
+                        >
+                            <sly
+                                data-sly-resource="${'Mahoe-Button' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}"
+                            />
+                        </div>
+                    </mahoe-card>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <mahoe-card
+                        variant="image"
+                        size="large"
+                        class="custom-card ${properties.verticalVariant} ${properties.horizontalVariant}"
+                        bg-src="${properties.imageCard2ReferenceWebp}"
+                    >
+                        <h2 class="typography-big-text-2">
+                            ${properties.tituloCard2}
+                        </h2>
+
+                        <p class="typography-large ${properties.hideSentence2 && 'd-none'}">
+                            ${properties.paragrafoCard2}
+                        </p>
+
+                        <div
+                            data-panelcontainer="${wcmmode.edit}"
+                            class="button__wrapper"
+                        >
+                            <sly
+                                data-sly-resource="${'Mahoe-Button2' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}"
+                            />
+                        </div>
+                    </mahoe-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

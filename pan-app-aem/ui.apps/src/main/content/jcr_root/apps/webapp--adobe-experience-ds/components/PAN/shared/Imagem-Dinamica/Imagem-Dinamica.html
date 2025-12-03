@@ -1,0 +1,24 @@
+<sly
+  data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+  data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<div data-cmp-is="Imagem-Dinamica" class="imagem-dinamica__container">
+  <picture>
+    <source
+      media="(min-width: 768px)"
+      alt="${properties.altImagemDesktop ? properties.altImagemDesktop : 'Imagem'}"
+      srcset="${properties.imageDesktopReference}"
+    />
+    <source
+      srcset="${properties.imageMobileReference}"
+      alt="${properties.altImagemMobile ? properties.altImagemMobile : 'Imagem'}"
+    />
+    <img
+      alt="${properties.altImagemMobile ? properties.altImagemMobile : 'Imagem'}"
+      src="${properties.imageMobileReference}"
+      class="imagem-dinamica__image"
+      loading="${properties.lazyload}"
+    />
+  </picture>
+</div>

@@ -1,0 +1,38 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Highlight-Recovery">
+    <div class="Highlight-Recovery">
+        <div class="Highlight-Recovery__background ${properties.colorVariant}">
+            <div class="container">
+                <div class="Highlight-Recovery__content">
+                    <div class="row">
+                        <div class="col-12 col-md-4 offset-md-1">
+                            <h2 class="typography-big-text-2" data-sly-element="${properties.tagTitulo}">
+                                ${properties.titulo}
+                            </h2>
+                        </div>
+                        <div class="col-12 col-md-5 offset-md-1">
+                            <div class="d-flex flex-column">
+                                <p class="typography-large mb-5 mb-md-4" data-sly-element="${properties.paragrafo}">
+                                    ${properties.paragrafo @context='text'}
+                                </p>
+                                <div class="button-container mt-md-2" data-panelcontainer="${wcmmode.edit}">
+                                    <sly
+                                        data-sly-resource="${'Mahoe-Button__Highlight-Recovery' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-11 mt-2 offset-md-1">
+                            <div class="typography-small disclaimer mt-2 ${properties.hideDisclaimer && 'd-none'}">
+                            ${properties.disclaimer @context='html'}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

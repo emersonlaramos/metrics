@@ -1,0 +1,167 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section id="${properties.sectionID}" data-cmp-is="Card-Carrossel-CardVertical">
+    <div class="card-carrossel-cardVertical ${properties.colorVariant}" data-js="swiper-card-vertical">
+        <div class="container">
+            <div class="row">
+                <div class="card-carrossel-cardVertical__align-text">
+                    <div class="col-12 col-md-2 offset-md-5">
+                        <h3
+                            class="typography-title-4"
+                            data-sly-element="${properties.tagPalavraDestaque}"
+                        >
+                            ${properties.palavraDestaque}
+                        </h3>
+                    </div>
+
+                    <div class="col-12 col-md-6 offset-md-3">
+                        <h2
+                            class="typography-big-text-2"
+                            data-sly-element="${properties.tagTitulo}"
+                        >
+                            ${properties.titulo}
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="button-navigation col-md-1 d-none d-md-flex">
+                    <div
+                        class="swiper-button-prev card-carrossel-cardVertical__swiper-button--prev"
+                    >
+                        <svg
+                            class="swiper-button-icon"
+                            width="20"
+                            height="12"
+                            viewBox="0 0 20 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M0.714355 6H19.2858"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M14.2859 11L19.2859 6L14.2859 1"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-10">
+                    <!-- Slider main container -->
+                    <div class="swiper swiper-cardVertical">
+                        <!-- Additional required wrapper -->
+                        <div
+                            class="swiper-wrapper"
+                            data-js="CardVertical-Wrapper"
+                        >
+                            <!-- Slides -->
+                            <sly
+                                data-sly-list.cardCarrosselVerticalMultifield="${resource.getChildren}"
+                            >
+                                <sly
+                                    data-sly-test="${cardCarrosselVerticalMultifield.name == 'cardCarrosselVertical'}"
+                                >
+                                    <sly
+                                        data-sly-list.cardCarrosselVertical="${cardCarrosselVerticalMultifield.getChildren}"
+                                    >
+                                        <div
+                                            class="swiper-slide ${properties.sizeVariant == 'medium' ? 'variant-md-card' : ''}"
+                                        >
+                                            <mahoe-card
+                                                class="card-carrossel-cardVertical__mahoe-card ${properties.verticalVariant}"
+                                                card-style="${properties.styleCard}"
+                                                mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                                size="${properties.sizeVariant}"
+                                                card-title="${cardCarrosselVertical.tituloCard}"
+                                                variant="${cardCarrosselVertical.imageCardReference ? 'image' : 'normal'}"
+                                                bg-src="${cardCarrosselVertical.imageCardReference}"
+                                                href="${cardCarrosselVertical.hrefCard}"
+                                                target="${cardCarrosselVertical.targetCard}"
+                                                data-track="${cardCarrosselVertical.dataTrackCardBotao}"
+                                            >
+                                                <div
+                                                    data-sly-test="${cardCarrosselVertical.iconCardReferenceSvg}"
+                                                >
+                                                    <img
+                                                        loading="lazy"
+                                                        class="icone"
+                                                        width="32"
+                                                        height="32"
+                                                        src="${cardCarrosselVertical.iconCardReferenceSvg}"
+                                                        alt="${cardCarrosselVertical.altIcon ? cardCarrosselVertical.altIcon : 'Icone'}"
+                                                    />
+                                                </div>
+
+                                                <p
+                                                    class="typography-large"
+                                                    data-sly-element="${cardCarrosselVertical.TituloCard}"
+                                                >
+                                                    ${cardCarrosselVertical.tituloCard}
+                                                </p>
+
+                                                <p
+                                                    class="typography-body-2 m-0"
+                                                    data-sly-element="${cardCarrosselVertical.TextoCard}"
+                                                >
+                                                    ${cardCarrosselVertical.textoCard}
+                                                </p>
+                                            </mahoe-card>
+                                        </div>
+                                    </sly>
+                                </sly>
+                            </sly>
+                        </div>
+
+                        <!-- navigation mobile -->
+                        <div class="button-pagination d-flex d-md-none">
+                            <div
+                                class="swiper-pagination carrossel-cardVertical__swiper--pagination d-md-none"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-navigation col-md-1 d-none d-md-flex">
+                    <div
+                        class="swiper-button-next card-carrossel-cardVertical__swiper-button--next"
+                    >
+                        <svg
+                            class="swiper-button-icon"
+                            width="20"
+                            height="12"
+                            viewBox="0 0 20 12"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M0.714355 6H19.2858"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M14.2859 11L19.2859 6L14.2859 1"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

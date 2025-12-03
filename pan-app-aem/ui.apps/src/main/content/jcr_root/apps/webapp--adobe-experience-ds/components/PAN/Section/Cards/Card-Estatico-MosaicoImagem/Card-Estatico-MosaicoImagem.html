@@ -1,0 +1,57 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Card-Estatico-MosaicoImagem">
+
+    <div class="card-estatico-mosaicoimagem ${properties.colorVariant}">
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center card-estatico-mosaicoimagem__title">
+                    <h2 class="typography-big-text-2">${properties.mainTitle}</h2>
+                </div>
+
+                <div class="col-12 col-lg-4  card-estatico-mosaicoimagem__superior-row">
+                    <mahoe-card size="large" variant="image" bg-src="${properties.imgReference1}" href="${properties.CTAhrefCard1}" data-track="${properties.dataTrackCard1}" target="${properties.ctaTargetCard1}">
+                        <p class="typography-body-1">${properties.labelCard1}</p>
+                        <h2 class="typography-title-3">${properties.tituloCard1}</h2>
+                    </mahoe-card>
+                </div>                
+                
+                <div class="col-12 col-lg-8 card-estatico-mosaicoimagem__superior-row">
+                    <mahoe-card size="small" variant="image" bg-src="${properties.imgReference2}" href="${properties.CTAhrefCard2}" data-track="${properties.dataTrackCard2}" target="${properties.ctaTargetCard2}">
+                        <p class="typography-body-1">${properties.labelCard2}</p>
+                        <h2 class="typography-title-3">${properties.tituloCard2}</h2>
+                    </mahoe-card>
+                </div>            
+                
+                <div class="col-12 col-lg-4 card-estatico-mosaicoimagem__inferior-row">
+                    <mahoe-card size="large" variant="image" bg-src="${properties.imgReference3}" href="${properties.CTAhrefCard3}" data-track="${properties.dataTrackCard3}" target="${properties.ctaTargetCard3}">
+                        <p class="typography-body-1">${properties.labelCard3}</p>
+                        <h2 class="typography-title-3">${properties.tituloCard3}</h2>
+                    </mahoe-card>
+                </div>                
+                
+                <div class="col-12 col-lg-8">
+                    <div class="row">
+                        <div class="col-6 col-lg-6 card-estatico-mosaicoimagem__inferior-row">
+                            <mahoe-card size="small" variant="image" bg-src="${properties.imgReference4}" href="${properties.CTAhrefCard4}" data-track="${properties.dataTrackCard4}" target="${properties.ctaTargetCard4}">
+                                <p class="typography-body-1">${properties.labelCard4}</p>
+                                <h2 class="typography-title-3">${properties.tituloCard4}</h2>
+                            </mahoe-card>
+                        </div>                
+                        
+                        <div class="col-6 col-lg-6 card-estatico-mosaicoimagem__inferior-row">
+                            <mahoe-card size="small" variant="image" bg-src="${properties.imgReference5}" href="${properties.CTAhrefCard5}" data-track="${properties.dataTrackCard5}" target="${properties.ctaTargetCard5}">
+                                <p class="typography-body-1">${properties.labelCard5}</p>
+                                <h2 class="typography-title-3">${properties.tituloCard5}</h2>
+                            </mahoe-card>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+</section>

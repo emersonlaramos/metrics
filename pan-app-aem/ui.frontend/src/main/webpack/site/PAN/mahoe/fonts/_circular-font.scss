@@ -1,0 +1,43 @@
+$typography-font-path: '/etc.clientlibs/webapp--adobe-experience-ds/clientlibs/clientlib-site/resources/fonts/' !default;
+
+/* Mixins
+-----------------------------*/
+@mixin font-face($font-path, $font-weight: 400, $font-style: normal) {
+  @font-face {
+    font-family: Circular Air Pro;
+    font-style: $font-style;
+    font-weight: $font-weight;
+    src: url('#{$font-path}.otf') format('OpenType');
+  }
+}
+
+/* Circular Air Pro - 400
+-----------------------------*/
+@include font-face('#{$typography-font-path}/CircularAirPro-Book', 400, normal);
+@include font-face(
+  '#{$typography-font-path}/CircularAirPro-BookItalic',
+  400,
+  italic
+);
+
+/* Circular Air Pro - 700
+ -----------------------------*/
+@include font-face('#{$typography-font-path}/CircularAirPro-Bold', 700, normal);
+@include font-face(
+  '#{$typography-font-path}/CircularAirPro-BoldItalic',
+  700,
+  italic
+);
+
+/* Circular Air Pro - 900
+ -----------------------------*/
+@include font-face(
+  '#{$typography-font-path}/CircularAirPro-ExtraBlack',
+  900,
+  normal
+);
+@include font-face(
+  '#{$typography-font-path}/CircularAirPro-ExtraBlackItalic',
+  900,
+  italic
+);

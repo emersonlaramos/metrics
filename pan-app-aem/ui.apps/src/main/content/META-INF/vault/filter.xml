@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/webapp--adobe-experience-ds/clientlibs"/>
+    <filter root="/apps/webapp--adobe-experience-ds/components"/>
+    <filter root="/apps/webapp--adobe-experience-ds/i18n"/>
+</workspaceFilter>

@@ -1,0 +1,209 @@
+<section class="SectionSocialMedia" data-cmp-is="SocialMedia-Imagem">
+    <div class="socialmedia-image d-flex ${properties.colorVariant}">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-12 col-lg-6 d-flex justify-content-center">
+                    <picture class="section-intro-imagem-inteira__picture">
+                        <source
+                            class="socialmedia-image__picture"
+                            media="(min-width: 768px)"
+                            width="504"
+                            height="640"
+                            srcset="${properties.imgReferenceParameterWebp}"
+                            alt="${properties.altDesktop ? properties.altDesktop : 'Imagem'}"
+                        />
+                        <img
+                            loading="lazy"
+                            class="socialmedia-image__picture"
+                            alt="${properties.altMobile ? properties.altMobile : 'Imagem'}"
+                            width="54"
+                            height="90"
+                            src="${properties.imageMobileReferenceWebp}"
+                        />
+                    </picture>
+                </div>
+
+                <div
+                    class="col-12 col-lg-4 d-flex flex-column justify-content-center"
+                >
+                    <h3 class="typography-title-4 socialmedia-image__destaque">
+                        ${properties.palavraDestaque}
+                    </h3>
+                    <h2 class="typography-big-text-2 socialmedia-image__title">
+                        ${properties.desktopTitle}
+                    </h2>
+
+                    <ul class="socialmedia-image__people-list">
+                        <li>
+                            <img
+                                class="socialmedia-image__people"
+                                width="54"
+                                height="54"
+                                loading="lazy"
+                                alt="${properties.perfil1 ? properties.perfil1 : 'Imagem'}"
+                                src="${properties.perfil1ReferenceParameterWebp}"
+                            />
+                        </li>
+                        <li>
+                            <img
+                                class="socialmedia-image__people"
+                                width="54"
+                                height="54"
+                                loading="lazy"
+                                alt="${properties.perfil2 ? properties.perfil2 : 'Imagem'}"
+                                src="${properties.perfil2ReferenceParameterWebp}"
+                            />
+                        </li>
+                        <li>
+                            <img
+                                class="socialmedia-image__people"
+                                width="54"
+                                height="54"
+                                loading="lazy"
+                                alt="${properties.perfil3 ? properties.perfil3 : 'Imagem'}"
+                                src="${properties.perfil3ReferenceParameterWebp}"
+                            />
+                        </li>
+                        <li>
+                            <img
+                                class="socialmedia-image__people"
+                                width="54"
+                                height="54"
+                                loading="lazy"
+                                alt="${properties.perfil4 ? properties.perfil4 : 'Imagem'}"
+                                src="${properties.perfil4ReferenceParameterWebp}"
+                            />
+                        </li>
+                        <li>
+                            <img
+                                class="socialmedia-image__people"
+                                width="54"
+                                height="54"
+                                loading="lazy"
+                                alt="${properties.perfil5 ? properties.perfil5 : 'Imagem'}"
+                                src="${properties.perfil5ReferenceParameterWebp}"
+                            />
+                        </li>
+                        <li>
+                            <img
+                                class="socialmedia-image__people"
+                                width="54"
+                                height="54"
+                                loading="lazy"
+                                alt="${properties.perfil6 ? properties.perfil6 : 'Imagem'}"
+                                src="${properties.perfil6ReferenceParameterWebp}"
+                            />
+                        </li>
+                        <li>
+                            <span
+                                class="socialmedia-image__number typography-body-1"
+                                >+224mil</span
+                            >
+                        </li>
+                    </ul>
+
+                    <p class="typography-body-1 socialmedia-image__paragrafo">
+                        ${properties.desktopText}
+                    </p>
+
+                    <ul
+                        class="socialmedia-image__list justify-content-between d-flex m-0"
+                    >
+                        <li
+                            class="socialmedia-image__list-item ${properties.hideIcon1Checkbox && 'd-none'}"
+                        >
+                            <a
+                                class="socialmedia-image__link"
+                                href="${properties.linkIcone1}"
+                                target="${properties.targetIcone1}"
+                                title="${properties.altIcone1}"
+                            >
+                                <img
+                                    class="socialmedia-image__icon"
+                                    alt="${properties.altIcone1 ? properties.altIcone1 : 'Imagem'}"
+                                    src="${properties.icon1SVGRefrenceParameter}"
+                            /></a>
+                        </li>
+                        <li
+                            class="socialmedia-image__list-item ${properties.hideIcon2Checkbox && 'd-none'}"
+                        >
+                            <a
+                                class="socialmedia-image__link"
+                                href="${properties.linkIcone2}"
+                                target="${properties.targetIcone2}"
+                                title="${properties.altIcone2}"
+                            >
+                                <img
+                                    class="socialmedia-image__icon"
+                                    alt="${properties.altIcone2 ? properties.altIcone2 : 'Imagem'}"
+                                    src="${properties.icon2SVGRefrenceParameter}"
+                            /></a>
+                        </li>
+                        <li
+                            class="socialmedia-image__list-item ${properties.hideIcon3Checkbox && 'd-none'}"
+                        >
+                            <a
+                                class="socialmedia-image__link"
+                                href="${properties.linkIcone3}"
+                                target="${properties.targetIcone3}"
+                                title="${properties.altIcone3}"
+                            >
+                                <img
+                                    class="socialmedia-image__icon"
+                                    alt="${properties.altIcone3 ? properties.altIcone3 : 'Imagem'}"
+                                    src="${properties.icon3SVGRefrenceParameter}"
+                            /></a>
+                        </li>
+                        <li
+                            class="socialmedia-image__list-item ${properties.hideIcon4Checkbox && 'd-none'}"
+                        >
+                            <a
+                                class="socialmedia-image__link"
+                                href="${properties.linkIcone4}"
+                                target="${properties.targetIcone4}"
+                                title="${properties.altIcone4}"
+                            >
+                                <img
+                                    class="socialmedia-image__icon"
+                                    alt="${properties.altIcone4 ? properties.altIcone4 : 'Imagem'}"
+                                    src="${properties.icon4SVGRefrenceParameter}"
+                            /></a>
+                        </li>
+                        <li
+                            class="socialmedia-image__list-item ${properties.hideIcon5Checkbox && 'd-none'}"
+                        >
+                            <a
+                                class="socialmedia-image__link"
+                                href="${properties.linkIcone5}"
+                                target="${properties.targetIcone5}"
+                                title="${properties.altIcone5}"
+                            >
+                                <img
+                                    class="socialmedia-image__icon"
+                                    alt="${properties.altIcone5 ? properties.altIcone5 : 'Imagem'}"
+                                    src="${properties.icon5SVGRefrenceParameter}"
+                            /></a>
+                        </li>
+                        <li
+                            class="socialmedia-image__list-item ${properties.hideIcon6Checkbox && 'd-none'}"
+                        >
+                            <a
+                                class="socialmedia-image__link"
+                                href="${properties.linkIcone6}"
+                                target="${properties.targetIcone6}"
+                                title="${properties.altIcone6}"
+                            >
+                                <img
+                                    class="socialmedia-image__icon"
+                                    alt="${properties.altIcone6 ? properties.altIcone6 : 'Imagem'}"
+                                    src="${properties.icon6SVGRefrenceParameter}"
+                            /></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-lg-1"></div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,58 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section
+    id="${properties.sectionID}"
+    data-cmp-is="Imagem-MetadeImagem-TextoCentral"
+>
+    <div class="Imagem-MetadeImagem-TextoCentral">
+        <picture class="Imagem-MetadeImagem-TextoCentral__picture">
+            <source
+                class="image-default"
+                media="(min-width: 768px)"
+                srcset="${properties.imageDesktopReferenceWebp}"
+                width="1440"
+                height="351"
+            />
+            <source
+                class="image-default"
+                srcset="${properties.imageMobileReferenceWebp}"
+                width="375"
+                height="275"
+            />
+            <img
+                loading="lazy"
+                class="image-default"
+                alt="${properties.altImagem ? properties.altImagem : 'Imagem'}"
+                width="375"
+                height="275"
+                src="${properties.imageMobileReferenceWebp}"
+            />
+        </picture>
+
+        <div class="${properties.colorVariant}">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+                    <div
+                        class="col-11 col-md-9 Imagem-MetadeImagem-TextoCentral__content"
+                    >
+                        <h1
+                            class="typography-big-text-2"
+                            data-sly-element="${properties.tagTitulo}"
+                        >
+                            ${properties.titulo}
+                        </h1>
+
+                        <div data-panelcontainer="${wcmmode.edit}">
+                            <sly
+                                data-sly-resource="${'Mahoe-Button' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

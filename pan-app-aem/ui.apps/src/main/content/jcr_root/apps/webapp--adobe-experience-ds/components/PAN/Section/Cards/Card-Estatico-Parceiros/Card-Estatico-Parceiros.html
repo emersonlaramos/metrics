@@ -1,0 +1,90 @@
+<sly
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"
+/>
+
+<section id="${properties.sectionID}" data-cmp-is="Card-Estatico-Parceiros">
+    <div class="card-estatico-parceiros ${properties.colorVariant}">
+        <div class="card-estatico-parceiros__content">
+            <h2 class="typography-title-1 mb-5">${properties.titulo}</h2>
+
+            <div class="swiper swiper-cardParceiros mb-3">
+                <div class="swiper-wrapper c-right1">
+                    <sly
+                        data-sly-list.cardCarrosselParceiros1Multifield="${resource.getChildren}"
+                    >
+                        <sly
+                            data-sly-test="${cardCarrosselParceiros1Multifield.name == 'cardCarrosselParceiros1'}"
+                        >
+                            <sly
+                                data-sly-list.cardCarrosselParceiros1="${cardCarrosselParceiros1Multifield.getChildren}"
+                            >
+                                <div
+                                    class="swiper-slide card-estatico-parceiros__card"
+                                >
+                                    <mahoe-card
+                                        card-style="${properties.styleCard}"
+                                        mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                        size="small"
+                                        href="${cardCarrosselParceiros1.href1}"
+                                        target="_blank"
+                                        title="${cardCarrosselParceiros1.title1}"
+                                        data-track="${cardCarrosselParceiros1.dataTrack1}"
+                                    >
+                                        <img
+                                            loading="lazy"
+                                            class="parceiro"
+                                            width=""
+                                            height=""
+                                            src="${cardCarrosselParceiros1.parceiroCard1Reference}"
+                                            alt="${cardCarrosselParceiros1.altParceiro1 ? cardCarrosselParceiros1.altParceiro1 : 'Parceiro'}"
+                                        />
+                                    </mahoe-card>
+                                </div>
+                            </sly>
+                        </sly>
+                    </sly>
+                </div>
+            </div>
+
+            <div class="swiper swiper-cardParceiros">
+                <div class="swiper-wrapper c-right2">
+                    <sly
+                        data-sly-list.cardCarrosselParceiros2Multifield="${resource.getChildren}"
+                    >
+                        <sly
+                            data-sly-test="${cardCarrosselParceiros2Multifield.name == 'cardCarrosselParceiros2'}"
+                        >
+                            <sly
+                                data-sly-list.cardCarrosselParceiros2="${cardCarrosselParceiros2Multifield.getChildren}"
+                            >
+                                <div
+                                    class="swiper-slide card-estatico-parceiros__card"
+                                >
+                                    <mahoe-card
+                                        card-style="${properties.styleCard}"
+                                        mode="${properties.colorVariant == 'bg-azul' ? 'blue' : properties.colorVariant == 'bg-preto' && 'dark'}"
+                                        size="small"
+                                        href="${cardCarrosselParceiros2.href2}"
+                                        target="_blank"
+                                        title="${cardCarrosselParceiros2.title2}"
+                                        data-track="${cardCarrosselParceiros2.dataTrack2}"
+                                    >
+                                        <img
+                                            loading="lazy"
+                                            class="parceiro"
+                                            width=""
+                                            height=""
+                                            src="${cardCarrosselParceiros2.parceiroCard2Reference}"
+                                            alt="${cardCarrosselParceiros2.altParceiro2 ? cardCarrosselParceiros2.altParceiro2 : 'Parceiro'}"
+                                        />
+                                    </mahoe-card>
+                                </div>
+                            </sly>
+                        </sly>
+                    </sly>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

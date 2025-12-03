@@ -1,0 +1,81 @@
+@import '../../../../../site/PAN/mixins/breakpoints';
+
+.section-intro {
+
+  .typography-small,
+  .typography-small a {
+    color: var(--pan-color-neutral-black);
+  }
+
+  &.bg {
+    &-azul {
+
+      .typography-title-3 .typography-small,
+      .typography-small a {
+        color: var(--pan-color-neutral-black);
+      }
+
+      .typography-big-text-2,
+      .typography-large {
+        color: var(--pan-color-neutral-lighter);
+      }
+    }
+
+    &-cinza {
+      .typography-title-3 {
+        color: var(--pan-color-primary-brand);
+      }
+
+      .typography-big-text-2,
+      .typography-large,
+      .typography-small,
+      .typography-small a {
+        color: var(--pan-color-neutral-black);
+      }
+    }
+
+    &-preto {
+      .typography-title-3 {
+        color: var(--pan-color-primary-brand);
+      }
+
+      .typography-big-text-2,
+      .typography-large {
+        color: var(--pan-color-neutral-lighter);
+      }
+
+      .typography-small,
+      .typography-small a {
+        color: var(--pan-color-neutral-light);
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    padding-top: 56px;
+
+    @include min-tablet {
+      padding-top: unset;
+    }
+
+    .typography-title-3 {
+      @include min-tablet {
+        margin-top: 86px;
+      }
+    }
+
+    .typography-small {
+      margin-top: 32px;
+      display: block;
+
+      @include min-tablet {
+        margin-top: 48px;
+      }
+    }
+  }
+
+  .disclaimer a {
+    text-decoration: underline;
+  }
+}

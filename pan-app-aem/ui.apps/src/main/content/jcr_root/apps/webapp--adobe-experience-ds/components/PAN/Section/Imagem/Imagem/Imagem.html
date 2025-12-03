@@ -1,0 +1,52 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty = !properties.title}" />
+
+<section id="${properties.sectionID}" data-cmp-is="Section-imagem">
+    <div class="section-imagem ${properties.colorVariant}" data-sly-attribute.data-js="${properties.bannerId ? 'primeiraDobra' : ''}">
+        <div class="container section-imagem__content">
+            <div class="row ${properties.positionVariant == 'direita' ? 'flex-row' : 'flex-row-reverse'}">
+                <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
+                    <h2 class="typography-title-3" data-sly-element="${properties.tagPalavraDestaque}">
+                        ${properties.palavraDestaque}
+                    </h2>
+
+                    <h1 class="typography-big-text-2" data-sly-element="${properties.tagTitulo}">
+                        ${properties.titulo}
+                    </h1>
+
+                    <div class="typography-large" data-sly-element="${properties.paragrafo}">
+                        ${properties.paragrafo @context='html'}
+                    </div>
+
+                    <div class="col-12 col-md-6 mt-4 d-flex flex-column flex-md-row">
+                        <div class="col-12 me-2 mb-3" data-panelcontainer="${wcmmode.edit}">
+                            <sly
+                                data-sly-resource="${'Mahoe-Button' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}" />
+                        </div>
+
+                        <div class="col-12" data-panelcontainer="${wcmmode.edit}">
+                            <sly
+                                data-sly-resource="${'Mahoe-Button-2' @ resourceType='/apps/webapp--adobe-experience-ds/components/PAN/shared/Mahoe-Button', selectors=[properties.colorVariant]}" />
+                        </div>
+                    </div>
+
+                    <div class="typography-small">
+                        ${properties.textoSmall @context='html'}
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <picture class="section-imagem__picture">
+                        <source class="image-default" media="(min-width: 768px)"
+                            srcset="${properties.imageDesktopReferenceWebp}" width="568" height="688" />
+                        <source class="image-default" srcset="${properties.imageMobileReferenceWebp}" width="303"
+                            height="335" />
+                        <img class="image-default" alt="${properties.altImagem ? properties.altImagem : 'Imagem'}" loading="${properties.lazyload}"
+                            title="${properties.titleImagem && properties.titleImagem || properties.altImagem}"
+                            width="303" height="335" src="${properties.imageMobileReferenceWebp}" />
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

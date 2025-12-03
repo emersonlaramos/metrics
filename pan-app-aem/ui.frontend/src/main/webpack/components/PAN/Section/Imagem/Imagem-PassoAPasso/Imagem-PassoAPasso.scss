@@ -1,0 +1,23 @@
+.imagem-passo-a-passo {
+  padding: var(--pan-spacing-32) 0;
+
+  &__subtitle {
+    color: var(--pan-color-primary-brand);
+
+    .bg-azul & {
+      color: var(--pan-color-neutral-white);
+    }
+  }
+
+  &__title {
+    color: var(--pan-color-neutral-black);
+
+    .bg-preto & {
+      color: var(--pan-color-neutral-white);
+    }
+
+    .bg-azul & {
+      color: var(--pan-color-neutral-black);
+    }
+  }
+}
