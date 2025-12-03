@@ -1,31 +1,24 @@
 Manifest-Version: 1.0
-Bundle-Category: Design System - Componentes PAN
+Bnd-LastModified: 1764790045689
 Bundle-Description: Core bundle for Design System - Componentes PAN
 Bundle-ManifestVersion: 2
 Bundle-Name: Design System - Componentes PAN - Core
 Bundle-SymbolicName: webapp--adobe-experience-ds.core
-Bundle-Version: 0.0.1.SNAPSHOT
-Export-Package: com.webapp.adobe.experience.ds.core.filters;version="1
- .0";uses:="javax.servlet",com.webapp.adobe.experience.ds.core.listene
- rs;version="1.0";uses:="org.osgi.service.event",com.webapp.adobe.expe
- rience.ds.core.models;version="1.0";uses:="javax.annotation,javax.jcr
- ,org.apache.sling.api,org.apache.sling.api.resource,org.apache.sling.
- models.annotations",com.webapp.adobe.experience.ds.core.schedulers;ve
- rsion="1.0",com.webapp.adobe.experience.ds.core.servlets;version="1.0
- ";uses:="javax.servlet,org.apache.sling.api,org.apache.sling.api.serv
- lets"
+Bundle-Version: 0.0.1.202512031927
+Created-By: 11.0.19 (Eclipse Adoptium)
 Import-Package: javax.annotation;version="0.0.0",com.day.cq.dam.api;ve
- rsion="[1.37,2)",com.webapp.adobe.experience.ds.core.filters;version=
- "[1.0,2)",com.webapp.adobe.experience.ds.core.listeners;version="[1.0
- ,2)",com.webapp.adobe.experience.ds.core.schedulers;version="[1.0,2)"
- ,com.webapp.adobe.experience.ds.core.servlets;version="[1.0,2)",javax
- .jcr;version="[2.0,3)",javax.servlet;version="[3.1,4)",org.apache.sli
- ng.api;version="[2.3,3)",org.apache.sling.api.request;version="[2.6,3
- )",org.apache.sling.api.resource;version="[2.13,3)",org.apache.sling.
- api.servlets;version="[2.3,3)",org.apache.sling.models.annotations;ve
- rsion="[1.5,2)",org.apache.sling.models.annotations.injectorspecific;
- version="[1.1,2)",org.osgi.service.event;version="[1.4,2)",org.slf4j;
- version="[1.7,2)"
+ rsion="[1.37,2)",javax.jcr;version="[2.0,3)",javax.servlet;version="[
+ 3.1,4)",org.apache.sling.api;version="[2.3,3)",org.apache.sling.api.r
+ equest;version="[2.6,3)",org.apache.sling.api.resource;version="[2.13
+ ,3)",org.apache.sling.api.servlets;version="[2.3,3)",org.apache.sling
+ .models.annotations;version="[1.5,2)",org.apache.sling.models.annotat
+ ions.injectorspecific;version="[1.1,2)",org.osgi.service.event;versio
+ n="[1.4,2)",org.slf4j;version="[1.7,2)"
+Private-Package: com.webapp.adobe.experience.ds.core.filters;version="
+ 1.0",com.webapp.adobe.experience.ds.core.listeners;version="1.0",com.
+ webapp.adobe.experience.ds.core.models;version="1.0",com.webapp.adobe
+ .experience.ds.core.schedulers;version="1.0",com.webapp.adobe.experie
+ nce.ds.core.servlets;version="1.0"
 Provide-Capability: osgi.service;objectClass:List<String>="java.lang.R
  unnable",osgi.service;objectClass:List<String>="javax.servlet.Filter"
  ;uses:="javax.servlet",osgi.service;objectClass:List<String>="javax.s
@@ -40,6 +33,5 @@ Service-Component: OSGI-INF/com.webapp.adobe.experience.ds.core.filter
  eners.SimpleResourceListener.xml,OSGI-INF/com.webapp.adobe.experience
  .ds.core.schedulers.SimpleScheduledTask.xml,OSGI-INF/com.webapp.adobe
  .experience.ds.core.servlets.SimpleServlet.xml
-Sling-Model-Classes: com.webapp.adobe.experience.ds.core.models.ImageS
- izeComponent
+Tool: Bnd-5.1.2.202007211702
 
